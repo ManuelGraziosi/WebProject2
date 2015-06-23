@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="jquery-1.11.3.min.js"></script>
+        <script type="text/javascript">
+            var xhr;
+            function datiCliente(){
+                d="";
+                $('.dati').each(function(){
+                    d=d+this.name+"="+this.value+"&";
+                });
+                return d;
+            }
+            function processzipdata(){
+                if(xhr.readyState == 4){
+                    if(xhr.status == 200){
+                        var data =xhr.responseText;
+                        $('#risultato').html(data);
+                    }
+                }
+            }
+            $(document).ready(function(){
+                $('#submit').click(
+                    function(){
+                        d=datiCliente();
+                        xhr=new XMLHttpRequest();
+                        xhr.onreadystatechange=processzipdata;
+                        xhr.open('GET',"/manuel/prove%20progetto/Sammartino/index.php?"+d);
+                        xhr.send(null);
+                    });
+            });
+        </script>
+    </head>
+    <body>
+        <table>
+            <tr><td>nome:  </td><td><input class="dati" name="nome" type="text"/></td></tr>
+            <tr><td>cognome:  </td><td><input class="dati" name="cognome" type="text"/></td></tr>
+            <tr><td>email:  </td><td><input class="dati" name="email" type="text"/></td></tr>
+            <tr><td>password:  </td><td><input class="dati" name="password" type="password"/></td></tr>
+            <tr><td>Via:  </td><td><input class="dati" name="via" type="text"/></td></tr>
+            <tr><td>citta:  </td><td><input class="dati" name="citta" type="text"/></td></tr>
+            <tr><td>CAP:  </td><td><input class="dati" name="CAP" type="text"/></td></tr>
+            <tr><td colspan="2"><button id="submit">invia</button></td></tr>
+        </table>
+        <div id="risultato" style="border: 3px solid red"></div>
+    </body>
+</html>

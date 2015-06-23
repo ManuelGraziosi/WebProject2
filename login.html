@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1 class="login">Login</h1>
+        <div class="loginform">
+          <p id="error"></p>
+          <br>
+          <form method="post" action="index.php">
+            <p><input name="rememberme" value="0" type="hidden"></p>
+            <p><input name="controller" value="registrazione" type="hidden"></p>
+            <p><input name="task" value="autentica" type="hidden"></p>
+            <fieldset>
+              <p><label for="username" class="top">Nome utente:</label><br>
+                <input name="username" id="username" tabindex="1" class="field" value="" type="text"></p>
+            <p><label for="password" class="top">Password:</label><br>
+                <input name="password" id="password" tabindex="2" class="field" value="" type="password"></p>
+            <p><input name="checkbox" id="checkbox" class="checkbox" tabindex="3" size="1" value="" type="checkbox"><label for="checkbox" class="right">Ricordati?</label></p>
+            <p><input name="cmdweblogin" class="button" value="LOGIN" type="submit"></p>
+            <p><a href="?controller=autenticazione&amp;task=password_dimenticata" id="forgotpsswd">Password dimenticata?</a></p>
+          </fieldset>
+          </form>
+        </div>
+        
+    </body>
+</html>
