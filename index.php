@@ -13,27 +13,22 @@ foreach ($prodotto as $key => $value) {
     $dati->$key=$value;
 }
 /**
-$ordine=new E_ordine();
-$prodottoOrdinato=new E_prod_ordinato();
 $db=new F_database();
-$datiprodotto=$db->caricaRiga("Prodotto", 'Caciotta');
+$nome="Caciotta";
+$datiprodotto=$db->caricaRiga("Prodotto",$nome);
+$cliente=new E_cliente();
+$nome="danielescarpone@gmail.com";
+$daticliente=$db->caricaRiga("Cliente", $nome);
+print_r($daticliente);
+$ordine=new E_ordine();
+$prod_ordinato=new E_prod_ordinato();
 $prodotto=new E_prodotto();
-$prodotto->inserisciDati($datiprodotto);
-$prodottoOrdinato->setProdotto($prodotto);
-$ordine->inserisciProdotto($prodottoOrdinato, 5);
-$ordine->inserisciProdotto($prodottoOrdinato, 5);
-print "prodotto<br>";
-print_r($prodotto);
-print "<br>Prodotto ordinato<br>";
-print_r($prodottoOrdinato);
-print "<br>ordine<br>";
-print_r($ordine);
-$ordine->rimuoviProdotto('Caciotta');
-print "<br><br>prodotto<br>";
-print_r($prodotto);
-print "<br>Prodotto ordinato<br>";
-print_r($prodottoOrdinato);
-print "<br>ordine<br>";
-print_r($ordine);
+U_operazioni::inserisciDati($prodotto, $datiprodotto);
+U_operazioni::inserisciDati($cliente, $daticliente);
+$quantita=25;
+$prod_ordinato->setProdotto($prodotto);
+$ordine->inserisciProdotto($prod_ordinato, $quantita);
+//$ordine->setCliente($cliente);
+//$cliente->aggiungiOrdine($ordine);
 /**/
 ?>

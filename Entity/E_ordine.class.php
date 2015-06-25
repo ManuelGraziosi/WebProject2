@@ -82,17 +82,6 @@ class E_ordine {
                 $trovato=true;
             }
         }
-        
-        /**
-        foreach ($this->_prodotto as & $thisItem) {
-            $thisProdotto=$thisItem->getProdottoOrdinato();
-            if ($thisProdotto->getNOME_PRODOTTO()==$nome) {
-                unset($thisItem);
-                print "<br><br><br><b>trovato</b><br><br><br>";
-                $trovato=true;
-            }
-        }
-        /**/
     }
     
     public function setStato_pagamento(boolean $pagato) {
