@@ -51,9 +51,9 @@ class E_prodotto {
 
     /**
      * @access public
-     * @param Entity.E_commento aParameter
+     * @param Entity.E_commento commento
      * @return boolean
-     * @ParamType aParameter Entity.E_commento
+     * @ParamType commento Entity.E_commento
      * @ReturnType boolean
      */
     public function inserisciCommento(E_commento $commento) {
@@ -77,7 +77,7 @@ class E_prodotto {
             return $somma/$voti;
         }
         elseif (isset($this->_commento[0]->voto)){
-            return $this->_commento[0]->voto;
+            return $this->_commento[0]->getVoto();
         }
         else{
             return false;
