@@ -84,13 +84,6 @@ class E_prodotto {
         }
     }
     
-    public function inserisciDati($dati) {
-        $dati=$dati[0];
-        foreach ($dati as $key => $value) {
-            $this->$key=$value;
-        }
-    }
-    
     /**
      * Restituisce un array di commenti relativi al prodotto
      *
