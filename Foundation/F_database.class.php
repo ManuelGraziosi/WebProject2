@@ -88,7 +88,7 @@ class F_database {
      * @param mixed $key
      * @return boolean
      */
-    public function caricaRiga($tabella,$chiave) {
+    public function caricaRiga($tabella, $chiave) {
         global $config;
         $query='SELECT * ' .
                 'FROM `'.$tabella.'` ' .
