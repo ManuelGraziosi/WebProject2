@@ -12,7 +12,6 @@
  * @author manuel
  */
 class E_newsletter {
-    //put your code here
      /**
     * @AttributeType string
     */
