@@ -18,7 +18,7 @@ class C_fareOrdine {
         }
     }
     
-    public function inserisciProdotto(){
+    public function inserisciProdottoOrdinato(){
         $view= U_singolaistanza::getIstanza('V_fareOrdine');
         $nomeprodotto=$view->getNomeProdotto();
         $quantita=$view->getQuantita();
@@ -38,12 +38,24 @@ class C_fareOrdine {
         $view->mostraNotifica('aggiungi',$ordineprodotto);
     }
     
-    public function rimuoviProdotto() {
+    public function rimuoviProdottoOrdinato() {
         $view=  U_singolaistanza::getIstanza('V_fareOrdine');
         $nomeprodotto=$view->getNomeProdotto();
         $this->_carrello->rimuoviProdotto($nomeprodotto);
         $sessione=  U_singolaistanza::getIstanza('U_sessione');
         $sessione->imposta_valore('carrello',serialize($this->_carrello));
         $view->mostraNotifica('rimuovi',false);
+    }
+    
+    public function aggiornaProdottoOrdinato(){
+        
+    }
+    
+    public function effettuaOrdine() {
+        
+    }
+    
+    public function confermaOrdine() {
+        
     }
 }
