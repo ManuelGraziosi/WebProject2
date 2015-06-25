@@ -1,7 +1,7 @@
 <?php
 require_once 'includes/autoload.inc.php';
 require_once 'includes/config.php';
-/**
+/**/
 $index=new C_home();
 $index->esegui();
 /**
@@ -12,7 +12,7 @@ $prodotto=$datiprodotto[0];
 foreach ($prodotto as $key => $value) {
     $dati->$key=$value;
 }
-/**/
+/**
 $db=new F_database();
 $nome="Caciotta";
 $datiprodotto=$db->caricaRiga("Prodotto",$nome);
