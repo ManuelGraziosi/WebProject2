@@ -6,7 +6,7 @@ var start=function(){
     
     
     $(".aggiungi").click(function(){
-        var url="index.php?controllore=C_fareOrdine&metodo=inserisciProdotto&nome_prodotto=";
+        var url="index.php?controllore=C_fareOrdine&metodo=inserisciProdottoOrdinato&nome_prodotto=";
         $.ajax({
             type:"GET",
             url:url+this.id,
@@ -25,12 +25,12 @@ var start=function(){
     
 function inserisciEvento(){
     $(".rimuovi").click(function(){
-        var url="index.php?controllore=C_fareOrdine&metodo=rimuoviProdotto&nome_prodotto="+this.id;
+        var url="index.php?controllore=C_fareOrdine&metodo=rimuoviProdottoOrdinato&nome_prodotto="+this.id;
         $.ajax({
             type:"GET",
             url:url,
             success:function() {
-                $('table#carrello').detach('tr');
+                $('table#carrello').detach('tr').d;
             }
         });
     });
