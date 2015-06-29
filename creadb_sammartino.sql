@@ -19,17 +19,17 @@ SET time_zone = "+00:00";
 --
 -- Database: `Sammartino`
 --
-CREATE DATABASE IF NOT EXISTS `Sammartino` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `Sammartino`;
+CREATE DATABASE IF NOT EXISTS `sammartino` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `sammartino`;
 
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `Cliente`
+-- Struttura della tabella `cliente`
 --
 
-DROP TABLE IF EXISTS `Cliente`;
-CREATE TABLE IF NOT EXISTS `Cliente` (
+DROP TABLE IF EXISTS `cliente`;
+CREATE TABLE IF NOT EXISTS `cliente` (
   `EMAIL` varchar(80) NOT NULL,
   `nome` varchar(40) DEFAULT NULL,
   `cognome` varchar(40) DEFAULT NULL,
@@ -44,11 +44,11 @@ CREATE TABLE IF NOT EXISTS `Cliente` (
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `Commento`
+-- Struttura della tabella `commento`
 --
 
-DROP TABLE IF EXISTS `Commento`;
-CREATE TABLE IF NOT EXISTS `Commento` (
+DROP TABLE IF EXISTS `commento`;
+CREATE TABLE IF NOT EXISTS `commento` (
   `ID_COMMENTO` int(11) NOT NULL,
   `nome_prod_com` varchar(30) DEFAULT NULL,
   `testo` varchar(1024) DEFAULT NULL,
@@ -58,22 +58,22 @@ CREATE TABLE IF NOT EXISTS `Commento` (
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `Newsletter`
+-- Struttura della tabella `newsletter`
 --
 
-DROP TABLE IF EXISTS `Newsletter`;
-CREATE TABLE IF NOT EXISTS `Newsletter` (
+DROP TABLE IF EXISTS `newsletter`;
+CREATE TABLE IF NOT EXISTS `newsletter` (
   `email` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `Ordine`
+-- Struttura della tabella `ordine`
 --
 
-DROP TABLE IF EXISTS `Ordine`;
-CREATE TABLE IF NOT EXISTS `Ordine` (
+DROP TABLE IF EXISTS `ordine`;
+CREATE TABLE IF NOT EXISTS `ordine` (
   `ID_ORDINE` int(11) NOT NULL,
   `id_metodo_pagamento` int(11) DEFAULT NULL,
   `email_cliente` varchar(80) DEFAULT NULL,
@@ -86,11 +86,11 @@ CREATE TABLE IF NOT EXISTS `Ordine` (
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `Pagamento`
+-- Struttura della tabella `pagamento`
 --
 
-DROP TABLE IF EXISTS `Pagamento`;
-CREATE TABLE IF NOT EXISTS `Pagamento` (
+DROP TABLE IF EXISTS `pagamento`;
+CREATE TABLE IF NOT EXISTS `pagamento` (
   `ID_PAGAMENTO` int(11) NOT NULL,
   `nome_titolare` varchar(40) DEFAULT NULL,
   `cognome_titolare` varchar(40) DEFAULT NULL,
@@ -101,11 +101,11 @@ CREATE TABLE IF NOT EXISTS `Pagamento` (
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `Prodotto`
+-- Struttura della tabella `prodotto`
 --
 
-DROP TABLE IF EXISTS `Prodotto`;
-CREATE TABLE IF NOT EXISTS `Prodotto` (
+DROP TABLE IF EXISTS `prodotto`;
+CREATE TABLE IF NOT EXISTS `prodotto` (
   `NOME_PRODOTTO` varchar(30) NOT NULL,
   `descrizione` blob NOT NULL,
   `foto` varchar(30) NOT NULL,
@@ -117,11 +117,11 @@ CREATE TABLE IF NOT EXISTS `Prodotto` (
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `Prod_ordinato`
+-- Struttura della tabella `prod_ordinato`
 --
 
-DROP TABLE IF EXISTS `Prod_ordinato`;
-CREATE TABLE IF NOT EXISTS `Prod_ordinato` (
+DROP TABLE IF EXISTS `prod_ordinato`;
+CREATE TABLE IF NOT EXISTS `prod_ordinato` (
   `ID_PROD_ORDINATO` int(11) NOT NULL,
   `nome_prodotto` varchar(30) DEFAULT NULL,
   `id_ordine` int(11) NOT NULL,
@@ -133,93 +133,93 @@ CREATE TABLE IF NOT EXISTS `Prod_ordinato` (
 --
 
 --
--- Indici per le tabelle `Cliente`
+-- Indici per le tabelle `cliente`
 --
-ALTER TABLE `Cliente`
+ALTER TABLE `cliente`
   ADD PRIMARY KEY (`EMAIL`);
 
 --
--- Indici per le tabelle `Commento`
+-- Indici per le tabelle `commento`
 --
-ALTER TABLE `Commento`
+ALTER TABLE `commento`
   ADD PRIMARY KEY (`ID_COMMENTO`),
   ADD KEY `Commenti` (`nome_prod_com`) USING BTREE;
 
 --
--- Indici per le tabelle `Ordine`
+-- Indici per le tabelle `ordine`
 --
-ALTER TABLE `Ordine`
+ALTER TABLE `ordine`
   ADD PRIMARY KEY (`ID_ORDINE`),
   ADD KEY `Email_cliente` (`email_cliente`) USING BTREE,
   ADD KEY `id_pagamento` (`id_metodo_pagamento`) USING BTREE;
 
 --
--- Indici per le tabelle `Pagamento`
+-- Indici per le tabelle `pagamento`
 --
-ALTER TABLE `Pagamento`
+ALTER TABLE `pagamento`
   ADD PRIMARY KEY (`ID_PAGAMENTO`);
 
 --
--- Indici per le tabelle `Prodotto`
+-- Indici per le tabelle `prodotto`
 --
-ALTER TABLE `Prodotto`
+ALTER TABLE `prodotto`
   ADD PRIMARY KEY (`NOME_PRODOTTO`);
 
 --
--- Indici per le tabelle `Prod_ordinato`
+-- Indici per le tabelle `prod_ordinato`
 --
-ALTER TABLE `Prod_ordinato`
+ALTER TABLE `prod_ordinato`
   ADD PRIMARY KEY (`ID_PROD_ORDINATO`),
   ADD KEY `id_ordine` (`id_ordine`),
-  ADD KEY `Prodotto_Ordine` (`nome_prodotto`,`id_ordine`) USING BTREE;
+  ADD KEY `prodotto_ordine` (`nome_prodotto`,`id_ordine`) USING BTREE;
 
 --
 -- AUTO_INCREMENT per le tabelle scaricate
 --
 
 --
--- AUTO_INCREMENT per la tabella `Commento`
+-- AUTO_INCREMENT per la tabella `commento`
 --
-ALTER TABLE `Commento`
+ALTER TABLE `commento`
   MODIFY `ID_COMMENTO` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT per la tabella `Ordine`
+-- AUTO_INCREMENT per la tabella `ordine`
 --
-ALTER TABLE `Ordine`
+ALTER TABLE `ordine`
   MODIFY `ID_ORDINE` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT per la tabella `Pagamento`
+-- AUTO_INCREMENT per la tabella `pagamento`
 --
-ALTER TABLE `Pagamento`
+ALTER TABLE `pagamento`
   MODIFY `ID_PAGAMENTO` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT per la tabella `Prod_ordinato`
+-- AUTO_INCREMENT per la tabella `prod_ordinato`
 --
-ALTER TABLE `Prod_ordinato`
+ALTER TABLE `prod_ordinato`
   MODIFY `ID_PROD_ORDINATO` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- Limiti per le tabelle scaricate
 --
 
 --
--- Limiti per la tabella `Commento`
+-- Limiti per la tabella `commento`
 --
-ALTER TABLE `Commento`
-  ADD CONSTRAINT `Commento_ibfk_1` FOREIGN KEY (`nome_prod_com`) REFERENCES `Prodotto` (`NOME_PRODOTTO`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `commento`
+  ADD CONSTRAINT `commento_ibfk_1` FOREIGN KEY (`nome_prod_com`) REFERENCES `prodotto` (`NOME_PRODOTTO`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Limiti per la tabella `Ordine`
+-- Limiti per la tabella `ordine`
 --
-ALTER TABLE `Ordine`
-  ADD CONSTRAINT `Ordine_ibfk_1` FOREIGN KEY (`email_cliente`) REFERENCES `Cliente` (`EMAIL`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `Ordine_ibfk_2` FOREIGN KEY (`id_metodo_pagamento`) REFERENCES `Pagamento` (`ID_PAGAMENTO`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `ordine`
+  ADD CONSTRAINT `ordine_ibfk_1` FOREIGN KEY (`email_cliente`) REFERENCES `cliente` (`EMAIL`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `ordine_ibfk_2` FOREIGN KEY (`id_metodo_pagamento`) REFERENCES `pagamento` (`ID_PAGAMENTO`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Limiti per la tabella `Prod_ordinato`
+-- Limiti per la tabella `prod_ordinato`
 --
-ALTER TABLE `Prod_ordinato`
-  ADD CONSTRAINT `Prod_ordinato_ibfk_1` FOREIGN KEY (`id_ordine`) REFERENCES `Ordine` (`ID_ORDINE`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `Prod_ordinato_ibfk_2` FOREIGN KEY (`nome_prodotto`) REFERENCES `Prodotto` (`NOME_PRODOTTO`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `prod_ordinato`
+  ADD CONSTRAINT `prod_ordinato_ibfk_1` FOREIGN KEY (`id_ordine`) REFERENCES `ordine` (`ID_ORDINE`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `prod_ordinato_ibfk_2` FOREIGN KEY (`nome_prodotto`) REFERENCES `prodotto` (`NOME_PRODOTTO`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
