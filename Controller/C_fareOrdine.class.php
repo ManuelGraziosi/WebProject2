@@ -7,7 +7,7 @@
 class C_fareOrdine {
     private $_carrello;
     /**
-     * Costruttore, legge la variabile di sessione 'carrello' daniele scarpone ciao
+     * Costruttore, legge la variabile di sessione 'carrello'
      */
     public function __construct() {
         $sessione=  U_singolaistanza::getIstanza('U_sessione');
