@@ -39,7 +39,7 @@ class E_cliente {
     /**
     * @AttributeType string
     */
-    public $città;
+    public $citta;
     /**
     * @AttributeType string
     */
