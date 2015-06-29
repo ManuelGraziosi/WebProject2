@@ -30,7 +30,7 @@ function inserisciEvento(){
             type:"GET",
             url:url,
             success:function() {
-                $('table#carrello').detach('tr').d;
+                $('table#carrello').detach('tr');
             }
         });
     });
