@@ -72,14 +72,14 @@ class E_ordine {
         }
     }
 
-    public function rimuoviProdotto($nome,$quantita) {
+    public function rimuoviProdotto($nome) {
         $trovato=false;
         /**/
         for($i=0;$i<count($this->_prodotto)&&(!$trovato);$i++){
             $thisProdotto=$this->_prodotto[$i]->getProdottoOrdinato();
             if($thisProdotto->getNOME_PRODOTTO()==$nome) {
-                //unset($this->_prodotto[$i]);
-                $q=$this->_prodotto[$i]->setQuantita($this->_prodotto[$i]->getQuantita()-$quantita);
+                unset($this->_prodotto[$i]);
+                //$q=$this->_prodotto[$i]->setQuantita($this->_prodotto[$i]->getQuantita()-$quantita);
                 $trovato=true;/**/
             }
         }
