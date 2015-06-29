@@ -23,7 +23,7 @@ class C_fareOrdine {
         $nomeprodotto=$view->getNomeProdotto();
         $quantita=$view->getQuantita();
         $db= U_singolaistanza::getIstanza('F_database');
-        $dati_prodotto=$db->caricaRiga('Prodotto', $nomeprodotto);
+        $dati_prodotto=$db->caricaRiga('prodotto', $nomeprodotto);
         $ordineprodotto=new E_prod_ordinato();
             $ordineprodotto->setNome_prodotto($nomeprodotto);
             $prodotto=new E_prodotto();
