@@ -12,7 +12,7 @@
  */
 class F_database {
     //put your code here
-    private $_connesione;
+    private $_connessione;
     private $_query; 
         
     function __construct() {
@@ -20,7 +20,7 @@ class F_database {
         $dsn= $config['DBMS']['dsn'];
         $username = $config['DBMS']['username'];
         $passwd = $config['DBMS']['passwd'];
-        $this->connesione = $this->connessione($dsn, $username, $passwd);
+        $this->_connessione = $this->connessione($dsn, $username, $passwd);
     }
     
     public function connessione($dsn, $username, $passwd){
@@ -32,28 +32,28 @@ class F_database {
         }
     }
 
-    public function domanda($query){
-        $this->query =$this->connesione->prepare($query);//e uno strumento che permette di accedere in modalita protetta al riparo di minacce come SQL Injections
+    public function query($query){
+        $this->_query =$this->_connessione->prepare($query);//e uno strumento che permette di accedere in modalita protetta al riparo di minacce come SQL Injections
         
-        $this->query->execute();//prepare() mette a disposizione una query che dodrà essere esequita da execute()
+        $this->_query->execute();//prepare() mette a disposizione una query che dodrà essere esequita da execute()
     }
     
     public function getRisultati(){
         
-        return $this->query->fetchAll(PDO::FETCH_ASSOC);//restituisce array() multidimenzionale contenente output della query
+        return $this->_query->fetchAll(PDO::FETCH_ASSOC);//restituisce array() multidimenzionale contenente output della query
     }
     
     
     
     public function caricaTabella($tabella){
         
-        $this->domanda("SELECT * FROM $tabella;");
-        //$this->domanda("SELECT * FROM $this->tabella;");
+        $this->query("SELECT * FROM $tabella;");
+        //$this->query("SELECT * FROM $this->tabella;");
         return $this->getRisultati();
     }
     
     public function chiudi(){
-        $this->connesione=NULL;
+        $this->_connessione=NULL;
     }
     
     /**
@@ -77,7 +77,7 @@ class F_database {
             $i++;
         }
         $query='INSERT INTO '.$tabella.' ('.$fields.') VALUES ('.$values.')';
-        $return = $this->domanda($query);
+        $return = $this->query($query);
         return $return;
     }
     
@@ -93,7 +93,7 @@ class F_database {
         $query='SELECT * ' .
                 'FROM `'.$tabella.'` ' .
                 'WHERE `'.$config[$tabella].'` = \''.$chiave.'\'';
-        $this->domanda($query);
+        $this->query($query);
         return $this->getRisultati();
     }
     /**
@@ -109,7 +109,7 @@ class F_database {
                 'FROM `'.$tabella.'` ' .
                 'WHERE `'.$config[$tabella].'` = \''.$arrayObject[$config[$tabella]].'\'';
         unset($object);
-        return $this->domanda($query);
+        return $this->query($query);
     }
     /**
      * Aggiorna sul database lo stato di un oggetto
@@ -133,7 +133,7 @@ class F_database {
         }
         $arrayObject=get_object_vars($object);
         $query='UPDATE `'.$tabella.'` SET '.$fields.' WHERE `'.$config[$tabella].'` = \''.$arrayObject[$config[$tabella]].'\'';
-        return $this->domanda($query);
+        return $this->query($query);
     }
     
     /**
@@ -158,7 +158,7 @@ class F_database {
             $query.='ORDER BY '.$ordinamento.' ';
         if ($limit != '')
             $query.='LIMIT '.$limit.' ';
-        $this->domanda($query);
+        $this->query($query);
         return $this->getRisultati();
     }
     
