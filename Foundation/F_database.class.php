@@ -12,8 +12,8 @@
  */
 class F_database {
     //put your code here
-    private $connesione;
-    private $query;
+    private $_connesione;
+    private $_query; 
         
     function __construct() {
         global $config;
