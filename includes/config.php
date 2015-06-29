@@ -4,13 +4,13 @@ $config['DBMS']['dsn']='mysql:host=localhost;dbname=Sammartino';
 $config['DBMS']['username']="root";
 $config['DBMS']['passwd']="";
 
-$config['Cliente']='EMAIL';
-$config['Pagamento']='ID_PAGAMENTO';
-$config['Commento']='ID_COMMENTO';
-$config['Newsletter']='email';
-$config['Ordine']='ID_ORDINE';
-$config['Prodotto']='NOME_PRODOTTO';
-$config['Prod_ordinato']='ID_PROD_ORDINATO';
+$config['cliente']='EMAIL';
+$config['pagamento']='ID_PAGAMENTO';
+$config['commento']='ID_COMMENTO';
+$config['newsletter']='email';
+$config['ordine']='ID_ORDINE';
+$config['prodotto']='NOME_PRODOTTO';
+$config['prod_ordinato']='ID_PROD_ORDINATO';
 
 $config['smarty']['template_dir'] = 'templates/main/template';
 $config['smarty']['compile_dir'] = 'templates/main/templates_c';
