@@ -80,7 +80,7 @@ class F_database {
      * @return boolean
      */
     public function depositaRiga($tabella,& $object) {
-        $object=(array) $object;
+        //$object=(array) $object;
         $i=0;
         $values='';
         $fields='';

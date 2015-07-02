@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `commento` (
 
 DROP TABLE IF EXISTS `newsletter`;
 CREATE TABLE IF NOT EXISTS `newsletter` (
-  `email` varchar(30) NOT NULL
+  `EMAIL` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -115,6 +115,9 @@ CREATE TABLE IF NOT EXISTS `prodotto` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
+INSERT INTO `prodotto`(`NOME_PRODOTTO`, `descrizione`, `foto`, `categoria`, `prezzo_kg`, `disponibilita`) VALUES 
+('Caciotta grande','da 1,8kg','Caciotta grande','Caciotta',7.2,45),
+('Stagionato grande','da 15kg','Stagionato','Stagionato',13,45);
 
 --
 -- Struttura della tabella `prod_ordinato`
@@ -136,6 +139,13 @@ CREATE TABLE IF NOT EXISTS `prod_ordinato` (
 -- Indici per le tabelle `cliente`
 --
 ALTER TABLE `cliente`
+  ADD PRIMARY KEY (`EMAIL`);
+
+
+--
+-- Indici per le tabelle `newsletter`
+--
+ALTER TABLE `newsletter`
   ADD PRIMARY KEY (`EMAIL`);
 
 --

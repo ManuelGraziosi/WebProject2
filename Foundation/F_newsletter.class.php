@@ -11,17 +11,17 @@ require_once 'includes/config.php';
  *
  * @author manuel
  */
-class F_newsletter extends F_database{
-    
+class F_newsletter{
+    private $db;
     public function __construct() {
-        U_singolaistanza::getIstanza('F_database');
+        $this->db=U_singolaistanza::getIstanza('F_database');
         //parent::__construct();
     }
     
     public function addEmail($email){
         
         $query = "INSERT INTO `newsletter`(`email`) VALUES ('$email')";
-        $this->query($query);
+        $this->db->query($query);
         return true;
     }
     
