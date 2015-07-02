@@ -21,7 +21,7 @@ var start=function(){
                 listItem = '<tr><td id="colonna">'+jsonData['_prodotto']["NOME_PRODOTTO"];
                 listItem+='</td><td id="colonna">'+jsonData['_prodotto']["prezzo_kg"];
                 listItem+='</td><td id="colonna">'+jsonData["quantita"]+'</td><td id="colonna">';
-                listItem+='<input id="'+jsonData['_prodotto']["NOME_PRODOTTO"]+'" class="aggiorna'+n+'" type="text" size="4"/></td><td id="colonna">';
+                listItem+='<input id="'+jsonData['_prodotto']["NOME_PRODOTTO"]+'" class="aggiorna'+n+'" type="text" size="4" value="'+jsonData["quantita"]+'"/></td><td id="colonna">';
                 listItem+='<input id="'+jsonData['_prodotto']["NOME_PRODOTTO"]+'" class="rimuovi'+n+'" type="submit" name="submit" value="rimuovi"></td></tr>';
                 $('#tab2').append(listItem);
                 inserisciEvento(n);

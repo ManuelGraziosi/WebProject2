@@ -23,4 +23,13 @@ class C_visualizzazione {
         /**
         $view->impostaTemplate('form_registrazione_cliente.tpl');/**/
     }
+    
+    public function newsletter() {
+        
+        $view=new V_view();
+        /**/
+        $view->impostaTemplate('newsletter.tpl');
+        /**
+        $view->impostaTemplate('form_registrazione_cliente.tpl');/**/
+    }
 }

@@ -26,6 +26,7 @@ class C_fareOrdine {
         $dati_prodotto=$db->caricaRiga('prodotto', $nomeprodotto);
         $ordineprodotto=new E_prod_ordinato();
             $ordineprodotto->setNome_prodotto($nomeprodotto);
+            $ordineprodotto->setQuantita($quantita);
             $prodotto=new E_prodotto();
             U_operazioni::inserisciDati($prodotto,$dati_prodotto[0]);
         $ordineprodotto->setProdotto($prodotto);
