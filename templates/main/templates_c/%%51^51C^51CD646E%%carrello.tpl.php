@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2015-06-30 17:44:39
+<?php /* Smarty version 2.6.26, created on 2015-07-02 15:01:25
          compiled from carrello.tpl */ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -82,9 +82,10 @@ $this->_sections['i']['index_next'] = $this->_sections['i']['index'] + $this->_s
 $this->_sections['i']['first']      = ($this->_sections['i']['iteration'] == 1);
 $this->_sections['i']['last']       = ($this->_sections['i']['iteration'] == $this->_sections['i']['total']);
 ?>
-                    <tr>
-                    <!--<form METHOD="post" ACTION="index.php?controllore=C_fareOrdine&metodo=inserisciProdotto">-->
-                        <td id="colonna"><?php echo $this->_tpl_vars['prodotti'][$this->_sections['i']['index']]['NOME_PRODOTTO']; ?>
+                    <tr id="riga<?php echo $this->_sections['i']['iteration']; ?>
+">
+                    <form name="prodotto">
+                        <td id="NOME_PRODOTTO1"><?php echo $this->_tpl_vars['prodotti'][$this->_sections['i']['index']]['NOME_PRODOTTO']; ?>
 </td>
                         <td id="colonna"><?php echo $this->_tpl_vars['prodotti'][$this->_sections['i']['index']]['descrizione']; ?>
 </td>
@@ -94,18 +95,19 @@ $this->_sections['i']['last']       = ($this->_sections['i']['iteration'] == $th
 </td>
                         <td id="colonna"><?php echo $this->_tpl_vars['prodotti'][$this->_sections['i']['index']]['prezzo_kg']; ?>
 </td>
-                        <td id="colonna"><input type="text" name="quantita" size="4"/></td>
+                        <td id="colonna"><input id="quantita" type="text" name="quantita" size="4" value="1"/></td>
                         <td id="colonna"><?php echo $this->_tpl_vars['prodotti'][$this->_sections['i']['index']]['disponibilita']; ?>
 </td>
-                        <td id="colonna">
-                            <!--<input type="hidden" name="controllore" value="C_fareOrdine"/>
-                            <input type="hidden" name="metodo" value="inserisciProdotto"/>
+                        <td id="colonna"><input type="button" id="bottone" class="aggiungi" value="invia dati"/>
+                            <input type="hidden" id="nome_prodotto1" name="nome_prodotto" value="<?php echo $this->_tpl_vars['prodotti'][$this->_sections['i']['index']]['NOME_PRODOTTO']; ?>
+"/>
+                            <!--<input type="hidden" name="metodo" value="inserisciProdotto"/>
                             <input class="prodotto" type="hidden" name="nome_prodotto" value="<?php echo $this->_tpl_vars['prodotti'][$this->_sections['i']['index']]['NOME_PRODOTTO']; ?>
-"/>-->
+"/>
                             <input id="<?php echo $this->_tpl_vars['prodotti'][$this->_sections['i']['index']]['NOME_PRODOTTO']; ?>
-" class="aggiungi" type="submit" name="submit" value="aggiungi">
+" class="aggiungi" type="submit" name="submit" value="aggiungi"/>-->
                         </td>
-                    <!--</form>-->
+                    </form>
                         </tr>
                     <?php endfor; else: ?> 
                     <tr>

@@ -1,4 +1,4 @@
-/**
+/**/
 var start=function(){
     
     carrello='<br><b>CARRELLO</b><table id="tab2" border><tr><td id="colonna"><b>Nome</b></td><td id="colonna"><b>Prezzo</b></td><td id="colonna"><b>Quantit&agrave</b></td><td id="colonna"><b>qunatit&agrave ordinata</b></td></tr></table>';
@@ -8,12 +8,10 @@ var start=function(){
     
     $(".aggiungi").click(function(){
         var url="index.php";
-        var nome_prodotto=$('#nome_prodotto1').val();
+        var nome_prodotto=$('#NOME_PRODOTTO1').html();
         var quantita=$('#quantita').val();
-        html='<p>'+nome_prodotto+'</p>';
-        $(html).appendTo('body');
         $.ajax({
-            data:{"controllore":"C_fareOrdine","metodo":"inserisciProdottoOrdinato","nome_prodotto":nome_prodotto,"quantita":25},
+            data:{"controllore":"C_fareOrdine","metodo":"inserisciProdottoOrdinato","nome_prodotto":nome_prodotto,"quantita":quantita},
             type:'GET',
             url:"index.php",
             dataType:"json",
@@ -56,6 +54,7 @@ function inserisciEvento(n){
     });
 }
 /**/
+/**
 var dati= new array();
 var start = function(){
     $('#invia').click(function(){
@@ -80,6 +79,6 @@ var start = function(){
         });
     });
 };
-
+/**/
 
 $(document).ready(start);

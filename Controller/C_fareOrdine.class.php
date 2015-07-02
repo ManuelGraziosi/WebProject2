@@ -32,7 +32,7 @@ class C_fareOrdine {
         if ($this->_carrello==false){
             $this->_carrello=new E_ordine();
         }
-        $this->_carrello->inserisciProdotto($ordineprodotto,5);//$quantita);
+        $this->_carrello->inserisciProdotto($ordineprodotto,$quantita);
         $sessione=  U_singolaistanza::getIstanza('U_sessione');
         $sessione->imposta_valore('carrello',serialize($this->_carrello));
         $view->mostraNotifica('aggiungi',$ordineprodotto);
@@ -50,7 +50,8 @@ class C_fareOrdine {
     public function aggiornaProdottoOrdinato(){
         $view=  U_singolaistanza::getIstanza('V_fareOrdine');
         $nomeprodotto=$view->getNomeProdotto();
-        $this->_carrello->aggiornaProdotto($nomeprodotto,5);
+        $quantita=$view->getQuantita();
+        $this->_carrello->aggiornaProdotto($nomeprodotto,$quantita);
         $sessione=  U_singolaistanza::getIstanza('U_sessione');
         $sessione->imposta_valore('carrello',serialize($this->_carrello));
         $view->mostraNotifica('rimuovi',false);

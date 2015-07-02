@@ -93,7 +93,7 @@ class E_ordine {
             $thisProdotto=$this->_prodotto[$i]->getProdottoOrdinato();
             if($thisProdotto->getNOME_PRODOTTO()==$nome) {
                 //unset($this->_prodotto[$i]);
-                $q=$this->_prodotto[$i]->setQuantita($this->_prodotto[$i]->getQuantita()-$quantita);
+                $q=$this->_prodotto[$i]->setQuantita($quantita);
                 $trovato=true;/**/
             }
         }
