@@ -14,13 +14,13 @@
 class C_visualizzazione {
     public function paginaIniziale() {
         $db= new F_database();
-        $prodotti=$db->caricaTabella('Prodotto');
+        $prodotti=$db->caricaTabella('prodotto');
         $view=new V_view();
-        /**
+        /**/
         $view->inserisciDatiTemplate('titolo', 'sembra che funziona');
         $view->inserisciDatiTemplate('prodotti', $prodotti);
         $view->impostaTemplate('carrello.tpl');
-        /**/
-        $view->impostaTemplate('form_registrazione_cliente.tpl');
+        /**
+        $view->impostaTemplate('form_registrazione_cliente.tpl');/**/
     }
 }
