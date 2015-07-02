@@ -14,12 +14,13 @@ require_once 'includes/config.php';
 class F_newsletter extends F_database{
     
     public function __construct() {
-        //U_singolaistanza::getInstance('F_database');
-        parent::__construct();
+        U_singolaistanza::getIstanza('F_database');
+        //parent::__construct();
     }
     
     public function addEmail($email){
-        $query = "INSERT INTO 'newsletter' ('email') VALUES ('$email')";
+        
+        $query = "INSERT INTO `newsletter`(`email`) VALUES ('$email')";
         $this->query($query);
         return true;
     }
