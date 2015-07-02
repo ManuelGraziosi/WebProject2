@@ -1,4 +1,4 @@
-/**/
+/**
 var start=function(){
     
     carrello='<br><b>CARRELLO</b><table id="tab2" border><tr><td id="colonna"><b>Nome</b></td><td id="colonna"><b>Prezzo</b></td><td id="colonna"><b>Quantit&agrave</b></td><td id="colonna"><b>qunatit&agrave ordinata</b></td></tr></table>';
@@ -12,7 +12,7 @@ var start=function(){
         var quantita=$('#quantita').val();
         html='<p>'+nome_prodotto+'</p>';
         $(html).appendTo('body');
-        /**/$.ajax({
+        $.ajax({
             data:{"controllore":"C_fareOrdine","metodo":"inserisciProdottoOrdinato","nome_prodotto":nome_prodotto,"quantita":25},
             type:'GET',
             url:"index.php",
@@ -28,7 +28,7 @@ var start=function(){
                 $('#tab2').append(listItem);
                 inserisciEvento(n);
             }
-        });/**/
+        });
     });
 
 }
@@ -56,12 +56,30 @@ function inserisciEvento(n){
     });
 }
 /**/
+var dati= new array();
+var start = function(){
+    $('#invia').click(function(){
+        var controllore=$('#controllore').val();
+        var metodo=$('#metodo').val();
+        var nome=$('#nome').val();
+        var cognome=$('#cognome').val();
+        var email=$('#EMAIL').val();
+        var password=$('#password').val();
+        var password_1=$('#password_1').val();
+        var via=$('#via').val();
+        var citta=$('#citta').val();
+        var CAP=$('#CAP').val();
+        $.ajax({
+            type:'GET',
+            url:"index.php",
+            dataType:"json",
+            data:{"controllore":controllore,"metodo":metodo,"nome":nome,"cognome":cognome,"EMAIL": email,"password": password,"password_1": password_1,"via": via,"citta": citta,"CAP": CAP},
+            success:function(jsonData) {
+                
+            }
+        });
+    });
+};
 
 
-/**
-var start=function(){
-    $('#riga1').each(function(n){
-        
-    })
-}*/
 $(document).ready(start);

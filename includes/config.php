@@ -1,6 +1,6 @@
 <?php
 global $config;
-$config['DBMS']['dsn']='mysql:host=localhost;dbname=Sammartino';
+$config['DBMS']['dsn']='mysql:host=localhost;dbname=sammartino';
 $config['DBMS']['username']="root";
 $config['DBMS']['passwd']="";
 

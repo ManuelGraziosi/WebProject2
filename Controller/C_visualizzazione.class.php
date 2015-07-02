@@ -16,8 +16,11 @@ class C_visualizzazione {
         $db= new F_database();
         $prodotti=$db->caricaTabella('Prodotto');
         $view=new V_view();
+        /**
         $view->inserisciDatiTemplate('titolo', 'sembra che funziona');
         $view->inserisciDatiTemplate('prodotti', $prodotti);
         $view->impostaTemplate('carrello.tpl');
+        /**/
+        $view->impostaTemplate('form_registrazione_cliente.tpl');
     }
 }

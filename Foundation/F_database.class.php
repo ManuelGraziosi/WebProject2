@@ -80,22 +80,29 @@ class F_database {
      * @return boolean
      */
     public function depositaRiga($tabella,& $object) {
+        $object=(array) $object;
         $i=0;
         $values='';
         $fields='';
         foreach ($object as $key=>$value) {
             if ($i==0) {
                 $fields.='`'.$key.'`';
-                $values.='\''.$value.'\'';
+                $values.='`'.$value.'`';
             } else {
                 $fields.=', `'.$key.'`';
-                $values.=', \''.$value.'\'';
+                $values.=', `'.$value.'`';
             }
             $i++;
         }
         $query='INSERT INTO '.$tabella.' ('.$fields.') VALUES ('.$values.')';
-        $return = $this->query($query);
-        return $return;
+        try{
+            $return = $this->query($query);
+            return $return;
+        }
+        catch (PDOException $e){
+            print 'Attenzione: '.$e->getMessage();
+        }
+        
     }
     
     
