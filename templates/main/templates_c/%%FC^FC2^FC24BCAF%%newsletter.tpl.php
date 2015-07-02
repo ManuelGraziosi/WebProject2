@@ -1,7 +1,10 @@
+<?php /* Smarty version 2.6.26, created on 2015-07-02 15:54:14
+         compiled from newsletter.tpl */ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>{$titolo}</title>
+    <title><?php echo $this->_tpl_vars['titolo']; ?>
+</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" type="text/css" media="screen" href="templates/main/template/css/style.css" />
     <script type="text/javascript" src="templates/main/template/js/jquery-1.11.3.min.js"></script>
@@ -54,35 +57,13 @@
             <!-- - - - - - - - - - - - -CORPO CHE CAMBIERA' SEMPRE- - - - - - - - - - - - - -->
             <br>
             <b>DISPONIBILITA'</b>
-            <div id="carr">
-                <table id="tab">
-                    {section name=i loop=$prodotti}
-                    <tr id="riga{$smarty.section.i.iteration}">
-                    <form name="prodotto">
-                        <td id="NOME_PRODOTTO1">{$prodotti[i].NOME_PRODOTTO}</td>
-                        <td id="colonna">{$prodotti[i].descrizione }</td>
-                        <td id="colonna">{$prodotti[i].foto}</td>
-                        <td id="colonna">{$prodotti[i].categoria}</td>
-                        <td id="colonna">{$prodotti[i].prezzo_kg}</td>
-                        <td id="colonna"><input id="quantita" type="text" name="quantita" size="4" value="1"/></td>
-                        <td id="colonna">{$prodotti[i].disponibilita}</td>
-                        <td id="colonna"><input type="button" id="bottone" class="aggiungi" value="invia dati"/>
-                            <input type="hidden" id="nome_prodotto1" name="nome_prodotto" value="{$prodotti[i].NOME_PRODOTTO}"/>
-                            <!--<input type="hidden" name="metodo" value="inserisciProdotto"/>
-                            <input class="prodotto" type="hidden" name="nome_prodotto" value="{$prodotti[i].NOME_PRODOTTO}"/>
-                            <input id="{$prodotti[i].NOME_PRODOTTO}" class="aggiungi" type="submit" name="submit" value="aggiungi"/>-->
-                        </td>
-                    </form>
-                        </tr>
-                    {sectionelse} 
-                    <tr>
-                         <td align="center">
-                         <b> nessun risultato </b>
-                        <td>
-                    </tr>
-                     {/section}
-                </table>    
-            </div>
+            <p><span class="error">* required field.</span></p>
+        <form method="post" action="index.php?controllore=C_newsletter&metodo=iscrizioneNewsletter&">
+           E-mail: <input type="text" name="email">
+           <span class="error"></span>
+           <br><br>
+           <input type="submit" name="submit" value="Submit">
+        </form>
 
 
         </div>
