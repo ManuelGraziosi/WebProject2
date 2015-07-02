@@ -5,7 +5,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-include_once('config.inc.php');
+require_once 'includes/config.php';
 /**
  * Description of F_newsletter
  *
@@ -14,17 +14,18 @@ include_once('config.inc.php');
 class F_newsletter extends F_database{
     
     public function __construct() {
-        U_singolaistanza::getInstance('F_database');
+        //U_singolaistanza::getInstance('F_database');
+        parent::__construct();
     }
     
     public function addEmail($email){
-        $query = "INSERT INTO '$dbname'.`$dbtable` (`email`) VALUES ('$email')";
+        $query = "INSERT INTO 'newsletter' ('email') VALUES ('$email')";
         $this->query($query);
         return true;
     }
     
     public function delEmail($email){
-        $query = "DELETE FROM '$dbname'.'$dbtable' WHERE email = '$email'";
+        $query = "DELETE FROM 'newsletter' WHERE email = '$email'";
         $this->query($query);
         return true;
         

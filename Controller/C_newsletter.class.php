@@ -18,9 +18,11 @@ class C_newsletter {
          $view=U_singolaistanza::getIstanza('V_newsletter');
          $view=new V_newsletter();//serve solo per richiamare velocemente i metodi
          $email=new E_newsletter();
+         
          $email->setEMAIL($view->getEmail());
-         $db=new F_database();
-         $db->depositaRiga('newsletter', $email);
+         print_r($email);
+         $db=new F_newsletter();
+         $db->addEmail($email->getEMAIL());
          
      }
      
