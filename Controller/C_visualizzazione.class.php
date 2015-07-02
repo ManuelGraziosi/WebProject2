@@ -11,15 +11,11 @@
  *
  * @author daniele
  */
-class C_visualizzazione {
+class C_visualizzazione{
     public function paginaIniziale() {
-        $db= new F_database();
-        $prodotti=$db->caricaTabella('prodotto');
         $view=new V_view();
-        /**/
-        $view->inserisciDatiTemplate('titolo', 'sembra che funziona');
-        $view->inserisciDatiTemplate('prodotti', $prodotti);
-        $view->impostaTemplate('carrello.tpl');
+        
+        $view->impostaTemplate('home_default.tpl');
         /**
         $view->impostaTemplate('form_registrazione_cliente.tpl');/**/
     }
@@ -29,6 +25,18 @@ class C_visualizzazione {
         $view=new V_view();
         /**/
         $view->impostaTemplate('newsletter.tpl');
+        /**
+        $view->impostaTemplate('form_registrazione_cliente.tpl');/**/
+    }
+    
+    public function carrello() {
+        $db= new F_database();
+        $prodotti=$db->caricaTabella('prodotto');
+        $view=new V_view();
+        /**/
+        $view->inserisciDatiTemplate('titolo', 'sembra che funziona');
+        $view->inserisciDatiTemplate('prodotti', $prodotti);
+        $view->impostaTemplate('carrello.tpl');
         /**
         $view->impostaTemplate('form_registrazione_cliente.tpl');/**/
     }

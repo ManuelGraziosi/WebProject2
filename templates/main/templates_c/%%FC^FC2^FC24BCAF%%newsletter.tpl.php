@@ -1,6 +1,6 @@
-<?php /* Smarty version 2.6.26, created on 2015-07-02 16:09:55
+<?php /* Smarty version 2.6.26, created on 2015-07-02 21:12:22
          compiled from newsletter.tpl */ ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title><?php echo $this->_tpl_vars['titolo']; ?>
@@ -80,7 +80,7 @@
             
             
             
-
+<!--
         </div>
 
     </div>
@@ -96,3 +96,4 @@
 
 </body>
 </html>
+-->

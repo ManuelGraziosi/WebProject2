@@ -1,6 +1,37 @@
 /**/
 var start=function(){
     
+    $('#newsletter').click(function(){
+        $(this).addClass('active');
+        $('#carrello').removeClass('active');
+        $('#home').removeClass('active');
+        $.ajax({
+            url:"index.php?controllore=C_visualizzazione&metodo=newsletter",
+            type:'GET',
+            dataType:"html",
+            success:function(newsletter) {
+                $('#mainright').html(newsletter);
+            }
+        });
+    });
+    
+    
+    $('#carrello').click(function(){
+        $(this).addClass('active');
+        $('#newsletter').removeClass('active');
+        $('#home').removeClass('active');
+        $.ajax({
+            url:"index.php?controllore=C_visualizzazione&metodo=carrello",
+            type:'GET',
+            dataType:"html",
+            success:function(carrello) {
+                $('#mainright').html(carrello);
+                $(document).ready(start);
+            }
+        });
+    });
+    
+    
     carrello='<br><b>CARRELLO</b><table id="tab2" border><tr><td id="colonna"><b>Nome</b></td><td id="colonna"><b>Prezzo</b></td><td id="colonna"><b>Quantit&agrave</b></td><td id="colonna"><b>qunatit&agrave ordinata</b></td></tr></table>';
     $(carrello).appendTo('#carr');
     

@@ -1,4 +1,4 @@
-<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>{$titolo}</title>
@@ -28,12 +28,12 @@
     <div id="maincont" class="clearfix">
         <div id="menucont">
             <ul>
-                <li><a title="Home" href="">Home</a></li>
+                <li><a id="home" title="Home" href="" class="active">Home</a></li>
                 <li><a title="About Us" href="">About Us</a></li>
                 <li><a title="Blog" href="">Blog</a></li>
                 <li><a title="Contact Us" href="">Contact Us</a></li>
-                <li><a title="newsletter" href="index.php?controllore=C_visualizzazione&metodo=newsletter">newsletter</a></li>
-                <li><a title="" href="index.php?controllore=C_visualizzazione&metodo=paginaIniziale" class="active">Carrello</a></li>
+                <li><a id="newsletter" title="Newsletter"><!-- href="index.php?controllore=C_visualizzazione&metodo=newsletter"-->newsletter</a></li>
+                <li><a id="carrello" title="Carrello"><!--  href="index.php?controllore=C_visualizzazione&metodo=carrello"-->Carrello</a></li>
             </ul>
         </div>
         <div id="mainleft">
@@ -50,34 +50,7 @@
         </div>
 
         <div id="mainright">
-
             <!-- - - - - - - - - - - - -CORPO CHE CAMBIERA' SEMPRE- - - - - - - - - - - - - -->
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            <br>
-            <b>DISPONIBILITA'</b>
-            <p><span class="error">* required field.</span></p>
-        <form method="post" action="index.php?controllore=C_newsletter&metodo=iscrizioneNewsletter&">
-           E-mail: <input type="text" name="email">
-           <span class="error"></span>
-           <br><br>
-           <input type="submit" name="submit" value="Submit">
-        </form>
-
-            
-            
-            
-            
-            
-<!--
         </div>
 
     </div>
@@ -93,4 +66,3 @@
 
 </body>
 </html>
--->
