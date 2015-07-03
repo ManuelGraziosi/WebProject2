@@ -47,4 +47,11 @@ class C_visualizzazione{
         /**/
         $view->impostaTemplate('home.tpl');
     }
+    
+    public function vetrina() {
+        
+        $view=new V_view();
+        /**/
+        $view->impostaTemplate('vetrina.tpl');
+    }
 }
