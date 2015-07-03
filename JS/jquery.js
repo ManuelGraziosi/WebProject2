@@ -4,6 +4,7 @@ var start=function(){
     var home=function(){
         $('title').html('home');
         
+        $('#vetrina').removeClass('active');
         $(this).addClass('active');
         $('#carrello').removeClass('active');
         $('#registrazione').removeClass('active');
@@ -26,6 +27,7 @@ var start=function(){
     $('#registrazione').click(function(){
         $('title').html('registrazione cliente');
         
+        $('#vetrina').removeClass('active');
         $(this).addClass('active');
         $('#carrello').removeClass('active');
         $('#home').removeClass('active');
@@ -44,6 +46,7 @@ var start=function(){
     $('#newsletter').click(function(){
         $('title').html('newsletter');
         
+        $('#vetrina').removeClass('active');
         $('#registrazione').removeClass('active');
         $(this).addClass('active');
         $('#carrello').removeClass('active');
