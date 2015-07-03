@@ -14,19 +14,16 @@
 class C_visualizzazione{
     public function paginaIniziale() {
         $view=new V_view();
-        
+        $view->inserisciDatiTemplate('titolo', 'home');
         $view->impostaTemplate('home_default.tpl');
-        /**
-        $view->impostaTemplate('form_registrazione_cliente.tpl');/**/
     }
     
     public function newsletter() {
         
         $view=new V_view();
         /**/
+        $view->inserisciDatiTemplate('titolo', 'newsletter');
         $view->impostaTemplate('newsletter.tpl');
-        /**
-        $view->impostaTemplate('form_registrazione_cliente.tpl');/**/
     }
     
     public function carrello() {
@@ -34,10 +31,16 @@ class C_visualizzazione{
         $prodotti=$db->caricaTabella('prodotto');
         $view=new V_view();
         /**/
-        $view->inserisciDatiTemplate('titolo', 'sembra che funziona');
+        $view->inserisciDatiTemplate('titolo', 'carrello');
         $view->inserisciDatiTemplate('prodotti', $prodotti);
         $view->impostaTemplate('carrello.tpl');
-        /**
+    }
+    
+    public function registrazione() {
+        
+        $view=new V_view();
+        $view->inserisciDatiTemplate('titolo', 'registrazione');
+        /**/
         $view->impostaTemplate('form_registrazione_cliente.tpl');/**/
     }
 }

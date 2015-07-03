@@ -1,7 +1,24 @@
 /**/
 var start=function(){
     
+    $('#registrazione').click(function(){
+        $(this).addClass('active');
+        $('#carrello').removeClass('active');
+        $('#home').removeClass('active');
+        $('#newsletter').removeClass('active');
+        $.ajax({
+            url:"index.php?controllore=C_visualizzazione&metodo=registrazione",
+            type:'GET',
+            dataType:"html",
+            success:function(registrazione) {
+                $('#mainright').html(registrazione);
+            }
+        });
+    });
+    
+    
     $('#newsletter').click(function(){
+        $(this).addClass('active');
         $(this).addClass('active');
         $('#carrello').removeClass('active');
         $('#home').removeClass('active');
