@@ -4,9 +4,9 @@
     <title>{$titolo}</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" type="text/css" media="screen" href="templates/main/template/css/style.css" />
-    <script type="text/javascript" src="templates/main/template/js/jquery-1.11.3.min.js"></script>
-    <script type="text/javascript" src="templates/main/template/js/jquery.js"></script>
-    <script type="text/javascript" src="templates/main/template/js/scripts.js"></script>
+    <script type="text/javascript" src="JS/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="JS/jquery.js"></script>
+    <script type="text/javascript" src="JS/scripts.js"></script>
 </head>
 
 <body>
