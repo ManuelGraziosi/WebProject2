@@ -50,7 +50,7 @@
         </div>
 
         <div id="mainright">
-            <!-- - - - - - - - - - - - -CORPO CHE CAMBIERA' SEMPRE- - - - - - - - - - - - - --><p>mario</p>
+            <!-- - - - - - - - - - - - -CORPO CHE CAMBIERA' SEMPRE- - - - - - - - - - - - - -->
         </div>
 
     </div>
