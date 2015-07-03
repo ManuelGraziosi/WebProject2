@@ -19,6 +19,7 @@ a:hover { color: #222; text-decoration: none; }
 	background: #FFF;
 	/** border: 10px solid #FFF; **/
 	-moz-box-shadow: 0 0 10px #000; -webkit-box-shadow: 0 0 10px #000; box-shadow: 0 0 10px #000;
+	border-radius: 10px 10px 10px 10px;
 }
 
 	#container #headercont
@@ -34,6 +35,7 @@ a:hover { color: #222; text-decoration: none; }
 			height: 200px;
 			padding: 0px 0px 0px 0px;
 			background: #ffff45;
+			border-radius: 10px 10px 10px 10px;
 		}
 		
 	/*#container #headercont #headerlogo h1 a
@@ -107,7 +109,7 @@ a:hover { color: #222; text-decoration: none; }
 		{
 			width: 1255px;
 			height: 50px;
-                        cursor: pointer;
+            
 			background: #faef87;
 		}
 		
@@ -115,6 +117,7 @@ a:hover { color: #222; text-decoration: none; }
 			{
 				float: left;
 				margin: 0 0 0 240px;
+				cursor: pointer;
 			}
 			
 			#container #maincont #menucont ul li
@@ -189,7 +192,7 @@ a:hover { color: #222; text-decoration: none; }
 		#container #maincont #mainright
 		{
 			float: left;
-			width: 580px;
+			width: 935px;
 			padding: 40px;
 		}
 		
@@ -236,4 +239,8 @@ padding:3px 5px;
 {
 width: 240px;
 height: 200px;
+border-radius: 10px 10px 10px 10px;
 }
+
+
+

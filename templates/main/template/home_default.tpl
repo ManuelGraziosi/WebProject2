@@ -37,7 +37,7 @@
             </ul>
         </div>
         <div id="mainleft">
-            <h3>Nullam blandit</h3>
+            <h3>Caseificio Sammartino</h3>
             <p>Vivamus mi arcu, lacinia scelerisque blandit nec, mattis non nibh.</p>
             <ul class="sidemenu">
                 <li><a title="" href="">Side Link 1</a></li>
@@ -59,7 +59,7 @@
 
 <div id="footercont">
   <p>
-    Template by <a title="download website templates" href="http://www.downloadwebsitetemplates.co.uk" rel="external">Download Website Templates</a> - Design by <a title="Mario Valdeburgo Git Hub" href="https://github.com/MarioValdeburgo" rel="external">Mario Valdeburgo</a>
+    Template by <a title="download website templates" href="http://www.downloadwebsitetemplates.co.uk" rel="external">Download Website Templates</a> - Designed by <a title="Mario Valdeburgo Git Hub" href="https://github.com/MarioValdeburgo" rel="external">Mario Valdeburgo</a>
      - © Copyright 2015
   </p>
 </div>
