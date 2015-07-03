@@ -29,11 +29,11 @@
         <div id="menucont">
             <ul>
                 <li><a id="home" title="Home" class="active">Home</a></li>
-                <li><a title="About Us" href="">About Us</a></li>
+                <li><a id="registrazione" title="registrazione">registrazione</a></li>
                 <li><a title="Contact Us" href="">Contact Us</a></li>
-                <li><a id="newsletter" title="Newsletter"><!-- href="index.php?controllore=C_visualizzazione&metodo=newsletter"-->Newsletter</a></li>
-                <li><a id="vetrina" title="Vetrina"><!-- href="index.php?controllore=C_visualizzazione&metodo=vetrina"-->Vetrina</a></li>
-                <li><a id="carrello" title="Carrello"><!--  href="index.php?controllore=C_visualizzazione&metodo=carrello"-->Carrello</a></li>
+                <li><a id="newsletter" title="Newsletter">Newsletter</a></li>
+                <li><a id="vetrina" title="Vetrina">Vetrina</a></li>
+                <li><a id="carrello" title="Carrello">Carrello</a></li>
             </ul>
         </div>
         <div id="mainleft">
