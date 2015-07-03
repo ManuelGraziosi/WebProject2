@@ -28,7 +28,7 @@
     <div id="maincont" class="clearfix">
         <div id="menucont">
             <ul>
-                <li><a id="home" title="Home" href="" class="active">Home</a></li>
+                <li><a id="home" title="Home" class="active">Home</a></li>
                 <li><a title="About Us" href="">About Us</a></li>
                 <li><a title="Blog" href="">Blog</a></li>
                 <li><a title="Contact Us" href="">Contact Us</a></li>

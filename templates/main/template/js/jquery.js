@@ -1,7 +1,31 @@
 /**/
 var start=function(){
     
+    var home=function(){
+        $('title').html('home');
+        
+        $(this).addClass('active');
+        $('#carrello').removeClass('active');
+        $('#home').removeClass('active');
+        $('#newsletter').removeClass('active');
+        
+        $.ajax({
+            url:"index.php?controllore=C_visualizzazione&metodo=home",
+            type:'GET',
+            dataType:"html",
+            success:function(home) {
+                $('#mainright').html(home);
+            }
+        });
+    }
+    $('#home').click(home);
+    
+    $('#home').ready(home);
+    
+    
     $('#registrazione').click(function(){
+        $('title').html('registrazione cliente');
+        
         $(this).addClass('active');
         $('#carrello').removeClass('active');
         $('#home').removeClass('active');
@@ -18,7 +42,9 @@ var start=function(){
     
     
     $('#newsletter').click(function(){
-        $(this).addClass('active');
+        $('title').html('newsletter');
+        
+        $('#registrazione').removeClass('active');
         $(this).addClass('active');
         $('#carrello').removeClass('active');
         $('#home').removeClass('active');
@@ -34,6 +60,9 @@ var start=function(){
     
     
     $('#carrello').click(function(){
+        $('title').html('carrello');
+        
+        $('#registrazione').removeClass('active');
         $(this).addClass('active');
         $('#newsletter').removeClass('active');
         $('#home').removeClass('active');
@@ -43,7 +72,7 @@ var start=function(){
             dataType:"html",
             success:function(carrello) {
                 $('#mainright').html(carrello);
-                $(document).ready(start);
+                //$(document).ready(start);
             }
         });
     });
