@@ -107,6 +107,7 @@ a:hover { color: #222; text-decoration: none; }
 		{
 			width: 1255px;
 			height: 50px;
+                        cursor: pointer;
 			background: #faef87;
 		}
 		

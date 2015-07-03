@@ -6,7 +6,7 @@ var start=function(){
         
         $(this).addClass('active');
         $('#carrello').removeClass('active');
-        $('#home').removeClass('active');
+        $('#registrazione').removeClass('active');
         $('#newsletter').removeClass('active');
         
         $.ajax({
