@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2015-07-02 21:47:56
+<?php /* Smarty version 2.6.26, created on 2015-07-03 11:02:26
          compiled from home_default.tpl */ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -31,7 +31,7 @@
     <div id="maincont" class="clearfix">
         <div id="menucont">
             <ul>
-                <li><a id="home" title="Home" href="" class="active">Home</a></li>
+                <li><a id="home" title="Home" class="active">Home</a></li>
                 <li><a title="About Us" href="">About Us</a></li>
                 <li><a title="Blog" href="">Blog</a></li>
                 <li><a title="Contact Us" href="">Contact Us</a></li>
@@ -53,7 +53,7 @@
         </div>
 
         <div id="mainright">
-            <!-- - - - - - - - - - - - -CORPO CHE CAMBIERA' SEMPRE- - - - - - - - - - - - - -->
+            <!-- - - - - - - - - - - - -CORPO CHE CAMBIERA' SEMPRE- - - - - - - - - - - - - --><p>mario</p>
         </div>
 
     </div>

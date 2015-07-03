@@ -22,7 +22,6 @@ class C_visualizzazione{
         
         $view=new V_view();
         /**/
-        $view->inserisciDatiTemplate('titolo', 'newsletter');
         $view->impostaTemplate('newsletter.tpl');
     }
     
@@ -31,7 +30,6 @@ class C_visualizzazione{
         $prodotti=$db->caricaTabella('prodotto');
         $view=new V_view();
         /**/
-        $view->inserisciDatiTemplate('titolo', 'carrello');
         $view->inserisciDatiTemplate('prodotti', $prodotti);
         $view->impostaTemplate('carrello.tpl');
     }
@@ -39,8 +37,14 @@ class C_visualizzazione{
     public function registrazione() {
         
         $view=new V_view();
-        $view->inserisciDatiTemplate('titolo', 'registrazione');
         /**/
         $view->impostaTemplate('form_registrazione_cliente.tpl');/**/
+    }
+    
+    public function home() {
+        
+        $view=new V_view();
+        /**/
+        $view->impostaTemplate('home.tpl');
     }
 }
