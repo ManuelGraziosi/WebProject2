@@ -73,7 +73,6 @@ var start=function(){
             dataType:"html",
             success:function(vetrina) {
                 $('#mainright').html(vetrina);
-                //$(document).ready(start);
             }
         });
         aggiungi();
@@ -97,7 +96,6 @@ var start=function(){
             dataType:"html",
             success:function(carrello) {
                 $('#mainright').html(carrello);
-                //$(document).ready(start);
             }
         });
     });

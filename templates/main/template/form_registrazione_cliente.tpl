@@ -1,7 +1,3 @@
-
-    <script type="text/javascript" src="templates/main/template/js/jquery-1.11.3.min.js"></script>
-    <script type="text/javascript" src="templates/main/template/js/jquery.js"></script>
-
 <table>
     <form name="modulo">
         <tr><td>nome:  </td><td><input id="nome" name="nome" type="text"/></td></tr>
