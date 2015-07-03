@@ -26,11 +26,7 @@ class C_visualizzazione{
     }
     
     public function carrello() {
-        $db= new F_database();
-        $prodotti=$db->caricaTabella('prodotto');
         $view=new V_view();
-        /**/
-        $view->inserisciDatiTemplate('prodotti', $prodotti);
         $view->impostaTemplate('carrello.tpl');
     }
     
@@ -49,9 +45,11 @@ class C_visualizzazione{
     }
     
     public function vetrina() {
-        
+        $db= new F_database();
+        $prodotti=$db->caricaTabella('prodotto');
         $view=new V_view();
         /**/
+        $view->inserisciDatiTemplate('prodotti', $prodotti);
         $view->impostaTemplate('vetrina.tpl');
     }
 }

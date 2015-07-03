@@ -37,6 +37,7 @@ class C_fareOrdine {
         $sessione=  U_singolaistanza::getIstanza('U_sessione');
         $sessione->imposta_valore('carrello',serialize($this->_carrello));
         $view->mostraNotifica('aggiungi',$ordineprodotto);
+        //$view->mostraNotifica('aggiungi',$this->_carrello);
     }
     
     public function rimuoviProdottoOrdinato() {

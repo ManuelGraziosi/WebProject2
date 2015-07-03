@@ -66,6 +66,7 @@ var start=function(){
         $(this).addClass('active');
         $('#newsletter').removeClass('active');
         $('#home').removeClass('active');
+        $('#carrello').removeClass('active');
         $.ajax({
             url:"index.php?controllore=C_visualizzazione&metodo=vetrina",
             type:'GET',
@@ -75,6 +76,7 @@ var start=function(){
                 //$(document).ready(start);
             }
         });
+        aggiungi();
     });
     
     
@@ -88,6 +90,7 @@ var start=function(){
         $(this).addClass('active');
         $('#newsletter').removeClass('active');
         $('#home').removeClass('active');
+        $('#vetrina').removeClass('active');
         $.ajax({
             url:"index.php?controllore=C_visualizzazione&metodo=carrello",
             type:'GET',
@@ -128,6 +131,45 @@ var start=function(){
         });
     });
 
+
+
+    $('#invia').click(function(){
+        var controllore=$('#controllore').val();
+        var metodo=$('#metodo').val();
+        var nome=$('#nome').val();
+        var cognome=$('#cognome').val();
+        var email=$('#EMAIL').val();
+        var password=$('#password').val();
+        var password_1=$('#password_1').val();
+        var via=$('#via').val();
+        var citta=$('#citta').val();
+        var CAP=$('#CAP').val();
+        $.ajax({
+            type:'GET',
+            url:"index.php",
+            dataType:"json",
+            data:{"controllore":controllore,"metodo":metodo,"nome":nome,"cognome":cognome,"EMAIL": email,"password": password,"password_1": password_1,"via": via,"citta": citta,"CAP": CAP},
+            success:function(jsonData) {
+            }
+        });
+    });
+
+
+
+    var aggiungi= function(){
+        $('#bottone1').click(function(){
+            var nome=$('#nome_prodotto').html();
+            var quantita=$('#quantita').val();
+            $.ajax({
+                type:'GET',
+                url:"index.php?controllore=C_fareOrdine&metodo=inserisciProdottoOrdinato&nome_ordinato"+nome+"quantita="+quantita,
+                dataType:"json",
+                success:function(jsonData) {
+                    $('#mainright').html(jsonData);
+                }
+            });
+        });
+    }
 }
 
 function inserisciEvento(n){
@@ -153,31 +195,8 @@ function inserisciEvento(n){
     });
 }
 /**/
-/**
-var dati= new array();
-var start = function(){
-    $('#invia').click(function(){
-        var controllore=$('#controllore').val();
-        var metodo=$('#metodo').val();
-        var nome=$('#nome').val();
-        var cognome=$('#cognome').val();
-        var email=$('#EMAIL').val();
-        var password=$('#password').val();
-        var password_1=$('#password_1').val();
-        var via=$('#via').val();
-        var citta=$('#citta').val();
-        var CAP=$('#CAP').val();
-        $.ajax({
-            type:'GET',
-            url:"index.php",
-            dataType:"json",
-            data:{"controllore":controllore,"metodo":metodo,"nome":nome,"cognome":cognome,"EMAIL": email,"password": password,"password_1": password_1,"via": via,"citta": citta,"CAP": CAP},
-            success:function(jsonData) {
-                
-            }
-        });
-    });
-};
+/**/
+    
 /**/
 
 $(document).ready(start);
