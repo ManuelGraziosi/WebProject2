@@ -30,9 +30,9 @@
             <ul>
                 <li><a id="home" title="Home" class="active">Home</a></li>
                 <li><a title="About Us" href="">About Us</a></li>
-                <li><a title="Blog" href="">Blog</a></li>
                 <li><a title="Contact Us" href="">Contact Us</a></li>
-                <li><a id="newsletter" title="Newsletter"><!-- href="index.php?controllore=C_visualizzazione&metodo=newsletter"-->newsletter</a></li>
+                <li><a id="newsletter" title="Newsletter"><!-- href="index.php?controllore=C_visualizzazione&metodo=newsletter"-->Newsletter</a></li>
+                <li><a id="vetrina" title="Vetrina"><!-- href="index.php?controllore=C_visualizzazione&metodo=vetrina"-->Vetrina</a></li>
                 <li><a id="carrello" title="Carrello"><!--  href="index.php?controllore=C_visualizzazione&metodo=carrello"-->Carrello</a></li>
             </ul>
         </div>

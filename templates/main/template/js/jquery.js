@@ -59,6 +59,28 @@ var start=function(){
     });
     
     
+    $('#vetrina').click(function(){
+        $('title').html('vetrina');
+        
+        $('#registrazione').removeClass('active');
+        $(this).addClass('active');
+        $('#newsletter').removeClass('active');
+        $('#home').removeClass('active');
+        $.ajax({
+            url:"index.php?controllore=C_visualizzazione&metodo=vetrina",
+            type:'GET',
+            dataType:"html",
+            success:function(vetrina) {
+                $('#mainright').html(vetrina);
+                //$(document).ready(start);
+            }
+        });
+    });
+    
+    
+    
+    
+    
     $('#carrello').click(function(){
         $('title').html('carrello');
         
