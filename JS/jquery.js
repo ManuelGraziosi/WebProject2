@@ -76,6 +76,7 @@ var start=function(){
             dataType:"html",
             success:function(vetrina) {
                 $('#mainright').html(vetrina);
+                $()
             }
         });
         aggiungi();
