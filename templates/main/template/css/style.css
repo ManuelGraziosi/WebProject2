@@ -130,7 +130,7 @@ a:hover { color: #222; text-decoration: none; }
 				float: left;
 				padding: 0 20px;
 				line-height: 50px;
-				color: #FFF;
+				color: #000;
 				font-weight: normal;
 				text-decoration: none;
 				text-transform: uppercase;
@@ -140,7 +140,7 @@ a:hover { color: #222; text-decoration: none; }
 
 			#container #maincont #menucont ul li a:hover
 			{
-				background: #ffff45;
+				background: orange;
 			}
 			
 				#container #maincont #menucont ul li a.active
@@ -178,14 +178,14 @@ a:hover { color: #222; text-decoration: none; }
 				padding: 8px 10px;
 				margin: 0 0 2px 0;
 				background: #faef87;
-				color: #FFF;
+				color: #000;
 				font-weight: normal;
 				text-decoration: none;
 			}
 			
 			#maincont #mainleft ul.sidemenu li a:hover
 			{
-				color: #FFF;
+				color: #000;
 				background: #ffff45;
 			}
 		
@@ -242,5 +242,10 @@ height: 200px;
 border-radius: 10px 10px 10px 10px;
 }
 
-
+#cart
+{
+width: 40px;
+height: 40px;
+float: right;
+}
 

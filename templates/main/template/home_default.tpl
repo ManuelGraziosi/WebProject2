@@ -33,7 +33,7 @@
                 <li><a title="Contact Us" href="">Contact Us</a></li>
                 <li><a id="newsletter" title="Newsletter">Newsletter</a></li>
                 <li><a id="vetrina" title="Vetrina">Vetrina</a></li>
-                <li><a id="carrello" title="Carrello">Carrello</a></li>
+                <li><a id="carrello" title="Carrello">Carrello<img id="cart" alt="Carrello" src="templates/main/template/images/cart/cart.png"/></a></li>
             </ul>
         </div>
         <div id="mainleft">
