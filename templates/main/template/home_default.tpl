@@ -26,7 +26,7 @@
         </div>
     
     <div id="maincont" class="clearfix">
-        <div id="menucont">
+        <div id="menucont" class="menu">
             <ul>
                 <li><a id="home" title="Home" class="active">Home</a></li>
                 <li><a id="registrazione" title="registrazione">Registrazione</a></li>

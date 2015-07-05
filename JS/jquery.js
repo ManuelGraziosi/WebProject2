@@ -202,3 +202,20 @@ function inserisciEvento(n){
 /**/
 
 $(document).ready(start);
+
+$(document).ready(function() {
+    var menu = $("#menucont");
+    var posizione = menu.position();
+    // intercettiamo qui l'evento "scroll"                 
+    $(window).scroll(function() {
+        // "$(window).scrollTop()" ci dice di quanto abbiamo scrollato la pagina
+        if ($(window).scrollTop() >= posizione.top) {
+            // abbiamo scrollato oltre il div, dobbiamo bloccarlo
+            $("#menucont").addClass("menu_scroll");
+        }
+        else {
+            // abbiamo scrollato verso l'alto, sopra il div, possiamo sbloccarlo
+            $("#menucont").removeClass("menu_scroll"); 
+        }
+    });
+});

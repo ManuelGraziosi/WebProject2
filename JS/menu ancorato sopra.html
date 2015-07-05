@@ -15,7 +15,12 @@
                   // "$(window).scrollTop()" ci dice di quanto abbiamo scrollato la pagina
                   if ($(window).scrollTop() >= posizione.top) {
                     // abbiamo scrollato oltre il div, dobbiamo bloccarlo
-                    $(".menu").addClass("menu_scroll");
+                    $(".menu").addClass("menu_scroll").animate({
+                        "position": "fixed",
+                        "top":"0px",
+                        "display":"block",
+                        "z-index": "2"
+                    },1000);
                   } else {
                     // abbiamo scrollato verso l'alto, sopra il div, possiamo sbloccarlo
                     $(".menu").removeClass("menu_scroll"); 
