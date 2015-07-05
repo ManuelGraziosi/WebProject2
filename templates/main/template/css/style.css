@@ -251,9 +251,13 @@ float: right;
 
 #carrello
 {
-margin-left: 151px;
 border-width: 0 0 0 3;
 border-left: solid;
+}
+
+#car
+{
+float: right;
 }
 
 .menu_scroll{

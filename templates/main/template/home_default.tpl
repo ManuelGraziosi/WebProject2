@@ -34,9 +34,11 @@
                 <li><a id="newsletter" title="Newsletter">Newsletter</a></li>
                 <li><a id="vetrina" title="Vetrina">Vetrina</a></li>
             </ul>
+            <span id="car">
             <ul>
                 <li><a id="carrello" title="Carrello">Carrello<img id="cart" alt="Carrello" src="templates/main/template/images/cart/cart.png"/></a></li>
             </ul>
+            </span>
         </div>
         <div id="mainleft">
             <h3>Caseificio Sammartino</h3>
