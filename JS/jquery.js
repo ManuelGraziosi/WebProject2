@@ -76,7 +76,7 @@ var start=function(){
                                     type:'GET',
                                     url:"index.php",
                                     dataType:"json",
-                                    data:/**{"controllore":controllore,"metodo":metodo,"nome":nome,"cognome":cognome,"EMAIL": email,"password": password,"password_1": password_1,"via": via,"citta": citta,"CAP": CAP}/**/eval("("+json+")"),
+                                    data:eval("("+json+")"),
                                     success:function(dati) {
                                         $('#mainright').html('<p>'+dati+'</p>');
                                         $('#formRegistrazione').dialog('close');
