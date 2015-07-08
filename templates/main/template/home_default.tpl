@@ -3,10 +3,13 @@
 <head>
     <title>{$titolo}</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="icon" href="templates/main/template/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" type="text/css" media="screen" href="templates/main/template/css/style.css" />
     <script type="text/javascript" src="JS/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="JS/jquery.js"></script>
     <script type="text/javascript" src="JS/scripts.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="JS/jquery-ui-1.11.4.custom/jquery-ui.min.css" /> 
+    <script type="text/javascript" src="JS/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
 </head>
 
 <body>
@@ -26,11 +29,11 @@
         </div>
     
     <div id="maincont" class="clearfix">
-        <div id="menucont" class="menu">
+        <div id="menucont">
             <ul>
                 <li><a id="home" title="Home" class="active">Home</a></li>
                 <li><a id="registrazione" title="registrazione">Registrazione</a></li>
-                <li><a title="Contact Us" href="">Contact Us</a></li>
+                <li><a id="login" title="login">login</a></li>
                 <li><a id="newsletter" title="Newsletter">Newsletter</a></li>
                 <li><a id="vetrina" title="Vetrina">Vetrina</a></li>
             </ul>
@@ -43,6 +46,23 @@
         <div id="mainleft">
             <h3>Caseificio Sammartino</h3>
             <p>Vivamus mi arcu, lacinia scelerisque blandit nec, mattis non nibh.</p>
+            
+            
+            <div id="login">
+                    <table>
+                        <tr>
+                            <td>email:</td><td><input type="email" id="EMAIL"/></td>
+                        </tr>
+                        <tr>
+                            <td>password:</td><td><input type="password" id="password"/></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><button id="invialogin">login</button></td>
+                        </tr>
+                    </table>
+            </div>
+            
+            
             <ul class="sidemenu">
                 <li><a title="" href="">Side Link 1</a></li>
                 <li><a title="" href="">Side Link 2</a></li>

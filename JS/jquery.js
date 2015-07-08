@@ -4,6 +4,7 @@ var start=function(){
     var home=function(){
         $('title').html('home');
         
+        $('#login').removeClass('active');
         $('#vetrina').removeClass('active');
         $(this).addClass('active');
         $('#carrello').removeClass('active');
@@ -18,7 +19,7 @@ var start=function(){
                 $('#mainright').html(home);
             }
         });
-    }
+    };
     $('#home').click(home);
     
     $('#home').ready(home);
@@ -27,6 +28,7 @@ var start=function(){
     $('#registrazione').click(function(){
         $('title').html('registrazione cliente');
         
+        $('#login').removeClass('active');
         $('#vetrina').removeClass('active');
         $(this).addClass('active');
         $('#carrello').removeClass('active');
@@ -38,14 +40,79 @@ var start=function(){
             dataType:"html",
             success:function(registrazione) {
                 $('#mainright').html(registrazione);
+                $(
+                    $('#formRegistrazione').dialog({
+                        draggable:false,
+                        modal:true,
+                        resizable:false,
+                        title:"Registrazione",
+                        buttons:{
+                            "Registra":function(){
+                                /**/
+                                $('.datiCliente').each(function(n){
+                                    $('#mainright').append('<p>'+n+')'+$(this).val()+'</p>');
+                                });
+                                var json='{';
+                                $('.datiCliente').each(function(n){
+                                    json+='"'+$(this).attr("name")+'":"'+$(this).val()+'",';
+                                });
+                                json+='"":""}';
+                                $('#mainright').append(json);
+                                /**
+                                var controllore=$('#controllore').val();
+                                var metodo=$('#metodo').val();
+                                var nome=$('#nome').val();
+                                var cognome=$('#cognome').val();
+                                var email=$('#registrazione #EMAIL').val();
+                                var password=$('#password').val();
+                                var password_1=$('#password_1').val();
+                                var via=$('#via').val();
+                                var citta=$('#citta').val();
+                                var CAP=$('#CAP').val();
+                                /**/
+                                
+                                /**/
+                                $.ajax({
+                                    type:'GET',
+                                    url:"index.php",
+                                    dataType:"json",
+                                    data:/**{"controllore":controllore,"metodo":metodo,"nome":nome,"cognome":cognome,"EMAIL": email,"password": password,"password_1": password_1,"via": via,"citta": citta,"CAP": CAP}/**/eval("("+json+")"),
+                                    success:function(dati) {
+                                        $('#mainright').html('<p>'+dati+'</p>');
+                                        $('#formRegistrazione').dialog('close');
+                                    }
+                                });/**/
+                            }
+                        }
+                    })
+                );
             }
         });
     });
     
     
+    $('#login').click(function(){
+        $('title').html('login');
+        
+        $('#vetrina').removeClass('active');
+        $('#registrazione').removeClass('active');
+        $(this).addClass('active');
+        $('#carrello').removeClass('active');
+        $('#home').removeClass('active');
+        $.ajax({
+            url:"index.php?controllore=C_visualizzazione&metodo=login",
+            type:'GET',
+            dataType:"html",
+            success:function(login) {
+                $('#mainright').html(login);
+            }
+        });
+    });
+    
     $('#newsletter').click(function(){
         $('title').html('newsletter');
         
+        $('#login').removeClass('active');
         $('#vetrina').removeClass('active');
         $('#registrazione').removeClass('active');
         $(this).addClass('active');
@@ -65,6 +132,7 @@ var start=function(){
     $('#vetrina').click(function(){
         $('title').html('vetrina');
         
+        $('#login').removeClass('active');
         $('#registrazione').removeClass('active');
         $(this).addClass('active');
         $('#newsletter').removeClass('active');
@@ -76,7 +144,7 @@ var start=function(){
             dataType:"html",
             success:function(vetrina) {
                 $('#mainright').html(vetrina);
-                $()
+                document.reload(aggiungi);
             }
         });
         aggiungi();
@@ -89,6 +157,7 @@ var start=function(){
     $('#carrello').click(function(){
         $('title').html('carrello');
         
+        $('#login').removeClass('active');
         $('#registrazione').removeClass('active');
         $(this).addClass('active');
         $('#newsletter').removeClass('active');
@@ -109,30 +178,6 @@ var start=function(){
     $(carrello).appendTo('#carr');
     
     var n = 0;
-    
-    $(".aggiungi").click(function(){
-        var url="index.php";
-        var nome_prodotto=$('#NOME_PRODOTTO1').html();
-        var quantita=$('#quantita').val();
-        $.ajax({
-            data:{"controllore":"C_fareOrdine","metodo":"inserisciProdottoOrdinato","nome_prodotto":nome_prodotto,"quantita":quantita},
-            type:'GET',
-            url:"index.php",
-            dataType:"json",
-            success:function(jsonData) {
-                var listItem;
-                n++;
-                listItem = '<tr><td id="colonna">'+jsonData['_prodotto']["NOME_PRODOTTO"];
-                listItem+='</td><td id="colonna">'+jsonData['_prodotto']["prezzo_kg"];
-                listItem+='</td><td id="colonna">'+jsonData["quantita"]+'</td><td id="colonna">';
-                listItem+='<input id="'+jsonData['_prodotto']["NOME_PRODOTTO"]+'" class="aggiorna'+n+'" type="text" size="4" value="'+jsonData["quantita"]+'"/></td><td id="colonna">';
-                listItem+='<input id="'+jsonData['_prodotto']["NOME_PRODOTTO"]+'" class="rimuovi'+n+'" type="submit" name="submit" value="rimuovi"></td></tr>';
-                $('#tab2').append(listItem);
-                inserisciEvento(n);
-            }
-        });
-    });
-
 
 
     $('#invia').click(function(){
@@ -152,28 +197,47 @@ var start=function(){
             dataType:"json",
             data:{"controllore":controllore,"metodo":metodo,"nome":nome,"cognome":cognome,"EMAIL": email,"password": password,"password_1": password_1,"via": via,"citta": citta,"CAP": CAP},
             success:function(jsonData) {
+                
             }
         });
     });
 
 
-
-    var aggiungi= function(){
-        $('#bottone1').click(function(){
-            var nome=$('#nome_prodotto').html();
-            var quantita=$('#quantita').val();
-            $.ajax({
-                type:'GET',
-                url:"index.php?controllore=C_fareOrdine&metodo=inserisciProdottoOrdinato&nome_ordinato"+nome+"quantita="+quantita,
-                dataType:"json",
-                success:function(jsonData) {
-                    $('#mainright').html(jsonData);
-                }
-            });
-        });
-    }
+$('#invialogin').click(function(){
+                        EMAIL=$('#EMAIL').val();
+                        password=$('#password').val();
+                        $.ajax({
+                            type:'GET',
+                            url:"index.php",
+                            dataType:"json",
+                            data:{"controllore":"C_registrazione","metodo":"autentica","EMAIL": EMAIL,"password": password},
+                            success:function(){
+                                $('#mainright').html('<p>vai a vedere nel database se funziona</p>');
+                            }
+                        });
+                    });
+    
 }
-
+var aggiungi= function(){
+        $(".aggiungi").each(function(){
+            this.click(function(){
+            var url="index.php";
+            var nome_prodotto=this.attr("id");
+            //var quantita=$('#quantita').val();
+            $.ajax({
+                data:{"controllore":"C_fareOrdine","metodo":"inserisciProdottoOrdinato","nome_prodotto":nome_prodotto,"quantita":quantita},
+                type:'GET',
+                url:"index.php",
+                dataType:"json",
+                    success:function(jsonData) {
+                        $('#mainright').html(jsonData);
+                    }
+                });
+            });
+        })
+    }
+    
+    
 function inserisciEvento(n){
     $('.rimuovi'+n).click(function(){
         var url="index.php?controllore=C_fareOrdine&metodo=rimuoviProdottoOrdinato&nome_prodotto="+this.id;
@@ -195,10 +259,10 @@ function inserisciEvento(n){
             }
         });
     });
+    
 }
 /**/
 /**/
-    
 /**/
 
 $(document).ready(start);
@@ -219,3 +283,4 @@ $(document).ready(function() {
         }
     });
 });
+
