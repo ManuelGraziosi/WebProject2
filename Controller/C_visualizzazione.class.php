@@ -52,4 +52,11 @@ class C_visualizzazione{
         $view->inserisciDatiTemplate('prodotti', $prodotti);
         $view->impostaTemplate('vetrina.tpl');
     }
+    
+    public function login() {
+        
+        $view=new V_view();
+        /**/
+        $view->impostaTemplate('login.tpl');
+    }
 }

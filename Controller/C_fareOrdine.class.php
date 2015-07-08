@@ -28,7 +28,7 @@ class C_fareOrdine {
             $ordineprodotto->setNome_prodotto($nomeprodotto);
             $ordineprodotto->setQuantita($quantita);
             $prodotto=new E_prodotto();
-            U_operazioni::inserisciDati($prodotto,$dati_prodotto[0]);
+            U_operazioni::inserisciDati($prodotto,$dati_prodotto);
         $ordineprodotto->setProdotto($prodotto);
         if ($this->_carrello==false){
             $this->_carrello=new E_ordine();

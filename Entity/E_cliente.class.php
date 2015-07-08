@@ -35,7 +35,7 @@ class E_cliente {
     /**
     * @AttributeType enum
     */
-    public $attivazione ='non attivo';
+    public $attivazione;
     /**
     * @AttributeType string
     */
@@ -81,15 +81,15 @@ class E_cliente {
     }
     /**
      * @access public
-     * @return array()
+     * @return boolean
      * @ReturnType array()
      */
     public function getAccountAttivo() {
         if ($this->attivazione=='attivo'){
-            return true;
+            return TRUE;
         }
         else{
-            return false;
+            return FALSE;
         }
     }
 

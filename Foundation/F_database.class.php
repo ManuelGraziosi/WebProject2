@@ -80,21 +80,23 @@ class F_database {
      * @return boolean
      */
     public function depositaRiga($tabella,& $object) {
-        //$object=(array) $object;
+        $object=(array) $object;
         $i=0;
         $values='';
         $fields='';
         foreach ($object as $key=>$value) {
-            if ($i==0) {
-                $fields.='`'.$key.'`';
-                $values.='`'.$value.'`';
-            } else {
-                $fields.=', `'.$key.'`';
-                $values.=', `'.$value.'`';
+            if($key[0]!='_'){
+                if ($i==0) {
+                    $fields.=''.$key.'';
+                    $values.='\''.$value.'\'';
+                } else {
+                    $fields.=','.$key.'';
+                    $values.=', \''.$value.'\'';
+                }
+                $i++;
             }
-            $i++;
         }
-        $query='INSERT INTO '.$tabella.' ('.$fields.') VALUES ('.$values.')';
+        $query='INSERT INTO `'.$tabella.'` ('.$fields.') VALUES ('.$values.');';
         try{
             $return = $this->query($query);
             return $return;

@@ -19,21 +19,25 @@ class V_registrazione {
      * @return array();
      */
     public function getDatiRegistrazione() {
-        $dati_richiesti=array('EMAIL', 'nome', 'cognome', 'password','password_1', 'codice_attivazione', 'attivazione', 'citta', 'via', 'CAP');
+        $dati_richiesti=array('EMAIL', 'nome', 'cognome', 'password', 'password_1', 'citta', 'via', 'CAP');
         $dati=array();
         foreach ($dati_richiesti as $dato) {
-            if (isset($_REQUEST[$dato]))
+            if (isset($_REQUEST[$dato])){
                 $dati[$dato]=$_REQUEST[$dato];
+            }
         }
-        $dati=$this->controllaDati($dati);
         return $dati;
     }
     
-    private function controllaDati(&$dati){
-        if($dati['password']==$dati['password_1']){
-            unset($dati['password_1']);
+    public function getEmail() {
+        if (isset($_REQUEST['EMAIL'])){
+            return $_REQUEST['EMAIL'];
         }
-        else print "sbagliato";
-        return $dati;
+    }
+    
+    public function getPassword() {
+        if (isset($_REQUEST['password'])){
+            return $_REQUEST['password'];
+        }
     }
 }

@@ -1,0 +1,3 @@
+$(function(){
+	control = new CHome();
+});
