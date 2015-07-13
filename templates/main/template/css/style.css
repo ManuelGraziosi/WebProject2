@@ -242,10 +242,74 @@ height: 200px;
 border-radius: 10px 10px 10px 10px;
 }
 
-#cart
+#menuright
 {
-width: 40px;
-height: 40px;
+float: right;
+}
+
+#container #maincont #menucont #menuright ul
+			{
+				float: left;
+				margin: 0 0 0 0px;
+				cursor: pointer;
+			}
+			
+			#container #maincont #menucont #menuright ul li
+			{
+			    display: inline;
+			}
+			
+			#container #maincont #menucont #menuright ul li a
+			{
+				float: left;
+				padding: 0 20px;
+				line-height: 50px;
+				color: #000;
+				font-weight: normal;
+				text-decoration: none;
+				text-transform: uppercase;
+				font-size: 11px;
+				background: #faef87;
+			}
+
+			#container #maincont #menucont #menuright ul li a:hover
+			{
+				background: orange;
+			}
+			
+				#container #maincont #menucont #menuright ul li a.active
+				{
+					background: #FFF;
+					color: #333;
+				}
+
+#formsearch
+{
+float: left;
+margin-top: 5px;
+}
+
+#barracerca
+{
+width: 200px;
+height: 30px;
+}
+
+#buttonsearch
+{
+float: right;
+background-color: transparent;
+border-width: 0 0 0 0;
+}
+
+#searchimg
+{
+width: 30px;
+height: 30px;
+}
+
+#car
+{
 float: right;
 }
 
@@ -255,8 +319,10 @@ border-width: 0 0 0 3;
 border-left: solid;
 }
 
-#car
+#cart
 {
+width: 40px;
+height: 40px;
 float: right;
 }
 
