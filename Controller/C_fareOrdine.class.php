@@ -61,10 +61,24 @@ class C_fareOrdine {
     
     public function effettuaOrdine() {
         
-        
     }
     
     public function confermaOrdine() {
+        //$sessione= U_singolaistanza::getIstanza('U_sessione');
+        /**
+        $sessione= new U_sessione();
+        $identificato = false;
+        if (isset($_SESSION['EMAIL'])) {
+            $identificato = true;
+        }
+        if($identificato){
+            //mostra il riepilogo dei prodotti ordinati
+        }
+        else{/**/
+            header('Location: index.php?controllore=C_visualizzazione&metodo=registrazione');
+            
+        //}
+        
         
     }
 }

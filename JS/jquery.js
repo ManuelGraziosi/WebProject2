@@ -24,7 +24,7 @@ var start=function(){
     
     $('#home').ready(home);
     
-    
+    /**
     $('#registrazione').click(function(){
         $('title').html('registrazione cliente');
         
@@ -49,6 +49,7 @@ var start=function(){
                         buttons:{
                             "Registra":function(){
                                 /**/
+    /**
                                 $('.datiCliente').each(function(n){
                                     $('#mainright').append('<p>'+n+')'+$(this).val()+'</p>');
                                 });
@@ -71,7 +72,7 @@ var start=function(){
                                 var CAP=$('#CAP').val();
                                 /**/
                                 
-                                /**/
+                                /**
                                 $.ajax({
                                     type:'GET',
                                     url:"index.php",
@@ -81,7 +82,7 @@ var start=function(){
                                         $('#mainright').html('<p>'+dati+'</p>');
                                         $('#formRegistrazione').dialog('close');
                                     }
-                                });/**/
+                                });/**
                             }
                         }
                     })
@@ -89,7 +90,7 @@ var start=function(){
             }
         });
     });
-    
+    /**/
     
     $('#login').click(function(){
         $('title').html('login');

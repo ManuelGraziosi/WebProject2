@@ -8,6 +8,15 @@
     <script type="text/javascript" src="JS/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="JS/jquery.js"></script>
     <script type="text/javascript" src="JS/scripts.js"></script>
+    
+    
+    <script type="text/javascript" src="JS/Controller/C_home.js"></script>
+    <script type="text/javascript" src="JS/Controller/C_registrazione.js"></script>
+    <script type="text/javascript" src="JS/View/V_registrazione.js"></script>
+    <script type="text/javascript" src="JS/index.js"></script>
+    
+    
+    
     <link rel="stylesheet" type="text/css" media="screen" href="JS/jquery-ui-1.11.4.custom/jquery-ui.min.css" /> 
     <script type="text/javascript" src="JS/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
 </head>
