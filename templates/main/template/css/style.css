@@ -309,6 +309,11 @@ width: 30px;
 height: 30px;
 }
 
+#buttonsearch:hover
+{
+cursor: pointer;
+}
+
 #car
 {
 float: right;
@@ -389,4 +394,16 @@ cursor: pointer;
 #formRegistrazione tr
 {
 height: 28px;
+}
+
+#newsletterdiv
+{
+padding-left: 8px;
+height: 150px;
+}
+
+#dovesiamo
+{
+padding-left: 8px;
+padding-right: 8px;
 }
