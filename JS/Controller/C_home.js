@@ -25,7 +25,7 @@ var C_home = function(){
     
     $('#registrazione').click(function(){
         $('#mainright').append('<div id="formRegistrazione"><table><tr><td>nome:  </td><td><input id="nome" name="nome" type="text"/></td></tr><tr><td>cognome:  </td><td><input id="cognome" name="cognome" type="text"/></td></tr><tr><td>email:  </td><td><input id="EMAIL_registrazione" name="EMAIL" type="text"/></td></tr><tr><td>password:  </td><td><input id="password_registrazione" name="password" type="password"/></td></tr><tr><td>password:  </td><td><input id="password_1_registrazione" name="password_1" type="password"/></td></tr><tr><td>Via:  </td><td><input id="via" name="via" type="text"/></td></tr><tr><td>citta:  </td><td><input id="citta" name="citta" type="text"/></td></tr><tr><td>CAP:  </td><td><input id="CAP" name="CAP" type="text"/></td></tr><tr><td colspan="2"><button id="invia" class="invia">invia</button></td></tr></table></div>');
-        index = new C_registrazione();
+    	index = new C_registrazione();
         //index.registrazione();
         
         

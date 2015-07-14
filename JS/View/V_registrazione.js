@@ -3,7 +3,7 @@ var V_registrazione= function(){
         draggable:true,
         modal:true,
         resizable:false,
-        title:"Resgistrazione"
+        title:"Registrazione"
     });
     $('#invia').button();
 };
