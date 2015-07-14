@@ -45,6 +45,8 @@
         <div id="menucont">
             <ul>
                 <li><a id="home" title="Home" class="active">Home</a></li>
+                <li><a id="chisiamo" title="ChiSiamo">Chi Siamo</a></li>
+                <li><a id="dovesiamo" title="DoveSiamo">Dove Siamo</a></li>
                 <li><a id="vetrina" title="Vetrina">Vetrina</a></li>
             </ul>
 
@@ -77,10 +79,17 @@
                         <button id="invialogin">Login</button> <br><br>
                         Non sei iscritto? <a id="registrazione" title="Registrati">REGISTRATI</a>
                     </div>
-                <h7>DOVE SIAMO</h7>
-                    <div>ciao</div>
+                <h7>CONTATTACI</h7>
+                    <div id="contattaci">
+                        <b>CASEIFICIO SAMMARTINO</b><br><br>
+                        Via le mani dal naso, 12<br>
+                        Teramo -Te-<br><br>
+                        caseificiosammartino@info.it<br><br>
+                        123 456789
+                    </div>
                 <h7 id="newsletter">NEWSLETTER</h7>
-                    <div>
+                    <div id="newsletterdiv">
+                       <p>Iscriviti alla Newsletter e rimani aggiornato!</p>
                        E-mail*: <input id="EMAIL_newsletter" type="text" name="EMAIL">
                        <button id="submit_newsletter">Iscriviti</button>
                        <div id="notifica_newsletter"></div>
