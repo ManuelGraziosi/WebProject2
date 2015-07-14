@@ -9,7 +9,7 @@ var C_newsletter= function(){
 }
 
 C_newsletter.prototype.controllaEmail=function(){
-    var errori;
+    //riscontro;
     $('#EMAIL_newsletter').blur(function () {
             if (!$(this).val().match(/^[a-zA-z' .]{2,30}@[a-zA-Z]{2,10}.[a-z]{2,3}$/)) {
                 /**
@@ -17,16 +17,17 @@ C_newsletter.prototype.controllaEmail=function(){
                 if ($email_controll==1){
                 /**/
                     $(this).css("border","3px solid red");
-                    errori=true;
+                    riscontro=false;
                 //}
             }
             else {
                 $(this).css("border", "2px solid green");
-                errori=false;
+                riscontro=true;
             }
             
         });
-}
+        return riscontro;
+};
 
 C_newsletter.prototype.inviaEmail=function(dati){
     $('body').append(" invia dati");
@@ -35,9 +36,15 @@ C_newsletter.prototype.inviaEmail=function(dati){
         url:"index.php",
         data:dati,
         datatype:"json",
-        success:function(){
-            var view= new V_newsletter();
-            view.notifica();
+        success:function(successo){
+            if(successo){
+                var view= new V_newsletter();
+                view.notifica(true);
+            }
+            else{
+                var view= new V_newsletter();
+                view.notifica(false);
+            }
         }
     });
 }

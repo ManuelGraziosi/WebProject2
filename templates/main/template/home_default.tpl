@@ -79,14 +79,11 @@
                     </div>
                 <h7>DOVE SIAMO</h7>
                     <div>ciao</div>
-                <h7>NEWSLETTER</h7>
-                    <div id="newsletter">
-                        <br>
-                       <p><span class="error">* required field.</span></p>
-                       E-mail: <input id="EMAIL_newsletter" type="text" name="email">
-                       <span class="error"></span>
-                       <br><br>
-                       <input id="submit_newsletter" type="submit" name="submit" value="Submit">
+                <h7 id="newsletter">NEWSLETTER</h7>
+                    <div>
+                       E-mail*: <input id="EMAIL_newsletter" type="text" name="EMAIL">
+                       <button id="submit_newsletter">Iscriviti</button>
+                       <div id="notifica_newsletter"></div>
                    </div>
             </div>
 

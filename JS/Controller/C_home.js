@@ -8,20 +8,41 @@
 var C_home = function(){
     $('body').append(" home ");
     
-    $('#EMAIL_newsletter').blur(function(){
-        var Cnews= new C_newsletter();
-        Cnews.controllaEmail()
+    $('#newsletter').click(function(){
+        var Cnews=new C_newsletter();
+        var Vnews=new V_newsletter();
+        Cnews.controllaEmail();
+        //$('#submit_newsletter').button();
     });
     
     $('#submit_newsletter').click(function(){
-        //$('body').append('cliccato su newsletter');
-        var Cnews= new C_newsletter();
-        $('#EMAIL_newsletter').blur(function(){Cnews.controllaEmail()});
+        var Cnews=new C_newsletter();
         var Vnews=new V_newsletter();
         email=Vnews.recuperaEmail();
+        /**/
+        if(Cnews.controllaEmail()){
+            Cnews.inviaEmail(email);
+        }
+        else {
+            if(!email.EMAIL){
+                $('#notifica_newsletter').html('ERRORE campo vuoto').css("color","red");
+            }
+            else{
+                $('#notifica_newsletter').html('ERRORE formato email ').css("color","red");
+            }
+        }/**/
         
-        Cnews.inviaEmail(email);
+        
+        
+        /**
+        if(Cnews.controllaEmail()){
+            email=Vnews.recuperaEmail();
+            if(email){
+                Cnews.inviaEmail(email);
+            }
+        }/**/
     });
+    
     /**/
     $('#vetrina').click(function(){
         $('body').append('cliccato su vetrina');

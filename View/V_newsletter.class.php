@@ -21,8 +21,8 @@
         }
         
         public function getEmail(){
-            if(isset($_REQUEST['email'])){
-                return $_REQUEST['email'];
+            if(isset($_REQUEST['EMAIL'])){
+                return $_REQUEST['EMAIL'];
             }
             else{
                 return false;

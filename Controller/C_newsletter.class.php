@@ -20,10 +20,17 @@ class C_newsletter {
          $email=new E_newsletter();
          
          $email->setEMAIL($view->getEmail());
-         print_r($email);
+         $db=new F_database();
+         $db->depositaRiga("newsletter", $email);
+         
+         
+         header("Content-type: application/json");
+         $t=true;
+         echo json_encode($t);
+         /**
          $db=new F_newsletter();
          $db->addEmail($email->getEMAIL());
-         
+         /**/
      }
      
 }
