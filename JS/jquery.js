@@ -24,22 +24,16 @@ var start=function(){
     
     $('#home').ready(home);
     
-    /**
-    $('#newsletter').click(function(){
-        $('title').html('newsletter');
-        
-        $('#login').removeClass('active');
-        $('#vetrina').removeClass('active');
-        $('#registrazione').removeClass('active');
-        $(this).addClass('active');
-        $('#carrello').removeClass('active');
-        $('#home').removeClass('active');
+    /**/
+    $('#buttonsearch').click(function(){
+        $('body').append("cliccato ricerca");
+        var r=$('#barracerca').val();
         $.ajax({
-            url:"index.php?controllore=C_visualizzazione&metodo=newsletter",
+            url:"index.php?controllore=C_visualizzazione&metodo=ricerca&ricerca="+r,
             type:'GET',
             dataType:"html",
-            success:function(newsletter) {
-                $('#mainright').html(newsletter);
+            success:function(prod) {
+                $('#mainright').html(prod);
             }
         });
     });

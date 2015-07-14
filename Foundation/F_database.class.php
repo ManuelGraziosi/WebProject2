@@ -148,7 +148,7 @@ class F_database {
         $i=0;
         $fields='';
         foreach ($object as $key=>$value) {
-            if (!($key == $config[$tabella]) /**&& substr($key, 0, 1)!='_'/**/) {
+            if (!($key == $config[$tabella]) /**/&& substr($key, 0, 1)!='_'/**/) {
                 if ($i==0) {
                     $fields.='`'.$key.'` = \''.$value.'\'';
                 } else {
@@ -173,7 +173,7 @@ class F_database {
     function ricerca($tabella,$parametri = array(), $ordinamento = '', $limit = '') {
         $filtro='';
         for ($i=0; $i<count($parametri); $i++) {
-            if ($i>0) $filtro .= ' AND';
+            if ($i>0) $filtro .= ' OR';
             $filtro .= ' `'.$parametri[$i][0].'` '.$parametri[$i][1].' \''.$parametri[$i][2].'\'';
         }
         $query='SELECT * ' .

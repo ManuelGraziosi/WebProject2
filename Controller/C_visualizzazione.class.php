@@ -59,4 +59,12 @@ class C_visualizzazione{
         /**/
         $view->impostaTemplate('login.tpl');
     }
+    
+    public function ricerca(){
+        $db= new F_database();
+        $view=new V_visualizzazione();
+        $parametri=  array(array("NOME_PRODOTTO","like","%".$view->getRicerca()."%"),array("categoria","like","%".$view->getRicerca()."%"));
+        $ris=$db->ricerca("prodotto", $parametri);
+        print_r($ris);
+    }
 }

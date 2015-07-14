@@ -50,12 +50,12 @@
 
             <span id="menuright">
                 <div id="formsearch">
-                            <form method="get" action="">
+                            <!--<form method="get" action="">-->
                                 <input id="barracerca" type="text" name="cercavetrina" placeholder="Cerca nella vetrina" />
                                 <button id="buttonsearch" name="vai" type="submit">
                                     <img id="searchimg" src="templates/main/template/images/Search.png">
                                 </button>
-                            </form>
+                            <!--</form>-->
                 </div>
                 <div id="car">
                     <ul>

@@ -94,8 +94,13 @@ class C_registrazione {
         
         $db=new F_database();
         $clientedati=$db->caricaRiga("cliente", $email);
-        $cliente=new E_cliente();
-        U_operazioni::inserisciDati($cliente, $clientedati);
+        
+        //print_r($clientedati);
+        if(true){
+            $cliente=new E_cliente();
+            U_operazioni::inserisciDati($cliente, $clientedati);
+        }
+        
         
         if ($cliente!=false) {
             if ($cliente->getAccountAttivo()) {
