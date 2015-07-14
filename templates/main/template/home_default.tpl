@@ -13,6 +13,10 @@
     <script type="text/javascript" src="JS/Controller/C_home.js"></script>
     <script type="text/javascript" src="JS/Controller/C_registrazione.js"></script>
     <script type="text/javascript" src="JS/View/V_registrazione.js"></script>
+    
+    <script type="text/javascript" src="JS/Controller/C_newsletter.js"></script>
+    <script type="text/javascript" src="JS/View/V_newsletter.js"></script>
+    
     <script type="text/javascript" src="JS/index.js"></script>
     
     
@@ -41,7 +45,6 @@
         <div id="menucont">
             <ul>
                 <li><a id="home" title="Home" class="active">Home</a></li>
-                <li><a id="newsletter" title="Newsletter">Newsletter</a></li>
                 <li><a id="vetrina" title="Vetrina">Vetrina</a></li>
             </ul>
 
@@ -77,7 +80,14 @@
                 <h7>DOVE SIAMO</h7>
                     <div>ciao</div>
                 <h7>NEWSLETTER</h7>
-                    <div>ciao</div>
+                    <div id="newsletter">
+                        <br>
+                       <p><span class="error">* required field.</span></p>
+                       E-mail: <input id="EMAIL_newsletter" type="text" name="email">
+                       <span class="error"></span>
+                       <br><br>
+                       <input id="submit_newsletter" type="submit" name="submit" value="Submit">
+                   </div>
             </div>
 
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mi arcu, lacinia scelerisque blandit nec, mattis non nibh. Curabitur quis urna at massa placerat auctor. Quisque et mauris sapien, a consectetur nulla.</p>

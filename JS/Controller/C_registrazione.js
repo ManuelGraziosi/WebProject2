@@ -52,7 +52,7 @@ C_registrazione.prototype={
                 errori[2]=false;
             }
             
-        })
+        });
 
         $('#password_registrazione').blur(function () {
             if (!$(this).val().match(/^[[a-zA-z0-9#!%\^&;\*\$:\{\}=\-_`~\(\)]{6,30}$/)) {

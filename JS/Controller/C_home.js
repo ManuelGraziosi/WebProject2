@@ -7,10 +7,22 @@
 
 var C_home = function(){
     $('body').append(" home ");
-    /**/
-    $('#newsletter').click(function(){
-        $('body').append('cliccato su newsletter');
+    
+    $('#EMAIL_newsletter').blur(function(){
+        var Cnews= new C_newsletter();
+        Cnews.controllaEmail()
     });
+    
+    $('#submit_newsletter').click(function(){
+        //$('body').append('cliccato su newsletter');
+        var Cnews= new C_newsletter();
+        $('#EMAIL_newsletter').blur(function(){Cnews.controllaEmail()});
+        var Vnews=new V_newsletter();
+        email=Vnews.recuperaEmail();
+        
+        Cnews.inviaEmail(email);
+    });
+    /**/
     $('#vetrina').click(function(){
         $('body').append('cliccato su vetrina');
     });

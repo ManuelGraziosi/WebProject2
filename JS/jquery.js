@@ -25,91 +25,6 @@ var start=function(){
     $('#home').ready(home);
     
     /**
-    $('#registrazione').click(function(){
-        $('title').html('registrazione cliente');
-        
-        $('#login').removeClass('active');
-        $('#vetrina').removeClass('active');
-        $(this).addClass('active');
-        $('#carrello').removeClass('active');
-        $('#home').removeClass('active');
-        $('#newsletter').removeClass('active');
-        $.ajax({
-            url:"index.php?controllore=C_visualizzazione&metodo=registrazione",
-            type:'GET',
-            dataType:"html",
-            success:function(registrazione) {
-                $('#mainright').html(registrazione);
-                $(
-                    $('#formRegistrazione').dialog({
-                        draggable:false,
-                        modal:true,
-                        resizable:false,
-                        title:"Registrazione",
-                        buttons:{
-                            "Registra":function(){
-                                /**/
-    /**
-                                $('.datiCliente').each(function(n){
-                                    $('#mainright').append('<p>'+n+')'+$(this).val()+'</p>');
-                                });
-                                var json='{';
-                                $('.datiCliente').each(function(n){
-                                    json+='"'+$(this).attr("name")+'":"'+$(this).val()+'",';
-                                });
-                                json+='"":""}';
-                                $('#mainright').append(json);
-                                /**
-                                var controllore=$('#controllore').val();
-                                var metodo=$('#metodo').val();
-                                var nome=$('#nome').val();
-                                var cognome=$('#cognome').val();
-                                var email=$('#registrazione #EMAIL').val();
-                                var password=$('#password').val();
-                                var password_1=$('#password_1').val();
-                                var via=$('#via').val();
-                                var citta=$('#citta').val();
-                                var CAP=$('#CAP').val();
-                                /**/
-                                
-                                /**
-                                $.ajax({
-                                    type:'GET',
-                                    url:"index.php",
-                                    dataType:"json",
-                                    data:eval("("+json+")"),
-                                    success:function(dati) {
-                                        $('#mainright').html('<p>'+dati+'</p>');
-                                        $('#formRegistrazione').dialog('close');
-                                    }
-                                });/**
-                            }
-                        }
-                    })
-                );
-            }
-        });
-    });
-    /**/
-    
-    /* $('#login').click(function(){
-        $('title').html('login');
-        
-        $('#vetrina').removeClass('active');
-        $('#registrazione').removeClass('active');
-        $(this).addClass('active');
-        $('#carrello').removeClass('active');
-        $('#home').removeClass('active');
-        $.ajax({
-            url:"index.php?controllore=C_visualizzazione&metodo=login",
-            type:'GET',
-            dataType:"html",
-            success:function(login) {
-                $('#mainright').html(login);
-            }
-        });
-    }); */
-    
     $('#newsletter').click(function(){
         $('title').html('newsletter');
         
@@ -128,7 +43,7 @@ var start=function(){
             }
         });
     });
-    
+    /**/
     
     $('#vetrina').click(function(){
         $('title').html('vetrina');
