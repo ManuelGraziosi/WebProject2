@@ -1,8 +1,9 @@
 var V_registrazione= function(){
     $('#formRegistrazione').dialog({
-        draggable:true,
+        draggable:false,
         modal:true,
         resizable:false,
+        minWidth:320,
         title:"Registrazione"
     });
     $('#invia').button();

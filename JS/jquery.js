@@ -289,7 +289,7 @@ $(document).ready(function() {
 $(document).ready(function()
 {
     $('#menufisarmonica').accordion({
-        active:false,
+        active:0,
         animated:'bounceslide',
         collapsible:true
     });

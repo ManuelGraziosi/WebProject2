@@ -72,7 +72,7 @@
                         Email: <br> <input type="email" id="EMAIL"/>
                         Password:<input type="password" id="password"/>
                         <button id="invialogin">Login</button> <br><br>
-                        Non sei iscritto? <a id="registrazione" title="registrazione">CLICCA QUI</a>
+                        Non sei iscritto? <a id="registrazione" title="Registrati">REGISTRATI</a>
                     </div>
                 <h7>DOVE SIAMO</h7>
                     <div>ciao</div>
