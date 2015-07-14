@@ -1,27 +1,30 @@
-<br>
-            <b>DISPONIBILITA'</b>
-            <div id="carr">
-                <table id="tab">
-                    {section name=i loop=$prodotti}
-                    <tr id="riga{$smarty.section.i.iteration}">
-                    <form name="prodotto">
-                        <td id="nome_prodotto">{$prodotti[i].NOME_PRODOTTO}</td>
-                        <td id="descrizione">{$prodotti[i].descrizione }</td>
-                        <td id="foto">{$prodotti[i].foto}</td>
-                        <td id="categoria">{$prodotti[i].categoria}</td>
-                        <td id="prezzo">{$prodotti[i].prezzo_kg}</td>
-                        <td><input id="quantita" type="text" name="quantita" size="4" value="1"/></td>
-                        <td id="disponibilita">{$prodotti[i].disponibilita}</td>
-                        <td id="aggiungi"><input type="submit" id="bottone1" class="aggiungi" value="aggiungi"/>
-                        </td>
-                    </form>
-                        </tr>
-                    {sectionelse} 
-                    <tr>
-                         <td align="center">
-                         <b> nessun risultato </b>
-                        <td>
-                    </tr>
-                     {/section}
-                </table>    
+
+            
+        {section name=i loop=$prodotti}
+
+            <div class="prodotto">
+                <div class="foto">
+                    <img src="templates/main/template/images/{$prodotti[i].foto}.jpg" width="250" height="250"/>
+                </div>
+                <div class="info">
+                    <div class="descrizione">
+                        <div class="nome">
+                            {$prodotti[i].NOME_PRODOTTO}
+                        </div>
+                        <div class="prezzo">
+                            {$prodotti[i].prezzo_kg}
+                        </div>
+                        <div class="categoria">
+                            {$prodotti[i].categoria}
+                        </div>
+                        <div title="{$prodotti[i].NOME_PRODOTTO}" class="aggiungi">
+                            <img src="templates/main/template/images/cart/addCart.png" width="45" height="45"/>
+                        </div>
+                    </div>
+                </div>
             </div>
+        {sectionelse} 
+            <b> nessun risultato </b>
+        {/section}
+                
+             
