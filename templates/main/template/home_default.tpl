@@ -42,7 +42,6 @@
             <ul>
                 <li><a id="home" title="Home" class="active">Home</a></li>
                 <li><a id="registrazione" title="registrazione">Registrazione</a></li>
-                <li><a id="login" title="login">login</a></li>
                 <li><a id="newsletter" title="Newsletter">Newsletter</a></li>
                 <li><a id="vetrina" title="Vetrina">Vetrina</a></li>
             </ul>
@@ -62,35 +61,26 @@
                     </ul>
                 </div>
             </span>
-
         </div>
+
         <div id="mainleft">
             <h3>Caseificio Sammartino</h3>
             <p>Vivamus mi arcu, lacinia scelerisque blandit nec, mattis non nibh.</p>
             
-            
-            <div id="login">
-                    <table>
-                        <tr>
-                            <td>email:</td><td><input type="email" id="EMAIL"/></td>
-                        </tr>
-                        <tr>
-                            <td>password:</td><td><input type="password" id="password"/></td>
-                        </tr>
-                        <tr>
-                            <td colspan="2"><button id="invialogin">login</button></td>
-                        </tr>
-                    </table>
+            <div id="menufisarmonica">
+                <h7>LOGIN</h7>
+                    <div id="login" class=".ui-accordion .ui-accordion-header ">
+                        Email:</td><td><input type="email" id="EMAIL"/></td>
+                        Password:</td><td><input type="password" id="password"/></td>
+                        <button id="invialogin">Login</button></td> <br><br>
+                        Non sei iscritto?
+                    </div>
+                <h7>CHI SIAMO</h7>
+                    <div>ciao</div>
+                <h7>NEWSLETTER</h7>
+                    <div>ciao</div>
             </div>
-            
-            
-            <ul class="sidemenu">
-                <li><a title="" href="">Side Link 1</a></li>
-                <li><a title="" href="">Side Link 2</a></li>
-                <li><a title="" href="">Side Link 3</a></li>
-                <li><a title="" href="">Side Link 4</a></li>
-                <li><a title="" href="">Side Link 5</a></li>
-            </ul>
+
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mi arcu, lacinia scelerisque blandit nec, mattis non nibh. Curabitur quis urna at massa placerat auctor. Quisque et mauris sapien, a consectetur nulla.</p>
         </div>
 

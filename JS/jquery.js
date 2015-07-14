@@ -285,3 +285,12 @@ $(document).ready(function() {
     });
 });
 
+
+$(document).ready(function()
+{
+    $('#menufisarmonica').accordion({
+        active:false,
+        animated:'bounceslide',
+        collapsible:true
+    });
+});
