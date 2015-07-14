@@ -376,6 +376,13 @@ background-color: wheat;
 
 #login
 {
-width: 161px;
+width: 182px;
 padding-left: 8px;
+padding-right: 8px;
+}
+
+#login a
+{
+text-decoration: underline;
+cursor: pointer;
 }

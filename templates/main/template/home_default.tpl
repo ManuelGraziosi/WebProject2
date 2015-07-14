@@ -41,7 +41,6 @@
         <div id="menucont">
             <ul>
                 <li><a id="home" title="Home" class="active">Home</a></li>
-                <li><a id="registrazione" title="registrazione">Registrazione</a></li>
                 <li><a id="newsletter" title="Newsletter">Newsletter</a></li>
                 <li><a id="vetrina" title="Vetrina">Vetrina</a></li>
             </ul>
@@ -70,12 +69,12 @@
             <div id="menufisarmonica">
                 <h7>LOGIN</h7>
                     <div id="login" class=".ui-accordion .ui-accordion-header ">
-                        Email:</td><td><input type="email" id="EMAIL"/></td>
-                        Password:</td><td><input type="password" id="password"/></td>
-                        <button id="invialogin">Login</button></td> <br><br>
-                        Non sei iscritto?
+                        Email: <br> <input type="email" id="EMAIL"/>
+                        Password:<input type="password" id="password"/>
+                        <button id="invialogin">Login</button> <br><br>
+                        Non sei iscritto? <a id="registrazione" title="registrazione">CLICCA QUI</a>
                     </div>
-                <h7>CHI SIAMO</h7>
+                <h7>DOVE SIAMO</h7>
                     <div>ciao</div>
                 <h7>NEWSLETTER</h7>
                     <div>ciao</div>

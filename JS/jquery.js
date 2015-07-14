@@ -92,7 +92,7 @@ var start=function(){
     });
     /**/
     
-    $('#login').click(function(){
+    /* $('#login').click(function(){
         $('title').html('login');
         
         $('#vetrina').removeClass('active');
@@ -108,7 +108,7 @@ var start=function(){
                 $('#mainright').html(login);
             }
         });
-    });
+    }); */
     
     $('#newsletter').click(function(){
         $('title').html('newsletter');
