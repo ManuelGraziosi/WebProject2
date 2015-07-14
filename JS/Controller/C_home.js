@@ -3,25 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+var C,V;
 
 var C_home = function(){
     $('body').append(" home ");
     
     $('#newsletter').click(function(){
-        var Cnews=new C_newsletter();
-        var Vnews=new V_newsletter();
-        Cnews.controllaEmail();
+        C=new C_newsletter();
+        V=new V_newsletter();
+        C.controllaEmail();
         //$('#submit_newsletter').button();
     });
     
     $('#submit_newsletter').click(function(){
-        var Cnews=new C_newsletter();
-        var Vnews=new V_newsletter();
-        email=Vnews.recuperaEmail();
+        email=V.recuperaEmail();
         /**/
-        if(Cnews.controllaEmail()){
-            Cnews.inviaEmail(email);
+        if(C.controllaEmail()){
+            C.inviaEmail(email);
         }
         else {
             if(!email.EMAIL){
@@ -35,10 +33,10 @@ var C_home = function(){
         
         
         /**
-        if(Cnews.controllaEmail()){
-            email=Vnews.recuperaEmail();
+        if(C.controllaEmail()){
+            email=V.recuperaEmail();
             if(email){
-                Cnews.inviaEmail(email);
+                C.inviaEmail(email);
             }
         }/**/
     });
@@ -61,13 +59,13 @@ var C_home = function(){
             url:"index.php?controllore=C_visualizzazione&metodo=registrazione",
             success:function(html){
                 $('#mainright').append(html);
-                index = new C_registrazione();
-                var view=new V_registrazione();
-                index.controllaDati();
+                C = new C_registrazione();
+                var V=new V_registrazione();
+                C.controllaDati();
                 $('#invia').click(function(){
                     $('body').append(" hai cliccato invia ");
-                    var dati = view.recuperaDati();
-                    index.inviaDati(dati);
+                    var dati = V.recuperaDati();
+                    C.inviaDati(dati);
                     $('#formRegistrazione').fadeOut();
                 });
             }
