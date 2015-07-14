@@ -46,7 +46,7 @@
             <ul>
                 <li><a id="home" title="Home" class="active">Home</a></li>
                 <li><a id="chisiamo" title="ChiSiamo">Chi Siamo</a></li>
-                <li><a id="contattaci" title="Contattaci">Contattaci</a></li>
+                <li><a id="dovesiamo" title="DoveSiamo">Dove Siamo</a></li>
                 <li><a id="vetrina" title="Vetrina">Vetrina</a></li>
             </ul>
 
@@ -79,11 +79,13 @@
                         <button id="invialogin">Login</button> <br><br>
                         Non sei iscritto? <a id="registrazione" title="Registrati">REGISTRATI</a>
                     </div>
-                <h7>DOVE SIAMO</h7>
-                    <div id="dovesiamo">
-                        CASEIFICIO SAMMARTINO<br><br>
-                        Contrada Scapriano Basso <br>
-                        64100 Teramo -TE-
+                <h7>CONTATTACI</h7>
+                    <div id="contattaci">
+                        <b>CASEIFICIO SAMMARTINO</b><br><br>
+                        Via le mani dal naso, 12<br>
+                        Teramo -Te-<br><br>
+                        caseificiosammartino@info.it<br><br>
+                        123 456789
                     </div>
                 <h7 id="newsletter">NEWSLETTER</h7>
                     <div id="newsletterdiv">
