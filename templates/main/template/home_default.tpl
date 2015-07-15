@@ -73,8 +73,9 @@
             <p>Vivamus mi arcu, lacinia scelerisque blandit nec, mattis non nibh.</p>
             
             <div id="menufisarmonica">
-                <h7>LOGIN</h7>
+                <h7>LOGIN / REGISTRAZIONE</h7>
                     <div id="login" class=".ui-accordion .ui-accordion-header ">
+                        <p align="center">ACCEDI</p>
                         Email: <br> <input type="email" id="EMAIL"/>
                         Password:<input type="password" id="password"/>
                         <button id="invialogin">Login</button> <br><br>
@@ -82,18 +83,21 @@
                     </div>
                 <h7>CONTATTACI</h7>
                     <div id="contattaci">
-                        <b>CASEIFICIO SAMMARTINO</b><br><br>
-                        Via le mani dal naso, 12<br>
-                        Teramo -Te-<br><br>
-                        caseificiosammartino@info.it<br><br>
-                        123 456789
+                        <b>Az. Agricola SAMMARTINO</b><br><br>
+                        <pre>Indirizzo:</pre>
+                        Via salita San Martino<br>
+                        64100 Teramo -Te-<br><br>
+                        <pre>Tel. : 0861-286413</pre>
+						<pre>Cell. : 333-1773133</pre><br>
+						<pre>Email: </pre>
+						az.sammartino@gmail.com                
                     </div>
                 <h7 id="newsletter">NEWSLETTER</h7>
                     <div id="newsletterdiv">
                        <p>Iscriviti alla Newsletter e rimani aggiornato!</p>
                        E-mail*: <input id="EMAIL_newsletter" type="text" name="EMAIL">
                        <button id="submit_newsletter">Iscriviti</button>
-                       <div id="notifica_newsletter"></div>
+                       <br><br><div id="notifica_newsletter"></div>
                    </div>
             </div>
 

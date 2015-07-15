@@ -30,6 +30,6 @@
         <tr><td>Via:  </td><td><input id="via" name="via" type="text"/></td></tr>
         <tr><td>Citta:  </td><td><input id="citta" name="citta" type="text"/></td></tr>
         <tr><td>CAP:  </td><td><input id="CAP" name="CAP" type="text"/></td></tr>
-        <tr><td colspan="2"><button id="invia" class="invia">invia</button></td></tr>
+        <tr><td colspan="2"><button id="invia" class="invia" title="Registrati">REGISTRATI</button></td></tr>
     </table>
 </div>
