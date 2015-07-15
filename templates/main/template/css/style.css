@@ -357,26 +357,35 @@ height: 100px;
 background-color: wheat;
 }
 
-.foto{
-                width: 250px;
-                height: 250px;
-                background-color: red;
-            }
-            .nome{
-                width:200px;
-                float:left;
-            }
-            .prezzo{
-                width:200px;
-                float:left;
-            }
-            .categoria{
-                width:200px;
-                float:left;
-            }
-            .aggiungi{
-                float:right;
-            }
+.foto
+{
+width: 250px;
+height: 250px;
+background-color: red;
+}
+
+.nome
+{
+width:200px;
+float:left;
+}
+
+.prezzo
+{
+width:200px;
+float:left;
+}
+
+.categoria
+{
+width:200px;
+float:left;
+}
+
+.aggiungi
+{
+float:right;
+}
 
 #login
 {

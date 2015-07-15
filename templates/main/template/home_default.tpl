@@ -70,7 +70,7 @@
 
         <div id="mainleft">
             <h3>Caseificio Sammartino</h3>
-            <p>Vivamus mi arcu, lacinia scelerisque blandit nec, mattis non nibh.</p>
+            <p>"AD OGNI PASTO PUOI PRENDERTI CURA DI TE PORTANDO A TAVOLA GLI OTTIMI E GENUINI PRODOTTI DEL CASEIFICIO SAMMARTINO"</p>
             
             <div id="menufisarmonica">
                 <h7>LOGIN / REGISTRAZIONE</h7>
@@ -87,20 +87,21 @@
                         <pre>Indirizzo:</pre>
                         Via salita San Martino<br>
                         64100 Teramo -Te-<br><br>
-                        <pre>Tel. : 0861-286413</pre>
-						<pre>Cell. : 333-1773133</pre><br>
+                        <pre>Tel.: 0861-286413</pre>
+						<pre>Cell.: 333-1773133</pre><br>
 						<pre>Email: </pre>
 						az.sammartino@gmail.com                
                     </div>
                 <h7 id="newsletter">NEWSLETTER</h7>
                     <div id="newsletterdiv">
                        <p>Iscriviti alla Newsletter e rimani aggiornato!</p>
-                       E-mail*: <input id="EMAIL_newsletter" type="text" name="EMAIL">
+                       E-mail: <input id="EMAIL_newsletter" type="text" name="EMAIL">
                        <button id="submit_newsletter">Iscriviti</button>
                        <br><br><div id="notifica_newsletter"></div>
                    </div>
             </div>
 
+            <br><br>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mi arcu, lacinia scelerisque blandit nec, mattis non nibh. Curabitur quis urna at massa placerat auctor. Quisque et mauris sapien, a consectetur nulla.</p>
         </div>
 

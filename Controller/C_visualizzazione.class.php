@@ -18,11 +18,11 @@ class C_visualizzazione{
         $view->impostaTemplate('home_default.tpl');
     }
     
-    public function newsletter() {
+    public function chisiamo() {
         
         $view=new V_view();
         /**/
-        $view->impostaTemplate('newsletter.tpl');
+        $view->impostaTemplate('chi_siamo.tpl');
     }
     
     public function carrello() {

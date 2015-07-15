@@ -2,10 +2,11 @@
 var start=function(){
     
     var home=function(){
-        $('title').html('home');
+        $('title').html('Sammartino | Home');
         
         $('#login').removeClass('active');
         $('#vetrina').removeClass('active');
+        $('#chisiamo').removeClass('active');
         $(this).addClass('active');
         $('#carrello').removeClass('active');
         $('#registrazione').removeClass('active');
@@ -39,11 +40,33 @@ var start=function(){
     });
     /**/
     
+    $('#chisiamo').click(function(){
+        $('title').html('Sammartino | Chi Siamo');
+        $('#vetrina').removeClass('active');
+        $('#home').removeClass('active');
+        $('#carrello').removeClass('active');
+        $('#login').removeClass('active');
+        $(this).addClass('active');
+        $.ajax({
+            url:"index.php?controllore=C_visualizzazione&metodo=chisiamo",
+            type:'GET',
+            dataType:"html",
+            success:function(chisiamo) {
+                $('#mainright').html(chisiamo);
+                document.reload(aggiungi);
+            }
+        });
+        aggiungi();
+    });
+
+
+
     $('#vetrina').click(function(){
-        $('title').html('vetrina');
+        $('title').html('Sammartino | Vetrina');
         
         $('#login').removeClass('active');
         $('#registrazione').removeClass('active');
+        $('#chisiamo').removeClass('active');
         $(this).addClass('active');
         $('#newsletter').removeClass('active');
         $('#home').removeClass('active');
@@ -65,8 +88,8 @@ var start=function(){
     
     
     $('#carrello').click(function(){
-        $('title').html('carrello');
-        
+        $('title').html('Sammartino | Carrello');
+        $('#chisiamo').removeClass('active');        
         $('#login').removeClass('active');
         $('#registrazione').removeClass('active');
         $(this).addClass('active');
