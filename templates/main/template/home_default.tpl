@@ -47,6 +47,7 @@
                 <li><a id="home" title="Home" class="active">Home</a></li>
                 <li><a id="chisiamo" title="ChiSiamo">Chi Siamo</a></li>
                 <li><a id="dovesiamo" title="DoveSiamo">Dove Siamo</a></li>
+                <li><a id="galleria" title="Galleria">Galleria</a></li>
                 <li><a id="vetrina" title="Vetrina">Vetrina</a></li>
             </ul>
 
