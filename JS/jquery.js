@@ -208,11 +208,11 @@ $(document).ready(function() {
         // "$(window).scrollTop()" ci dice di quanto abbiamo scrollato la pagina
         if ($(window).scrollTop() >= posizione.top) {
             // abbiamo scrollato oltre il div, dobbiamo bloccarlo
-            $("#menucont").addClass("menu_scroll");
+            $("#top-bar").addClass("menu_scroll");
         }
         else {
             // abbiamo scrollato verso l'alto, sopra il div, possiamo sbloccarlo
-            $("#menucont").removeClass("menu_scroll"); 
+            $("#top-bar").removeClass("menu_scroll"); 
         }
     });
 });

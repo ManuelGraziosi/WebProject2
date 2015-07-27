@@ -107,15 +107,16 @@ a:hover { color: #222; text-decoration: none; }
 
 		#container #maincont #menucont
 		{
-			width: 1255px;
+			width: 1015px;
 			height: 50px;
 			background: #faef87;
+			float: right;
 		}
 		
 			#container #maincont #menucont ul
 			{
 				float: left;
-				margin: 0 0 0 240px;
+				margin: 0 0 0 0px;
 				cursor: pointer;
 			}
 			
@@ -249,40 +250,40 @@ float: right;
 }
 
 #container #maincont #menucont #menuright ul
-			{
-				float: left;
-				margin: 0 0 0 0px;
-				cursor: pointer;
-			}
+{
+float: left;
+margin: 0 0 0 0px;
+cursor: pointer;
+}
 			
-			#container #maincont #menucont #menuright ul li
-			{
-			    display: inline;
-			}
+#container #maincont #menucont #menuright ul li
+{
+display: inline;
+}
 			
-			#container #maincont #menucont #menuright ul li a
-			{
-				float: left;
-				padding: 0 20px;
-				line-height: 50px;
-				color: #000;
-				font-weight: normal;
-				text-decoration: none;
-				text-transform: uppercase;
-				font-size: 11px;
-				background: #faef87;
-			}
+#container #maincont #menucont #menuright ul li a
+{
+float: left;
+padding: 0 20px;
+line-height: 50px;
+color: #000;
+font-weight: normal;
+text-decoration: none;
+text-transform: uppercase;
+font-size: 11px;
+background: #faef87;
+}
 
-			#container #maincont #menucont #menuright ul li a:hover
-			{
-				background: orange;
-			}
+#container #maincont #menucont #menuright ul li a:hover
+{
+background: orange;
+}
 			
-				#container #maincont #menucont #menuright ul li a.active
-				{
-					background: #FFF;
-					color: #333;
-				}
+#container #maincont #menucont #menuright ul li a.active
+{
+background: #FFF;
+color: #333;
+}
 
 #formsearch
 {
@@ -415,4 +416,36 @@ height: 150px;
 {
 padding-left: 8px;
 padding-right: 8px;
+}
+
+#container #maincont #user-space
+{
+width: 240px;
+height: 50px;     
+background: #faef87;
+float: left;
+}
+
+#user-space
+{
+cursor: default;
+}
+
+#user_pic
+{
+float: left;
+height: 20px;
+padding: 4 4 0 4;
+}
+
+#utente
+{
+padding: 4 0 0 4;
+}
+
+#logout
+{
+color: black;
+padding-left: 4px;
+text-decoration: underline;
 }

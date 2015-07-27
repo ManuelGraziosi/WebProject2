@@ -42,32 +42,41 @@
         </div>
     
     <div id="maincont" class="clearfix">
-        <div id="menucont">
-            <ul>
-                <li><a id="home" title="Home" class="active">Home</a></li>
-                <li><a id="chisiamo" title="ChiSiamo">Chi Siamo</a></li>
-                <li><a id="dovesiamo" title="DoveSiamo">Dove Siamo</a></li>
-                <li><a id="galleria" title="Galleria">Galleria</a></li>
-                <li><a id="vetrina" title="Vetrina">Vetrina</a></li>
-            </ul>
+        <div id="top-bar">
 
-            <span id="menuright">
-                <div id="formsearch">
-                            <!--<form method="get" action="">-->
-                                <input id="barracerca" type="text" name="cercavetrina" placeholder="Cerca nella vetrina" />
-                                <button id="buttonsearch" name="vai" type="submit">
-                                    <img id="searchimg" src="templates/main/template/images/Search.png">
-                                </button>
-                            <!--</form>-->
-                </div>
-                <div id="car">
-                    <ul>
-                        <li><a id="carrello" title="Carrello">Carrello<img id="cart" alt="Carrello" src="templates/main/template/images/cart/cart.png"/></a></li>
-                    </ul>
-                </div>
-            </span>
+            <div id="user-space">
+                <img id="user_pic" src="templates/main/template/images/user.png" /><div id="utente">Ospite (verrà cambiato dal js)</div>
+                <div id="logout">Logout</div>
+            </div>
+
+            <div id="menucont">
+                <ul>
+                    <li><a id="home" title="Home" class="active">Home</a></li>
+                    <li><a id="chisiamo" title="ChiSiamo">Chi Siamo</a></li>
+                    <li><a id="dovesiamo" title="DoveSiamo">Dove Siamo</a></li>
+                    <li><a id="galleria" title="Galleria">Galleria</a></li>
+                    <li><a id="vetrina" title="Vetrina">Vetrina</a></li>
+                </ul>
+
+                <span id="menuright">
+                    <div id="formsearch">
+                                <!--<form method="get" action="">-->
+                                    <input id="barracerca" type="text" name="cercavetrina" placeholder="Cerca nella vetrina" />
+                                    <button id="buttonsearch" name="vai" type="submit">
+                                        <img id="searchimg" src="templates/main/template/images/Search.png">
+                                    </button>
+                                <!--</form>-->
+                    </div>
+                    <div id="car">
+                        <ul>
+                            <li><a id="carrello" title="Carrello">Carrello<img id="cart" alt="Carrello" src="templates/main/template/images/cart/cart.png"/></a></li>
+                        </ul>
+                    </div>
+                </span>
+                
+            </div>
+
         </div>
-
         <div id="mainleft">
             <h3>Caseificio Sammartino</h3>
             <p>"AD OGNI PASTO PUOI PRENDERTI CURA DI TE PORTANDO A TAVOLA GLI OTTIMI E GENUINI PRODOTTI DEL CASEIFICIO SAMMARTINO"</p>
