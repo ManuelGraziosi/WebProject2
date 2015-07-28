@@ -3,11 +3,11 @@
 <head>
     <title>{$titolo}</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <link rel="icon" href="templates/main/template/images/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" type="text/css" media="screen" href="templates/main/template/css/style.css" />
-    <script type="text/javascript" src="JS/jquery-1.11.3.min.js"></script>
-    <script type="text/javascript" src="JS/jquery.js"></script>
-    <script type="text/javascript" src="JS/scripts.js"></script>
+    <link rel="icon" href="PHP/templates/template/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" media="screen" href="PHP/templates/template/css/style.css" />
+    <script type="text/javascript" src="JS/Utility/Jquery/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="JS/Utility/Jquery/jquery.js"></script>
+    <script type="text/javascript" src="JS/Utility/Jquery/scripts.js"></script>
     
     
     <script type="text/javascript" src="JS/Controller/C_home.js"></script>
@@ -21,8 +21,8 @@
     
     
     
-    <link rel="stylesheet" type="text/css" media="screen" href="JS/jquery-ui-1.11.4.custom/jquery-ui.min.css" /> 
-    <script type="text/javascript" src="JS/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="JS/Utility/Jquery/jquery-ui-1.11.4.custom/jquery-ui.min.css" /> 
+    <script type="text/javascript" src="JS/Utility/Jquery/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
 </head>
 
 <body>
@@ -30,13 +30,13 @@
 
        <div id="headercont" class="clearfix">
             <div id="headerlogo">
-             <img id="logo" src='templates/main/template/images/logo-sammartino.jpg'/>
+             <img id="logo" src='PHP/templates/template/images/logo-sammartino.jpg'/>
             </div>
             <div id="headergallery">
                 <div id="slideshow">
-                   <img alt="" src="templates/main/template/images/immagine-top1.jpg" class="active" />
-                   <img alt="" src="templates/main/template/images/immagine-top2.jpg" />
-                   <img alt="" src="templates/main/template/images/immagine-top3.jpg" />
+                   <img alt="" src="PHP/templates/template/images/immagine-top1.jpg" class="active" />
+                   <img alt="" src="PHP/templates/template/images/immagine-top2.jpg" />
+                   <img alt="" src="PHP/templates/template/images/immagine-top3.jpg" />
                 </div>
             </div>
         </div>
@@ -45,7 +45,7 @@
         <div id="top-bar">
 
             <div id="user-space">
-                <img id="user_pic" src="templates/main/template/images/user.png" /><div id="utente">Ospite (verrà cambiato dal js)</div>
+                <img id="user_pic" src="PHP/templates/template/images/user.png" /><div id="utente">Ospite (verrà cambiato dal js)</div>
                 <div id="logout">Logout</div>
             </div>
 
@@ -63,13 +63,13 @@
                                 <!--<form method="get" action="">-->
                                     <input id="barracerca" type="text" name="cercavetrina" placeholder="Cerca nella vetrina" />
                                     <button id="buttonsearch" name="vai" type="submit">
-                                        <img id="searchimg" src="templates/main/template/images/Search.png">
+                                        <img id="searchimg" src="PHP/templates/template/images/Search.png">
                                     </button>
                                 <!--</form>-->
                     </div>
                     <div id="car">
                         <ul>
-                            <li><a id="carrello" title="Carrello">Carrello<img id="cart" alt="Carrello" src="templates/main/template/images/cart/cart.png"/></a></li>
+                            <li><a id="carrello" title="Carrello">Carrello<img id="cart" alt="Carrello" src="PHP/templates/template/images/cart/cart.png"/></a></li>
                         </ul>
                     </div>
                 </span>

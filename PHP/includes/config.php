@@ -12,8 +12,8 @@ $config['ordine']='ID_ORDINE';
 $config['prodotto']='NOME_PRODOTTO';
 $config['prod_ordinato']='ID_PROD_ORDINATO';
 
-$config['smarty']['template_dir'] = 'templates/main/template';
-$config['smarty']['compile_dir'] = 'templates/main/templates_c';
-$config['smarty']['config_dir'] = 'templates/main/configs';
-$config['smarty']['cache_dir'] = 'templates/main/cache';
+$config['smarty']['template_dir'] = 'PHP/templates/template';
+$config['smarty']['compile_dir'] = 'PHP/templates/templates_c';
+$config['smarty']['config_dir'] = 'PHP/templates/configs';
+$config['smarty']['cache_dir'] = 'PHP/templates/cache';
 ?>

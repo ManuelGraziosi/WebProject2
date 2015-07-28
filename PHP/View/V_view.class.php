@@ -11,7 +11,7 @@
  * @author Daniele
  */
 
-require_once 'lib/smarty/Smarty.class.php';
+require_once 'PHP/lib/smarty/Smarty.class.php';
 
 class V_view extends Smarty {
 

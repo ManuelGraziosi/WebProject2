@@ -58,17 +58,6 @@ CREATE TABLE IF NOT EXISTS `commento` (
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `newsletter`
---
-
-DROP TABLE IF EXISTS `newsletter`;
-CREATE TABLE IF NOT EXISTS `newsletter` (
-  `EMAIL` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Struttura della tabella `ordine`
 --
 
@@ -131,15 +120,24 @@ CREATE TABLE IF NOT EXISTS `prod_ordinato` (
   `quantita` int(4) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+
+--
+-- Struttura della tabella `newsletter`
+--
+
+CREATE TABLE IF NOT EXISTS `newsletter` (
+  `email` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 --
 -- Indici per le tabelle scaricate
 --
 
 --
--- Indici per le tabelle `cliente`
+-- Indici per le tabelle `newsletter`
 --
-ALTER TABLE `cliente`
-  ADD PRIMARY KEY (`EMAIL`);
+ALTER TABLE `newsletter`
+  ADD PRIMARY KEY (`email`);
 
 
 --

@@ -26,19 +26,11 @@ var start=function(){
     $('#home').ready(home);
     
     /**/
-    $('#buttonsearch').click(function(){
-        $('body').append("cliccato ricerca");
-        var r=$('#barracerca').val();
-        $.ajax({
-            url:"index.php?controllore=C_visualizzazione&metodo=ricerca&ricerca="+r,
-            type:'GET',
-            dataType:"html",
-            success:function(prod) {
-                $('#mainright').html(prod);
-            }
-        });
-    });
+    $('#buttonsearch').click(ricerca);
     /**/
+
+    $('#barracerca').keypress(ricerca);
+    
     
     $('#chisiamo').click(function(){
         $('title').html('Sammartino | Chi Siamo');
@@ -106,13 +98,6 @@ var start=function(){
         });
     });
     
-    
-    carrello='<br><b>CARRELLO</b><table id="tab2" border><tr><td id="colonna"><b>Nome</b></td><td id="colonna"><b>Prezzo</b></td><td id="colonna"><b>Quantit&agrave</b></td><td id="colonna"><b>qunatit&agrave ordinata</b></td></tr></table>';
-    $(carrello).appendTo('#carr');
-    
-    var n = 0;
-
-
     $('#invia').click(function(){
         var controllore=$('#controllore').val();
         var metodo=$('#metodo').val();
@@ -136,93 +121,38 @@ var start=function(){
     });
 
 
-$('#invialogin').click(function(){
-                        EMAIL=$('#EMAIL').val();
-                        password=$('#password').val();
-                        $.ajax({
-                            type:'GET',
-                            url:"index.php",
-                            dataType:"json",
-                            data:{"controllore":"C_registrazione","metodo":"autentica","EMAIL": EMAIL,"password": password},
-                            success:function(){
-                                $('#mainright').html('<p>vai a vedere nel database se funziona</p>');
-                            }
-                        });
-                    });
-    
-}
-var aggiungi= function(){
-        $(".aggiungi").each(function(){
-            this.click(function(){
-            var url="index.php";
-            var nome_prodotto=this.attr("id");
-            //var quantita=$('#quantita').val();
-            $.ajax({
-                data:{"controllore":"C_fareOrdine","metodo":"inserisciProdottoOrdinato","nome_prodotto":nome_prodotto,"quantita":quantita},
-                type:'GET',
-                url:"index.php",
-                dataType:"json",
-                    success:function(jsonData) {
-                        $('#mainright').html(jsonData);
-                    }
-                });
-            });
-        })
-    }
-    
-    
-function inserisciEvento(n){
-    $('.rimuovi'+n).click(function(){
-        var url="index.php?controllore=C_fareOrdine&metodo=rimuoviProdottoOrdinato&nome_prodotto="+this.id;
+    $('#invialogin').click(function(){
+        EMAIL=$('#EMAIL').val();
+        password=$('#password').val();
         $.ajax({
-            type:"GET",
-            url:url,
-            success:function() {
-                $('tab2 rimuovi'+n).append('<p>daniele scarpone daniele scarpone</p>');
-            }
-        });
-    });
-    $('.aggiorna'+n).blur(function(){
-        var url="index.php?controllore=C_fareOrdine&metodo=aggiornaProdottoOrdinato&nome_prodotto="+this.id+"&quantita="+this.value;
-        $.ajax({
-            type:"GET",
-            url:url,
-            success:function() {
-                $('tab2 rimuovi'+n).append('<p>daniele scarpone daniele scarpone</p>');
+            type:'GET',
+            url:"index.php",
+            dataType:"json",
+            data:{"controllore":"C_registrazione","metodo":"autentica","EMAIL": EMAIL,"password": password},
+            success:function(){
+                $('#mainright').html('<p>vai a vedere nel database se funziona</p>');
             }
         });
     });
     
 }
+
+
+var ricerca=function(){
+    $('body').append("cliccato ricerca");
+    var r=$('#barracerca').val();
+    $.ajax({
+        url:"index.php?controllore=C_visualizzazione&metodo=ricerca&ricerca="+r,
+        type:'GET',
+        dataType:"html",
+        success:function(prod) {
+            $('#mainright').html(prod);
+        }
+    });
+}
+
 /**/
 /**/
 /**/
 
 $(document).ready(start);
-
-$(document).ready(function() {
-    var menu = $("#menucont");
-    var posizione = menu.position();
-    // intercettiamo qui l'evento "scroll"                 
-    $(window).scroll(function() {
-        // "$(window).scrollTop()" ci dice di quanto abbiamo scrollato la pagina
-        if ($(window).scrollTop() >= posizione.top) {
-            // abbiamo scrollato oltre il div, dobbiamo bloccarlo
-            $("#top-bar").addClass("menu_scroll");
-        }
-        else {
-            // abbiamo scrollato verso l'alto, sopra il div, possiamo sbloccarlo
-            $("#top-bar").removeClass("menu_scroll"); 
-        }
-    });
-});
-
-
-$(document).ready(function()
-{
-    $('#menufisarmonica').accordion({
-        active:false,
-        animated:'bounceslide',
-        collapsible:true
-    });
-});

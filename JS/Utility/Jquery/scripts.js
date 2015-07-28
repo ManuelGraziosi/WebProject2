@@ -21,4 +21,38 @@ function slideSwitch()
     $next.css({opacity: 0.0}) .addClass('active') .animate({opacity: 1.0}, 1000, function() { $active.removeClass('active last-active'); });
 }
 
-$(function() { setInterval( "slideSwitch()", 5000 ); });
+
+var menu=function() {
+    var menu = $("#menucont");
+    var posizione = menu.position();
+    // intercettiamo qui l'evento "scroll"                 
+    $(window).scroll(function() {
+        // "$(window).scrollTop()" ci dice di quanto abbiamo scrollato la pagina
+        if ($(window).scrollTop() >= posizione.top) {
+            // abbiamo scrollato oltre il div, dobbiamo bloccarlo
+            $("#top-bar").addClass("menu_scroll");
+        }
+        else {
+            // abbiamo scrollato verso l'alto, sopra il div, possiamo sbloccarlo
+            $("#top-bar").removeClass("menu_scroll"); 
+        }
+    });
+};
+
+
+var fisarmonica=function()
+{
+    $('#menufisarmonica').accordion({
+        active:false,
+        animated:'bounceslide',
+        collapsible:true
+    });
+};
+
+
+
+$(function() { 
+    setInterval( "slideSwitch()", 5000 );
+    menu();
+    fisarmonica();
+});

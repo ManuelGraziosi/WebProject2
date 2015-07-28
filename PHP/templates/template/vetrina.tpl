@@ -4,7 +4,7 @@
 
             <div class="prodotto">
                 <div class="foto">
-                    <img src="templates/main/template/images/{$prodotti[i].foto}.jpg" width="250" height="250"/>
+                    <img src="PHP/templates/template/images/{$prodotti[i].foto}.jpg" width="250" height="250"/>
                 </div>
                 <div class="info">
                     <div class="descrizione">
@@ -18,7 +18,7 @@
                             {$prodotti[i].categoria}
                         </div>
                         <div title="{$prodotti[i].NOME_PRODOTTO}" class="aggiungi">
-                            <img src="templates/main/template/images/cart/addCart.png" width="45" height="45"/>
+                            <img src="PHP/templates/template/images/cart/addCart.png" width="45" height="45"/>
                         </div>
                     </div>
                 </div>
