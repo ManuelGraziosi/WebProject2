@@ -1,7 +1,9 @@
-/**
-INSERT INTO `cliente`(`E-MAIL`, `nome`, `cognome`, `password`, `codice_attivazione`, `attivazione`, `citta`, `via`, `CAP`) VALUES 
-();
 
+INSERT INTO `cliente` (`EMAIL`, `nome`, `cognome`, `password`, `codice_attivazione`, `attivazione`, `citta`, `via`, `CAP`) VALUES
+('alessioscarpone@gmail.com', 'alessio', 'scarpone', 'matinf', '1732788707', 'attivo', 'Teramo', 'scapriano alto', '64100'),
+('danielescarpone@gmail.com', 'daniele', 'scarpone', 'matinf', '1477181174', 'attivo', 'Teramo', 'scapriano alto', '64100');
+
+/**
 INSERT INTO `commento`(`ID_COMMENTO`, `nome_prod_com`, `testo`, `voto`) VALUES 
 ();
 

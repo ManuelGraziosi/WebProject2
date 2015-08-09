@@ -3,21 +3,15 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Creato il: Giu 11, 2015 alle 21:45
+-- Creato il: Ago 09, 2015 alle 20:09
 -- Versione del server: 5.6.24
 -- Versione PHP: 5.6.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-
 --
--- Database: `Sammartino`
+-- Database: `sammartino`
 --
 CREATE DATABASE IF NOT EXISTS `sammartino` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
 USE `sammartino`;
@@ -41,6 +35,10 @@ CREATE TABLE IF NOT EXISTS `cliente` (
   `CAP` varchar(5) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- RELATIONS FOR TABLE `cliente`:
+--
+
 -- --------------------------------------------------------
 
 --
@@ -55,8 +53,27 @@ CREATE TABLE IF NOT EXISTS `commento` (
   `voto` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- RELATIONS FOR TABLE `commento`:
+--   `nome_prod_com`
+--       `prodotto` -> `NOME_PRODOTTO`
+--
+
 -- --------------------------------------------------------
 
+--
+-- Struttura della tabella `newsletter`
+--
+
+DROP TABLE IF EXISTS `newsletter`;
+CREATE TABLE IF NOT EXISTS `newsletter` (
+  `email` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- RELATIONS FOR TABLE `newsletter`:
+--
+-- --------------------------------------------------------
 --
 -- Struttura della tabella `ordine`
 --
@@ -71,6 +88,14 @@ CREATE TABLE IF NOT EXISTS `ordine` (
   `conferma_ordine` tinyint(1) NOT NULL,
   `data_spedizione` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- RELATIONS FOR TABLE `ordine`:
+--   `email_cliente`
+--       `cliente` -> `EMAIL`
+--   `id_metodo_pagamento`
+--       `pagamento` -> `ID_PAGAMENTO`
+--
 
 -- --------------------------------------------------------
 
@@ -87,6 +112,10 @@ CREATE TABLE IF NOT EXISTS `pagamento` (
   `ccv` varchar(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- RELATIONS FOR TABLE `pagamento`:
+--
+
 -- --------------------------------------------------------
 
 --
@@ -96,18 +125,17 @@ CREATE TABLE IF NOT EXISTS `pagamento` (
 DROP TABLE IF EXISTS `prodotto`;
 CREATE TABLE IF NOT EXISTS `prodotto` (
   `NOME_PRODOTTO` varchar(30) NOT NULL,
-  `descrizione` blob NOT NULL,
-  `foto` varchar(30) NOT NULL,
+  `foto` blob NOT NULL,
+  `descrizione` varchar(1024) NOT NULL,
   `categoria` varchar(30) NOT NULL,
   `prezzo_kg` float NOT NULL,
   `disponibilita` int(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- RELATIONS FOR TABLE `prodotto`:
+--
 -- --------------------------------------------------------
-INSERT INTO `prodotto`(`NOME_PRODOTTO`, `descrizione`, `foto`, `categoria`, `prezzo_kg`, `disponibilita`) VALUES 
-('Caciotta grande','da 1,8kg','Caciotta grande','Caciotta',7.2,45),
-('Stagionato grande','da 15kg','Stagionato','Stagionato',13,45);
-
 --
 -- Struttura della tabella `prod_ordinato`
 --
@@ -120,30 +148,22 @@ CREATE TABLE IF NOT EXISTS `prod_ordinato` (
   `quantita` int(4) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-
 --
--- Struttura della tabella `newsletter`
+-- RELATIONS FOR TABLE `prod_ordinato`:
+--   `id_ordine`
+--       `ordine` -> `ID_ORDINE`
+--   `nome_prodotto`
+--       `prodotto` -> `NOME_PRODOTTO`
 --
-
-CREATE TABLE IF NOT EXISTS `newsletter` (
-  `email` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Indici per le tabelle scaricate
 --
 
 --
--- Indici per le tabelle `newsletter`
+-- Indici per le tabelle `cliente`
 --
-ALTER TABLE `newsletter`
-  ADD PRIMARY KEY (`email`);
-
-
---
--- Indici per le tabelle `newsletter`
---
-ALTER TABLE `newsletter`
+ALTER TABLE `cliente`
   ADD PRIMARY KEY (`EMAIL`);
 
 --
@@ -152,6 +172,12 @@ ALTER TABLE `newsletter`
 ALTER TABLE `commento`
   ADD PRIMARY KEY (`ID_COMMENTO`),
   ADD KEY `Commenti` (`nome_prod_com`) USING BTREE;
+
+--
+-- Indici per le tabelle `newsletter`
+--
+ALTER TABLE `newsletter`
+  ADD PRIMARY KEY (`email`);
 
 --
 -- Indici per le tabelle `ordine`
@@ -228,7 +254,3 @@ ALTER TABLE `ordine`
 ALTER TABLE `prod_ordinato`
   ADD CONSTRAINT `prod_ordinato_ibfk_1` FOREIGN KEY (`id_ordine`) REFERENCES `ordine` (`ID_ORDINE`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `prod_ordinato_ibfk_2` FOREIGN KEY (`nome_prodotto`) REFERENCES `prodotto` (`NOME_PRODOTTO`) ON DELETE CASCADE ON UPDATE CASCADE;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
