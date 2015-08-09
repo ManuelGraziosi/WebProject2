@@ -67,6 +67,7 @@ class C_visualizzazione{
             array("categoria","like","%".$view->getRicerca()."%")
             );
         $prodotti=$db->ricerca("prodotto", $parametri);
+        
         $smarty->inserisciDatiTemplate('prodotti', $prodotti);
         $smarty->impostaTemplate('vetrina.tpl');
     }
