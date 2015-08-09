@@ -12,6 +12,7 @@
  * @author daniele
  */
 class C_visualizzazione{
+    
     public function paginaIniziale() {
         $view=new V_view();
         $view->inserisciDatiTemplate('titolo', 'home');
@@ -48,23 +49,25 @@ class C_visualizzazione{
         $db= new F_database();
         $prodotti=$db->caricaTabella('prodotto');
         $view=new V_view();
-        /**/
         $view->inserisciDatiTemplate('prodotti', $prodotti);
         $view->impostaTemplate('vetrina.tpl');
     }
     
     public function login() {
-        
         $view=new V_view();
-        /**/
         $view->impostaTemplate('login.tpl');
     }
     
     public function ricerca(){
         $db= new F_database();
         $view=new V_visualizzazione();
-        $parametri=  array(array("NOME_PRODOTTO","like","%".$view->getRicerca()."%"),array("categoria","like","%".$view->getRicerca()."%"));
-        $ris=$db->ricerca("prodotto", $parametri);
-        print_r($ris);
+        $smarty=new V_view();
+        $parametri=  array(
+            array("NOME_PRODOTTO","like","%".$view->getRicerca()."%"),
+            array("categoria","like","%".$view->getRicerca()."%")
+            );
+        $prodotti=$db->ricerca("prodotto", $parametri);
+        $smarty->inserisciDatiTemplate('prodotti', $prodotti);
+        $smarty->impostaTemplate('vetrina.tpl');
     }
 }
