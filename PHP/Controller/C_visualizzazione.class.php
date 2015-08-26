@@ -72,7 +72,7 @@ class C_visualizzazione{
         $smarty->impostaTemplate('vetrina.tpl');
     }
     
-    public function inserimentoProdotto() {
+    public function amministrazione() {
         $view=new V_view();
         $view->impostaTemplate('amministrazione.tpl');
     }

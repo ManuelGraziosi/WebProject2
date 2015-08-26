@@ -107,7 +107,7 @@ var C_home = function(){
         $('.menu').removeClass('active');        
         $(this).addClass('active');
         $.ajax({
-            url:"index.php?controllore=C_visualizzazione&metodo=inserimentoProdotto",
+            url:"index.php?controllore=C_visualizzazione&metodo=amministrazione",
             type:'GET',
             dataType:"html",
             success:function(form) {
