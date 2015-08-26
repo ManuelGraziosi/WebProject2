@@ -14,7 +14,7 @@ class V_fareOrdine extends V_view{
     public function getNomeProdotto() {
         if (isset($_REQUEST['nome_prodotto'])) {
             return $_REQUEST['nome_prodotto'];
-        } 
+        }
         else{
             return false;
         }

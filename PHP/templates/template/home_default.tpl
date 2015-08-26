@@ -51,11 +51,12 @@
 
             <div id="menucont">
                 <ul>
-                    <li><a id="home" title="Home" class="active">Home</a></li>
-                    <li><a id="chisiamo" title="ChiSiamo">Chi Siamo</a></li>
-                    <li><a id="dovesiamo" title="DoveSiamo">Dove Siamo</a></li>
-                    <li><a id="galleria" title="Galleria">Galleria</a></li>
-                    <li><a id="vetrina" title="Vetrina">Vetrina</a></li>
+                    <li><a id="home" title="Home" class="menu">Home</a></li>
+                    <li><a id="chisiamo" title="ChiSiamo" class="menu">Chi Siamo</a></li>
+                    <li><a id="dovesiamo" title="DoveSiamo" class="menu">Dove Siamo</a></li>
+                    <li><a id="galleria" title="Galleria" class="menu">Galleria</a></li>
+                    <li><a id="vetrina" title="Vetrina" class="menu">Vetrina</a></li>
+                    <li><a id="amministratore" title="amministratore" class="menu">amministratore</a></li>
                 </ul>
 
                 <span id="menuright">
@@ -69,7 +70,7 @@
                     </div>
                     <div id="car">
                         <ul>
-                            <li><a id="carrello" title="Carrello">Carrello<img id="cart" alt="Carrello" src="PHP/templates/template/images/cart/cart.png"/></a></li>
+                            <li><a id="carrello" title="Carrello" class="menu">Carrello<img id="cart" alt="Carrello" src="PHP/templates/template/images/cart/cart.png"/></a></li>
                         </ul>
                     </div>
                 </span>
@@ -97,9 +98,9 @@
                         Via salita San Martino<br>
                         64100 Teramo -Te-<br><br>
                         <pre>Tel.: 0861-286413</pre>
-						<pre>Cell.: 333-1773133</pre><br>
-						<pre>Email: </pre>
-						az.sammartino@gmail.com                
+                        <pre>Cell.: 333-1773133</pre><br>
+                        <pre>Email: </pre>
+                        az.agricolasammartino@gmail.com                
                     </div>
                 <h7 id="newsletter">NEWSLETTER</h7>
                     <div id="newsletterdiv">
@@ -116,6 +117,16 @@
 
         <div id="mainright">
             <!-- - - - - - - - - - - - -CORPO CHE CAMBIERA' SEMPRE- - - - - - - - - - - - - -->
+            
+            
+            
+            <h1 style="font-size:1cm" align='center'>BENVENUTO</h1> <br>
+<div align="center"><img style="width:100%" src='PHP/templates/template/images/sammartino0.jpg'/></div>
+            
+            
+            
+            
+            
         </div>
 
     </div>

@@ -71,4 +71,10 @@ class C_visualizzazione{
         $smarty->inserisciDatiTemplate('prodotti', $prodotti);
         $smarty->impostaTemplate('vetrina.tpl');
     }
+    
+    public function inserimentoProdotto() {
+        $view=new V_view();
+        $view->impostaTemplate('form_inserimento_prodotto.tpl');
+    }
+    
 }

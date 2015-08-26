@@ -117,9 +117,10 @@ C_registrazione.prototype={
 
     inviaDati:function(dati){
         $('body').append(" invia dati");
-        //var dati=this.recuperaDati();
+        var view = new V_registrazione();
+        var dati = view.recuperaDati();
         $.ajax({
-            url:"index.php",
+            url:"index.php?controllore=C_registrazione&metodo=creaCliente",
             data:dati,
             datatype:"json",
             success:function(){

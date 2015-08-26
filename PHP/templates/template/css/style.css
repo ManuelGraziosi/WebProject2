@@ -152,8 +152,8 @@ a:hover { color: #222; text-decoration: none; }
 		#container #maincont #mainleft
 		{
 			float: left;
-			width: 200px;
-			padding: 40px 20px;
+			width: 220px;
+			padding: 40px 10px;
 			color: #5E7E1F;
 			line-height: 18px;
 		}
@@ -390,7 +390,7 @@ float:right;
 
 #login
 {
-width: 182px;
+width: 202px;
 padding-left: 8px;
 padding-right: 8px;
 }

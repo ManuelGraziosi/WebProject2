@@ -29,6 +29,19 @@ V_registrazione.prototype.recuperaDati=function(){
     return dati;
 }
 /**/
+V_registrazione.prototype.datilogin=function(){
+    $('body').append("datilogin ");
+    //this.dati = new Array();
+    var dati = new Object();
+    dati={
+        "EMAIL"      :$('#EMAIL').val(),
+        "password"   :$('#password').val(),
+        "controllore":"C_registrazione",
+        "metodo"     :"autentica"
+    }
+    return dati;
+}
+
 V_registrazione.prototype.notifica=function(){
     $('#formRegistrazione').html("registrazione avvenuta con successo");
 }

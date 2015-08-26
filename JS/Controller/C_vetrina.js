@@ -7,9 +7,6 @@ visualizzazione.prototype.home=function(){
 
     $('#vetrina').removeClass('active');
     $(this).addClass('active');
-    $('#carrello').removeClass('active');
-    $('#registrazione').removeClass('active');
-    $('#newsletter').removeClass('active');
 
     $.ajax({
         url:"index.php?controllore=C_visualizzazione&metodo=home",

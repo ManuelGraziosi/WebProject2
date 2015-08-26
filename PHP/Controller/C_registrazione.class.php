@@ -110,7 +110,7 @@ class C_registrazione {
                     $sessione=U_singolaistanza::getIstanza('U_sessione');
                     $sessione->imposta_valore('email',$email);
                     $sessione->imposta_valore('nome_cognome',$cliente->getNome().' '.$cliente->getCognome());
-                    return true;
+                    return print "true";
                 } else {
                     $this->_errore='Email o password errati';
                     //EMAIL password errati
@@ -123,8 +123,7 @@ class C_registrazione {
             $this->_errore='L\'account non esiste';
             //account non esiste
         }
-        
-        return false;
+        return print $this->_errore;
     }
 }
 ?>
