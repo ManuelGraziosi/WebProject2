@@ -42,11 +42,7 @@ class C_amministratore {
         $prodotto = new E_prodotto();
         $datiProdotto = $view->getDatiProdotto();
         U_operazioni::inserisciDati($prodotto, $datiProdotto);
-        $db->depositaRiga('prodotto', $prodotto);
-        
-        $prodotto = $db->caricaTabella('prodotto');
-        print_r($prodotto);
-        
+        $db->depositaRiga('prodotto', $prodotto);        
     }
     
     public function aggiornaProdotto() {

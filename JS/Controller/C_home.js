@@ -110,8 +110,31 @@ var C_home = function(){
             url:"index.php?controllore=C_visualizzazione&metodo=inserimentoProdotto",
             type:'GET',
             dataType:"html",
-            success:function(chisiamo) {
-                $('#mainright').html(chisiamo);
+            success:function(form) {
+                $('#mainright').html(form);
+                $('#tab').tabs();
+                $('#inviaProdotto').click(function(){
+                    var dati = new Object();
+                    dati = {
+                        "NOME_PRODOTTO": $('#nome').val(),
+                        "foto"         : $('#foto').val(),
+                        "descrizione"  : $('#descrizione').val(),
+                        "categoria"    : $('#categoria').val(),
+                        "prezzo_kg"    : $('#prezzo').val(),
+                        "disponibilita": $('#disponibilita').val(),
+                        "controllore"  : "C_amministratore",
+                        "metodo"       : "inserisciProdotto"
+                    };
+                    $.ajax({
+                        url:"index.php",
+                        type:'GET',
+                        dataType:"html",
+                        data:dati,
+                        success:function(carrello) {
+                            $('#mainright').html(carrello);
+                        }
+                    });
+                });
             }
         });
     });

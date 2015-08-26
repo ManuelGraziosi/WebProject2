@@ -74,7 +74,7 @@ class C_visualizzazione{
     
     public function inserimentoProdotto() {
         $view=new V_view();
-        $view->impostaTemplate('form_inserimento_prodotto.tpl');
+        $view->impostaTemplate('amministrazione.tpl');
     }
     
 }
