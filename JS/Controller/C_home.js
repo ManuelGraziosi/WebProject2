@@ -165,7 +165,7 @@ var C_home = function(){
                         "prezzo_kg"    : $('#prezzo_A').val(),
                         "disponibilita": $('#disponibilita_A').val(),
                         "controllore"  : "C_amministratore",
-                        "metodo"       : "inserisciProdotto"
+                        "metodo"       : "aggiornaProdotto"
                     };
                     $.ajax({
                         url:"index.php",
