@@ -3,6 +3,7 @@
         <li><a href="#formInserimentoProdotto">Inserisci Prodotto</a></li>
         <li><a href="#formEliminaProdotto">Elimina Prodotto</a></li>
         <li><a href="#formAggiornaProdotto">Aggiorna Prodotto</a></li>
+        <li><a href="#formEliminaCliente">Elimina Cliente</a></li>
       </ul>
     <div id="formInserimentoProdotto">
         <table>
@@ -34,4 +35,15 @@
             <tr><td colspan="2"><button id="AggiornaProdotto" class="invia" title="Aggiorna prodotto">Aggiorna prodotto</button></td></tr>
         </table>
     </div>
+    
+    <div id="formEliminaCliente">
+        <table>
+            <tr>
+                <td>Nome:  </td>
+                <td><input id="nome" name="nome" type="text"/></td>
+                <td colspan="2"><button id="EliminaCliente" class="invia" title="Elimina Cliente">Elimina Cliente</button></td>
+            </tr>
+        </table>
+    </div>
+    
 </div>
