@@ -25,10 +25,13 @@ class C_amministratore {
         $view = new V_amministratore();
         $db = new F_database();
         $prodotto = new E_prodotto();
+        print_r($prodotto);
         $nomeprodotto = $view->getNomeProdotto();
         $datiprodotto = $db->caricaRiga('prodotto', $nomeprodotto);
+        print_r($datiprodotto);
         
         U_operazioni::inserisciDati($prodotto, $datiprodotto);
+        print_r($prodotto);
         $db->cancellaRiga('prodotto', $prodotto);
         
         $prodotto=$db->caricaTabella('prodotto');

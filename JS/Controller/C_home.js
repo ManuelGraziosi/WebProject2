@@ -113,15 +113,57 @@ var C_home = function(){
             success:function(form) {
                 $('#mainright').html(form);
                 $('#tab').tabs();
+                
                 $('#inviaProdotto').click(function(){
                     var dati = new Object();
                     dati = {
-                        "NOME_PRODOTTO": $('#nome').val(),
+                        "NOME_PRODOTTO": $('#nome_I').val(),
                         "foto"         : $('#foto').val(),
                         "descrizione"  : $('#descrizione').val(),
                         "categoria"    : $('#categoria').val(),
                         "prezzo_kg"    : $('#prezzo').val(),
                         "disponibilita": $('#disponibilita').val(),
+                        "controllore"  : "C_amministratore",
+                        "metodo"       : "inserisciProdotto"
+                    };
+                    $.ajax({
+                        url:"index.php",
+                        type:'GET',
+                        dataType:"html",
+                        data:dati,
+                        success:function(carrello) {
+                            $('#mainright').html(carrello);
+                        }
+                    });
+                });
+                
+                $('#EliminaProdotto').click(function(){
+                    var dati = new Object();
+                    dati = {
+                        "NOME_PRODOTTO": $('#nome_E').val(),
+                        "controllore"  : "C_amministratore",
+                        "metodo"       : "eliminaProdotto"
+                    };
+                    $.ajax({
+                        url:"index.php",
+                        type:'GET',
+                        dataType:"html",
+                        data:dati,
+                        success:function(carrello) {
+                            $('#mainright').html(carrello);
+                        }
+                    });
+                });
+                
+                $('#AggiornaProdotto').click(function(){
+                    var dati = new Object();
+                    dati = {
+                        "NOME_PRODOTTO": $('#nome_A').val(),
+                        "foto"         : $('#foto_A').val(),
+                        "descrizione"  : $('#descrizione_A').val(),
+                        "categoria"    : $('#categoria_A').val(),
+                        "prezzo_kg"    : $('#prezzo_A').val(),
+                        "disponibilita": $('#disponibilita_A').val(),
                         "controllore"  : "C_amministratore",
                         "metodo"       : "inserisciProdotto"
                     };
