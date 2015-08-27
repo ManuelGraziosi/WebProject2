@@ -44,6 +44,39 @@
                 <td colspan="2"><button id="EliminaCliente" class="invia" title="Elimina Cliente">Elimina Cliente</button></td>
             </tr>
         </table>
+        <table>
+            <tr>
+                <th>Nome</th>
+                <th>Cognome</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Via</th>
+                <th>Citta</th>
+                <th>CAP</th>
+            </tr>
+            <tr>
+                <td>daniele</td>
+                <td>scarpone</td>
+                <td>danielescarpone@gmail.com</td>
+                <td>matinf</td>
+                <td>scapriano alto</td>
+                <td>Teramo</td>
+                <td>64100</td>
+            </tr>
+            {section name=i loop=$clienti}
+            <tr>
+                <td>{$clienti[i].nome}</td>
+                <td>{$clienti[i].cognome}</td>
+                <td>{$clienti[i].EMAIL}</td>
+                <td>{$clienti[i].password}</td>
+                <td>{$clienti[i].via}</td>
+                <td>{$clienti[i].citta}</td>
+                <td>{$clienti[i].CAP}</td>
+            </tr>
+            {sectionelse} 
+                <b> nessun cliente </b>
+            {/section}
+        </table>
     </div>
     
 </div>

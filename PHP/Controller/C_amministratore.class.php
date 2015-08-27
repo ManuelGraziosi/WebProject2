@@ -30,7 +30,6 @@ class C_amministratore {
         $datiprodotto = $db->caricaRiga('prodotto', $nomeprodotto);
         
         U_operazioni::inserisciDati($prodotto, $datiprodotto);
-        print_r($prodotto);
         $db->cancellaRiga('prodotto', $prodotto);
                 
     }
