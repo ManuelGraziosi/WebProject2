@@ -13,7 +13,7 @@ INSERT INTO `pagamento`(`ID_PAGAMENTO`, `nome_titolare`, `cognome_titolare`, `da
 ();
 /**/
 INSERT INTO `prodotto`(`NOME_PRODOTTO`, `descrizione`, `foto`, `categoria`, `prezzo_kg`, `disponibilita`) VALUES 
-('Caciotta','da 1,8kg','Caciotta grande','Caciotta',7.2,45),
+('Caciotta','fatto con latte dell azienda sammartino','Caciotta grande','Caciotta',7.2,45),
 ('Yogurt naturale','fatto con latte dell azienda sammartino','yogurt_naturale','fresco',2,14),
 ('Yogurt fragola','fatto con latte dell azienda sammartino','yogurt_fragola','fresco',2,14),
 ('Yogurt frutti di bosco','fatto con latte dell azienda sammartino','yogurt_frutti di bosco','fresco',2,14),

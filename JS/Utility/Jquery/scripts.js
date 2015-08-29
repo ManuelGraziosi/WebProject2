@@ -14,7 +14,7 @@ Cufon.replace('#maincont h1, #maincont h2, #maincont h3', { fontFamily:'Melbourn
 
 function slideSwitch()
 {
-	var $active = $('#slideshow IMG.active');
+    var $active = $('#slideshow IMG.active');
     if ( $active.length === 0 ) $active = $('#slideshow IMG:last');
     var $next =  $active.next().length ? $active.next() : $('#slideshow IMG:first');
     $active.addClass('last-active');
@@ -23,7 +23,7 @@ function slideSwitch()
 
 
 var menu=function() {
-    var menu = $("#menucont");
+    var menu = $("#top-bar");
     var posizione = menu.position();
     // intercettiamo qui l'evento "scroll"                 
     $(window).scroll(function() {
