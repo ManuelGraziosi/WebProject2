@@ -112,7 +112,8 @@ var C_home = function(){
             dataType:"html",
             success:function(form) {
                 $('#mainright').html(form);
-                $('#tab').tabs();
+                aggiorna_grafica();
+                $('#amministra').tabs();
                 
                 $('#inviaProdotto').click(function(){
                     var dati = new Object();
@@ -131,8 +132,13 @@ var C_home = function(){
                         type:'GET',
                         dataType:"html",
                         data:dati,
-                        success:function(carrello) {
-                            $('#mainright').html(carrello);
+                        success:function(successo) {
+                            if(!successo){
+                                alert("prodotto inserito con successo");
+                            }
+                            else{
+                                alert("errore di inserimento");
+                            }
                         }
                     });
                 });

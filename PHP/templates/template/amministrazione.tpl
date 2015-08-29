@@ -1,9 +1,10 @@
-<div id="tab">
+<div id="amministra">
       <ul>
         <li><a href="#formInserimentoProdotto">Inserisci Prodotto</a></li>
         <li><a href="#formEliminaProdotto">Elimina Prodotto</a></li>
         <li><a href="#formAggiornaProdotto">Aggiorna Prodotto</a></li>
         <li><a href="#formEliminaCliente">Elimina Cliente</a></li>
+        <li><a href="#elencoProdotto">Elenco Prodotto</a></li>
       </ul>
     <div id="formInserimentoProdotto">
         <table>
@@ -85,10 +86,17 @@
                 <td>{$clienti[i].citta}</td>
                 <td>{$clienti[i].CAP}</td>
             </tr>
-            {sectionelse} 
+            {sectionelse}
                 <b> nessun cliente </b>
             {/section}
         </table>
     </div>
     
+    <div id="elencoProdotto">
+        <table>
+            {section name=i loop=$prodotti}
+                <tr><td>{$prodotti[i].NOME_PRODOTTO}</td></tr>
+            {/section}
+        </table>
+    </div>
 </div>

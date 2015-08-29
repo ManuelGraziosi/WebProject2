@@ -65,7 +65,7 @@ var start=function(){
     });
     
 }
-
+/**
 var evento =function(){
     $('#inviaProdotto').click(function(){
         var dati = new Object();
@@ -90,7 +90,7 @@ var evento =function(){
         });
     });
 }
-
+/**/
 var ricerca=function(){
     $('body').append("cliccato ricerca");
     var r=$('#barracerca').val();
@@ -103,6 +103,13 @@ var ricerca=function(){
         }
     });
 }
+
+
+var aggiorna_grafica= function(){
+    $('button').button();
+    $('select').select();
+}
+
 
 $(document).ready(start);
 /**/

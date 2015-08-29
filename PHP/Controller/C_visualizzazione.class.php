@@ -74,6 +74,11 @@ class C_visualizzazione{
     
     public function amministrazione() {
         $view=new V_view();
+        $db= new F_database();
+        $datiprod=$db->caricaTabella('prodotto');
+        /**/
+        /**/
+        $view->inserisciDatiTemplate('prodotti', $datiprod);
         $view->impostaTemplate('amministrazione.tpl');
     }
     
