@@ -6,6 +6,7 @@
         <li><a href="#formEliminaCliente">Elimina Cliente</a></li>
         <li><a href="#elencoProdotto">Elenco Prodotti</a></li>
         <li><a href="#elencoClienti">Elenco Clienti</a></li>
+        <li><a href="#elencoOrdiniConfermati">Elenco Ordini Confermati</a></li>
       </ul>
     <div id="formInserimentoProdotto">
         <table>
@@ -55,12 +56,18 @@
                 </td>
                 <td>
                     <table>
-                        <tr><td>Nome:  </td><td><input id="nome_A" name="nome" type="text" value="{$prodotto.NOME_PRODOTTO}"/></td></tr>
-                        <tr><td>foto:  </td><td><input id="foto_A" name="foto" type="text" value="{$prodotto.foto}"/></td></tr>
-                        <tr><td>descrizione:  </td><td><input id="descrizione_A" name="descrizione" type="text" value="{$prodotto.descrizione}"/></td></tr>
-                        <tr><td>categoria:  </td><td><input id="categoria_A" name="categoria" type="text" value="{$prodotto.categoria}"/></td></tr>
-                        <tr><td>prezzo_kg:  &nbsp</td><td><input id="prezzo_A" name="prezzo" type="text" value="{$prodotto.prezzo_kg}"/></td></tr>
-                        <tr><td>disponibilità:  </td><td><input id="disponibilita_A" name="disponibilita" type="text" value="{$prodotto.disponibilita}"/></td></tr>
+                        <tr><td>Nome:  </td><td><input id="nome_A" name="nome" type="text" value="{$prodotto[0].NOME_PRODOTTO}"/></td></tr>
+                        <tr><td>foto:  </td><td><input id="foto_A" name="foto" type="text" value="{$prodotto[0].foto}"/></td></tr>
+                        <tr>
+                            <td>descrizione:  </td>
+                            <td>
+                                <textarea id="descrizione_A" name="descrizione">{$prodotto[0].descrizione}</textarea>
+                                <!--<input id="descrizione_A" name="descrizione" type="text" value="{$prodotto[0].descrizione}"/>-->
+                            </td>
+                        </tr>
+                        <tr><td>categoria:  </td><td><input id="categoria_A" name="categoria" type="text" value="{$prodotto[0].categoria}"/></td></tr>
+                        <tr><td>prezzo_kg:  &nbsp</td><td><input id="prezzo_A" name="prezzo" type="text" value="{$prodotto[0].prezzo_kg}"/></td></tr>
+                        <tr><td>disponibilità:  </td><td><input id="disponibilita_A" name="disponibilita" type="text" value="{$prodotto[0].disponibilita}"/></td></tr>
                         <tr><td colspan="2"><button id="AggiornaProdotto" class="invia" title="Aggiorna prodotto">Aggiorna prodotto</button></td></tr>
                     </table>
                 </td>
@@ -112,6 +119,31 @@
         <table>
             {section name=i loop=$clienti}
                 <tr><td>{$clienti[i].EMAIL}</td></tr>
+            {/section}
+        </table>
+    </div>
+    <div id="elencoOrdiniConfermati">
+        <table>
+            <tr>
+                <th>ID_ORDINE</th>
+                <th>id_metodo_pagamento</th>
+                <th>email_cliente</th>
+                <th>data_pagamento</th>
+                <th>stato_pagamento</th>
+                <th>conferma_ordine</th>
+                <th>data_spedizione</th>
+            </tr>
+        </table>
+        <table>
+            {section name=i loop=$ordini}
+                <tr>
+                    <td>{$ordini[i].ID_ORDINE}</td>
+                    <td>{$ordini[i].id_metodo_pagamento}</td>
+                    <td>{$ordini[i].email_cliente}</td>
+                    <td>{$ordini[i].data_pagamento}</td>
+                    <td>{$ordini[i].stato_pagamento}</td>
+                    <td>{$ordini[i].conferma_ordine}</td>
+                    <td>{$ordini[i].data_spedizione}</td></tr>
             {/section}
         </table>
     </div>

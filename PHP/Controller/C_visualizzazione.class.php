@@ -77,8 +77,14 @@ class C_visualizzazione{
         $db= new F_database();
         $datiprod=$db->caricaTabella('prodotto');
         $daticlie=$db->caricaTabella('cliente');
+        /*provvisiorio*/
+        $datiprodotto=$db->caricaRiga("prodotto", "Caciotta");
         /**/
-        /**/
+        
+        print_r($datiprodotto);
+        
+        
+        $view->inserisciDatiTemplate('prodotto', $datiprodotto);
         $view->inserisciDatiTemplate('prodotti', $datiprod);
         $view->inserisciDatiTemplate('clienti', $daticlie);
         $view->impostaTemplate('amministrazione.tpl');

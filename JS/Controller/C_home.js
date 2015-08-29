@@ -6,11 +6,14 @@
 var C,V;
 
 var C_home = function(){
+    /**
     $('body').append("e partito il C_home");
     $('title').html('Sammartino | Home');
+    /**/
+    aggiorna_grafica();
     $('.menu').removeClass('active');
     $('#home').addClass('active');
-    
+    /**/
     $('#home').click(function(){
         $('body').append('cliccato su home');
         $('title').html('Sammartino | Home');
@@ -63,6 +66,7 @@ var C_home = function(){
         $(this).addClass('active');
         $.ajax({
             url:"index.php?controllore=C_visualizzazione&metodo=galleria",
+            //url:"galleria/index.html",
             type:'GET',
             dataType:"html",
             success:function(galleria) {
