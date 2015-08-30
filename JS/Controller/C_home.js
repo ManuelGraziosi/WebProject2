@@ -10,7 +10,7 @@ var C_home = function(){
     $('.menu').removeClass('active');
     $('#home').addClass('active');
     /**/
-    $('#home').click(function(){
+    $('#home').unbind().click(function(){
         $('title').html('Sammartino | Home');
         $('.menu').removeClass('active');
         $(this).addClass('active');
@@ -24,7 +24,7 @@ var C_home = function(){
         });
     });
     
-    $('#chisiamo').click(function(){
+    $('#chisiamo').unbind().click(function(){
         $('title').html('Sammartino | Chi siamo');
         $('.menu').removeClass('active');
         $(this).addClass('active');
@@ -38,7 +38,7 @@ var C_home = function(){
         });
     });
     
-    $('#dovesiamo').click(function(){
+    $('#dovesiamo').unbind().click(function(){
         $('title').html('Sammartino | Dove siamo');
         $('.menu').removeClass('active');        
         $(this).addClass('active');
@@ -52,7 +52,7 @@ var C_home = function(){
         });
     });
     
-    $('#galleria').click(function(){
+    $('#galleria').unbind().click(function(){
         $('title').html('Sammartino | Galleria');
         $('.menu').removeClass('active');        
         $(this).addClass('active');
@@ -67,7 +67,7 @@ var C_home = function(){
         });
     });
     
-    $('#vetrina').click(function(){
+    $('#vetrina').unbind().click(function(){
         $('title').html('Sammartino | Vetrina');
         $('.menu').removeClass('active');        
         $(this).addClass('active');
@@ -81,7 +81,7 @@ var C_home = function(){
         });
     });
     
-    $('#carrello').click(function(){
+    $('#carrello').unbind().click(function(){
         $('title').html('Sammartino | Carrello');
         $('.menu').removeClass('active');        
         $(this).addClass('active');
@@ -108,7 +108,7 @@ var C_home = function(){
                 aggiorna_grafica();
                 $('#amministra').tabs();
                 
-                $('#inviaProdotto').click(function(){
+                $('#inviaProdotto').unbind().click(function(){
                     var dati = new Object();
                     dati = {
                         "NOME_PRODOTTO": $('#nome_I').val(),
@@ -136,7 +136,7 @@ var C_home = function(){
                     });
                 });
                 
-                $('#EliminaProdotto').click(function(){
+                $('#EliminaProdotto').unbind().click(function(){
                     var dati = new Object();
                     dati = {
                         "NOME_PRODOTTO": $('#nome_E').val(),
@@ -154,7 +154,7 @@ var C_home = function(){
                     });
                 });
                 
-                $('#AggiornaProdotto').click(function(){
+                $('#AggiornaProdotto').unbind().click(function(){
                     var dati = new Object();
                     dati = {
                         "NOME_PRODOTTO": $('#nome_A').val(),
@@ -180,14 +180,14 @@ var C_home = function(){
         });
     });
     
-    $('#newsletter').click(function(){
+    $('#newsletter').unbind().click(function(){
         C=new C_newsletter();
         V=new V_newsletter();
         C.controllaEmail();
         //$('#submit_newsletter').button();
     });
     
-    $('#submit_newsletter').click(function(){
+    $('#submit_newsletter').unbind().click(function(){
         email=V.recuperaEmail();
         /**/
         if(C.controllaEmail()){
@@ -205,19 +205,22 @@ var C_home = function(){
     
     /**/
     
-    $('#registrazione').click(function(){
+    $('#registrazione').unbind().click(function(){
+        
+        C = new C_registrazione();
+        V = new V_registrazione();
+        //C.controllaDati();
         $.ajax({
             url:"index.php?controllore=C_visualizzazione&metodo=registrazione",
             success:function(html){
                 $('#mainright').append(html);
-                C = new C_registrazione();
-                var V=new V_registrazione();
                 C.controllaDati();
-                $('#invia').click(function(){
+                V.dialogo();
+                $('#invia').unbind().click(function(){
                     $('body').append(" hai cliccato invia ");
                     var dati = V.recuperaDati();
                     C.inviaDati(dati);
-                    $('#formRegistrazione').fadeOut();
+                    //$('#formRegistrazione').fadeOut();
                 });
             }
         });
@@ -225,13 +228,28 @@ var C_home = function(){
         
     });
     
-    $('#login').click(function(){
-        $('#invialogin').click(function(){
+    $('#login').unbind().click(function(){
+        $('#invialogin').unbind().click(function(){
             C = new C_registrazione();
             V = new V_registrazione();
-            dati= V.recuperaDatiLogin();
+            var dati= V.recuperaDatiLogin();
             C.inviaDatiLogin(dati);
-        })
+        });
     });
-    /**/
+    
+    
+    $('#buttonsearch').unbind().click(function(){
+        C = new C_registrazione();
+        V = new V_registrazione();
+        var stringa = V.recuperaDatiricerca();
+        C.ricerca(stringa);
+    });
+    
+    
+    $('#barracerca').unbind().keypress(function(){
+        C = new C_registrazione();
+        V = new V_registrazione();
+        var stringa = V.recuperaDatiricerca();
+        C.ricerca(stringa);
+    });
 }

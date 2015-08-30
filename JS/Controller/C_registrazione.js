@@ -139,10 +139,23 @@ C_registrazione.prototype={
             data:dati,
             datatype:"json",
             success:function(login){
-                $('#utente').html('<p>'+login+'</p>');
-                var view= new V_registrazione();
-                view.notifica();
+                $('#utente').html('<p>'+login['cliente']+'</p>');
+                if(login['errore']!=false){
+                    alert(login['errore']);
+                }
             }
         });
-    }
+    },
+    
+    ricerca : function(stringa){
+    $.ajax({
+        url:"index.php?controllore=C_visualizzazione&metodo=ricerca",
+        type:'GET',
+        data:stringa,
+        dataType:"html",
+        success:function(prod) {
+            $('#mainright').html(prod);
+        }
+    });
+}
 }
