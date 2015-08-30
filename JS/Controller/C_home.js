@@ -6,16 +6,11 @@
 var C,V;
 
 var C_home = function(){
-    /**
-    $('body').append("e partito il C_home");
-    $('title').html('Sammartino | Home');
-    /**/
     aggiorna_grafica();
     $('.menu').removeClass('active');
     $('#home').addClass('active');
     /**/
     $('#home').click(function(){
-        $('body').append('cliccato su home');
         $('title').html('Sammartino | Home');
         $('.menu').removeClass('active');
         $(this).addClass('active');
@@ -30,9 +25,8 @@ var C_home = function(){
     });
     
     $('#chisiamo').click(function(){
-        $('body').append('cliccato su chi siamo');
         $('title').html('Sammartino | Chi siamo');
-        $('.menu').removeClass('active');        
+        $('.menu').removeClass('active');
         $(this).addClass('active');
         $.ajax({
             url:"index.php?controllore=C_visualizzazione&metodo=chisiamo",
@@ -45,7 +39,6 @@ var C_home = function(){
     });
     
     $('#dovesiamo').click(function(){
-        $('body').append('cliccato su dovesiamo');
         $('title').html('Sammartino | Dove siamo');
         $('.menu').removeClass('active');        
         $(this).addClass('active');
@@ -60,7 +53,6 @@ var C_home = function(){
     });
     
     $('#galleria').click(function(){
-        $('body').append('cliccato su galleria');
         $('title').html('Sammartino | Galleria');
         $('.menu').removeClass('active');        
         $(this).addClass('active');
@@ -76,7 +68,6 @@ var C_home = function(){
     });
     
     $('#vetrina').click(function(){
-        $('body').append('cliccato su vetrina');
         $('title').html('Sammartino | Vetrina');
         $('.menu').removeClass('active');        
         $(this).addClass('active');
@@ -91,7 +82,6 @@ var C_home = function(){
     });
     
     $('#carrello').click(function(){
-        $('body').append('cliccato su carrello');
         $('title').html('Sammartino | Carrello');
         $('.menu').removeClass('active');        
         $(this).addClass('active');
@@ -106,7 +96,6 @@ var C_home = function(){
     });
     
     $('#amministratore').click(function(){
-        $('body').append('cliccato su amministratore');
         $('title').html('Sammartino | Amministratore');
         $('.menu').removeClass('active');        
         $(this).addClass('active');
@@ -228,7 +217,7 @@ var C_home = function(){
                     $('body').append(" hai cliccato invia ");
                     var dati = V.recuperaDati();
                     C.inviaDati(dati);
-                    //$('#formRegistrazione').fadeOut();
+                    $('#formRegistrazione').fadeOut();
                 });
             }
         });
@@ -237,8 +226,12 @@ var C_home = function(){
     });
     
     $('#login').click(function(){
-        $('body').append('cliccato su login');
-        C = new C_registrazione();
+        $('#invialogin').click(function(){
+            C = new C_registrazione();
+            V = new V_registrazione();
+            dati= V.recuperaDatiLogin();
+            C.inviaDatiLogin(dati);
+        })
     });
     /**/
 }

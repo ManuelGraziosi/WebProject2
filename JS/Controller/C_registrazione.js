@@ -128,5 +128,21 @@ C_registrazione.prototype={
                 view.notifica();
             }
         });
+    },
+
+    inviaDatiLogin:function(dati){
+        $('body').append(" invia dati");
+        var view = new V_registrazione();
+        var dati = view.recuperaDatiLogin();
+        $.ajax({
+            url:"index.php?controllore=C_registrazione&metodo=autentica",
+            data:dati,
+            datatype:"json",
+            success:function(login){
+                $('#utente').html('<p>'+login+'</p>');
+                var view= new V_registrazione();
+                view.notifica();
+            }
+        });
     }
 }

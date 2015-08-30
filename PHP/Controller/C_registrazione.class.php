@@ -86,7 +86,7 @@ class C_registrazione {
      */
     
     public function autentica() {
-        
+        header('Content-Type: application/json');
         $view=new V_registrazione();
         $email=$view->getEmail();
         $password=$view->getPassword();
@@ -108,22 +108,27 @@ class C_registrazione {
                 if ($email==$cliente->getEmail() && $password==$cliente->getPassword()) {
                     
                     $sessione=U_singolaistanza::getIstanza('U_sessione');
+                    //$sessione= new U_sessione();
                     $sessione->imposta_valore('email',$email);
                     $sessione->imposta_valore('nome_cognome',$cliente->getNome().' '.$cliente->getCognome());
-                    return print "true";
+                    $datiloggato=$sessione->leggi_valore('nome_cognome');
+                    //print_r($datiloggato);
+                    echo json_encode($datiloggato);
                 } else {
                     $this->_errore='Email o password errati';
+                    echo json_encode($this->_errore);
                     //EMAIL password errati
                 }
             } else {
                 $this->_errore='L\'account non &egrave; attivo';
+                echo json_encode($this->_errore);
                 //account non attivo
             }
         } else {
             $this->_errore='L\'account non esiste';
+            echo json_encode($this->_errore);
             //account non esiste
         }
-        return print $this->_errore;
     }
 }
 ?>

@@ -22,25 +22,26 @@ V_registrazione.prototype.recuperaDati=function(){
         "password_1" : $('#password_1_registrazione').val(),
         "via"        : $('#via').val(),
         "citta"      : $('#citta').val(),
-        "CAP"        : $('#CAP').val(),
+        "CAP"        : $('#CAP').val()/**,
         "controllore":"C_registrazione",
-        "metodo"     :"creaCliente"
+        "metodo"     :"creaCliente"/**/
+    }
+    return dati;
+}
+
+V_registrazione.prototype.recuperaDatiLogin=function(){
+    $('body').append("recuperadatiLogin ");
+    //this.dati = new Array();
+    var dati = new Object();
+    dati={
+        "EMAIL"      : $('#EMAIL').val(),
+        "password"   : $('#password').val()/**,
+        "controllore":"C_registrazione",
+        "metodo"     :"autentica"/**/
     }
     return dati;
 }
 /**/
-V_registrazione.prototype.datilogin=function(){
-    $('body').append("datilogin ");
-    //this.dati = new Array();
-    var dati = new Object();
-    dati={
-        "EMAIL"      :$('#EMAIL').val(),
-        "password"   :$('#password').val(),
-        "controllore":"C_registrazione",
-        "metodo"     :"autentica"
-    }
-    return dati;
-}
 
 V_registrazione.prototype.notifica=function(){
     $('#formRegistrazione').html("registrazione avvenuta con successo");
