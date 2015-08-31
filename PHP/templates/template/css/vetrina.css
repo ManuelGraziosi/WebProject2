@@ -1,0 +1,44 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 1-set-2015, 0.01.43
+    Author     : daniele
+*/
+.prodotto {
+    float: left;
+    width: 250px;
+    height: 350px;
+    margin: 5px;
+    border:3px solid orange;
+    background-color: orange;
+}
+
+.descrizione {
+    width: 250px;
+    height: 100px;
+    background-color: wheat;
+}
+
+.foto {
+    width: 250px;
+    height: 250px;
+    background-color: red;
+}
+
+.nome {
+    width:200px;
+    float:left;
+}
+
+.prezzo {
+    width:200px;
+    float:left;
+}
+
+.categoria {
+    width:200px;
+    float:left;
+}
