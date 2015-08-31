@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-var C,V;
+var C_home;
 
 var C_home_eventi = function(){
     C_home = new C_home();
