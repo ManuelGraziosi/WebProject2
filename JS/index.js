@@ -1,4 +1,4 @@
 var control;
 $(document).ready(function(){
-	control = new C_home();
+	control = new C_home_eventi();
 });

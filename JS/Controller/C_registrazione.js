@@ -14,44 +14,39 @@ C_registrazione.prototype={
         $('body').append("controlla Dati ");
         errori=new Array();
         //var dati = this.recuperaDati();
-        $('#nome').blur(function () {
+        $('#nome_registrazione').blur(function () {
             if (!$(this).val().match(/^[a-zA-z' ]{2,30}$/)) {
-                    $(this).css("border", "3px solid red");
-                    errori[0]=true;
+                $(this).css("border", "3px solid red");
+                errori[0]=true;
             }
             else{
-                    $(this).css("border", "2px solid green");
-                    errori[0]=false;
+                $(this).css("border", "2px solid green");
+                errori[0]=false;
             }
         });
-
-
-        $('#cognome').blur(function () {
+        
+        $('#cognome_registrazione').blur(function () {
             if (!$(this).val().match(/^[a-zA-z' ]{2,30}$/)) {
-                    $(this).css("border", "3px solid red");
-                    errori[1]=true;
+                $(this).css("border", "3px solid red");
+                errori[1]=true;
             }
             else{
-                    $(this).css("border", "2px solid green");
-                    errori[1]=false;
+                $(this).css("border", "2px solid green");
+                errori[1]=false;
             }
         });
 
         $('#EMAIL_registrazione').blur(function () {
-            if (!$(this).val().match(/^[a-zA-z' .]{2,30}@[a-zA-Z]{2,10}.[a-z]{2,3}$/)) {
-                /**
-                $email_controll=mysql_query("SELECT email FROM Utente WHERE email=$('#email')");
-                if ($email_controll==1){
-                /**/
-                    $(this).css("border","3px solid red");
-                    errori[2]=true;
+            //if (!$(this).val().match(/^[a-zA-z' .]{2,30}@[a-zA-Z]{2,10}.[a-z]{2,3}$/)) {
+            if (!$(this).val().match(/^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/)) {
+                $(this).css("border","3px solid red");
+                errori[2]=true;
                 //}
             }
             else {
                 $(this).css("border", "2px solid green");
                 errori[2]=false;
             }
-            
         });
 
         $('#password_registrazione').blur(function () {
@@ -76,46 +71,41 @@ C_registrazione.prototype={
             }
         });
         
-        $('#via').blur(function () {
+        $('#via_registrazione').blur(function () {
             if (!$(this).val().match(/^[a-zA-z' ]{2,100}$/)) {
-                    $(this).css("border", "3px solid red");
-                    errori[1]=true;
+                $(this).css("border", "3px solid red");
+                errori[1]=true;
             }
             else{
-                    $(this).css("border", "2px solid green");
-                    errori[1]=false;
+                $(this).css("border", "2px solid green");
+                errori[1]=false;
             }
         });
 
-        $('#citta').blur(function () {
-            if (!$(this).val().match(/^[a-zA-z' ]{2,20}$/)) {
-                    $(this).css("border", "3px solid red");
-                    errori[1]=true;
+        $('#citta_registrazione').blur(function () {
+            if (!$(this).val().match(/^[a-zA-z' ]{1,20}$/)) {
+                $(this).css("border", "3px solid red");
+                errori[1]=true;
             }
             else{
-                    $(this).css("border", "2px solid green");
-                    errori[1]=false;
+                $(this).css("border", "2px solid green");
+                errori[1]=false;
             }
         });
         
-        $('#CAP').blur(function () {
+        $('#CAP_registrazione').blur(function () {
             if (!$(this).val().match(/^[0-9]{5}$/)) {
-                    $(this).css("border", "3px solid red");
-                    errori[1]=true;
+                $(this).css("border", "3px solid red");
+                errori[1]=true;
             }
             else{
-                    $(this).css("border", "2px solid green");
-                    errori[1]=false;
+                $(this).css("border", "2px solid green");
+                errori[1]=false;
             }
         });
-
-
-        if(errori[0] === true && errori[1] === true){
-            $('body').append('<p>funziona o no?</p>');
-        }
     },
 
-    inviaDati:function(dati){
+    inviaDatiRegistrazione:function(dati){
         $('body').append(" invia dati");
         var view = new V_registrazione();
         var dati = view.recuperaDati();

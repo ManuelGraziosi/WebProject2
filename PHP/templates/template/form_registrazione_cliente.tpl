@@ -2,11 +2,11 @@
     <table>
         <tr>
             <td>Nome:  </td>
-            <td><input id="nome" name="nome" type="text" placeholder="solo caretteri"/></td>
+            <td><input id="nome_registrazione" name="nome" type="text" placeholder="solo caretteri"/></td>
         </tr>
         <tr>
             <td>Cognome:  </td>
-            <td><input id="cognome" name="cognome" type="text" placeholder="solo caretteri"/></td>
+            <td><input id="cognome_registrazione" name="cognome" type="text" placeholder="solo caretteri"/></td>
         </tr>
         <tr>
             <td>Email:  </td>
@@ -21,15 +21,15 @@
         </tr>
         <tr>
             <td>Via:  </td>
-            <td><input id="via" name="via" type="text" placeholder=""/></td>
+            <td><input id="via_registrazione" name="via" type="text" placeholder=""/></td>
         </tr>
         <tr>
             <td>Citta:  </td>
-            <td><input id="citta" name="citta" type="text" placeholder="nome della città"/></td>
+            <td><input id="citta_registrazione" name="citta" type="text" placeholder="nome della città"/></td>
         </tr>
         <tr>
             <td>CAP:  </td>
-            <td><input id="CAP" name="CAP" type="text" placeholder="5 numeri"/></td>
+            <td><input id="CAP_registrazione" name="CAP" type="text" placeholder="5 numeri"/></td>
         </tr>
         <tr>
             <td colspan="2">

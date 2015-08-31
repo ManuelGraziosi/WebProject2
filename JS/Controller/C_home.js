@@ -23,8 +23,10 @@ var C_home = function(){
             }
         });
     });
-    
-    $('#chisiamo').unbind().click(function(){
+};
+
+C_home.prototype={
+    chisiamo: function(){
         $('title').html('Sammartino | Chi siamo');
         $('.menu').removeClass('active');
         $(this).addClass('active');
@@ -36,9 +38,9 @@ var C_home = function(){
                 $('#mainright').html(chisiamo);
             }
         });
-    });
+    },
     
-    $('#dovesiamo').unbind().click(function(){
+    dovesiamo:function(){
         $('title').html('Sammartino | Dove siamo');
         $('.menu').removeClass('active');        
         $(this).addClass('active');
@@ -50,9 +52,9 @@ var C_home = function(){
                 $('#mainright').html(dovesiamo);
             }
         });
-    });
+    },
     
-    $('#galleria').unbind().click(function(){
+    galleria : function(){
         $('title').html('Sammartino | Galleria');
         $('.menu').removeClass('active');        
         $(this).addClass('active');
@@ -65,9 +67,9 @@ var C_home = function(){
                 $('#mainright').html(galleria);
             }
         });
-    });
+    },
     
-    $('#vetrina').unbind().click(function(){
+    vetrina : function(){
         $('title').html('Sammartino | Vetrina');
         $('.menu').removeClass('active');        
         $(this).addClass('active');
@@ -79,9 +81,9 @@ var C_home = function(){
                 $('#mainright').html(chisiamo);
             }
         });
-    });
+    },
     
-    $('#carrello').unbind().click(function(){
+    carrello : function(){
         $('title').html('Sammartino | Carrello');
         $('.menu').removeClass('active');        
         $(this).addClass('active');
@@ -93,9 +95,9 @@ var C_home = function(){
                 $('#mainright').html(chisiamo);
             }
         });
-    });
+    },
     
-    $('#amministratore').click(function(){
+    amministratore:function(){
         $('title').html('Sammartino | Amministratore');
         $('.menu').removeClass('active');        
         $(this).addClass('active');
@@ -178,17 +180,19 @@ var C_home = function(){
                 });
             }
         });
-    });
+    },
     
-    $('#newsletter').unbind().click(function(){
+    newsletter : function(){
         C=new C_newsletter();
         V=new V_newsletter();
         C.controllaEmail();
         //$('#submit_newsletter').button();
-    });
+    },
     
-    $('#submit_newsletter').unbind().click(function(){
-        email=V.recuperaEmail();
+    submit_newsletter : function(){
+        C=new C_newsletter();
+        V=new V_newsletter();
+        var email = V.recuperaEmail();
         /**/
         if(C.controllaEmail()){
             C.inviaEmail(email);
@@ -201,11 +205,11 @@ var C_home = function(){
                 $('#notifica_newsletter').html('ERRORE formato email ').css("color","red");
             }
         }/**/
-    });
+    },
     
     /**/
     
-    $('#registrazione').unbind().click(function(){
+    registrazione : function(){
         
         C = new C_registrazione();
         V = new V_registrazione();
@@ -218,38 +222,30 @@ var C_home = function(){
                 V.dialogo();
                 $('#invia').unbind().click(function(){
                     $('body').append(" hai cliccato invia ");
-                    var dati = V.recuperaDati();
-                    C.inviaDati(dati);
+                    var dati = V.recuperaDatiRegistrazione();
+                    C.inviaDatiRegistrazione(dati);
                     //$('#formRegistrazione').fadeOut();
                 });
             }
         });
         
         
-    });
+    },
     
-    $('#login').unbind().click(function(){
+    login : function(){
         $('#invialogin').unbind().click(function(){
             C = new C_registrazione();
             V = new V_registrazione();
             var dati= V.recuperaDatiLogin();
             C.inviaDatiLogin(dati);
         });
-    });
+    },
     
     
-    $('#buttonsearch').unbind().click(function(){
+    ricerca:function(){
         C = new C_registrazione();
         V = new V_registrazione();
         var stringa = V.recuperaDatiricerca();
         C.ricerca(stringa);
-    });
-    
-    
-    $('#barracerca').unbind().keypress(function(){
-        C = new C_registrazione();
-        V = new V_registrazione();
-        var stringa = V.recuperaDatiricerca();
-        C.ricerca(stringa);
-    });
+    }
 }

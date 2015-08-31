@@ -14,25 +14,23 @@ V_registrazione.prototype.dialogo= function(){
 };
 
 /**/
-V_registrazione.prototype.recuperaDati=function(){
-    $('body').append("recuperati i dati</br> ");
+V_registrazione.prototype.recuperaDatiRegistrazione=function(){
     //this.dati = new Array();
     var dati = new Object();
     dati={
-        "nome"       : $('#nome').val(),
-        "cognome"    : $('#cognome').val(),
+        "nome"       : $('#nome_registrazione').val(),
+        "cognome"    : $('#cognome_registrazione').val(),
         "EMAIL"      : $('#EMAIL_registrazione').val(),
         "password"   : $('#password_registrazione').val(),
         "password_1" : $('#password_1_registrazione').val(),
-        "via"        : $('#via').val(),
-        "citta"      : $('#citta').val(),
-        "CAP"        : $('#CAP').val()
+        "via"        : $('#via_registrazione').val(),
+        "citta"      : $('#citta_registrazione').val(),
+        "CAP"        : $('#CAP_registrazione').val()
     };
     return dati;
 }
 
 V_registrazione.prototype.recuperaDatiLogin=function(){
-    $('body').append("recuperati dati dal form Login </br>");
     //this.dati = new Array();
     var dati = new Object();
     dati={
