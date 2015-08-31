@@ -17,7 +17,6 @@
     
     
     <script type="text/javascript" src="JS/Controller/C_home.js"></script>
-    <script type="text/javascript" src="JS/Controller/C_home_eventi.js"></script>
     <script type="text/javascript" src="JS/Controller/C_registrazione.js"></script>
     <script type="text/javascript" src="JS/Controller/C_amministrazione.js"></script>
     <script type="text/javascript" src="JS/Controller/C_newsletter.js"></script>
@@ -65,7 +64,7 @@
                     <li><a id="dovesiamo" title="DoveSiamo" class="menu">Dove Siamo</a></li>
                     <li><a id="galleria" title="Galleria" class="menu">Galleria</a></li>
                     <li><a id="vetrina" title="Vetrina" class="menu">Vetrina</a></li>
-                    <li><a id="amministratore" title="amministratore" class="menu">amministratore</a></li>
+                    <li><a id="amministrazione" title="amministrazione" class="menu">Amministrazione</a></li>
                 </ul>
 
                 <span id="menuright">

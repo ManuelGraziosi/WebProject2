@@ -1,5 +1,5 @@
-var C_amministratore = function(){
-    $('title').html('Sammartino | Amministratore');
+var C_amministrazione = function(){
+    $('title').html('Sammartino | Amministrazione');
     $('.menu').removeClass('active');        
     $(this).addClass('active');
     $.ajax({

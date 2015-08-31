@@ -81,8 +81,6 @@ class C_visualizzazione{
         $datiprodotto=$db->caricaRiga("prodotto", "Caciotta");
         /**/
         
-        print_r($datiprodotto);
-        
         
         $view->inserisciDatiTemplate('prodotto', $datiprodotto);
         $view->inserisciDatiTemplate('prodotti', $datiprod);

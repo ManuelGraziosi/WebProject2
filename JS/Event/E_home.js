@@ -10,7 +10,7 @@ var E_home = function(){
     
     $('.menu').unbind().click(C_home.caricaPagina);
     
-    $('#amministratore').click(C_home.amministratore);
+    $('#amministrazione').click(C_home.amministratore);
     $('#newsletter').click(C_home.newsletter);
     $('#submit_newsletter').unbind().click(C_home.submit_newsletter);
     $('#registrazione').unbind().click(C_home.registrazione);

@@ -133,8 +133,6 @@
                 <th>conferma_ordine</th>
                 <th>data_spedizione</th>
             </tr>
-        </table>
-        <table>
             {section name=i loop=$ordini}
                 <tr>
                     <td>{$ordini[i].ID_ORDINE}</td>
@@ -143,7 +141,8 @@
                     <td>{$ordini[i].data_pagamento}</td>
                     <td>{$ordini[i].stato_pagamento}</td>
                     <td>{$ordini[i].conferma_ordine}</td>
-                    <td>{$ordini[i].data_spedizione}</td></tr>
+                    <td>{$ordini[i].data_spedizione}</td>
+                </tr>
             {/section}
         </table>
     </div>
