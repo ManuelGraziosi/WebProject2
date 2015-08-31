@@ -6,7 +6,9 @@
     <link rel="icon" href="PHP/templates/template/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" type="text/css" media="screen" href="PHP/templates/template/css/style.css" />
     <script type="text/javascript" src="JS/Utility/Jquery/jquery-1.11.3.min.js"></script>
-    <!----><script type="text/javascript" src="JS/Utility/Jquery/jquery.js"></script><!---->
+    <!----><!---->
+    
+    <script type="text/javascript" src="JS/Utility/U_operazioni.js"></script>
     <script type="text/javascript" src="JS/Utility/Jquery/scripts.js"></script>
     
     

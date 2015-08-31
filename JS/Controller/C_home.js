@@ -4,9 +4,10 @@
  * and open the template in the editor.
  */
 var C,V;
+var U = new U_operazioni();
 
 var C_home = function(){
-    aggiorna_grafica();
+    U.aggiorna_grafica();
     $('.menu').removeClass('active');
     $('#home').addClass('active');
     $('title').html('Sammartino | Home');
@@ -15,87 +16,17 @@ var C_home = function(){
         $('title').html('Sammartino | Home');
         $('.menu').removeClass('active');
         $(this).addClass('active');
-        $.ajax({
-            url:"index.php?controllore=C_visualizzazione&metodo=home",
-            type:'GET',
-            dataType:"html",
-            success:function(home) {
-                $('#mainright').html(home);
-            }
-        });
+        U.richiestaHtmlServer('C_visualizzazione','home');
     });
 };
 
 C_home.prototype={
-    chisiamo: function(){
-        $('title').html('Sammartino | Chi siamo');
+    caricaPagina : function(){
+        var nomePagina = $(this).attr('title');
+        $('title').html('Sammartino | '+nomePagina);
         $('.menu').removeClass('active');
         $(this).addClass('active');
-        $.ajax({
-            url:"index.php?controllore=C_visualizzazione&metodo=chisiamo",
-            type:'GET',
-            dataType:"html",
-            success:function(chisiamo) {
-                $('#mainright').html(chisiamo);
-            }
-        });
-    },
-    
-    dovesiamo:function(){
-        $('title').html('Sammartino | Dove siamo');
-        $('.menu').removeClass('active');        
-        $(this).addClass('active');
-        $.ajax({
-            url:"index.php?controllore=C_visualizzazione&metodo=dovesiamo",
-            type:'GET',
-            dataType:"html",
-            success:function(dovesiamo) {
-                $('#mainright').html(dovesiamo);
-            }
-        });
-    },
-    
-    galleria : function(){
-        $('title').html('Sammartino | Galleria');
-        $('.menu').removeClass('active');        
-        $(this).addClass('active');
-        $.ajax({
-            url:"index.php?controllore=C_visualizzazione&metodo=galleria",
-            //url:"galleria/index.html",
-            type:'GET',
-            dataType:"html",
-            success:function(galleria) {
-                $('#mainright').html(galleria);
-            }
-        });
-    },
-    
-    vetrina : function(){
-        $('title').html('Sammartino | Vetrina');
-        $('.menu').removeClass('active');        
-        $(this).addClass('active');
-        $.ajax({
-            url:"index.php?controllore=C_visualizzazione&metodo=vetrina",
-            type:'GET',
-            dataType:"html",
-            success:function(chisiamo) {
-                $('#mainright').html(chisiamo);
-            }
-        });
-    },
-    
-    carrello : function(){
-        $('title').html('Sammartino | Carrello');
-        $('.menu').removeClass('active');        
-        $(this).addClass('active');
-        $.ajax({
-            url:"index.php?controllore=C_visualizzazione&metodo=carrello",
-            type:'GET',
-            dataType:"html",
-            success:function(chisiamo) {
-                $('#mainright').html(chisiamo);
-            }
-        });
+        U.richiestaHtmlServer('C_visualizzazione',nomePagina);
     },
     
     amministratore:function(){
@@ -108,7 +39,7 @@ C_home.prototype={
             dataType:"html",
             success:function(form) {
                 $('#mainright').html(form);
-                aggiorna_grafica();
+                U.aggiorna_grafica();
                 $('#amministra').tabs();
                 
                 $('#inviaProdotto').unbind().click(function(){
@@ -197,10 +128,7 @@ C_home.prototype={
         }/**/
     },
     
-    /**/
-    
     registrazione : function(){
-        
         C = new C_registrazione();
         V = new V_registrazione();
         $.ajax({
@@ -228,7 +156,6 @@ C_home.prototype={
             C.inviaDatiLogin(dati);
         });
     },
-    
     
     ricerca : function(){
         C = new C_registrazione();
