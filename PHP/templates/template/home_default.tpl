@@ -14,6 +14,7 @@
     <script type="text/javascript" src="JS/Controller/C_home_eventi.js"></script>
     <script type="text/javascript" src="JS/Controller/C_registrazione.js"></script>
     <script type="text/javascript" src="JS/View/V_registrazione.js"></script>
+    <script type="text/javascript" src="JS/View/V_amministrazione.js"></script>
     
     <script type="text/javascript" src="JS/Controller/C_newsletter.js"></script>
     <script type="text/javascript" src="JS/View/V_newsletter.js"></script>

@@ -111,19 +111,10 @@ C_home.prototype={
                 $('#amministra').tabs();
                 
                 $('#inviaProdotto').unbind().click(function(){
-                    var dati = new Object();
-                    dati = {
-                        "NOME_PRODOTTO": $('#nome_I').val(),
-                        "foto"         : $('#foto').val(),
-                        "descrizione"  : $('#descrizione').val(),
-                        "categoria"    : $('#categoria').val(),
-                        "prezzo_kg"    : $('#prezzo').val(),
-                        "disponibilita": $('#disponibilita').val(),
-                        "controllore"  : "C_amministratore",
-                        "metodo"       : "inserisciProdotto"
-                    };
+                    V = new V_amministrazione();
+                    var dati = V.recuperaDatiProdotto('I');
                     $.ajax({
-                        url:"index.php",
+                        url:"index.php?controllore=C_amministratore&metodo=inserisciProdotto",
                         type:'GET',
                         dataType:"html",
                         data:dati,
@@ -157,6 +148,8 @@ C_home.prototype={
                 });
                 
                 $('#AggiornaProdotto').unbind().click(function(){
+                    V = new V_amministrazione();
+                    var dati = V.recuperaDatiProdotto('A');/**
                     var dati = new Object();
                     dati = {
                         "NOME_PRODOTTO": $('#nome_A').val(),
@@ -167,9 +160,9 @@ C_home.prototype={
                         "disponibilita": $('#disponibilita_A').val(),
                         "controllore"  : "C_amministratore",
                         "metodo"       : "aggiornaProdotto"
-                    };
+                    };/**/
                     $.ajax({
-                        url:"index.php",
+                        url:"index.php?controllore=C_amministratore&metodo=aggiornaProdotto",
                         type:'GET',
                         dataType:"html",
                         data:dati,

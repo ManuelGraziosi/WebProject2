@@ -11,17 +11,17 @@
     <div id="formInserimentoProdotto">
         <table>
             <tr><td>Nome:  </td><td><input id="nome_I" name="nome" type="text"/></td></tr>
-            <tr><td>foto:  </td><td><input id="foto" name="foto" type="text"/></td></tr>
+            <tr><td>foto:  </td><td><input id="foto_I" name="foto" type="text"/></td></tr>
             <tr>
                 <td>descrizione:  </td>
                 <td>
-                    <textarea id="descrizione" name="descrizione"></textarea>
+                    <textarea id="descrizione_I" name="descrizione"></textarea>
                     <!--<input id="descrizione" name="descrizione" type="text"/>-->
                 </td>
             </tr>
-            <tr><td>categoria:  </td><td><input id="categoria" name="categoria" type="text"/></td></tr>
-            <tr><td>prezzo_kg:  &nbsp</td><td><input id="prezzo" name="prezzo" type="text"/></td></tr>
-            <tr><td>disponibilità:  </td><td><input id="disponibilita" name="disponibilita" type="text"/></td></tr>
+            <tr><td>categoria:  </td><td><input id="categoria_I" name="categoria" type="text"/></td></tr>
+            <tr><td>prezzo_kg:  &nbsp</td><td><input id="prezzo_I" name="prezzo" type="text"/></td></tr>
+            <tr><td>disponibilità:  </td><td><input id="disponibilita_I" name="disponibilita" type="text"/></td></tr>
             <tr><td colspan="2"><button id="inviaProdotto" class="invia" title="Inserisci prodotto">Inserisci prodotto</button></td></tr>
         </table>
     </div>
