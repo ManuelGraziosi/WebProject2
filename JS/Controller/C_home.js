@@ -9,6 +9,7 @@ var C_home = function(){
     aggiorna_grafica();
     $('.menu').removeClass('active');
     $('#home').addClass('active');
+    $('title').html('Sammartino | Home');
     /**/
     $('#home').unbind().click(function(){
         $('title').html('Sammartino | Home');
@@ -147,20 +148,16 @@ C_home.prototype={
                     });
                 });
                 
-                $('#AggiornaProdotto').unbind().click(function(){
+                $('#AggiornaProdotto').unbind().change(function(){
+                    $(this).val();
+                    $.ajax({
+                        url:"index.php?controllore=&metodo="
+                    });
+                });
+                
+                $('#AggiornaProdottoSelezionato').unbind().click(function(){
                     V = new V_amministrazione();
-                    var dati = V.recuperaDatiProdotto('A');/**
-                    var dati = new Object();
-                    dati = {
-                        "NOME_PRODOTTO": $('#nome_A').val(),
-                        "foto"         : $('#foto_A').val(),
-                        "descrizione"  : $('#descrizione_A').val(),
-                        "categoria"    : $('#categoria_A').val(),
-                        "prezzo_kg"    : $('#prezzo_A').val(),
-                        "disponibilita": $('#disponibilita_A').val(),
-                        "controllore"  : "C_amministratore",
-                        "metodo"       : "aggiornaProdotto"
-                    };/**/
+                    var dati = V.recuperaDatiProdotto('A');
                     $.ajax({
                         url:"index.php?controllore=C_amministratore&metodo=aggiornaProdotto",
                         type:'GET',
@@ -206,7 +203,6 @@ C_home.prototype={
         
         C = new C_registrazione();
         V = new V_registrazione();
-        //C.controllaDati();
         $.ajax({
             url:"index.php?controllore=C_visualizzazione&metodo=registrazione",
             success:function(html){
@@ -217,7 +213,6 @@ C_home.prototype={
                     $('body').append(" hai cliccato invia ");
                     var dati = V.recuperaDatiRegistrazione();
                     C.inviaDatiRegistrazione(dati);
-                    //$('#formRegistrazione').fadeOut();
                 });
             }
         });
@@ -235,7 +230,7 @@ C_home.prototype={
     },
     
     
-    ricerca:function(){
+    ricerca : function(){
         C = new C_registrazione();
         V = new V_registrazione();
         var stringa = V.recuperaDatiricerca();

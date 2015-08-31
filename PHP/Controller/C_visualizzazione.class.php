@@ -15,7 +15,7 @@ class C_visualizzazione{
     
     public function paginaIniziale() {
         $view=new V_view();
-        $view->inserisciDatiTemplate('titolo', 'home');
+        //$view->inserisciDatiTemplate('titolo', 'home');
         $view->impostaTemplate('home_default.tpl');
     }
     

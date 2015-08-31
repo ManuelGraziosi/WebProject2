@@ -16,3 +16,14 @@ V_amministrazione.prototype.recuperaDatiProdotto=function(a){
     };
     return dati;
 }
+
+V_amministrazione.prototype.visualizzaDatiProdotto=function(dati){
+    //this.dati = new Array();
+    a='A';
+    $('#nome_'+a).val(dati['NOME_PRODOTTO']);
+    $('#foto_'+a).val(dati['foto']);
+    $('#descrizione_'+a).val(dati['descrizione']);
+    $('#categoria_'+a).val(dati['categoria']);
+    $('#prezzo_'+a).val(dati['prezzo']);
+    $('#disponibilita_'+a).val(dati['disponibilita']);
+}

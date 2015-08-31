@@ -68,7 +68,7 @@
                         <tr><td>categoria:  </td><td><input id="categoria_A" name="categoria" type="text" value="{$prodotto[0].categoria}"/></td></tr>
                         <tr><td>prezzo_kg:  &nbsp</td><td><input id="prezzo_A" name="prezzo" type="text" value="{$prodotto[0].prezzo_kg}"/></td></tr>
                         <tr><td>disponibilità:  </td><td><input id="disponibilita_A" name="disponibilita" type="text" value="{$prodotto[0].disponibilita}"/></td></tr>
-                        <tr><td colspan="2"><button id="AggiornaProdotto" class="invia" title="Aggiorna prodotto">Aggiorna prodotto</button></td></tr>
+                        <tr><td colspan="2"><button id="AggiornaProdottoSelezionato" class="invia" title="Aggiorna prodotto">Aggiorna prodotto</button></td></tr>
                     </table>
                 </td>
             </tr>

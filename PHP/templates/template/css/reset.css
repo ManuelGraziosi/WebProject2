@@ -73,3 +73,9 @@ border-spacing: 0;
 {
 	display:block;
 }
+
+@font-face {
+    font-family: contenuto;
+    src: url("font/KaushanScript-Regular.otf");
+    src: local('KaushanScript-Regular.otf'), url('font/KaushanScript-Regular.otf') format('truetype');
+}

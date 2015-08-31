@@ -4,7 +4,7 @@ body
 {
 	background: #111 url("../images/bg.png") repeat;
 	color: #555;
-	font-family: 'Droid Sans', Arial, Helvetica, sans-serif;
+	font-family: contenuto,'Droid Sans', Arial, Helvetica, sans-serif;
 	font-size: 12px;
 	padding: 30px 0;
 }

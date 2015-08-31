@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>{$titolo}</title>
+    <title></title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="icon" href="PHP/templates/template/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" type="text/css" media="screen" href="PHP/templates/template/css/style.css" />
@@ -13,10 +13,12 @@
     <script type="text/javascript" src="JS/Controller/C_home.js"></script>
     <script type="text/javascript" src="JS/Controller/C_home_eventi.js"></script>
     <script type="text/javascript" src="JS/Controller/C_registrazione.js"></script>
+    <script type="text/javascript" src="JS/Controller/C_amministrazione.js"></script>
+    <script type="text/javascript" src="JS/Controller/C_amministrazione_eventi.js"></script>
+    <script type="text/javascript" src="JS/Controller/C_newsletter.js"></script>
+    
     <script type="text/javascript" src="JS/View/V_registrazione.js"></script>
     <script type="text/javascript" src="JS/View/V_amministrazione.js"></script>
-    
-    <script type="text/javascript" src="JS/Controller/C_newsletter.js"></script>
     <script type="text/javascript" src="JS/View/V_newsletter.js"></script>
     
     <script type="text/javascript" src="JS/index.js"></script>
@@ -119,28 +121,16 @@
 
         <div id="mainright">
             <!-- - - - - - - - - - - - -CORPO CHE CAMBIERA' SEMPRE- - - - - - - - - - - - - -->
-            
-            
-            
             <h1 style="font-size:1cm" align='center'>BENVENUTO</h1> <br>
-<div align="center"><img style="width:100%" src='PHP/templates/template/images/sammartino0.jpg'/></div>
-            
-            
-            
-            
-            
+            <div align="center"><img style="width:100%" src='PHP/templates/template/images/sammartino0.jpg'/></div>
         </div>
-
     </div>
-
-</div>
-
-<div id="footercont">
-  <p>
-    Template by <a title="download website templates" href="http://www.downloadwebsitetemplates.co.uk" rel="external">Download Website Templates</a> - Designed by <a title="Mario Valdeburgo Git Hub" href="https://github.com/MarioValdeburgo" rel="external">Mario Valdeburgo</a>
-     - © Copyright 2015
-  </p>
-</div>
-
+    </div>
+    <div id="footercont">
+      <p>
+        Template by <a title="download website templates" href="http://www.downloadwebsitetemplates.co.uk" rel="external">Download Website Templates</a> - Designed by <a title="Mario Valdeburgo Git Hub" href="https://github.com/MarioValdeburgo" rel="external">Mario Valdeburgo</a>
+         - © Copyright 2015
+      </p>
+    </div>
 </body>
 </html>
