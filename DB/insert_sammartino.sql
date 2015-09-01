@@ -16,7 +16,7 @@ INSERT INTO `prodotto`(`NOME_PRODOTTO`, `descrizione`, `foto`, `categoria`, `pre
 ('Caciotta','fatto con latte dell azienda sammartino','Caciotta grande','Caciotta',7.2,45),
 ('Caciotta al tartufo','fatto con latte dell azienda sammartino','tartufo', 'caciotta', 15, 10),
 ('Caciotta al peperoncino','fatto con latte dell azienda sammartino', 'peperoncino', 'caciotta', 9, 10),
-('Caciotta alle noci','fatto con latte dell azienda sammartino', 'noci', 'fresco', 8, 10),
+('Caciotta alle noci','fatto con latte dell azienda sammartino', 'noci', 'caciotta', 8, 10),
 ('Ricotta da 2kg','fatto con latte dell azienda sammartino', 'ricotta_2kg', 'fresco', 3, 10),
 ('Ricotta da 500g','fatto con latte dell azienda sammartino', 'ricotta_500g', 'fresco', 3, 10),
 ('Ricotta da 350g','fatto con latte dell azienda sammartino', 'ricotta_350g', 'fresco', 3, 10),

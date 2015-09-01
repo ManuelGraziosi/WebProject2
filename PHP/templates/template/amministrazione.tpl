@@ -1,32 +1,50 @@
 <div id="amministra">
       <ul>
-        <li><a href="#formInserimentoProdotto">Inserisci Prodotto</a></li>
-        <li><a href="#formEliminaProdotto">Elimina Prodotto</a></li>
-        <li><a href="#formAggiornaProdotto">Aggiorna Prodotto</a></li>
-        <li><a href="#formEliminaCliente">Elimina Cliente</a></li>
-        <li><a href="#elencoProdotto">Elenco Prodotti</a></li>
-        <li><a href="#elencoClienti">Elenco Clienti</a></li>
-        <li><a href="#elencoOrdiniConfermati">Elenco Ordini Confermati</a></li>
+        <li><a href="#Prodotto">Prodotto</a></li>
+        <li><a href="#Cliente">Cliente</a></li>
+        <li><a href="#OrdiniConfermati">Ordini Confermati</a></li>
       </ul>
-    <div id="formInserimentoProdotto">
+    <div id="Prodotto">
+        
+        
         <table>
-            <tr><td>Nome:  </td><td><input id="nome_I" name="nome" type="text"/></td></tr>
-            <tr><td>foto:  </td><td><input id="foto_I" name="foto" type="text"/></td></tr>
+            <tr>
+                <td>
+                    Nome:
+                </td>
+                <td>
+                    <select id="nome_E" name="nome">
+                        <option>           </option>
+                        <!--
+                        {section name=i loop=$prodotti}
+                            <option>{$prodotti[i].NOME_PRODOTTO}</option>
+                        {/section}
+                        -->
+                    </select>
+                </td>
+                <td colspan="2">
+                    <button id="EliminaProdotto" class="invia" title="Elimina prodotto">Elimina prodotto</button>
+                </td>
+            </tr>
+        </table>
+        
+        
+        <table>
+            <tr><td>Nome:  </td><td><input id="nome" name="nome" type="text"/></td></tr>
+            <tr><td>foto:  </td><td><input id="foto" name="foto" type="text"/></td></tr>
             <tr>
                 <td>descrizione:  </td>
                 <td>
-                    <textarea id="descrizione_I" name="descrizione"></textarea>
-                    <!--<input id="descrizione" name="descrizione" type="text"/>-->
+                    <textarea id="descrizione" name="descrizione"></textarea>
                 </td>
             </tr>
-            <tr><td>categoria:  </td><td><input id="categoria_I" name="categoria" type="text"/></td></tr>
-            <tr><td>prezzo_kg:  &nbsp</td><td><input id="prezzo_I" name="prezzo" type="text"/></td></tr>
-            <tr><td>disponibilità:  </td><td><input id="disponibilita_I" name="disponibilita" type="text"/></td></tr>
+            <tr><td>categoria:  </td><td><input id="categoria" name="categoria" type="text"/></td></tr>
+            <tr><td>prezzo_kg:  &nbsp</td><td><input id="prezzo" name="prezzo" type="text"/></td></tr>
+            <tr><td>disponibilità:  </td><td><input id="disponibilita" name="disponibilita" type="text"/></td></tr>
             <tr><td colspan="2"><button id="inviaProdotto" class="invia" title="Inserisci prodotto">Inserisci prodotto</button></td></tr>
         </table>
-    </div>
     
-    <div id="formEliminaProdotto">
+    <!--
         <table>
             <tr>
                 <td>Nome:  </td>
@@ -41,9 +59,7 @@
             </tr>
             <tr><td colspan="2"><button id="EliminaProdotto" class="invia" title="Elimina prodotto">Elimina prodotto</button></td></tr>
         </table>
-    </div>
-    
-    <div id="formAggiornaProdotto">
+        
         <table>
             <tr>
                 <td>Nome:  </td>
@@ -62,7 +78,6 @@
                             <td>descrizione:  </td>
                             <td>
                                 <textarea id="descrizione_A" name="descrizione">{$prodotto[0].descrizione}</textarea>
-                                <!--<input id="descrizione_A" name="descrizione" type="text" value="{$prodotto[0].descrizione}"/>-->
                             </td>
                         </tr>
                         <tr><td>categoria:  </td><td><input id="categoria_A" name="categoria" type="text" value="{$prodotto[0].categoria}"/></td></tr>
@@ -74,9 +89,10 @@
             </tr>
             
         </table>
+    -->
     </div>
-    
-    <div id="formEliminaCliente">
+    <div id="Cliente">
+    <!--
         <table>
             <tr>
                 <td>Nome:  </td>
@@ -107,22 +123,9 @@
             {/section}
         </table>
     </div>
-    
-    <div id="elencoProdotto">
-        <table>
-            {section name=i loop=$prodotti}
-                <tr><td>{$prodotti[i].NOME_PRODOTTO}</td></tr>
-            {/section}
-        </table>
-    </div>
-    <div id="elencoClienti">
-        <table>
-            {section name=i loop=$clienti}
-                <tr><td>{$clienti[i].EMAIL}</td></tr>
-            {/section}
-        </table>
-    </div>
-    <div id="elencoOrdiniConfermati">
+    -->
+    <div id="OrdiniConfermati">
+    <!--
         <table>
             <tr>
                 <th>ID_ORDINE</th>
@@ -145,5 +148,6 @@
                 </tr>
             {/section}
         </table>
+    -->
     </div>
 </div>

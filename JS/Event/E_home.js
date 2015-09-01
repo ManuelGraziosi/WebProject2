@@ -16,5 +16,9 @@ var E_home = function(){
     $('#registrazione').unbind().click(C_home.registrazione);
     $('#login').unbind().click(C_home.login);
     $('#buttonsearch').unbind().click(C_home.ricerca);
-    $('#barracerca').unbind().keypress(C_home.ricerca);
+    $('#barracerca').unbind().keypress(function(evento){
+        if(evento.which == 13){//13 corrisponde al tasto invio
+            C_home.ricerca();
+        }
+    });
 }

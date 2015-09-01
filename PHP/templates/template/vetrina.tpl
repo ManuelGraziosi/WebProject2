@@ -7,7 +7,7 @@
                     <img src="PHP/templates/template/images/{$prodotti[i].foto}.jpg" width="250" height="250"/>
                 </div>
                 <div class="info">
-                    <div class="descrizione">
+                    <div class="dettaglio">
                         <div class="nome">
                             {$prodotti[i].NOME_PRODOTTO}
                         </div>

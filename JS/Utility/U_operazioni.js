@@ -6,6 +6,7 @@ U_operazioni.prototype = {
     aggiorna_grafica : function(){
         $('button').button();
         $('select').select();
+        //$('body').disableSelection();
     },
     
     richiestaHtmlServer : function(controllore,metodo){
