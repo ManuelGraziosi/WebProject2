@@ -8,7 +8,7 @@ var C_home;
 var E_home = function(){
     C_home = new C_home();
     
-    $('.menu').unbind().click(C_home.caricaPagina);
+    $('.menu').unbind().click(C_home.caricaPaginaHtml);
     
     $('#amministrazione').click(C_home.amministratore);
     $('#newsletter').click(C_home.newsletter);

@@ -1,6 +1,8 @@
 var E_amministratore = function(){
     
-    $('#inviaProdotto').unbind().click(function(){
+    $('#inviaProdotto').unbind().click();
+    /**
+    function(){
         V = new V_amministrazione();
         var dati = V.recuperaDatiProdotto('I');
         $.ajax({
@@ -17,9 +19,12 @@ var E_amministratore = function(){
                 }
             }
         });
-    });
+    }
+    /**/
 
-    $('#EliminaProdotto').unbind().click(function(){
+    $('#EliminaProdotto').unbind().click();
+    /**
+    function(){
         var dati = new Object();
         dati = {
             "NOME_PRODOTTO": $('#nome_E').val(),
@@ -35,16 +40,13 @@ var E_amministratore = function(){
                 $('#mainright').html(carrello);
             }
         });
-    });
+    }
+    /**/
+    $('#AggiornaProdotto').unbind().change();
 
-    $('#AggiornaProdotto').unbind().change(function(){
-        $(this).val();
-        $.ajax({
-            url:"index.php?controllore=&metodo="
-        });
-    });
-
-    $('#AggiornaProdottoSelezionato').unbind().click(function(){
+    $('#AggiornaProdottoSelezionato').unbind().click();
+    /**
+    function(){
         V = new V_amministrazione();
         var dati = V.recuperaDatiProdotto('A');
         $.ajax({
@@ -56,5 +58,6 @@ var E_amministratore = function(){
                 $('#mainright').html(carrello);
             }
         });
-    });
+    }
+    /**/
 };

@@ -13,12 +13,12 @@ var C_home = function(){
 };
 
 C_home.prototype={
-    caricaPagina : function(){
+    caricaPaginaHtml : function(){
         var nomePagina = $(this).attr('title');
         $('title').html('Sammartino | '+nomePagina);
         $('.menu').removeClass('active');
         $(this).addClass('active');
-        U.richiestaHtmlServer('C_visualizzazione',nomePagina);
+        U.richiestaHtmlServer('C_visualizzazione',nomePagina,'#mainright');
     },
     
     amministratore : function(){

@@ -9,14 +9,19 @@ U_operazioni.prototype = {
         //$('body').disableSelection();
     },
     
-    richiestaHtmlServer : function(controllore,metodo){
-        
+    richiestaHtmlServer : function(controllore,metodo,selettore){
+        var azioneRichiesta = new Object();
+        azioneRichiesta = {
+            "controllore" : controllore,
+            "metodo"      : metodo
+        };
         $.ajax({
-            url:"index.php?controllore="+controllore+"&metodo="+metodo,
+            url:"index.php",
             type:'POST',
+            data:azioneRichiesta,
             dataType:"html",
             success:function(html) {
-                $('#mainright').html(html);
+                $(selettore).html(html);
             }
         });
     }

@@ -10,7 +10,7 @@
         <table>
             <tr>
                 <td>
-                    Nome:
+                    Nome del prodotto da eliminare:
                 </td>
                 <td>
                     <select id="nome_E" name="nome">
@@ -29,6 +29,29 @@
         </table>
         
         
+        
+        <table>
+            <tr>
+                <td>
+                    Nome del prodotto da aggiornare:
+                </td>
+                <td>
+                    <select id="nome_A" name="nome">
+                        <option>           </option>
+                        <!--
+                        {section name=i loop=$prodotti}
+                            <option>{$prodotti[i].NOME_PRODOTTO}</option>
+                        {/section}
+                        -->
+                    </select>
+                </td>
+                <td colspan="2">
+                    <button id="AggiornaProdotto" class="invia" title="Aggiorna prodotto">Aggiorna prodotto</button>
+                </td>
+            </tr>
+        </table>
+        
+        
         <table>
             <tr><td>Nome:  </td><td><input id="nome" name="nome" type="text"/></td></tr>
             <tr><td>foto:  </td><td><input id="foto" name="foto" type="text"/></td></tr>
@@ -39,26 +62,12 @@
                 </td>
             </tr>
             <tr><td>categoria:  </td><td><input id="categoria" name="categoria" type="text"/></td></tr>
-            <tr><td>prezzo_kg:  &nbsp</td><td><input id="prezzo" name="prezzo" type="text"/></td></tr>
+            <tr><td>prezzo_kg:  &nbsp</td><td><input id="prezzo_kg" name="prezzo" type="text"/></td></tr>
             <tr><td>disponibilità:  </td><td><input id="disponibilita" name="disponibilita" type="text"/></td></tr>
             <tr><td colspan="2"><button id="inviaProdotto" class="invia" title="Inserisci prodotto">Inserisci prodotto</button></td></tr>
         </table>
     
     <!--
-        <table>
-            <tr>
-                <td>Nome:  </td>
-                <td>
-                    <select id="nome_E" name="nome">
-                        <option></option>
-                        {section name=i loop=$prodotti}
-                            <option>{$prodotti[i].NOME_PRODOTTO}</option>
-                        {/section}
-                    </select>
-                </td>
-            </tr>
-            <tr><td colspan="2"><button id="EliminaProdotto" class="invia" title="Elimina prodotto">Elimina prodotto</button></td></tr>
-        </table>
         
         <table>
             <tr>
