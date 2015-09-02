@@ -4,7 +4,7 @@
 
             <div class="prodotto">
                 <div class="foto">
-                    <img src="PHP/templates/template/images/{$prodotti[i].foto}.jpg" width="250" height="250"/>
+                    <img src="PHP/templates/template/images/prodotti/{$prodotti[i].foto}.jpg" width="250" height="250"/>
                 </div>
                 <div class="info">
                     <div class="dettaglio">
