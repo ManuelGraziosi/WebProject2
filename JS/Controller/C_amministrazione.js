@@ -46,7 +46,7 @@ C_amministrazione.prototype = {
 //$('#inviaProdotto').unbind().click();
 
 
-
+/**
 $('#AggiornaProdotto').unbind().change(function(){
     $(this).val();
     $.ajax({
@@ -70,3 +70,4 @@ $('#AggiornaProdottoSelezionato').unbind().click(function(){
         }
     });
 };
+/**/

@@ -92,7 +92,7 @@
             
             <div id="menufisarmonica">
                 <h7>LOGIN / REGISTRAZIONE</h7>
-                    <div id="login" class=".ui-accordion .ui-accordion-header ">
+                    <div id="login">
                         <p align="center">ACCEDI</p>
                         Email: <br> <input type="email" id="EMAIL"/>
                         Password:<input type="password" id="password"/>

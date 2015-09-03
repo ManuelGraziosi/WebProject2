@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="icon" href="PHP/templates/template/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" media="screen" href="PHP/templates/template/css/amministrazione.css" />
+    <script type="text/javascript" src="JS/Utility/Jquery/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="JS/Utility/U_operazioni.js"></script>
+    <script type="text/javascript" src="JS/Event/E_amministrazione.js"></script>
+    <script type="text/javascript" src="JS/Controller/C_amministrazione.js"></script>
+    <script type="text/javascript" src="JS/View/V_amministrazione.js"></script>
+    <script type="text/javascript" src="JS/index_admin.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="JS/Utility/Jquery/jquery-ui-1.11.4.custom/jquery-ui.min.css" /> 
+    <script type="text/javascript" src="JS/Utility/Jquery/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+</head>
+
+<body>
+    <div id="amministra" class="ui-widget">
+          <ul>
+            <li><a href="#Prodotto">Prodotto</a></li>
+            <li><a href="#Cliente">Cliente</a></li>
+            <li><a href="#OrdiniConfermati">Ordini Confermati</a></li>
+          </ul>
+        <div id="Prodotto">
+            <div id="tabellaForm">
+                <div class="rigaTabella">
+                    <span class="colonnaTabellaLabel">
+                        <label>Nome:</label>
+                    </span>
+                    <span class="colonnaTabellaText">
+                        <select id="prodottoSelezionato">
+                            <option></option>
+                        </select>
+                    </span>
+                    <span class="avvisoFunzionamento">
+                        <label class="ui-state-disabled">selezionare un prodotto per aggiornare e eliminare, nulla per aggiungere</label>
+                    </span>
+                </div>
+                <div class="rigaTabella">
+                    <span class="colonnaTabellaLabel">
+                        <label>Nome foto:</label>
+                    </span>
+                    <span class="colonnaTabellaText">
+                        <input id="foto" type="text"/>
+                    </span>
+                </div>
+                <div class="rigaTabella">
+                    <span class="colonnaTabellaLabel">
+                        <label>Descrizione:</label>
+                    </span>
+                    <span class="colonnaTabellaText">
+                        <textarea id="descrizione" name="descrizione"></textarea>
+                    </span>
+                </div>
+                <div class="rigaTabella">
+                    <span class="colonnaTabellaLabel">
+                        <label>Categoria:</label>
+                    </span>
+                    <span class="colonnaTabellaText">
+                        <input id="categoria" type="text"/>
+                    </span>
+                </div>
+                <div class="rigaTabella">
+                    <span class="colonnaTabellaLabel">
+                        <label>Prezzo:</label>
+                    </span>
+                    <span class="colonnaTabellaText">
+                        <input id="prezzo_kg" type="text"/>
+                    </span>
+                </div>
+                <div class="rigaTabella">
+                    <span class="colonnaTabellaLabel">
+                        <label>Disponibilità:</label>
+                    </span>
+                    <span class="colonnaTabellaText">
+                        <input id="disponibilita" type="text"/>
+                    </span>
+                </div>
+            </div>
+            
+            <div id="controlloProdotto">
+                <span><button id="InserisciProdotto">Inserisci Prodotto</button></span>
+                <span><button id="AggiornaProdotto">Aggiorna Prodotto</button></span>
+                <span><button id="EliminaProdotto">Elimina Prodotto</button></span>
+            </div>
+        </div>
+        
+        <div id="Cliente">
+        </div>
+        
+        <div id="OrdiniConfermati">
+        </div>
+    </div>
+</body>
+</html>

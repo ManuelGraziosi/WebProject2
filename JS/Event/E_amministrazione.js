@@ -1,48 +1,12 @@
-var E_amministratore = function(){
+var E_amministrazione = function(){
     
-    $('#inviaProdotto').unbind().click();
-    /**
-    function(){
-        V = new V_amministrazione();
-        var dati = V.recuperaDatiProdotto('I');
-        $.ajax({
-            url:"index.php?controllore=C_amministratore&metodo=inserisciProdotto",
-            type:'GET',
-            dataType:"html",
-            data:dati,
-            success:function(successo) {
-                if(!successo){
-                    alert("prodotto inserito con successo");
-                }
-                else{
-                    alert("errore di inserimento");
-                }
-            }
-        });
-    }
-    /**/
+    $('#amministra').tabs();
 
-    $('#EliminaProdotto').unbind().click();
-    /**
-    function(){
-        var dati = new Object();
-        dati = {
-            "NOME_PRODOTTO": $('#nome_E').val(),
-            "controllore"  : "C_amministratore",
-            "metodo"       : "eliminaProdotto"
-        };
-        $.ajax({
-            url:"index.php",
-            type:'GET',
-            dataType:"html",
-            data:dati,
-            success:function(carrello) {
-                $('#mainright').html(carrello);
-            }
-        });
-    }
-    /**/
-    $('#AggiornaProdotto').unbind().change();
+    $('button').button();
+    
+    $('#InserisciProdotto').click();
+    $('#AggiornaProdotto').click();
+    $('#EliminaProdotto').click();
 
     $('#AggiornaProdottoSelezionato').unbind().click();
     /**

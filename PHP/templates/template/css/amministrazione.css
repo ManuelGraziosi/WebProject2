@@ -8,3 +8,38 @@ and open the template in the editor.
     Author     : daniele
 */
 
+#Prodotto {
+    float:left;
+}
+
+#Cliente {
+    float:left;
+}
+
+#OrdiniConfermati {
+    float:left;
+}
+
+select {
+    width: 250px;
+}
+
+#tabellaForm {
+    float: left;
+}
+
+button {
+    margin: 15px 0 0 0;
+}
+
+.rigaTabella {
+    float: left;
+    width: 80%;
+}
+
+.colonnaTabellaLabel {
+    float: left;
+    height: 1cm;
+    width: 200px;
+}
+

@@ -73,19 +73,18 @@ class C_visualizzazione{
     }
     
     public function amministrazione() {
+        /**
         $view=new V_view();
         $db= new F_database();
         $datiprod=$db->caricaTabella('prodotto');
         $daticlie=$db->caricaTabella('cliente');
-        /*provvisiorio*/
         $datiprodotto=$db->caricaRiga("prodotto", "Caciotta");
-        /**/
-        
-        
         $view->inserisciDatiTemplate('prodotto', $datiprodotto);
         $view->inserisciDatiTemplate('prodotti', $datiprod);
         $view->inserisciDatiTemplate('clienti', $daticlie);
         $view->impostaTemplate('amministrazione.tpl');
+        /**/
+     header("location: PHP/templates/template/amministrazione.html");
     }
     
 }
