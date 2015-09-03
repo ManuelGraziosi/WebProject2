@@ -1,13 +1,6 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 1-set-2015, 0.01.43
-    Author     : daniele
-*/
-.prodotto {
+
+.prodotto
+{
     float: left;
     width: 250px;
     height: 350px;
@@ -16,29 +9,41 @@ and open the template in the editor.
     background-color: orange;
 }
 
-.dettaglio {
+.dettaglio
+{
     width: 250px;
     height: 100px;
     background-color: wheat;
 }
 
-.foto {
+.foto-space
+{
     width: 250px;
     height: 250px;
     background-color: red;
 }
 
-.nome {
+.nome
+{
     width:200px;
     float:left;
 }
 
-.prezzo {
+.prezzo
+{
     width:200px;
     float:left;
 }
 
-.categoria {
+.categoria
+{
     width:200px;
     float:left;
+}
+
+#foto
+{   
+    width: 250px;
+    max-height: 250px;
+    vertical-align: middle;
 }
