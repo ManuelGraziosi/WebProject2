@@ -1,5 +1,6 @@
 
-.prodotto {
+.prodotto
+{
     float: left;
     width: 250px;
     height: 350px;
@@ -8,29 +9,41 @@
     background-color: orange;
 }
 
-.dettaglio {
+.dettaglio
+{
     width: 250px;
     height: 100px;
     background-color: wheat;
 }
 
-.foto {
+.foto-space
+{
     width: 250px;
     height: 250px;
     background-color: red;
 }
 
-.nome {
+.nome
+{
     width:200px;
     float:left;
 }
 
-.prezzo {
+.prezzo
+{
     width:200px;
     float:left;
 }
 
-.categoria {
+.categoria
+{
     width:200px;
     float:left;
+}
+
+#foto
+{   
+    width: 250px;
+    max-height: 250px;
+    vertical-align: middle;
 }

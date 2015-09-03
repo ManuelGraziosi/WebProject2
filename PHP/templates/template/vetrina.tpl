@@ -3,8 +3,8 @@
         {section name=i loop=$prodotti}
 
             <div class="prodotto">
-                <div class="foto">
-                    <img src="PHP/templates/template/images/prodotti/{$prodotti[i].foto}.jpg" width="250" height="250"/>
+                <div class="foto-space">
+                    <img id="foto" src="PHP/templates/template/images/prodotti/{$prodotti[i].foto}.jpg" />
                 </div>
                 <div class="info">
                     <div class="dettaglio">
@@ -24,7 +24,7 @@
                 </div>
             </div>
         {sectionelse} 
-            <b> nessun risultato </b>
+            <b> Nessun risultato </b>
         {/section}
                 
              
