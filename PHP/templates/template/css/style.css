@@ -296,20 +296,21 @@ width: 200px;
 height: 30px;
 }
 
-#buttonsearch
+/* #buttonsearch
 {
 float: right;
-background-color: transparent;
-border-width: 0 0 0 0;
-}
-
+background: transparent;
+} */
+ 
 #searchimg
 {
 width: 30px;
 height: 30px;
+vertical-align: middle;
+padding-right: 5px;
 }
 
-#buttonsearch:hover
+#searchimg:hover
 {
 cursor: pointer;
 }
