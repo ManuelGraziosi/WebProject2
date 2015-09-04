@@ -8,6 +8,13 @@ and open the template in the editor.
     Author     : daniele
 */
 
+#amministra {
+    margin: 0px;
+    padding: 0px;
+    float:left;
+    width: 100%;
+}
+
 #Prodotto {
     float:left;
 }

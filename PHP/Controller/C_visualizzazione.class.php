@@ -84,7 +84,7 @@ class C_visualizzazione{
         $view->inserisciDatiTemplate('clienti', $daticlie);
         $view->impostaTemplate('amministrazione.tpl');
         /**/
-     header("location: PHP/templates/template/amministrazione.html");
+     header("location: amministrazione.html");
     }
     
 }
