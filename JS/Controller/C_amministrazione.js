@@ -4,7 +4,7 @@ var C_amministrazione = function(){
     $('title').html('Sammartino | Amministrazione');
     $('.menu').removeClass('active');
     $('#amministrazione').addClass('active');
-    U.richiestaHtmlServer('C_visualizzazione','amministrazione','#mainright');
+    U.richiestaHtmlServer('C_visualizzazione','amministrazione','html');
 };
 
 C_amministrazione.prototype = {

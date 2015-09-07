@@ -38,4 +38,18 @@ class V_amministratore {
         return $dati;
     }
     
+    public function getListaProdotti($lista) {
+        header("Content-Type: application/json");
+        $chiavi = array('NOME_PRODOTTO'/**, 'foto', 'descrizione', 'categoria', 'prezzo_kg', 'disponibilita'/**/);
+        foreach ($chiavi as $value) {
+            if(isset($_REQUEST[$value])){
+                $dati[0][$value] = $_REQUEST[$value];
+            }
+            else{
+                $dati[0][$value] = false;
+            }
+        }
+        echo $dati;
+    }
+    
 }

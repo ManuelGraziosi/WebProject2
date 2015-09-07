@@ -84,7 +84,7 @@ class C_registrazione {
         if ($cliente!=false) {
             if ($cliente->getAccountAttivo()) {
                 //account attivo
-                if ($email==$cliente->getEmail() && $password==$cliente->getPassword()) {
+                if ($email == $cliente->getEmail() && $password == $cliente->getPassword()) {
                     $sessione=U_singolaistanza::getIstanza('U_sessione');
                     $sessione->imposta_valore('email',$email);
                     $sessione->imposta_valore('nome_cognome',$cliente->getNome().' '.$cliente->getCognome());
@@ -104,6 +104,15 @@ class C_registrazione {
         }
         //print_r($this->_messaggio);
         echo json_encode($this->_messaggio);
+    }
+    
+    /**
+     * Effettua il logout
+     */
+    public function logout() {
+        $sessione=  U_singolaistanza::getIstanza('U_sessione');
+        $sessione->cancella_valore('email');
+        $sessione->cancella_valore('nome_cognome');
     }
 }
 ?>

@@ -40,7 +40,7 @@ class C_amministratore {
         $prodotto = new E_prodotto();
         $datiProdotto = $view->getDatiProdotto();
         U_operazioni::inserisciDati($prodotto, $datiProdotto);
-        $db->depositaRiga('prodotto', $prodotto);        
+        $db->depositaRiga('prodotto', $prodotto);
     }
     
     public function aggiornaProdotto() {
@@ -62,6 +62,21 @@ class C_amministratore {
         //$ordine = new E_ordine();
         $ordini = $db->caricaTabella('ordine');
         print_r($ordini);
+    }
+    
+    public function listaProdotti(){
+        $db=new F_database();
+        $prodotto= new E_prodotto();
+        $view = new V_amministratore();
+        $lista= array();
+        $datiprodotto = $db->caricaTabella('prodotto');
+        $i=0;
+        foreach ($datiprodotto as $value){
+            U_operazioni::inserisciDati($prodotto, $value);
+            $lista[$i]=$prodotto;
+            $i++;
+        }
+        $view->getListaProdotti($lista);
     }
     
 }

@@ -33,6 +33,83 @@
 </head>
 
 <body>
+    <div id="amministra" class="ui-widget">
+          <ul>
+            <li><a href="#Prodotto">Prodotto</a></li>
+            <li><a href="#Cliente">Cliente</a></li>
+            <li><a href="#OrdiniConfermati">Ordini Confermati</a></li>
+          </ul>
+        <div id="Prodotto">
+            <div id="tabellaForm">
+                <div class="rigaTabella">
+                    <span class="colonnaTabellaLabel">
+                        <label>Nome:</label>
+                    </span>
+                    <span class="colonnaTabellaText">
+                        <select id="prodottoSelezionato">
+                            <option></option>
+                        </select>
+                    </span>
+                    <span class="avvisoFunzionamento">
+                        <label class="ui-state-disabled">selezionare un prodotto per aggiornare e eliminare, nulla per aggiungere</label>
+                    </span>
+                </div>
+                <div class="rigaTabella">
+                    <span class="colonnaTabellaLabel">
+                        <label>Nome foto:</label>
+                    </span>
+                    <span class="colonnaTabellaText">
+                        <input id="foto" type="text"/>
+                    </span>
+                </div>
+                <div class="rigaTabella">
+                    <span class="colonnaTabellaLabel">
+                        <label>Descrizione:</label>
+                    </span>
+                    <span class="colonnaTabellaText">
+                        <textarea id="descrizione" name="descrizione"></textarea>
+                    </span>
+                </div>
+                <div class="rigaTabella">
+                    <span class="colonnaTabellaLabel">
+                        <label>Categoria:</label>
+                    </span>
+                    <span class="colonnaTabellaText">
+                        <input id="categoria" type="text"/>
+                    </span>
+                </div>
+                <div class="rigaTabella">
+                    <span class="colonnaTabellaLabel">
+                        <label>Prezzo:</label>
+                    </span>
+                    <span class="colonnaTabellaText">
+                        <input id="prezzo_kg" type="text"/>
+                    </span>
+                </div>
+                <div class="rigaTabella">
+                    <span class="colonnaTabellaLabel">
+                        <label>Disponibilità:</label>
+                    </span>
+                    <span class="colonnaTabellaText">
+                        <input id="disponibilita" type="text"/>
+                    </span>
+                </div>
+            </div>
+            
+            <div id="controlloProdotto">
+                <span><button id="InserisciProdotto">Inserisci Prodotto</button></span>
+                <span><button id="AggiornaProdotto">Aggiorna Prodotto</button></span>
+                <span><button id="EliminaProdotto">Elimina Prodotto</button></span>
+            </div>
+        </div>
+        
+        <div id="Cliente">
+        </div>
+        
+        <div id="OrdiniConfermati">
+        </div>
+    </div>
+    <!--
     <div id="amministra">
           <ul>
             <li><a href="#Prodotto">Prodotto</a></li>
@@ -124,7 +201,7 @@
                     <b> nessun cliente </b>
                 {/section}
             </table>
-        -->
+        --><!--
         </div>
         <div id="OrdiniConfermati">
         <!--
@@ -150,7 +227,7 @@
                     </tr>
                 {/section}
             </table>
-        -->
+        --><!--
         </div>
         <script type="text/javascript">
             $('#amministra').tabs();
@@ -159,5 +236,6 @@
             $('button').button();
         </script>
     </div>
+           -->
 </body>
 </html>
