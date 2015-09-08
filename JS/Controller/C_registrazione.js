@@ -108,7 +108,7 @@ C_registrazione.prototype={
     inviaDatiRegistrazione:function(dati){
         $('body').append(" invia dati");
         var view = new V_registrazione();
-        var dati = view.recuperaDati();
+        var dati = view.recuperaDatiRegistrazione();
         $.ajax({
             url:"index.php?controllore=C_registrazione&metodo=creaCliente",
             data:dati,
@@ -130,6 +130,20 @@ C_registrazione.prototype={
             datatype:"json",
             success:function(login){
                 $('#utente').html('<p>'+login['cliente']+'</p>');
+                if(login['errore']!=false){
+                    alert(login['errore']);
+                }
+            }
+        });
+    },
+    
+    richiestaLogout: function(){
+        $.ajax({
+            url:"index.php?controllore=C_registrazione&metodo=logout",
+            data:dati,/**
+            datatype:"json",/**/
+            success:function(login){
+                $('#utente').html('<p>Ospite</p>');
                 if(login['errore']!=false){
                     alert(login['errore']);
                 }

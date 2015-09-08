@@ -387,6 +387,7 @@ float: left;
 #user-space
 {
 cursor: default;
+float: left;
 }
 
 #user_pic
@@ -399,6 +400,7 @@ padding: 4 4 0 4;
 #utente
 {
 padding: 4 0 0 4;
+float: left;
 }
 
 #logout
@@ -406,4 +408,8 @@ padding: 4 0 0 4;
 color: black;
 padding-left: 4px;
 text-decoration: underline;
+float: right;
+width: 50px;
+height: 50px;
 }
+

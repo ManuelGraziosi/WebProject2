@@ -60,7 +60,7 @@ C_home.prototype={
                 $('#mainright').append(html);
                 C.controllaDati();
                 V.dialogo();
-                $('#invia').unbind().click(function(){
+                $('#invia').click(function(){
                     $('body').append(" hai cliccato invia ");
                     var dati = V.recuperaDatiRegistrazione();
                     C.inviaDatiRegistrazione(dati);
@@ -77,6 +77,13 @@ C_home.prototype={
             V = new V_registrazione();
             var dati= V.recuperaDatiLogin();
             C.inviaDatiLogin(dati);
+        });
+    },
+    
+    logout : function(){
+        $('#invialogout').unbind().click(function(){
+            C = new C_registrazione();
+            C.richiestaLogout();
         });
     },
     

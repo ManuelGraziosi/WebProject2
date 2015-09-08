@@ -16,8 +16,9 @@ var E_home = function(){
             });
     $('#newsletter').click(C_home.newsletter);
     $('#submit_newsletter').unbind().click(C_home.submit_newsletter);
-    $('#registrazione').unbind().click(C_home.registrazione);
+    $('#registrazione').click(C_home.registrazione);
     $('#login').unbind().click(C_home.login);
+    $('#logout').unbind().click(C_home.logout);
     $('#searchimg').unbind().click(C_home.ricerca);
     $('#barracerca').unbind().keypress(function(evento){
         if(evento.which == 13){//13 corrisponde al tasto invio
