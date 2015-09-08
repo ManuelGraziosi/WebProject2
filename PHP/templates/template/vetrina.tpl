@@ -1,5 +1,23 @@
 
-            
+        <div id="selezione">
+            <div id="barra-selezione">
+                Seleziona la categoria di prodotto: 
+                <select name="categoria">
+                    <option value="FR"> Fresco</option>
+                    <option value="ST"> Stagionato </option>
+                    <option value="YO"> Yogurt </option>
+                </select>
+                &nbsp &nbsp
+                Seleziona il tipo di prodotto: 
+                <select name="tipologia">
+                    <option value="Pe"> Pecorino</option>
+                    <option value="Ca"> Caciotta </option>
+                </select>
+                &nbsp &nbsp &nbsp &nbsp
+                <button>Cerca</button>    DA MODIFICARE!
+            </div>
+        </div>
+
         {section name=i loop=$prodotti}
 
             <div class="prodotto">
