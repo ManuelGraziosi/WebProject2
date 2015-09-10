@@ -84,8 +84,7 @@
                     <td>{$clienti[i].CAP}</td>
                     <td>
                         <button class="ui-state-default ui-corner-all" title="Aggiorna {$prodotti[i].NOME_PRODOTTO}">
-                            <span class="ui-icon ui-icon-locked"></span>
-                            <span class="ui-icon ui-icon-unlocked"></span>
+                            <span class="ui-icon ui-icon-locked ui-icon ui-icon-unlocked"></span>
                         </button>
                     </td>
                 </tr>
