@@ -55,8 +55,8 @@
             <span id="user-space">
                 <span><img id="user_pic" src="PHP/templates/template/images/user.png" /><p id="utente">Ospite</p></span>
                 
-<!----><div id="logout" class="ui-state-default ui-corner-all" title=".ui-icon-close">Logout<span class="ui-icon ui-icon-close"></span></div>
-                <!----
+<!----<div id="logout" class="ui-state-default ui-corner-all" title=".ui-icon-close">Logout<span class="ui-icon ui-icon-close"></span></div>
+                <!------>
                 <div id="logout">Logout<span class="ui-icon-close"></span></div>
                 <!---->
             </span>
