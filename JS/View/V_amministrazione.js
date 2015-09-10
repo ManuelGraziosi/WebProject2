@@ -2,8 +2,18 @@ var V_amministrazione= function(){
     //this.dialogo();
 };
 
+V_amministrazione.prototype.dialogo= function(){
+    $('#tabellaForm').dialog({
+        draggable:false,
+        modal:true,
+        resizable:false,
+        minWidth:400,
+        title:"Aggiorna Prodotto"
+    });
+};
+
 /**/
-V_amministrazione.prototype.recuperaDatiProdotto=function(a){
+V_amministrazione.prototype.recuperaDatiProdotto=function(){
     //this.dati = new Array();
     var dati = new Object();
     dati = {

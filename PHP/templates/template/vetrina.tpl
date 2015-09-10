@@ -42,7 +42,7 @@
                 </div>
             </div>
         {sectionelse} 
-            <b> Nessun risultato </b>
+            <b> Nessun prodotto disponibile in vetrina </b>
         {/section}
                 
              
