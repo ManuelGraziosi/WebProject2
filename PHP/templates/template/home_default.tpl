@@ -12,17 +12,17 @@
     <script type="text/javascript" src="JS/Utility/Jquery/scripts.js"></script>
     
     
-    <!--<script type="text/javascript" src="JS/Event/E_amministrazione.js"></script>-->
+    <script type="text/javascript" src="JS/Event/E_amministrazione.js"></script>
     <script type="text/javascript" src="JS/Event/E_home.js"></script>
     
     
     <script type="text/javascript" src="JS/Controller/C_home.js"></script>
     <script type="text/javascript" src="JS/Controller/C_registrazione.js"></script>
-    <!--<script type="text/javascript" src="JS/Controller/C_amministrazione.js"></script>-->
+    <script type="text/javascript" src="JS/Controller/C_amministrazione.js"></script>
     <script type="text/javascript" src="JS/Controller/C_newsletter.js"></script>
     
     <script type="text/javascript" src="JS/View/V_registrazione.js"></script>
-   <!-- <script type="text/javascript" src="JS/View/V_amministrazione.js"></script>-->
+    <script type="text/javascript" src="JS/View/V_amministrazione.js"></script>
     <script type="text/javascript" src="JS/View/V_newsletter.js"></script>
     
     <script type="text/javascript" src="JS/index.js"></script>
@@ -55,8 +55,8 @@
             <span id="user-space">
                 <span><img id="user_pic" src="PHP/templates/template/images/user.png" /><p id="utente">Ospite</p></span>
                 
-<!----><div id="logout" class="ui-state-default ui-corner-all" title=".ui-icon-close">Logout<span class="ui-icon ui-icon-close"></span></div>
-                <!----
+<!----<div id="logout" class="ui-state-default ui-corner-all" title=".ui-icon-close">Logout<span class="ui-icon ui-icon-close"></span></div>
+                <!------>
                 <div id="logout">Logout<span class="ui-icon-close"></span></div>
                 <!---->
             </span>
