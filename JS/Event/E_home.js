@@ -8,13 +8,10 @@ var C_home;
 var E_home = function(){
     C_home = new C_home();
     
-    $('.menu').unbind().click(C_home.caricaPaginaHtml);
+    $('.menu').unbind().click(C_home.caricaPaginaHtml);//richiede tutte le pagine del menu
     
-    $('#amministrazione').unbind().click(/**/C_home.amministratore/**
-            function(){
-                top.location.href = "amministrazione.html";
-            }/**/);
-    $('#newsletter').click(C_home.newsletter);
+    $('#amministrazione').unbind().click(C_home.amministratore);
+    /**/$('#newsletter').click(C_home.newsletter);
     $('#submit_newsletter').unbind().click(C_home.submit_newsletter);
     $('#registrazione').click(C_home.registrazione);
     $('#login').unbind().click(C_home.login);
@@ -26,5 +23,4 @@ var E_home = function(){
             C_home.ricerca();
         }
     });/**/
-    $('#')/**/
 }

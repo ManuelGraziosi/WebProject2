@@ -8,14 +8,16 @@ var V_dettagli_prodotto= function(){
     //this.dialogo();
 };
 
-V_dettagli_prodotto.prototype.dialogo= function(){
-    $('#dettagli_prodotto').dialog({
-        draggable:false,
-        modal:true,
-        resizable:false,
-        minWidth:320,
-        title:"Dettagli Prodotto"
-    });
-    $('#invia').button();
+V_dettagli_prodotto.prototype={
+        dialogomanuel: function(){
+        $('.dettagli_prodotto').dialog({
+            draggable:false,
+            modal:true,
+            resizable:false,
+            minWidth:320,
+            title:"Dettagli Prodotto"
+        });
+        $('#invia').button();
+    }
 };
 

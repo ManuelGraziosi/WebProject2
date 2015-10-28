@@ -21,7 +21,7 @@ U_operazioni.prototype = {
             data:azioneRichiesta,
             dataType:"html",
             success:function(html) {
-                $(selettore).html(html);
+                $(selettore).html(html);c=new E_vetrina();
             }
         });
     }

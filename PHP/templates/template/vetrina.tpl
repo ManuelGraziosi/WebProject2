@@ -20,7 +20,7 @@
 
         {section name=i loop=$prodotti}
 
-            <div class="prodotto">
+            <div class="prodotto" id="{$smarty.section.i.iteration}">
                 <div class="foto-space">
                     <img id="foto" src="PHP/templates/template/images/prodotti/{$prodotti[i].foto}.jpg" />
                 </div>

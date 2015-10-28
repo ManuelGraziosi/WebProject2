@@ -14,16 +14,21 @@
     
     <script type="text/javascript" src="JS/Event/E_amministrazione.js"></script>
     <script type="text/javascript" src="JS/Event/E_home.js"></script>
+    <script type="text/javascript" src="JS/Event/E_vetrina.js"></script>
     
     
     <script type="text/javascript" src="JS/Controller/C_home.js"></script>
     <script type="text/javascript" src="JS/Controller/C_registrazione.js"></script>
     <script type="text/javascript" src="JS/Controller/C_amministrazione.js"></script>
     <script type="text/javascript" src="JS/Controller/C_newsletter.js"></script>
+    <script type="text/javascript" src="JS/Controller/C_dettagli_prodotto.js"></script>
+    <script type="text/javascript" src="JS/Controller/C_vetrina.js"></script>
     
     <script type="text/javascript" src="JS/View/V_registrazione.js"></script>
     <script type="text/javascript" src="JS/View/V_amministrazione.js"></script>
     <script type="text/javascript" src="JS/View/V_newsletter.js"></script>
+    <script type="text/javascript" src="JS/View/V_vetrina.js"></script>
+    <script type="text/javascript" src="JS/View/V_dettagli_prodotto.js"></script>
     
     <script type="text/javascript" src="JS/index.js"></script>
     
@@ -138,5 +143,7 @@
          - © Copyright 2015
       </p>
     </div>
+    <div id="nascosto" class="prova">123465798</div>
+    
 </body>
 </html>

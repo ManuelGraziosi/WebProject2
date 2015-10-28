@@ -92,5 +92,7 @@ C_home.prototype={
         V = new V_registrazione();
         var stringa = V.recuperaDatiricerca();
         C.ricerca(stringa);
-    }
-}
+    },
+    
+    
+};

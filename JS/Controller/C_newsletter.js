@@ -9,7 +9,7 @@ var C_newsletter= function(){
 }
 
 C_newsletter.prototype.controllaEmail=function(){
-    //riscontro;
+    var riscontro=false;
     $('#EMAIL_newsletter').blur(function () {
             if (!$(this).val().match(/^[a-zA-z' .]{2,30}@[a-zA-Z]{2,10}.[a-z]{2,3}$/)) {
                 /**

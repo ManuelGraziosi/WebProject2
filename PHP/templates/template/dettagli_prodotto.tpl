@@ -14,6 +14,9 @@
                         <div class="categoria">
                             {$prodotto.categoria}
                         </div>
+                        <div class="descrizione">
+                            {$prodotto.descrizione}
+                        </div>
                         <div title="{$prodotto.NOME_PRODOTTO}" class="aggiungi">
                             <img src="PHP/templates/template/images/cart/addCart.png" width="45" height="45"/>
                         </div>

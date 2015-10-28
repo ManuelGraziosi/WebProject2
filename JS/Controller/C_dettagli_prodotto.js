@@ -4,26 +4,26 @@
  * and open the template in the editor.
  */
 
-var visualizzazione=function(){
+var C_dettagli_prodotto=function(){
     
 };
 
-visualizzazione.prototype.home=function(){
-    $('title').html('home');
-
-    $('#dettagli_prodotto').removeClass('active');
-    $(this).addClass('active');
-
-    $.ajax({
-        url:"index.php?controllore=C_visualizzazione&metodo=dettagliprodotto",
-        type:'GET',
-        dataType:"html",
-        success:function(home) {
-            $('#mainright').html(home);
-        }
-    });
-};
-
-var start=function(){
-    $('#home').click(visualizzazione.home());
+C_dettagli_prodotto.prototype.dettaglio=function(){
+    var U = new U_operazioni();
+    U.richiestaHtmlServer("C_visualizzazione","dettagliprodotto","mainright");
+    
+    
+    var dati = new Object();
+        dati = {
+            "NOME_PRODOTTO": $('#nome').val()
+        };
+        $.ajax({
+            url:"index.php?controllore=C_visualizzazione&metodo=dettagliprodotto",
+            type:'GET',
+            dataType:"html",
+            data:dati,
+            success:function(carrello) {
+                $('#nascosto').html(carrello).toggleClass("nacondino");
+            }
+        });
 };

@@ -1,23 +1,23 @@
-var visualizzazione=function(){
-    
+var C,V;
+var U = new U_operazioni();
+
+var C_vetrina=function(){
+    U.aggiorna_grafica();
 };
 
-visualizzazione.prototype.home=function(){
-    $('title').html('home');
-
-    $('#vetrina').removeClass('active');
-    $(this).addClass('active');
-
-    $.ajax({
-        url:"index.php?controllore=C_visualizzazione&metodo=home",
-        type:'GET',
-        dataType:"html",
-        success:function(home) {
-            $('#mainright').html(home);
-        }
-    });
-};
-
-var start=function(){
-    $('#home').click(visualizzazione.home());
+C_vetrina.prototype={
+    dettaglio : function(){
+        
+        $.ajax({
+            url:"index.php?controllore=C_visualizzazione&metodo=dettagliprodotto",
+            type:'GET',
+            dataType:"html",
+            data:{NOME_PRODOTTO:"Caciotta"},
+            success:function(carrello) {
+            V=new V_dettagli_prodotto();
+            $('#nascosto').html(carrello);
+            V.dialogomanuel();
+            }
+        });
+    }
 };
