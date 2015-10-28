@@ -25,5 +25,6 @@ var E_home = function(){
         if(evento.which == 13){//13 corrisponde al tasto invio
             C_home.ricerca();
         }
-    });/**/
+    });
+    $('#')
 }
