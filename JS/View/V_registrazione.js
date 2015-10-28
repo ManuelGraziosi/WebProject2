@@ -28,7 +28,7 @@ V_registrazione.prototype.recuperaDatiRegistrazione=function(){
         "CAP"        : $('#CAP_registrazione').val()
     };
     return dati;
-}
+};
 
 V_registrazione.prototype.recuperaDatiLogin=function(){
     //this.dati = new Array();
@@ -38,12 +38,12 @@ V_registrazione.prototype.recuperaDatiLogin=function(){
         "password"   : $('#password').val()
     };
     return dati;
-}
+};
 /**/
 
 V_registrazione.prototype.notifica=function(){
     $('#formRegistrazione').html("registrazione avvenuta con successo");
-}
+};
 
 V_registrazione.prototype.recuperaDatiricerca=function(){
     $('body').append("recuperati dati dal text di ricerca </br>");
@@ -53,4 +53,4 @@ V_registrazione.prototype.recuperaDatiricerca=function(){
         "ricerca" : $('#barracerca').val()
     };
     return dati;
-}
+};
