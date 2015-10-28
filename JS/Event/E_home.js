@@ -26,5 +26,4 @@ var E_home = function(){
             C_home.ricerca();
         }
     });/**/
-    $('#').unbind().click(C_home.)
 }
