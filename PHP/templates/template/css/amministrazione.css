@@ -46,6 +46,10 @@ button {
     width: 20%;
 }
 /**/
+button{
+    margin: 0px;
+}
+
 table {
     text-align: left;
     border-spacing: 0px;
@@ -109,7 +113,7 @@ thead th{
     color: #fff;
 }
 tfoot{
-    background-image: url(../images/verlauf_schwarz.png);
+    //background-image: url(../images/verlauf_schwarz.png);
     border-top: 1px solid #fff;
 }
 tfoot th,tfoot td{

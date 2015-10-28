@@ -10,10 +10,12 @@ E_amministrazione.prototype = {
             var V =new V_amministrazione();
             V.dialogo();
         });
-        $('.AggiornaProdotto').click(function(){
+        $('.AggiornaProdotto').click(function(event,ui){
             $('#tabellaForm').fadeIn();
             var V =new V_amministrazione();
             V.dialogo();
+            var dati = V.recuperaDatiProdotto(ui);
+            V.visualizzaDatiProdotto(dati);
         });
         $('#EliminaProdotto').click();
         $('#AggiornaProdottoSelezionato').click();

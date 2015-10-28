@@ -11,15 +11,15 @@
             <caption>Prodotti</caption>
             <thead class="ui-widget-header">
                 <tr>
-                    <th scope="col" style="width: 2%">N.</th>
-                    <th scope="col" style="width: 26%">Nome</th>
-                    <th scope="col" style="width: 26%">Foto</th>
-                    <th scope="col" style="width: 14%">Categoria</th>
+                    <th scope="col" style="width: 5%">N.</th>
+                    <th scope="col" style="width: 35%">Nome</th>
+                    <th scope="col" style="width: 35%">Foto</th>
+                    <th scope="col" style="width: 18%">Categoria</th>
                     <th scope="col" style="width: 7%">Pr.</th>
                     <!--<th scope="col" style="width: 60%">Descrizione</th>-->
-                    <th scope="col" style="width: 7%">Disp.</th>
-                    <th scope="col" style="width: 7%"></th>
-                    <th scope="col" style="width: 7%"></th>
+                    <th scope="col" style="width: 0%">Disp.</th>
+                    <th scope="col" style="width: 0%"></th>
+                    <th scope="col" style="width: 0%"></th>
                 </tr>
             </thead>
             <tbody>
@@ -28,14 +28,14 @@
                     <td> 
                         {$smarty.section.i.iteration}
                     </td>
-                    <td>{$prodotti[i].NOME_PRODOTTO}</td>
-                    <td>{$prodotti[i].foto}</td>
-                    <td>{$prodotti[i].categoria}</td>
-                    <td>{$prodotti[i].prezzo_kg} €</td>
-                    <!--<td>{$prodotti[i].descrizione}</td>-->
-                    <td>{$prodotti[i].disponibilita}</td>
+                    <td id="{$prodotti[i].foto}_nome">{$prodotti[i].NOME_PRODOTTO}</td>
+                    <td id="{$prodotti[i].foto}_foto">{$prodotti[i].foto}</td>
+                    <td id="{$prodotti[i].foto}_categoria">{$prodotti[i].categoria}</td>
+                    <td id="{$prodotti[i].foto}_prezzo">{$prodotti[i].prezzo_kg} €</td>
+                    <td id="{$prodotti[i].foto}_descrizione" hidden="true">{$prodotti[i].descrizione}</td>
+                    <td id="{$prodotti[i].foto}_disponibilita">{$prodotti[i].disponibilita}</td>
                     <td>
-                        <button class="AggiornaProdotto ui-state-default ui-corner-all" title="Aggiorna {$prodotti[i].NOME_PRODOTTO}">
+                        <button class="AggiornaProdotto ui-state-default ui-corner-all" title="{$prodotti[i].foto}">
                             <span class="ui-icon ui-icon-pencil"></span>
                         </button>
                     </td>

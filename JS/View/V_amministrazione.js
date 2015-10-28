@@ -15,14 +15,16 @@ V_amministrazione.prototype.dialogo= function(){
 /**/
 V_amministrazione.prototype.recuperaDatiProdotto=function(){
     //this.dati = new Array();
+    var nome = $(this).attr('title');
+    $('body').append(nome);
     var dati = new Object();
     dati = {
-        "NOME_PRODOTTO": $('#nome').val(),
-        "foto"         : $('#foto').val(),
-        "descrizione"  : $('#descrizione').val(),
-        "categoria"    : $('#categoria').val(),
-        "prezzo_kg"    : $('#prezzo').val(),
-        "disponibilita": $('#disponibilita').val()
+        "NOME_PRODOTTO": $('#'+nome+'_nome').val(),
+        "foto"         : $('#'+nome+'_foto').val(),
+        "descrizione"  : $('#'+nome+'_descrizione').val(),
+        "categoria"    : $('#'+nome+'_categoria').val(),
+        "prezzo_kg"    : $('#'+nome+'_prezzo').val(),
+        "disponibilita": $('#'+nome+'_disponibilita').val()
     };
     return dati;
 }
