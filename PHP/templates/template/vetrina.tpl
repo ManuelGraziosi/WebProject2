@@ -17,10 +17,10 @@
                 <button>Cerca</button>    DA MODIFICARE!
             </div>
         </div>
-
+        <div id="elencoProdotti">
         {section name=i loop=$prodotti}
 
-            <div class="prodotto" id="{$smarty.section.i.iteration}">
+            <div class="prodotto" title="{$prodotti[i].NOME_PRODOTTO}" id="{$smarty.section.i.iteration}">
                 <div class="foto-space">
                     <img id="foto" src="PHP/templates/template/images/prodotti/{$prodotti[i].foto}.jpg" />
                 </div>
@@ -44,5 +44,4 @@
         {sectionelse} 
             <b> Nessun prodotto disponibile in vetrina </b>
         {/section}
-                
-             
+        </div>

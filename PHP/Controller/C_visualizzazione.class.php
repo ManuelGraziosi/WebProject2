@@ -89,9 +89,11 @@ class C_visualizzazione{
     }
     
     public function dettagliprodotto(){
-        $view=new V_view();
+        $view=new V_fareOrdine();
         $db= new F_database();
-        $datiprod=$db->caricaRiga('prodotto','Caciotta');
+        $nome=$view->getNomeProdotto();
+        print $nome;
+        $datiprod=$db->caricaRiga('prodotto',$nome);
         $view->inserisciDatiTemplate('prodotto', $datiprod[0]);
         $view->impostaTemplate('dettagli_prodotto.tpl');
         

@@ -3,24 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-var C_home;
+var home;
 
 var E_home = function(){
-    C_home = new C_home();
+    home = new C_home();
     
-    $('.menu').unbind().click(C_home.caricaPaginaHtml);//richiede tutte le pagine del menu
+    $('.menu').unbind().click(home.caricaPaginaHtml);//richiede tutte le pagine del menu
     
-    $('#amministrazione').unbind().click(C_home.amministratore);
-    /**/$('#newsletter').click(C_home.newsletter);
-    $('#submit_newsletter').unbind().click(C_home.submit_newsletter);
-    $('#registrazione').click(C_home.registrazione);
-    $('#login').unbind().click(C_home.login);
-    $('#logout').unbind().click(C_home.logout);
-    $('#searchimg').unbind().click(C_home.ricerca);
-    $('#barracerca').unbind().keyup(C_home.ricerca);
+    $('#amministrazione').unbind().click(home.amministratore);
+    /**/$('#newsletter').click(home.newsletter);
+    $('#submit_newsletter').unbind().click(home.submit_newsletter);
+    $('#registrazione').click(home.registrazione);
+    $('#login').unbind().click(home.login);
+    $('#logout').unbind().click(home.logout);
+    $('#searchimg').unbind().click(home.ricerca);
+    $('#barracerca').unbind().keyup(home.ricerca);
     /**$('#barracerca').unbind().keypress(function(evento){
         if(evento.which == 13){//13 corrisponde al tasto invio
-            C_home.ricerca();
+            home.ricerca();
         }
     });/**/
 }

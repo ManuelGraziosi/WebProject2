@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-//var C_vetrina;
+var vetrina;
 
 var E_vetrina = function(){
-    C_vetrina = new C_vetrina();
+    vetrina = new C_vetrina();
     
     
-    $('.prodotto').click(C_vetrina.dettaglio);
+    $('.prodotto').click(vetrina.dettaglio);
 }
 
