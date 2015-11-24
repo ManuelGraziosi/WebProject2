@@ -35,10 +35,6 @@ CREATE TABLE IF NOT EXISTS `cliente` (
   `CAP` varchar(5) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- RELATIONS FOR TABLE `cliente`:
---
-
 -- --------------------------------------------------------
 
 --
@@ -49,15 +45,11 @@ DROP TABLE IF EXISTS `commento`;
 CREATE TABLE IF NOT EXISTS `commento` (
   `ID_COMMENTO` int(11) NOT NULL,
   `nome_prod_com` varchar(30) DEFAULT NULL,
+  `data_commento` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '''9999-12-31 23:59:59',
+  `user_commento` varchar(80) NOT NULL,
   `testo` varchar(1024) DEFAULT NULL,
   `voto` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- RELATIONS FOR TABLE `commento`:
---   `nome_prod_com`
---       `prodotto` -> `NOME_PRODOTTO`
---
 
 -- --------------------------------------------------------
 
@@ -67,13 +59,11 @@ CREATE TABLE IF NOT EXISTS `commento` (
 
 DROP TABLE IF EXISTS `newsletter`;
 CREATE TABLE IF NOT EXISTS `newsletter` (
-  `email` varchar(30) NOT NULL
+  `email` varchar(80) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- RELATIONS FOR TABLE `newsletter`:
---
 -- --------------------------------------------------------
+
 --
 -- Struttura della tabella `ordine`
 --
@@ -89,14 +79,6 @@ CREATE TABLE IF NOT EXISTS `ordine` (
   `data_spedizione` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- RELATIONS FOR TABLE `ordine`:
---   `email_cliente`
---       `cliente` -> `EMAIL`
---   `id_metodo_pagamento`
---       `pagamento` -> `ID_PAGAMENTO`
---
-
 -- --------------------------------------------------------
 
 --
@@ -111,10 +93,6 @@ CREATE TABLE IF NOT EXISTS `pagamento` (
   `data_scadenza` date DEFAULT NULL,
   `ccv` varchar(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- RELATIONS FOR TABLE `pagamento`:
---
 
 -- --------------------------------------------------------
 
@@ -132,10 +110,8 @@ CREATE TABLE IF NOT EXISTS `prodotto` (
   `disponibilita` int(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- RELATIONS FOR TABLE `prodotto`:
---
 -- --------------------------------------------------------
+
 --
 -- Struttura della tabella `prod_ordinato`
 --
@@ -147,14 +123,6 @@ CREATE TABLE IF NOT EXISTS `prod_ordinato` (
   `id_ordine` int(11) NOT NULL,
   `quantita` int(4) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- RELATIONS FOR TABLE `prod_ordinato`:
---   `id_ordine`
---       `ordine` -> `ID_ORDINE`
---   `nome_prodotto`
---       `prodotto` -> `NOME_PRODOTTO`
---
 
 --
 -- Indici per le tabelle scaricate
@@ -171,7 +139,8 @@ ALTER TABLE `cliente`
 --
 ALTER TABLE `commento`
   ADD PRIMARY KEY (`ID_COMMENTO`),
-  ADD KEY `Commenti` (`nome_prod_com`) USING BTREE;
+  ADD KEY `Commenti` (`nome_prod_com`) USING BTREE,
+  ADD KEY `user_commento` (`user_commento`) USING BTREE;
 
 --
 -- Indici per le tabelle `newsletter`
@@ -212,11 +181,6 @@ ALTER TABLE `prod_ordinato`
 --
 
 --
--- AUTO_INCREMENT per la tabella `commento`
---
-ALTER TABLE `commento`
-  MODIFY `ID_COMMENTO` int(11) NOT NULL AUTO_INCREMENT;
---
 -- AUTO_INCREMENT per la tabella `ordine`
 --
 ALTER TABLE `ordine`
@@ -239,18 +203,19 @@ ALTER TABLE `prod_ordinato`
 -- Limiti per la tabella `commento`
 --
 ALTER TABLE `commento`
-  ADD CONSTRAINT `commento_ibfk_1` FOREIGN KEY (`nome_prod_com`) REFERENCES `prodotto` (`NOME_PRODOTTO`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `commento_ibfk_1` FOREIGN KEY (`nome_prod_com`) REFERENCES `prodotto` (`NOME_PRODOTTO`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `commento_ibfk_2` FOREIGN KEY (`user_commento`) REFERENCES `cliente` (`EMAIL`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Limiti per la tabella `ordine`
 --
 ALTER TABLE `ordine`
-  ADD CONSTRAINT `ordine_ibfk_1` FOREIGN KEY (`email_cliente`) REFERENCES `cliente` (`EMAIL`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `ordine_ibfk_2` FOREIGN KEY (`id_metodo_pagamento`) REFERENCES `pagamento` (`ID_PAGAMENTO`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `ordine_ibfk_1` FOREIGN KEY (`id_metodo_pagamento`) REFERENCES `pagamento` (`ID_PAGAMENTO`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  ADD CONSTRAINT `ordine_ibfk_2` FOREIGN KEY (`email_cliente`) REFERENCES `cliente` (`EMAIL`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 --
 -- Limiti per la tabella `prod_ordinato`
 --
 ALTER TABLE `prod_ordinato`
-  ADD CONSTRAINT `prod_ordinato_ibfk_1` FOREIGN KEY (`id_ordine`) REFERENCES `ordine` (`ID_ORDINE`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `prod_ordinato_ibfk_2` FOREIGN KEY (`nome_prodotto`) REFERENCES `prodotto` (`NOME_PRODOTTO`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `prod_ordinato_ibfk_1` FOREIGN KEY (`nome_prodotto`) REFERENCES `prodotto` (`NOME_PRODOTTO`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  ADD CONSTRAINT `prod_ordinato_ibfk_2` FOREIGN KEY (`id_ordine`) REFERENCES `ordine` (`ID_ORDINE`) ON DELETE NO ACTION ON UPDATE CASCADE;
