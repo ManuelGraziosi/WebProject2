@@ -10,5 +10,5 @@ var E_vetrina = function(){
     
     
     $('.prodotto').click(vetrina.dettaglio);
-}
+};
 

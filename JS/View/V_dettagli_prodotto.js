@@ -15,7 +15,10 @@ V_dettagli_prodotto.prototype={
             modal:true,
             resizable:false,
             minWidth:320,
-            title:"Dettagli Prodotto"
+            title:"Dettagli Prodotto",
+            close: function(){
+                $('.dettagli_prodotto').remove();
+            }
         });
         $('#invia').button();
     }
