@@ -23,18 +23,18 @@ function slideSwitch()
 
 
 var menu=function() {
-    var menu = $("#top-bar");
-    var posizione = menu.position();
+    var menu1 = $("#top-bar"/**"#top-bar"/**/);
+    var posizione = menu1.position();
     // intercettiamo qui l'evento "scroll"                 
     $(window).scroll(function() {
         // "$(window).scrollTop()" ci dice di quanto abbiamo scrollato la pagina
         if ($(window).scrollTop() >= posizione.top) {
             // abbiamo scrollato oltre il div, dobbiamo bloccarlo
-            $("#top-bar").addClass("menu_scroll");
+            $("#top-bar"/**"#top-bar"/**/).addClass("menu_scroll");
         }
         else {
             // abbiamo scrollato verso l'alto, sopra il div, possiamo sbloccarlo
-            $("#top-bar").removeClass("menu_scroll"); 
+            $("#top-bar"/**"#top-bar"/**/).removeClass("menu_scroll"); 
         }
     });
 };
