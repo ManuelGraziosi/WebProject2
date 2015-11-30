@@ -8,13 +8,13 @@ var V_newsletter=function(){
     $('#submit_newsletter').button();
 }
 
-V_newsletter.prototype.recuperaEmail=function(){
+V_newsletter.prototype.recuperaEmailNewsletter=function(){
     var email= new Object();
     email = {
-        "EMAIL" : $('#EMAIL_newsletter').val(),
+        "EMAIL" : $('#EMAIL_newsletter').val()/**/,
         "controllore" : "C_newsletter",
-        "metodo" :"iscrizioneNewsletter"
-    }
+        "metodo" :"iscrizioneNewsletter"/**/
+    };
     return email;
 }
 

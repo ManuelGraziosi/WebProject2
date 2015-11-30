@@ -8,10 +8,10 @@ var C_newsletter= function(){
     
 }
 
-C_newsletter.prototype.controllaEmail=function(){
+C_newsletter.prototype.controllaEmailNewsletter=function(){
     var riscontro=false;
     $('#EMAIL_newsletter').blur(function () {
-            if (!$(this).val().match(/^[a-zA-z' .]{2,30}@[a-zA-Z]{2,10}.[a-z]{2,3}$/)) {
+            if (!$(this).val().match(/^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/)) {
                 /**
                 $email_controll=mysql_query("SELECT email FROM Utente WHERE email=$('#email')");
                 if ($email_controll==1){
@@ -29,7 +29,7 @@ C_newsletter.prototype.controllaEmail=function(){
         return riscontro;
 };
 
-C_newsletter.prototype.inviaEmail=function(dati){
+C_newsletter.prototype.inviaEmailNewsletter=function(dati){
     $('body').append(" invia dati");
     //var dati=this.recuperaDati();
     $.ajax({

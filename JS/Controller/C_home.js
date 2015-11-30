@@ -29,24 +29,25 @@ C_home.prototype={
     newsletter : function(){
         C=new C_newsletter();
         V=new V_newsletter();
-        C.controllaEmail();
+        C.controllaEmailNewsletter();
         //$('#submit_newsletter').button();
     },
     
     submit_newsletter : function(){
         C=new C_newsletter();
         V=new V_newsletter();
-        var email = V.recuperaEmail();
-        /**/
-        if(C.controllaEmail()){
-            C.inviaEmail(email);
+        var email = V.recuperaEmailNewsletter();
+        /*il ! e da cancellare*/
+        if(C.controllaEmailNewsletter()){
+            
+            C.inviaEmailNewsletter(email);
         }
         else {
             if(!email.EMAIL){
                 $('#notifica_newsletter').html('ERRORE campo vuoto').css("color","red");
             }
             else{
-                $('#notifica_newsletter').html('ERRORE formato email ').css("color","red");
+                $('#notifica_newsletter').html('ERRORE formato email').css("color","red");
             }
         }/**/
     },
