@@ -50,7 +50,7 @@ button{
     margin: 0px;
 }
 
-table {
+.admin {
     text-align: left;
     border-spacing: 0px;
     border: 1px solid #aeb3b6;
@@ -60,67 +60,67 @@ table {
 }
 
 
-table a, table, tbody, tfoot, tr, th, td {
+.admin a, .admin,.admin tbody,.admin tfoot,.admin tr,.admin th,.admin td {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 2.0em;
     font-size: 13px;
     color: #55595c;
 }
-tbody td{
+.admintbody td{
     line-height: 2.5em;
 }
 
-table caption{
+.admin caption{
     padding: .4em 0 ;
     font-size: 240%;
     font-style: normal;
     color: #FB7E00;
 }
 
-table a{
+.admin a{
     display: block;
     text-decoration: none;
     color: #FF8E53;
     padding-right: 1.5em;
 }
 
-table a:hover, table a:focus{
+.admin a:hover, .admin a:focus{
     text-decoration: underline;
 }
 
-table th a{
+.admin th a{
     color: #FF8E53;
     text-align: right;
 }
-table .odd th a,table .odd td a,table .odd td{
+.admin .odd th a,.admin .odd td a,.admin .odd td{
     color: #666;
     padding-right: 1.0 em;
 }
 
-table th a:hover, table th a:focus, tbody tr:hover th{   
+.admin th a:hover, .admin th a:focus,.admin tbody tr:hover th{   
     background-color: #FFCC99;
     color: #fff !important;
 }
-table .odd th,table .odd td{
+.admin .odd th,.admin .odd td{
     background-color: #DDDDDD;
 }
 
-thead th{
+.admin thead th{
     //background-image: url(../images/verlauf_schwarz.png);
     text-transform: uppercase;
     font-weight: normal;
     letter-spacing: 1px;
     color: #fff;
 }
-tfoot{
+.admin tfoot{
     //background-image: url(../images/verlauf_schwarz.png);
     border-top: 1px solid #fff;
 }
-tfoot th,tfoot td{
+.admin tfoot th,.admin tfoot td{
     color: #fff;
 }
 
-tbody th{
+.admin tbody th{
     padding-right: 1.0em;
      color: #25c1e2;
      font-style: normal;
@@ -128,22 +128,22 @@ tbody th{
      border-bottom: 1px dotted #aeb3b6;
 }
 
-td{
+.admin td{
     color: #FF8E1C;
     border-bottom: 1px dotted #aeb3b6;
     padding-right: 0.5em;
     vertical-align: central;
 }
 
-tbody tr.odd{
+.admin tbody tr.odd{
     border-bottom: 1px dotted #aeb3b6;
 }
 
-tbody tr:hover td{
+.admin tbody tr:hover td{
     background-color: #FFCC99;
 }
 
-tbody tr:hover td,tbody tr:hover th, tbody tr:hover a{
+.admin tbody tr:hover td,.admin tbody tr:hover th,.admin tbody tr:hover a{
     color: #fff !important;
 }
 

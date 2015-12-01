@@ -8,7 +8,8 @@ V_registrazione.prototype.dialogo= function(){
         modal:true,
         resizable:false,
         minWidth:320,
-        title:"Registrazione"
+        title:"Registrazione",
+        close: $('#formRegistrazione').remove()
     });
     $('#invia').button();
 };

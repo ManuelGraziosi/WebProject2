@@ -59,8 +59,8 @@ C_home.prototype={
             url:"index.php?controllore=C_visualizzazione&metodo=registrazione",
             success:function(html){
                 $('#mainright').append(html);
+                V.dialogo();//non li dovete invertire senno si buttano giorni xD
                 C.controllaDati();
-                V.dialogo();
                 $('#invia').click(function(){
                     $('body').append(" hai cliccato invia ");
                     var dati = V.recuperaDatiRegistrazione();

@@ -14,8 +14,8 @@ C_registrazione.prototype={
         $('body').append("controlla Dati ");
         errori=new Array();
         //var dati = this.recuperaDati();
-        $('#nome_registrazione').blur(function () {
-            if (!$(this).val().match(/^[a-zA-z' ]{2,30}$/)) {
+        $('input#nome_registrazione').blur(function () {
+            if (!$(this).val().match(/^[a-zA-Z' ]{2,30}$/)) {
                 $(this).css("border", "3px solid red");
                 errori[0]=true;
             }
@@ -26,7 +26,7 @@ C_registrazione.prototype={
         });
         
         $('#cognome_registrazione').blur(function () {
-            if (!$(this).val().match(/^[a-zA-z' ]{2,30}$/)) {
+            if (!$(this).val().match(/^[a-zA-Z' ]{2,30}$/)) {
                 $(this).css("border", "3px solid red");
                 errori[1]=true;
             }
@@ -50,7 +50,7 @@ C_registrazione.prototype={
         });
 
         $('#password_registrazione').blur(function () {
-            if (!$(this).val().match(/^[[a-zA-z0-9#!%\^&;\*\$:\{\}=\-_`~\(\)]{6,30}$/)) {
+            if (!$(this).val().match(/^[[a-zA-Z0-9#!%\^&;\*\$:\{\}=\-_`~\(\)]{6,30}$/)) {
                 $(this).css("border", "3px solid red");
                 errori[4]=true;
             }
@@ -72,7 +72,7 @@ C_registrazione.prototype={
         });
         
         $('#via_registrazione').blur(function () {
-            if (!$(this).val().match(/^[a-zA-z' ]{2,100}$/)) {
+            if (!$(this).val().match(/^[a-zA-Z' ]{2,100}$/)) {
                 $(this).css("border", "3px solid red");
                 errori[1]=true;
             }
@@ -83,7 +83,7 @@ C_registrazione.prototype={
         });
 
         $('#citta_registrazione').blur(function () {
-            if (!$(this).val().match(/^[a-zA-z' ]{1,20}$/)) {
+            if (!$(this).val().match(/^[a-zA-Z' ]{1,20}$/)) {
                 $(this).css("border", "3px solid red");
                 errori[1]=true;
             }
@@ -106,7 +106,7 @@ C_registrazione.prototype={
     },
 
     inviaDatiRegistrazione:function(dati){
-        $('body').append(" invia dati");
+        /**$('body').append(" invia dati");/**/
         var view = new V_registrazione();
         var dati = view.recuperaDatiRegistrazione();
         $.ajax({
@@ -121,7 +121,7 @@ C_registrazione.prototype={
     },
 
     inviaDatiLogin:function(dati){
-        $('body').append(" invia dati");
+        /**$('body').append(" invia dati");/**/
         var view = new V_registrazione();
         var dati = view.recuperaDatiLogin();
         $.ajax({
@@ -185,7 +185,7 @@ C_registrazione.prototype={
     },
     
     inviaEmailNewsletter : function(dati){
-        $('body').append(" invia dati");
+        /**$('body').append(" invia dati");/**/
         //var dati=this.recuperaDati();
         $.ajax({
             url:"index.php",

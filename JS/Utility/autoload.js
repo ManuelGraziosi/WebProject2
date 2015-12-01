@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+/**
 autoload= function(){
     $.ajaxSetup({
         cache:true
@@ -24,4 +24,8 @@ autoload= function(){
     $.getScript("JS/View/V_newsletter.js");
     $.getScript("JS/View/V_vetrina.js");
     $.getScript("JS/View/V_dettagli_prodotto.js");
+    $.ajaxSetup({
+        cache:false
+    });
 }();
+/**/

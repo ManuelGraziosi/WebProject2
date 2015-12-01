@@ -7,7 +7,7 @@
     <div id="Prodotto" class="contenutoAmministrazione">
 
 
-        <table>
+        <table class="admin">
             <caption>Prodotti</caption>
             <thead class="ui-widget-header">
                 <tr>
@@ -60,7 +60,7 @@
     </div>
 
     <div id="Cliente" class="contenutoAmministrazione">
-        <table>
+        <table class="admin">
             <caption>Clienti</caption>
             <thead class="ui-widget-header">
                 <tr>
@@ -96,7 +96,7 @@
     </div>
 
     <div id="OrdiniConfermati" class="contenutoAmministrazione">
-        <table>
+        <table class="admin">
             <caption>Ordini effetuati</caption>
             <thead class="ui-widget-header">
                 <tr>

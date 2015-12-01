@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="PHP/templates/template/css/index.css" />
     <script type="text/javascript" src="JS/Utility/Jquery/jquery-1.11.3.min.js"></script>
     <!----><!---->
-    <!--
+    
     <script type="text/javascript" src="JS/Utility/U_operazioni.js"></script>
     <script type="text/javascript" src="JS/Utility/Jquery/scripts.js"></script>
     
@@ -28,7 +28,7 @@
     <script type="text/javascript" src="JS/View/V_amministrazione.js"></script>
     <script type="text/javascript" src="JS/View/V_newsletter.js"></script>
     <script type="text/javascript" src="JS/View/V_vetrina.js"></script>
-    <script type="text/javascript" src="JS/View/V_dettagli_prodotto.js"></script>-->
+    <script type="text/javascript" src="JS/View/V_dettagli_prodotto.js"></script>
     
     <script type="text/javascript" src="JS/index.js"></script>
     
