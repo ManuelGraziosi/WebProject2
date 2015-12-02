@@ -7,8 +7,8 @@ var vetrina;
 
 var E_vetrina = function(){
     vetrina = new C_vetrina();
-    
-    
+    home = new C_home();
+    $('.aggiungi').click(home.ordinareprodotto);
     $('.prodotto').click(vetrina.dettaglio);
 };
 

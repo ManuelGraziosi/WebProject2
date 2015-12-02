@@ -26,7 +26,7 @@
                 </div>
                 <div class="info">
                     <div class="dettaglio">
-                        <div class="nome">
+                        <div class="nome {$prodotti[i].NOME_PRODOTTO}">
                             {$prodotti[i].NOME_PRODOTTO}
                         </div>
                         <div class="prezzo">
@@ -35,9 +35,9 @@
                         <div class="categoria">
                             {$prodotti[i].categoria}
                         </div>
-                        <div title="{$prodotti[i].NOME_PRODOTTO}" class="aggiungi">
+                        <button title="{$prodotti[i].NOME_PRODOTTO}" class="aggiungi">
                             <img src="PHP/templates/template/images/cart/addCart.png" width="45" height="45"/>
-                        </div>
+                        </button>
                     </div>
                 </div>
             </div>
