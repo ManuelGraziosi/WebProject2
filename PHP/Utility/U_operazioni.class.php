@@ -7,7 +7,7 @@
 class U_operazioni {
     
     public static function inserisciDati(&$oggetto, $dati){
-        if(!array_key_exists('NOME_PRODOTTO', $dati)){
+        if(array_key_exists('0', $dati)){
             $dati=$dati[0];
         }
         foreach ($dati as $key => $value) {
