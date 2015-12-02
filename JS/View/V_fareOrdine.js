@@ -8,10 +8,12 @@ var V_fareOrdine = function(){
 };
 
 V_fareOrdine.prototype.datiProdottoOrdinato = function(chiave){
+    
     var dati = new Object();
     dati = {
-        "NOME_PRODOTTO" :$(".nome ."+chiave+"").val(),
-        "quantita":$(".quantita ."+chiave+"").val()
+        "NOME_PRODOTTO" :chiave,
+        "quantita":$(".quantita").attr("title")
     };
     return dati;
+    /**/
 };

@@ -19,5 +19,27 @@ C_vetrina.prototype={
             V.dialogomanuel();
             }
         });
+    },
+    
+    
+    ordinareprodotto : function(){
+        /**/
+        U = new U_operazioni();
+        C = new C_fareOrdine();
+        V = new V_fareOrdine();/**/
+        var nome = $(this).attr("title");
+        //$("body").html(nome);
+        /**/
+        var dati = V.datiProdottoOrdinato(/**/nome/**/);
+        C.inserisciProdottoOrdinato(dati);
+        /**/
+    },
+    
+    eliminareprodotto : function(){
+        C = new C_fareOrdine();
+        V = new V_fareOrdine();/**/
+        var nome = $(this).attr("title");
+        
+        C.rimuoviProdottoOrdinato(nome);
     }
 };

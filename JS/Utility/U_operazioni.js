@@ -24,5 +24,12 @@ U_operazioni.prototype = {
                 $(selettore).html(html);c=new E_vetrina();
             }
         });
+    },
+    
+    formatta : function(/**/stringa/**/){
+        //var string = " m a  u i";
+        var nospace = stringa.replace(/ /g, ' .'); 
+        
+        return nospace;
     }
 };

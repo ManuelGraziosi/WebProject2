@@ -95,14 +95,4 @@ C_home.prototype={
         C.ricerca(stringa);
     },
     
-    
-    ordinareprodotto : function(){
-        C = new C_fareOrdine();
-        V = new V_fareOrdine();
-        var nome = $(this).attr('title');
-        $("#nascosto").html(/**$(this).attr('title')+/**/nome+" daniele");
-        var dati = V.datiProdottoOrdinato();
-        C.inserisciProdottoOrdinato(dati);
-    }
-    
 };

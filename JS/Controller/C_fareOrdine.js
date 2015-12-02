@@ -22,11 +22,11 @@ C_fareOrdine.prototype={
             }
         });
     },
-    rimuoviProdottoOrdinato: function(){
+    rimuoviProdottoOrdinato: function(dati){
         $.ajax({
             url:"index.php?controllore=C_fareOrdine&metodo=rimuoviProdottoOrdinato",
             metod:"GET",
-            data:dati,
+            data:{"NOME_PRODOTTO":dati},
             dataType:"JSON",
             success:function(){
                 
