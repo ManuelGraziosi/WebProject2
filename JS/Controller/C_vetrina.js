@@ -39,7 +39,6 @@ C_vetrina.prototype={
         C = new C_fareOrdine();
         V = new V_fareOrdine();/**/
         var nome = $(this).attr("title");
-        
         C.rimuoviProdottoOrdinato(nome);
     }
 };

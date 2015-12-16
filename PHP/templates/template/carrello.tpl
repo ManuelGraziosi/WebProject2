@@ -2,7 +2,27 @@
             <b>DISPONIBILITA'</b>
             <div id="carr">
                 <table id="tab">
-                    {section name=i loop=$prodotti}
+                    <tr>
+                        <td>
+                            NOME
+                        </td>
+                        <td>
+                            CATEGORIA
+                        </td>
+                        <td>
+                            QUANTITA
+                        </td>
+                        <td>
+                            PREZZO
+                        </td>
+                        <td>
+                            SUBTOTALE
+                        </td>
+                    </tr>
+                    <tr>
+                        
+                    </tr>
+        <!--            {section name=i loop=$prodotti}
                     <tr id="riga{$smarty.section.i.iteration}">
                     <form name="prodotto">
                         <td id="NOME_PRODOTTO1">{$prodotti[i].NOME_PRODOTTO}</td>
@@ -17,7 +37,7 @@
                             <!--<input type="hidden" name="metodo" value="inserisciProdotto"/>
                             <input class="prodotto" type="hidden" name="nome_prodotto" value="{$prodotti[i].NOME_PRODOTTO}"/>
                             <input id="{$prodotti[i].NOME_PRODOTTO}" class="aggiungi" type="submit" name="submit" value="aggiungi"/>-->
-                        </td>
+        <!--                </td>
                     </form>
                         </tr>
                     {sectionelse} 
@@ -27,5 +47,6 @@
                         <td>
                     </tr>
                      {/section}
+        -->
                 </table>    
             </div>

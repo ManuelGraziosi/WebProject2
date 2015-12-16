@@ -20,24 +20,33 @@ class C_fareOrdine {
     
     public function inserisciProdottoOrdinato(){
         $view= U_singolaistanza::getIstanza('V_fareOrdine');
-        $nomeprodotto=$view->getNomeProdotto();
-        $quantita=$view->getQuantita();
-        $db= U_singolaistanza::getIstanza('F_database');
-        $dati_prodotto=$db->caricaRiga('prodotto', $nomeprodotto);
-        $ordineprodotto=new E_prod_ordinato();
-            $ordineprodotto->setNome_prodotto($nomeprodotto);
-            $ordineprodotto->setQuantita($quantita);
-            $prodotto=new E_prodotto();
-            U_operazioni::inserisciDati($prodotto,$dati_prodotto);
-        $ordineprodotto->setProdotto($prodotto);
-        if ($this->_carrello==false){
-            $this->_carrello=new E_ordine();
-        }
-        $this->_carrello->inserisciProdotto($ordineprodotto,$quantita);
         $sessione=  U_singolaistanza::getIstanza('U_sessione');
-        $sessione->imposta_valore('carrello',serialize($this->_carrello));
-        $view->mostraNotifica('aggiungi',$ordineprodotto);
-        //$view->mostraNotifica('aggiungi',$this->_carrello);
+        //$sessione=new U_sessione();
+        $loggato=$sessione->leggi_valore("email");
+        if($sessione->leggi_valore("email")){
+            //con login
+            $nomeprodotto=$view->getNomeProdotto();
+            $quantita=$view->getQuantita();
+            $db= U_singolaistanza::getIstanza('F_database');
+            $dati_prodotto=$db->caricaRiga('prodotto', $nomeprodotto);
+            $ordineprodotto=new E_prod_ordinato();
+                $ordineprodotto->setNome_prodotto($nomeprodotto);
+                $ordineprodotto->setQuantita($quantita);
+                $prodotto=new E_prodotto();
+                U_operazioni::inserisciDati($prodotto,$dati_prodotto);
+            $ordineprodotto->setProdotto($prodotto);
+            if ($this->_carrello==false){
+                $this->_carrello=new E_ordine();
+            }
+            $this->_carrello->inserisciProdotto($ordineprodotto,$quantita);
+            $sessione=  U_singolaistanza::getIstanza('U_sessione');
+            $sessione->imposta_valore('carrello',serialize($this->_carrello));
+            $view->mostraNotifica('aggiungi',$ordineprodotto);
+            //$view->mostraNotifica('aggiungi',$this->_carrello);
+        }
+        else{
+            print "ti devi loggare";
+        }
     }
     
     public function rimuoviProdottoOrdinato() {

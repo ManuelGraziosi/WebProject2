@@ -82,10 +82,10 @@ C_home.prototype={
     },
     
     logout : function(){
-        $('#invialogout').unbind().click(function(){
+        //$('#invialogout').unbind().click(function(){
             C = new C_registrazione();
             C.richiestaLogout();
-        });
+        //});
     },
     
     ricerca : function(){

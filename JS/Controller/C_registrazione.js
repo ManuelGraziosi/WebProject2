@@ -140,11 +140,11 @@ C_registrazione.prototype={
     richiestaLogout: function(){
         $.ajax({
             url:"index.php?controllore=C_registrazione&metodo=logout",
-            data:dati,/**
+            /**data:dati,/**
             datatype:"json",/**/
             success:function(login){
                 $('#utente').html('<p>Ospite</p>');
-                if(login['errore']!=false){
+                if(login['errore']==""){
                     alert(login['errore']);
                 }
             }
