@@ -10,9 +10,8 @@ and open the template in the editor.
 
 /* contenitore generale */
 .dettagli_prodotto {
-    //min-width: 500px;
-    background-color: palevioletred;
     
+    background-color: #FFA500 !important;  
 }
 /**/
 
@@ -22,7 +21,6 @@ and open the template in the editor.
     /**/
     width: 30%;
     height: 80%;
-    
     float: left;
     /**/
 }
@@ -34,8 +32,6 @@ and open the template in the editor.
     /**/
     width: 100%;
     height: 100%;
-    /**/
-    
     clear: both;
     
 }
@@ -63,9 +59,11 @@ and open the template in the editor.
 .d_dettaglio
 {
     width: 70%;
-    height: 50%;
+    height: 100%;
     float: left;
-    background-color: darkgreen;
+    background-color: #F5DEB3;
+    
+    
 }
 /**/
 .d_nome
@@ -98,7 +96,7 @@ and open the template in the editor.
 {
     width:100%;
     clear:both;
-    background-color: brown;
+    
 }
 /**/
 

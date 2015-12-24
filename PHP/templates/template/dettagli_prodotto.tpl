@@ -26,6 +26,16 @@
                     <div class="d_descrizione">
                         DESCRIZIONE: 
                         {$prodotto.descrizione}
+                        DESCRIZIONE:<br> 
+                        DESCRIZIONE:<br>
+                        DESCRIZIONE:<br>
+                        DESCRIZIONE:<br>
+                        DESCRIZIONE:<br>
+                        DESCRIZIONE:<br>
+                        DESCRIZIONE:<br>
+                        DESCRIZIONE:<br>
+                        DESCRIZIONE:<br>
+                        DESCRIZIONE:<br>
                     </div>
                 </div>
                 <!-- SEZIONE COMMENTO -->
