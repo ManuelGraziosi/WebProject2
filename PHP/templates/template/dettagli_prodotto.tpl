@@ -30,15 +30,10 @@
                 </div>
                 <!-- SEZIONE COMMENTO -->
                 <div class="d_comment_area">
-                        <!-- RIGA DA ATTIVARE QUANDO MESSO IN CONTESTO PHP
-                        <form id="Form_commento" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-                        -->
                         <form id="Form_commento" method="post">
                             Commento (Max: 255 caratteri):
-                            <br>
-                            <textarea id="text_commento" name="commento" placeholder="Inserisci il tuo commento..." maxlength="255"></textarea>
-                            <br>
                             
+                            <textarea id="text_commento" name="commento" placeholder="Inserisci il tuo commento..." maxlength="255"></textarea>
                             
                             <input type="submit" name="submit" value="Invia">
                         </form>
