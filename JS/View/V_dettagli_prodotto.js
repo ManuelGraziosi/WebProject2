@@ -14,7 +14,8 @@ V_dettagli_prodotto.prototype={
             draggable:false,
             modal:true,
             resizable:false,
-            minWidth:320,
+            width: "50%",
+            minWidth:500,
             title:"Dettagli Prodotto",
             close: function(){
                 $('.dettagli_prodotto').remove();
