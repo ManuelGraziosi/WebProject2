@@ -2,39 +2,30 @@
                 <!-- SEZIONE IMMAGINE-VOTO-ACQUISTO -->
                 <div class="d_miniature">
                     <div class="d_immagine">
-                        <!--
                         <img id="d_foto" src="PHP/templates/template/images/prodotti/{$prodotto.foto}.jpg" />
-                        --> 
-                        <img id="d_foto" src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTQCKLerDdt-MYpFEtKAXUNv_oBs5OVYvB6znby58MX5yqqZWKV0dnNvA" />
                     </div>
                     <div class="d_voto">
                         <p>VOTO</p>
                     </div>
                     <div title="{$prodotto.NOME_PRODOTTO}" class="d_aggiungi">
-                        <!--
                         <img src="PHP/templates/template/images/cart/addCart.png" width="45" height="45"/>
-                        --> 
-                        <img src="http://www.ricercaolistica.it/setup/carrello.png" width="45" height="45"/>
                     </div>
                 </div>
                 <!-- SEZIONE DESCRIZIONE -->
                 <div class="d_dettaglio">
                     <p>DESCRIZIONE COMPLETA</p>
                     <div class="d_nome">
-                        <!-- {$prodotto.NOME_PRODOTTO} -->
-                        NOME_PRODOTTO
+                        NOME_PRODOTTO: {$prodotto.NOME_PRODOTTO}
                     </div>
                     <div class="d_prezzo">
-                        <!-- {$prodotto.prezzo_kg} -->
-                        PREZZO KG
+                        PREZZO KG: {$prodotto.prezzo_kg}
                     </div>
                     <div class="d_categoria">
-                        <!-- {$prodotto.categoria} -->
-                        CATEGORIA
+                        CATEGORIA: {$prodotto.categoria}
                     </div>
                     <div class="d_descrizione">
-                        <!-- {$prodotto.descrizione} -->
-                        DESCRIZIONE
+                        DESCRIZIONE: 
+                        {$prodotto.descrizione}
                     </div>
                 </div>
                 <!-- SEZIONE COMMENTO -->
