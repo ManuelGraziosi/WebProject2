@@ -1,0 +1,179 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 28-nov-2015, 19.39.13
+    Author     : manuel
+*/
+
+/* contenitore generale */
+.dettagli_prodotto {
+    /**
+    width: auto;
+    /**/
+    min-width: 500px;
+    /*height: 50%;
+    /**/
+    background-color: palevioletred;
+    
+}
+/**/
+
+/* qua inizia la sezione miniature*/
+.d_miniature
+{
+    /**/
+    width: 50%;
+    height: 50%;
+    background-color: orange;
+    float: left;
+    /**/
+}
+/**/
+
+/**/
+.d_immagine
+{
+    /**/
+    width: 200px;
+    height: 200px;
+    /**/
+    background-color: red;
+    clear: both;
+    
+}
+/**/
+
+/**/
+.d_voto
+{
+    float: left;
+    background-color: blue;
+}
+/**/
+
+/**/
+.d_aggiungi
+{
+    float: right;
+    background-color: cyan;
+}
+/**/
+/* qua finisce la d_miniature*/
+
+/**/
+/* qua inizia la sezione d_dettaglio */
+.d_dettaglio
+{
+    width: 50%;
+    height: 50%;
+    float: left;
+    background-color: darkgreen;
+}
+/**/
+.d_nome
+{
+    width:200px;
+    /**float:left;/**/
+}
+/**/
+
+/**/
+.d_prezzo
+{
+    width:200px;
+    /**float:left;/**/
+}
+/**/
+
+/**/
+.d_categoria
+{
+    width:200px;
+    /**float:left;/**/
+}
+/**/
+/* qua finisce la d_dettaglio*/
+
+/**/
+/* qua inizia la zona commento */
+.d_comment_area
+{
+    width:100%;
+    clear:both;
+    background-color: brown;
+}
+/**/
+
+/**/
+.d_comment_list
+{
+    width:100%;
+    clear:both;
+    background-color: aquamarine;
+}
+/**/
+
+/**/
+.d_data_commento{
+    float: left;
+    background-color: pink;
+}
+/**/
+
+/**/
+.d_nome_commento{
+    float: left;
+    background-color: plum;
+}
+/**/
+
+/**/
+.d_voto_commento{
+    float: right;
+    background-color: purple;
+    
+}
+/**/
+
+/**/
+.d_commento{
+    clear: both;
+    background-color: palevioletred;
+}
+/**/
+
+/**/
+.d_mostra_tutti{
+    clear: both;
+    text-align: center;
+    background-color: silver;
+}
+/**/
+
+/**/
+#text_commento
+{   
+    width: 100%;
+    height: 100px;
+    vertical-align: middle;
+}
+/**/
+
+/**
+#d_selezione
+{
+background-color: lightblue;
+margin:-40px -40px 20px -40px;
+height: 50px;
+}
+/**/
+
+/**
+#d_barra-selezione
+{
+padding: 15px 10px 15px 10px;
+}
+/**/

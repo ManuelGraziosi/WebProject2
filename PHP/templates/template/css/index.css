@@ -4,9 +4,11 @@ Importiamo i diversi css
 
 @import url(reset.css);
 @import url(style.css);
+@import url(dettaglioProdotto.css);
 @import url(vetrina.css);
 @import url(carrello.css);
 @import url(home.css);
 @import url(dovesiamo.css);
 @import url(chisiamo.css);
 @import url(amministrazione.css);
+

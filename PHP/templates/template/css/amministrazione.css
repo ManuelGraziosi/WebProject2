@@ -55,7 +55,6 @@ button{
     border-spacing: 0px;
     border: 1px solid #aeb3b6;
     border-collapse: collapse;
-    //width: 820px;
     float: left;
 }
 
@@ -106,14 +105,12 @@ button{
 }
 
 .admin thead th{
-    //background-image: url(../images/verlauf_schwarz.png);
     text-transform: uppercase;
     font-weight: normal;
     letter-spacing: 1px;
     color: #fff;
 }
 .admin tfoot{
-    //background-image: url(../images/verlauf_schwarz.png);
     border-top: 1px solid #fff;
 }
 .admin tfoot th,.admin tfoot td{

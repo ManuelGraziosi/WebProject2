@@ -1,7 +1,25 @@
-<?php /* Smarty version 2.6.26, created on 2015-07-28 13:37:19
+<?php /* Smarty version 2.6.26, created on 2015-12-24 17:11:07
          compiled from vetrina.tpl */ ?>
 
-            
+        <div id="selezione">
+            <div id="barra-selezione">
+                Seleziona la categoria di prodotto: 
+                <select name="categoria">
+                    <option value="FR"> Fresco</option>
+                    <option value="ST"> Stagionato </option>
+                    <option value="YO"> Yogurt </option>
+                </select>
+                &nbsp &nbsp
+                Seleziona il tipo di prodotto: 
+                <select name="tipologia">
+                    <option value="Pe"> Pecorino</option>
+                    <option value="Ca"> Caciotta </option>
+                </select>
+                &nbsp &nbsp &nbsp &nbsp
+                <button>Cerca</button>    DA MODIFICARE!
+            </div>
+        </div>
+        <div id="elencoProdotti">
         <?php unset($this->_sections['i']);
 $this->_sections['i']['name'] = 'i';
 $this->_sections['i']['loop'] = is_array($_loop=$this->_tpl_vars['prodotti']) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
@@ -27,14 +45,17 @@ $this->_sections['i']['first']      = ($this->_sections['i']['iteration'] == 1);
 $this->_sections['i']['last']       = ($this->_sections['i']['iteration'] == $this->_sections['i']['total']);
 ?>
 
-            <div class="prodotto">
-                <div class="foto">
-                    <img src="PHP/templates/template/images/<?php echo $this->_tpl_vars['prodotti'][$this->_sections['i']['index']]['foto']; ?>
-.jpg" width="250" height="250"/>
+            <div class="prodotto" id="<?php echo $this->_sections['i']['iteration']; ?>
+">
+                <div class="foto-space" title="<?php echo $this->_tpl_vars['prodotti'][$this->_sections['i']['index']]['NOME_PRODOTTO']; ?>
+">
+                    <img id="foto" src="PHP/templates/template/images/prodotti/<?php echo $this->_tpl_vars['prodotti'][$this->_sections['i']['index']]['foto']; ?>
+.jpg" />
                 </div>
                 <div class="info">
-                    <div class="descrizione">
-                        <div class="nome">
+                    <div class="dettaglio">
+                        <div class="nome <?php echo $this->_tpl_vars['prodotti'][$this->_sections['i']['index']]['NOME_PRODOTTO']; ?>
+">
                             <?php echo $this->_tpl_vars['prodotti'][$this->_sections['i']['index']]['NOME_PRODOTTO']; ?>
 
                         </div>
@@ -46,15 +67,14 @@ $this->_sections['i']['last']       = ($this->_sections['i']['iteration'] == $th
                             <?php echo $this->_tpl_vars['prodotti'][$this->_sections['i']['index']]['categoria']; ?>
 
                         </div>
-                        <div title="<?php echo $this->_tpl_vars['prodotti'][$this->_sections['i']['index']]['NOME_PRODOTTO']; ?>
+                        <button title="<?php echo $this->_tpl_vars['prodotti'][$this->_sections['i']['index']]['NOME_PRODOTTO']; ?>
 " class="aggiungi">
                             <img src="PHP/templates/template/images/cart/addCart.png" width="45" height="45"/>
-                        </div>
+                        </button>
                     </div>
                 </div>
             </div>
         <?php endfor; else: ?> 
-            <b> nessun risultato </b>
+            <b> Nessun prodotto disponibile in vetrina </b>
         <?php endif; ?>
-                
-             
+        </div>
