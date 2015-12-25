@@ -43,8 +43,9 @@
                         <form id="Form_commento" method="post">
                             Commento (Max: 255 caratteri):
                             
-                            <textarea id="text_commento" name="commento" placeholder="Inserisci il tuo commento..." maxlength="255"></textarea>
-                            
+                            <textarea id="text_commento" name="commento" onKeyUp="V.characterLeft();" onKeyDown="V.characterLeft();" placeholder="Inserisci il tuo commento..." maxlength="255"></textarea>
+                            <br>
+                            <p id="charsLeft">Rimanenti: 255 di 255</p>
                             <input type="submit" name="submit" value="Invia">
                         </form>
                 </div>

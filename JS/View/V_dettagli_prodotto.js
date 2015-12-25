@@ -9,7 +9,7 @@ var V_dettagli_prodotto= function(){
 };
 
 V_dettagli_prodotto.prototype={
-        dialogomanuel: function(){
+    dialogomanuel: function(){
         $('.dettagli_prodotto').dialog({
             draggable:false,
             modal:true,
@@ -22,6 +22,15 @@ V_dettagli_prodotto.prototype={
             }
         });
         $('#invia').button();
-    }
+    },
+    
+    characterLeft: function(){
+            var maxLen = 255;
+            //var charL = document.getElementById('text_commento').value.length;
+            var charL = $('#text_commento').val().length;
+            var str = "Rimanenti: "+ (maxLen - charL) +" di "+ maxLen;
+            //$('#charsLeft').innerHTML = str;
+            $('#charsLeft').text(str);
+        }
 };
 
