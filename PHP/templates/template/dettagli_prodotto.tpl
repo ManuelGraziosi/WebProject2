@@ -14,7 +14,7 @@
                 <!-- SEZIONE DESCRIZIONE -->
                 <div class="d_dettaglio">
                     <p>DESCRIZIONE COMPLETA</p>
-                    <div class="d_nome">
+                    <div class="d_nome" id="nome_prod">
                         NOME_PRODOTTO: {$prodotto.NOME_PRODOTTO}
                     </div>
                     <div class="d_prezzo">

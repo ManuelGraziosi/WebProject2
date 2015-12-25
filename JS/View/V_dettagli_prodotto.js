@@ -23,7 +23,7 @@ V_dettagli_prodotto.prototype={
         });
         $('#invia').button();
     },
-    
+    //funzione per il conteggio dei caratteri nell'area commento
     characterLeft: function(){
             var maxLen = 255;
             //var charL = document.getElementById('text_commento').value.length;
