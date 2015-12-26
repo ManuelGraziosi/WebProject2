@@ -35,7 +35,7 @@ V_dettagli_prodotto.prototype={
         
     invioCommento: function(){
         //$("#commenta").click(function(e){
-            var prodotto = $("#nome_prod").text().substr(40,30);
+            var prodotto = $("#nome_prod").text().substr(40,30);//a causa della formattazione minchiona sono costretto a prendere parte del testo
             var data = new Date();
             var t = data.getTime();
             //var url = form.attr('action');
