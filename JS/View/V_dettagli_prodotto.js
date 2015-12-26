@@ -31,6 +31,23 @@ V_dettagli_prodotto.prototype={
             var str = "Rimanenti: "+ (maxLen - charL) +" di "+ maxLen;
             //$('#charsLeft').innerHTML = str;
             $('#charsLeft').text(str);
-        }
+        },
+        
+    invioCommento: function(){
+        //$("#commenta").click(function(e){
+            var prodotto = $("#nome_prod").text().substr(40,30);
+            var data = new Date();
+            var t = data.getTime();
+            //var url = form.attr('action');
+            
+
+            var msg = "Il prodotto è:" + prodotto + "\n\r la Data è:" + t;//data + " to " + url;
+            alert(msg);
+
+            //$.get(url, data, function(){
+            //    alert('Success!');
+            //});
+        //});
+    }
 };
 

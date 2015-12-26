@@ -1,4 +1,5 @@
 <div class="dettagli_prodotto">
+    
                 <!-- SEZIONE IMMAGINE-VOTO-ACQUISTO -->
                 <div class="d_miniature">
                     <div class="d_immagine">
@@ -40,13 +41,12 @@
                 </div>
                 <!-- SEZIONE COMMENTO -->
                 <div class="d_comment_area">
+                    <p id="utente">Ospite</p>
                         <form id="Form_commento" method="post">
-                            Commento (Max: 255 caratteri):
-                            
                             <textarea id="text_commento" name="commento" onKeyUp="V.characterLeft();" onKeyDown="V.characterLeft();" placeholder="Inserisci il tuo commento..." maxlength="255"></textarea>
                             <br>
                             <p id="charsLeft">Rimanenti: 255 di 255</p>
-                            <input type="submit" name="submit" value="Invia">
+                            <input type="button" onclick="V.invioCommento()" id="commenta" name="submit" value="Invia">
                         </form>
                 </div>
                 <div class="d_comment_list">
