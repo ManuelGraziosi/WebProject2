@@ -25,5 +25,12 @@ class F_commento {
         $this->db->query($query);
         return true;
     }
+    
+    public function getProdCommentList($nome_prod_com){
+        
+        $query = "SELECT * FROM `commento` WHERE nome_prod_com = '$nome_prod_com'";
+        $result = $this->db->query($query);
+        return $result;
+    }
 
 }

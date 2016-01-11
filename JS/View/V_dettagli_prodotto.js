@@ -23,6 +23,7 @@ V_dettagli_prodotto.prototype={
         });
         $('#invia').button();
     },
+    
     //funzione per il conteggio dei caratteri nell'area commento
     characterLeft: function(){
             var maxLen = 255;
@@ -32,22 +33,30 @@ V_dettagli_prodotto.prototype={
             //$('#charsLeft').innerHTML = str;
             $('#charsLeft').text(str);
         },
-        
+    //funzione per l'organizzazione dei dati da inviare al db tramite la View php
     invioCommento: function(){
-        //$("#commenta").click(function(e){
-            var prodotto = $("#nome_prod").text().substr(40,30);//a causa della formattazione minchiona sono costretto a prendere parte del testo
-            var data = new Date();
-            var t = data.getTime();
-            //var url = form.attr('action');
-            
+        //il 15 compensa lo scritto di troppo che non serve
+        var lengthNameProdCom = $(".d_nome").text().length - 15; 
+        //a causa della formattazione minchiona sono costretto a prendere parte del testo    
+        var productCom = $("#nome_prod").text().trim().substr(15,lengthNameProdCom);
+        var dateTemp = new Date();
+        var dayCom = dateTemp.getDay();
+        var monthCom = dateTemp.getMonth()+1;
+        var yearCom = dateTemp.getFullYear();
+        var hourCom = dateTemp.getHours();
+        var minuteCom = dateTemp.getMinutes();
+        var secondCom = dateTemp.getSeconds();
+        var dateCom = yearCom + "-" + monthCom + "-" + dayCom + " " + hourCom + ":" + minuteCom + ":" + secondCom;
 
-            var msg = "Il prodotto è:" + prodotto + "\n\r la Data è:" + t;//data + " to " + url;
-            alert(msg);
+        var userCom = $('#utente').text();
 
-            //$.get(url, data, function(){
-            //    alert('Success!');
-            //});
-        //});
+        var textCom = $("#text_commento").val();
+
+        var msg = "Il prodotto è: " + productCom + 
+                  "\n\r la Data è: " + dateCom + 
+                  "\n\r l'utente è: " + userCom +
+                  "\n\r il testo inserito è: " + textCom;
+        alert(msg);
     }
 };
 
