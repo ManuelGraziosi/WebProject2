@@ -95,4 +95,15 @@ C_home.prototype={
         C.ricerca(stringa);
     },
     
+    mostraCarrello : function(){
+        $.ajax({
+            url:"index.php?controllore=C_visualizzazione&metodo=carrello",
+            metod:"GET",
+            //data:{"NOME_PRODOTTO":dati},
+            dataType:"HTML",
+            success:function(d){
+                $('#mainright').html(d);
+            }
+        });
+    }
 };

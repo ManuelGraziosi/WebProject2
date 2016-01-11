@@ -68,6 +68,13 @@ class C_fareOrdine {
         $view->mostraNotifica('rimuovi',false);
     }
     
+    public function mostraCarrello(){
+        $sessione=  U_singolaistanza::getIstanza('U_sessione');
+        $ordine=$sessione->leggi_valore('carrello');
+        
+        return $ordine[E_prod_ordinato[E_prodotto]];
+    }
+    
     public function effettuaOrdine() {
         
     }

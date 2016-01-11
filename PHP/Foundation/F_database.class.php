@@ -165,6 +165,8 @@ class F_database {
     /**
      * Effettua una ricerca sul database
      *
+     * parametri= array(chiave,operatore di confronto,valore,oparatore di concatenazione);
+     * 
      * @param array $parametri
      * @param string $ordinamento
      * @param string $limit
@@ -173,8 +175,8 @@ class F_database {
     function ricerca($tabella,$parametri = array(), $ordinamento = '', $limit = '') {
         $filtro='';
         for ($i=0; $i<count($parametri); $i++) {
-            if ($i>0) $filtro .= ' OR';
-            $filtro .= ' `'.$parametri[$i][0].'` '.$parametri[$i][1].' \''.$parametri[$i][2].'\'';
+            /*if ($i>0) $filtro .= ' OR';/**/
+            $filtro .= ' `'.$parametri[$i][0].'` '.$parametri[$i][1].' \''.$parametri[$i][2].'\' '.$parametri[$i][3];
         }
         $query='SELECT * ' .
                 'FROM `'.$tabella.'` ';
@@ -185,6 +187,9 @@ class F_database {
         if ($limit != '')
             $query.='LIMIT '.$limit.' ';
         $this->query($query);
+        
+        print_r($query);
+        
         return $this->getRisultati();
     }
     

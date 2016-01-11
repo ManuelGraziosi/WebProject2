@@ -10,6 +10,8 @@ var E_home = function(){
     
     $('.menu').unbind().click(home.caricaPaginaHtml);//richiede tutte le pagine del menu
     
+    
+    $('#carrello').unbind().click(home.mostraCarrello);
     $('#amministrazione').unbind().click(home.amministratore);
     /**/$('#newsletter').click(home.newsletter);
     $('#submit_newsletter').unbind().click(home.submit_newsletter);

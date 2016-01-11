@@ -28,6 +28,10 @@ class C_visualizzazione{
     
     public function carrello() {
         $view=new V_view();
+        $C_ordine= new C_fareOrdine();
+        $ordine = $C_ordine->mostraCarrello();
+        print_r($ordine);
+        $view->inserisciDatiTemplate('prodotti',$ordine);
         $view->impostaTemplate('carrello.tpl');
     }
     
