@@ -72,7 +72,7 @@ class C_fareOrdine {
         $sessione=  U_singolaistanza::getIstanza('U_sessione');
         $ordine=$sessione->leggi_valore('carrello');
         
-        return $ordine[E_prod_ordinato[E_prodotto]];
+        return $ordine;
     }
     
     public function effettuaOrdine() {
