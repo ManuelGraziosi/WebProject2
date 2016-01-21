@@ -49,6 +49,13 @@ class C_visualizzazione{
         $view->impostaTemplate('home.tpl');
     }
     
+    public function DoveSiamo() {
+        
+        $view=new V_view();
+        /**/
+        $view->impostaTemplate('dove_siamo.tpl');
+    }
+    
     public function vetrina() {
         $db= new F_database();
         $prodotti=$db->caricaTabella('prodotto');
