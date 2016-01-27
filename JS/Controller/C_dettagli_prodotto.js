@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+/**
 var C_dettagli_prodotto=function(){
     
 };
@@ -23,7 +23,12 @@ C_dettagli_prodotto.prototype.dettaglio=function(){
             dataType:"html",
             data:dati,
             success:function(carrello) {
+                /**
                 $('#nascosto').html(carrello).toggleClass("nacondino");
+                V = new V_dettagli_prodotto();
+                $(document).ready($('#accordion').accordion());
+                /**
             }
         });
 };
+/**/

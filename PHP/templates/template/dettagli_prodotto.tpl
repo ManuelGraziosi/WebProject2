@@ -27,16 +27,6 @@
                     <div class="d_descrizione">
                         DESCRIZIONE: 
                         {$prodotto.descrizione}
-                        DESCRIZIONE:<br> 
-                        DESCRIZIONE:<br>
-                        DESCRIZIONE:<br>
-                        DESCRIZIONE:<br>
-                        DESCRIZIONE:<br>
-                        DESCRIZIONE:<br>
-                        DESCRIZIONE:<br>
-                        DESCRIZIONE:<br>
-                        DESCRIZIONE:<br>
-                        DESCRIZIONE:<br>
                     </div>
                 </div>
                 <!-- SEZIONE COMMENTO -->
@@ -46,58 +36,82 @@
                             <textarea id="text_commento" name="commento" onKeyUp="V.characterLeft();" onKeyDown="V.characterLeft();" placeholder="Inserisci il tuo commento..." maxlength="255"></textarea>
                             <br>
                             <p id="charsLeft">Rimanenti: 255 di 255</p>
-                            <input type="button" onclick="V.invioCommento()" id="commenta" name="submit" value="Invia">
+                            <input type="button" id="commenta" name="submit" value="Invia">
                         </form>
                 </div>
-                <div class="d_comment_list">
-                    <div class="d_data_commento">
-                        DATA
-                    </div>
-                    <div class="d_nome_commento">
-                        NOME
-                    </div>
-                    <div class="d_voto_commento">
-                        VOTO
-                    </div>
-                    <div class="d_commento">
-                        COMMENTO
-                    </div>
-                    <div class="d_data_commento">
-                        DATA
-                    </div>
-                    <div class="d_nome_commento">
-                        NOME
-                    </div>
-                    <div class="d_voto_commento">
-                        VOTO
-                    </div>
-                    <div class="d_commento">
-                        COMMENTO
-                    </div>
-                    <div class="d_data_commento">
-                        DATA
-                    </div>
-                    <div class="d_nome_commento">
-                        NOME
-                    </div>
-                    <div class="d_voto_commento">
-                        VOTO
-                    </div>
-                    <div class="d_commento">
-                        COMMENTO
-                    </div>
-                    <div class="d_data_commento">
-                        DATA
-                    </div>
-                    <div class="d_nome_commento">
-                        NOME
-                    </div>
-                    <div class="d_voto_commento">
-                        VOTO
-                    </div>
-                    <div class="d_commento">
-                        COMMENTO
-                    </div>
-                    <div class="d_mostra_tutti">VISUALIZZA ALTRI COMMENTI</div>
+                <div id="accordion">
+                        <h3>
+                            DATA
+                            NOME
+                            VOTO
+                        </h3>
+                        <div class="d_commento">
+                            <p>COMMENTO</p>
+                        </div>
+                        <h3>
+                            DATA
+                            NOME
+                            VOTO
+                        </h3>
+                        <div class="d_commento">
+                            <p>COMMENTO</p>
+                        </div>
+                        <h3>
+                            DATA
+                            NOME
+                            VOTO
+                        </h3>
+                        <div class="d_commento">
+                            <p>COMMENTO</p>
+                        </div>
+                        <h3>
+                            DATA
+                            NOME
+                            VOTO
+                        </h3>
+                        <div class="d_commento">
+                            <p>COMMENTO</p>
+                        </div>
+                        <h3>
+                            DATA
+                            NOME
+                            VOTO
+                        </h3>
+                        <div class="d_commento">
+                            <p>COMMENTO</p>
+                        </div>
+                        <h3>
+                            DATA
+                            NOME
+                            VOTO
+                        </h3>
+                        <div class="d_commento">
+                            <p>COMMENTO</p>
+                        </div>
+                        <h3>
+                            DATA
+                            NOME
+                            VOTO
+                        </h3>
+                        <div class="d_commento">
+                            <p>COMMENTO</p>
+                        </div>
+                        <h3>
+                            DATA
+                            NOME
+                            VOTO
+                        </h3>
+                        <div class="d_commento">
+                            <p>COMMENTO</p>
+                        </div>
+                        <h3>
+                            DATA
+                            NOME
+                            VOTO
+                        </h3>
+                        <div class="d_commento">
+                            <p>COMMENTO</p>
+                        </div>
+                        <div class="d_mostra_tutti">VISUALIZZA ALTRI COMMENTI</div>
                 </div>
             </div>

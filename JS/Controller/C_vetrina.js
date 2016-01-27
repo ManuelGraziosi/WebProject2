@@ -17,6 +17,7 @@ C_vetrina.prototype={
             V=new V_dettagli_prodotto();
             $('#nascosto').html(carrello);
             V.dialogomanuel();
+            $('#accordion').accordion();
             }
         });
     },

@@ -26,6 +26,13 @@ class C_visualizzazione{
         $view->impostaTemplate('chi_siamo.tpl');
     }
     
+    public function Galleria() {
+        
+        $view=new V_view();
+        /**/
+        $view->impostaTemplate('galleria.tpl');
+    }
+    
     public function carrello() {
         $view=new V_view();
         $C_ordine= new C_fareOrdine();
