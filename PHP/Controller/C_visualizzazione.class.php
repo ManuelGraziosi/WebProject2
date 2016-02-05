@@ -81,8 +81,8 @@ class C_visualizzazione{
         $view=new V_visualizzazione();
         $smarty=new V_view();
         $parametri=  array(
-            array("NOME_PRODOTTO","like","%".$view->getRicerca()."%"),
-            array("categoria","like","%".$view->getRicerca()."%")
+            array("NOME_PRODOTTO","like","%".$view->getRicerca()."%","OR"),
+            array("categoria","like","%".$view->getRicerca()."%","")
             );
         $prodotti=$db->ricerca("prodotto", $parametri);
         
