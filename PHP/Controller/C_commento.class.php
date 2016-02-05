@@ -42,7 +42,7 @@ class C_commento {
          
          header("Content-type: application/html");
          
-         echo print_r($commento);
+         echo "SUCCESSO!!!";
          
          /**
          $db=new F_newsletter();
