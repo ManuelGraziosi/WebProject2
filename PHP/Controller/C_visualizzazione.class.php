@@ -26,6 +26,13 @@ class C_visualizzazione{
         $view->impostaTemplate('chi_siamo.tpl');
     }
     
+    public function Galleria() {
+        
+        $view=new V_view();
+        /**/
+        $view->impostaTemplate('galleria.tpl');
+    }
+    
     public function carrello() {
         $view=new V_view();
         $C_ordine= new C_fareOrdine();
@@ -74,8 +81,8 @@ class C_visualizzazione{
         $view=new V_visualizzazione();
         $smarty=new V_view();
         $parametri=  array(
-            array("NOME_PRODOTTO","like","%".$view->getRicerca()."%"),
-            array("categoria","like","%".$view->getRicerca()."%")
+            array("NOME_PRODOTTO","like","%".$view->getRicerca()."%","OR"),
+            array("categoria","like","%".$view->getRicerca()."%","")
             );
         $prodotti=$db->ricerca("prodotto", $parametri);
         

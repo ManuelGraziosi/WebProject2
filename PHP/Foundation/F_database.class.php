@@ -188,8 +188,6 @@ class F_database {
             $query.='LIMIT '.$limit.' ';
         $this->query($query);
         
-        print_r($query);
-        
         return $this->getRisultati();
     }
     

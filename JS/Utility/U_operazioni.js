@@ -22,6 +22,7 @@ U_operazioni.prototype = {
             dataType:"html",
             success:function(html) {
                 $(selettore).html(html);c=new E_vetrina();
+                $('#accordion').accordion();
             }
         });
     },
