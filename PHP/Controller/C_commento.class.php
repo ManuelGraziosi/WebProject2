@@ -36,8 +36,8 @@ class C_commento {
         $commento->getVoto(NULL);
         
          
-         $db=new F_database();
-         $db->depositaRiga("newsletter", $email);
+         $db=new F_commento();
+         $db->addCommento($commento);
          
          
          header("Content-type: application/json");
