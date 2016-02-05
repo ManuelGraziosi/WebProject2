@@ -40,78 +40,22 @@
                         </form>
                 </div>
                 <div id="accordion">
-                        <h3>
-                            DATA
-                            NOME
-                            VOTO
+                    {section name=i loop=$commenti}
+
+                         <h3>
+                            DATA: {$commenti[i].data_commento}
+                            UTENTE: {$commenti[i].user_commento}
+                            VOTO: {$commenti[i].voto}
+                            
                         </h3>
                         <div class="d_commento">
-                            <p>COMMENTO</p>
+                            <p>{$commenti[i].testo}</p>
                         </div>
-                        <h3>
-                            DATA
-                            NOME
-                            VOTO
-                        </h3>
-                        <div class="d_commento">
-                            <p>COMMENTO</p>
-                        </div>
-                        <h3>
-                            DATA
-                            NOME
-                            VOTO
-                        </h3>
-                        <div class="d_commento">
-                            <p>COMMENTO</p>
-                        </div>
-                        <h3>
-                            DATA
-                            NOME
-                            VOTO
-                        </h3>
-                        <div class="d_commento">
-                            <p>COMMENTO</p>
-                        </div>
-                        <h3>
-                            DATA
-                            NOME
-                            VOTO
-                        </h3>
-                        <div class="d_commento">
-                            <p>COMMENTO</p>
-                        </div>
-                        <h3>
-                            DATA
-                            NOME
-                            VOTO
-                        </h3>
-                        <div class="d_commento">
-                            <p>COMMENTO</p>
-                        </div>
-                        <h3>
-                            DATA
-                            NOME
-                            VOTO
-                        </h3>
-                        <div class="d_commento">
-                            <p>COMMENTO</p>
-                        </div>
-                        <h3>
-                            DATA
-                            NOME
-                            VOTO
-                        </h3>
-                        <div class="d_commento">
-                            <p>COMMENTO</p>
-                        </div>
-                        <h3>
-                            DATA
-                            NOME
-                            VOTO
-                        </h3>
-                        <div class="d_commento">
-                            <p>COMMENTO</p>
-                        </div>
+
+        {sectionelse} 
+            <b> Nessun prodotto disponibile in vetrina </b>
+        {/section}
+ 
                         <div class="d_mostra_tutti">VISUALIZZA ALTRI COMMENTI</div>
                 </div>
             </div>

@@ -110,11 +110,14 @@ class C_visualizzazione{
         $view=new V_fareOrdine();
         $db= new F_database();
         $nome=$view->getNomeProdotto();
-        print $nome;
+        print $nome;//test di verifica selezione prodotto
         $datiprod=$db->caricaRiga('prodotto',$nome);
+        $datiCommenti=$db->ricerca('commento',array(array("nome_prod_com","=",$nome,"")),"data_commento","5");
         $view->inserisciDatiTemplate('prodotto', $datiprod[0]);
+        //$view->impostaTemplate('dettagli_prodotto.tpl');
+        $view->inserisciDatiTemplate('commenti', $datiCommenti);
         $view->impostaTemplate('dettagli_prodotto.tpl');
-        
+        print_r($datiCommenti);
         
     }
     
