@@ -29,20 +29,21 @@ class C_commento {
         
         //creazione dell'oggetto commento con relativi valori, per inserimento in DB
         $commento = new E_commento();
-        $commento->getData_commento($DateCOM);
-        $commento->getNome_prod_com($ProductCOM);
-        $commento->getTesto($TextCOM);
-        $commento->getUser_commento($EmailCom);
-        $commento->getVoto(NULL);
+        $commento->setData_commento($DateCOM);
+        $commento->setNome_prod_com($ProductCOM);
+        $commento->setTesto($TextCOM);
+        $commento->setUser_commento($EmailCom);
+        $commento->setVoto(NULL);
         
          
          $db=new F_commento();
          $db->addCommento($commento);
          
          
-         header("Content-type: application/json");
-         $t=true;
-         echo json_encode($t);
+         header("Content-type: application/html");
+         
+         echo print_r($commento);
+         
          /**
          $db=new F_newsletter();
          $db->addEmail($email->getEMAIL());

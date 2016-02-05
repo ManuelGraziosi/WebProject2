@@ -5,7 +5,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-require_once 'includes/config.php';
+//require_once 'includes/config.php';
 /**
  * Description of F_commento
  *

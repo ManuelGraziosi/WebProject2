@@ -36,7 +36,7 @@
                             <textarea id="text_commento" name="commento" onKeyUp="V.characterLeft();" onKeyDown="V.characterLeft();" placeholder="Inserisci il tuo commento..." maxlength="255"></textarea>
                             <br>
                             <p id="charsLeft">Rimanenti: 255 di 255</p>
-                            <input type="button" id="commenta" name="submit" value="Invia">
+                            <input type="button" onClick="V.invioCommento()" id="commenta" name="submit" value="Invia">
                         </form>
                 </div>
                 <div id="accordion">
