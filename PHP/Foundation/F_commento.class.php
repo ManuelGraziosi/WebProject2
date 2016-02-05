@@ -21,9 +21,11 @@ class F_commento {
     
     public function addCommento($commento){
         
-        $query = "INSERT INTO `commento`(`testo`) VALUES ('$commento')";
-        $this->db->query($query);
-        return true;
+        /**/
+        $db= new F_database();//serve solo per richiamare velocemente i metodi
+        $d= $db->depositaRiga("commento", $commento);
+        //print_r($d);
+        /**/
     }
     
     public function getProdCommentList($nome_prod_com){
