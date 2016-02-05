@@ -48,15 +48,29 @@ V_dettagli_prodotto.prototype={
         var secondCom = dateTemp.getSeconds();
         var dateCom = yearCom + "-" + monthCom + "-" + dayCom + " " + hourCom + ":" + minuteCom + ":" + secondCom;
 
-        var userCom = $('#utente').text();
+        //var userCom = $('#utente').text();
+        
 
         var textCom = $("#text_commento").val();
 
-        var msg = "Il prodotto è: " + productCom + 
-                  "\n\r la Data è: " + dateCom + 
-                  "\n\r l'utente è: " + userCom +
-                  "\n\r il testo inserito è: " + textCom;
-        alert(msg);
+        //var msg = "Il prodotto è: " + productCom + 
+        //          "\n\r la Data è: " + dateCom + 
+        //          "\n\r il testo inserito è: " + textCom;
+        //alert(msg);
+        
+        var dati = {
+            "ProductCOM"    : productCom,
+            "DateCOM"       : dateCom,
+            "TextCOM"       : textCom 
+        };
+        $.ajax({
+            url:"index.php?controllore=C_commento&metodo=inserisci_commento",
+            data:dati,
+            datatype:"html",//cosi definisco il tipo di dato che ricevo dopo l'invio, che sra un popup con scritto successo quindi html
+            success:function(risposta){
+                alert(risposta);
+            }
+        });
     }
 };
 
