@@ -96,6 +96,12 @@ C_home.prototype={
     },
     
     mostraCarrello : function(){
+        var nomePagina = $(this).attr('title');
+        //si dovrebbe trovare una soluzione
+        $('title').html('Sammartino | '+nomePagina);
+        $('.menu').removeClass('active');
+        $(this).addClass('active');
+        //a queste
         $.ajax({
             url:"index.php?controllore=C_visualizzazione&metodo=carrello",
             metod:"GET",
@@ -103,6 +109,10 @@ C_home.prototype={
             dataType:"HTML",
             success:function(d){
                 $('#mainright').html(d);
+                $(function(){
+                    var c= new C_vetrina();
+                    $('.cancella_prodotto').click(c.eliminareprodotto/**($('.cancella_prodotto').attr('title'))/**/);
+                });
             }
         });
     }
