@@ -1,4 +1,4 @@
-
+<!--
         <div id="selezione">
             <div id="barra-selezione">
                 Seleziona la categoria di prodotto: 
@@ -17,6 +17,7 @@
                 <button>Cerca</button>    DA MODIFICARE!
             </div>
         </div>
+-->
         <div id="elencoProdotti">
         {section name=i loop=$prodotti}
 
