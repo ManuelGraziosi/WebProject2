@@ -1,5 +1,5 @@
 <div id="carrello">
-    <div class="elemento">
+    <div id="intestazione">
         <span class="foto">
             <p>foto</p>
         </span>
@@ -16,7 +16,7 @@
             <p>Subtotale</p>
         </span>
         <span class="cancella">
-            
+            <p></p>
         </span>
     </div>
     <!--va iterato-->
@@ -30,7 +30,7 @@
             <p>{$prodotti[i].nome_prodotto}</p>
         </span>
         <span class="quantita">
-            <p><input class="n_quantita" type="text" value="{$prodotti[i].quantita}"></p>
+            <input class="n_quantita" type="text" value="{$prodotti[i].quantita}"/>N.
         </span>
         <span class="prezzo">
             <p>{$prodotti[i].prezzo}€</p>
