@@ -30,7 +30,7 @@
             <p>{$prodotti[i].nome_prodotto}</p>
         </span>
         <span class="quantita">
-            <p>{$prodotti[i].quantita}Kg</p>
+            <p><input class="n_quantita" type="text" value="{$prodotti[i].quantita}"></p>
         </span>
         <span class="prezzo">
             <p>{$prodotti[i].prezzo}€</p>
