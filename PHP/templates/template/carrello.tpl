@@ -1,52 +1,56 @@
-            <br>
-            <b>DISPONIBILITA'</b>
-            <div id="carr">
-                <table id="tab">
-                    <tr>
-                        <td>
-                            NOME
-                        </td>
-                        <td>
-                            CATEGORIA
-                        </td>
-                        <td>
-                            QUANTITA
-                        </td>
-                        <td>
-                            PREZZO
-                        </td>
-                        <td>
-                            SUBTOTALE
-                        </td>
-                    </tr>
-                    <tr>
-                        
-                    </tr>
-        <!--            {section name=i loop=$prodotti}
-                    <tr id="riga{$smarty.section.i.iteration}">
-                    <form name="prodotto">
-                        <td id="NOME_PRODOTTO1">{$prodotti[i].NOME_PRODOTTO}</td>
-                        <td id="colonna">{$prodotti[i].descrizione }</td>
-                        <td id="colonna">{$prodotti[i].foto}</td>
-                        <td id="colonna">{$prodotti[i].categoria}</td>
-                        <td id="colonna">{$prodotti[i].prezzo_kg}</td>
-                        <td id="colonna"><input id="quantita" type="text" name="quantita" size="4" value="1"/></td>
-                        <td id="colonna">{$prodotti[i].disponibilita}</td>
-                        <td id="colonna"><input type="button" id="bottone" class="aggiungi" value="invia dati"/>
-                            <input type="hidden" id="nome_prodotto1" name="nome_prodotto" value="{$prodotti[i].NOME_PRODOTTO}"/>
-                            <!--<input type="hidden" name="metodo" value="inserisciProdotto"/>
-                            <input class="prodotto" type="hidden" name="nome_prodotto" value="{$prodotti[i].NOME_PRODOTTO}"/>
-                            <input id="{$prodotti[i].NOME_PRODOTTO}" class="aggiungi" type="submit" name="submit" value="aggiungi"/>-->
-        <!--                </td>
-                    </form>
-                        </tr>
-                    {sectionelse} 
-                    <tr>
-                         <td align="center">
-                         <b> nessun risultato </b>
-                        <td>
-                    </tr>
-                     {/section}
-        -->
-                </table>    
-            </div>
+<div id="carrello">
+    <div class="elemento">
+        <span class="foto">
+            <p>foto</p>
+        </span>
+        <span class="nome">
+            <p>Nome prodotto</p>
+        </span>
+        <span class="quantita">
+            <p>Quantita</p>
+        </span>
+        <span class="prezzo">
+            <p>Prezzo</p>
+        </span>
+        <span class="subtotale">
+            <p>Subtotale</p>
+        </span>
+        <span class="cancella">
+            
+        </span>
+    </div>
+    <!--va iterato-->
+    {assign var="totale" value=0}
+    {section name=i loop=$prodotti}
+    <div class="elemento">
+        <span class="foto">
+            <img id="d_foto" src="PHP/templates/template/images/prodotti/{$prodotti[i].foto}.jpg" width="50px" height="50px"/>
+        </span>
+        <span class="nome">
+            <p>{$prodotti[i].nome_prodotto}</p>
+        </span>
+        <span class="quantita">
+            <p>{$prodotti[i].quantita}Kg</p>
+        </span>
+        <span class="prezzo">
+            <p>{$prodotti[i].prezzo}€</p>
+        </span>
+        <span class="subtotale">
+            <p>{$prodotti[i].subtotale}€</p>{assign var="totale" value=$prodotti[i].subtotale+$totale}
+        </span>
+        <span class="cancella">
+            <button class="cancella_prodotto" title="{$prodotti[i].nome_prodotto}">X</button>
+        </span>
+    </div>
+    {sectionelse}
+    <div class="elemento">
+        <b> Nessun prodotto nel carrello </b>
+    </div>
+    {/section}
+    <div class="elemento">
+        <b> TOTALE: {$totale}</b>
+    </div>
+    <div class="">
+        <button id="aggiorna">aggiorna carrello</button>
+    </div>
+</div>
