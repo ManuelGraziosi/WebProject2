@@ -17,7 +17,7 @@ C_fareOrdine.prototype={
             data:/**/dati/**{"NOME_PRODOTTO":"Caciotta","quantita":"100"}/**/,
             dataType:"JSON",
             success:function(dati){
-                $('#nascosto').html(dati._prodotto.NOME_PRODOTTO+" "+dati._prodotto.categoria+" "+dati._prodotto.descrizione);
+                //$('#nascosto').html(dati._prodotto.NOME_PRODOTTO+" "+dati._prodotto.categoria+" "+dati._prodotto.descrizione);
                 //c = new C_fareOrdine();
                 
             }
@@ -35,11 +35,11 @@ C_fareOrdine.prototype={
             }
         });
     },
-    aggiornaProdottoOrdinato: function(){
+    aggiornaProdottoOrdinato: function(dati){
         $.ajax({
             url:"index.php?controllore=C_fareOrdine&metodo=aggiornaProdottoOrdinato",
             metod:"GET",
-            data:dati,
+            data:{"NOME_PRODOTTO":dati},
             dataType:"JSON",
             success:function(){
                 
