@@ -73,13 +73,13 @@ class E_ordine {
     }
 
     public function rimuoviProdotto($nome) {
-        $trovato=false;
-        /**/
-        for($i=0;$i<count($this->_prodotto)&&(!$trovato);$i++){
-            $thisProdotto=$this->_prodotto[$i]->getProdottoOrdinato();
+        $trovato=false;/**/
+        foreach ($this->_prodotto as $key => $value) {
+            $thisProdotto=$value/**/->getProdottoOrdinato()/**/;
+            print_r($thisProdotto);
             if($thisProdotto->getNOME_PRODOTTO()==$nome) {
-                unset($this->_prodotto[$i]);
-                $trovato=true;/**/
+                unset($this->_prodotto[$key]);
+                $trovato=true;
             }
         }
     }
@@ -87,12 +87,11 @@ class E_ordine {
     
     public function aggiornaProdotto($nome,$quantita) {
         $trovato=false;
-        /**/
-        for($i=0;$i<count($this->_prodotto)&&(!$trovato);$i++){
-            $thisProdotto=$this->_prodotto[$i]->getProdottoOrdinato();
+        foreach ($this->_prodotto as $key => $value) {
+            $thisProdotto=$value/**/->getProdottoOrdinato()/**/;
             if($thisProdotto->getNOME_PRODOTTO()==$nome) {
                 //unset($this->_prodotto[$i]);
-                $q=$this->_prodotto[$i]->setQuantita($quantita);
+                $q=$this->_prodotto[$key]->setQuantita($quantita);
                 $trovato=true;/**/
             }
         }
