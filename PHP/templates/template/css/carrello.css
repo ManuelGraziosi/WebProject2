@@ -33,13 +33,13 @@ div#carrello{
 }
 /**/
 #intestazione{
-        background: #f93;
+        background: #fd7;
 	width:927px;
 	border-left: 4px;
 	border-bottom: 4px;
 	border-right: 4px;
         border-style: solid;
-        border-color: #f93;
+        border-color: #fd7;
 }
 
 
@@ -71,13 +71,13 @@ div#carrello{
 
 .elemento{
 	width:927px;
-        font-size: 20px;/**/
-        background-color: #FAEF87;
+        font-size: 15px;/**/
+        background-color: #F9F3BB;
 	border-left: 4px;
 	border-bottom: 4px;
 	border-right: 4px;
         border-style: solid;
-        border-color: #f93;
+        border-color: #fd7;
 }
 
 .elemento p{
@@ -134,6 +134,7 @@ div#carrello{
 }
 
 #foot .label,#foot .valore,#foot .vuoto{
+        font-size: 20px;
         text-align: right;
         float:left;
 }
