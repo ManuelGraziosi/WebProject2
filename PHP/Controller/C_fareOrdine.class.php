@@ -70,9 +70,28 @@ class C_fareOrdine {
     
     public function mostraCarrello(){
         $sessione=  U_singolaistanza::getIstanza('U_sessione');
-        $ordine=$sessione->leggi_valore('carrello');
-        
-        return $ordine;
+        $ordine=unserialize($sessione->leggi_valore('carrello'));
+        if($ordine!=false){
+            $daticarrello=array();
+            $ordine1=$ordine->_prodotto;
+            $i=-1;
+            foreach ($ordine1 as $key => $value) {
+                /**/
+                $i++;
+                $daticarrello[$i]=array(
+                    "nome_prodotto"=>$ordine1[$key]->_prodotto->getNOME_PRODOTTO(),
+                    "quantita"=>2,/**$ordine1[$key]->getQuantita(),/**/ 
+                    "foto"=>$ordine1[$key]/**/->_prodotto/**/->getFoto(),
+                    "prezzo"=>$ordine1[$key]/**/->_prodotto/**/->getPrezzo_kg(),
+                    "subtotale"=>$ordine1[$key]/**/->_prodotto/**/->getPrezzo_kg()*2
+                );
+                /**/
+            }
+            return $daticarrello;
+        }
+        else{
+            return false;
+        }
     }
     
     public function effettuaOrdine() {
