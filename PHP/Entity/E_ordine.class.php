@@ -76,7 +76,6 @@ class E_ordine {
         $trovato=false;/**/
         foreach ($this->_prodotto as $key => $value) {
             $thisProdotto=$value/**/->getProdottoOrdinato()/**/;
-            print_r($thisProdotto);
             if($thisProdotto->getNOME_PRODOTTO()==$nome) {
                 unset($this->_prodotto[$key]);
                 $trovato=true;
