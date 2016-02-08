@@ -14,6 +14,7 @@ div#carrello{
         border:0px;
         margin:0px;
         border: 0px;
+        color:black;
 }
 
 #intestazione,#intestazione div,#intestazione span{
@@ -33,8 +34,12 @@ div#carrello{
 /**/
 #intestazione{
         background: #f93;
-	width:935px;
-	border:#FF9933 4px solid;
+	width:927px;
+	border-left: 4px;
+	border-bottom: 4px;
+	border-right: 4px;
+        border-style: solid;
+        border-color: #f93;
 }
 
 
@@ -43,7 +48,7 @@ div#carrello{
 }
 
 #intestazione .nome{
-	width: 400px;
+	width: 392px;
 }
 
 #intestazione .quantita{
@@ -65,10 +70,18 @@ div#carrello{
 }
 
 .elemento{
-	width:935px;
-        font-size: 20px;
+	width:927px;
+        font-size: 20px;/**/
         background-color: #FAEF87;
-	border:#FF9933/**#DCDCDC/**/ 4px solid;
+	border-left: 4px;
+	border-bottom: 4px;
+	border-right: 4px;
+        border-style: solid;
+        border-color: #f93;
+}
+
+.elemento p{
+    padding: 5px;
 }
 
 .elemento .foto{
@@ -76,11 +89,12 @@ div#carrello{
 }
 
 .elemento .nome{
-	width: 400px;
+	width: 392px;
 }
 
 .elemento .quantita{
 	width: 175px;
+        text-align: right;
 	//background: pink;
 }
 
@@ -107,4 +121,33 @@ div#carrello{
 .elemento .cancella_prodotto{
 	width: 100%;
         height: 100%;
+}
+
+#foot{
+        float:right;
+        background-color: #FAEF87;
+	border-left: 4px;
+	border-bottom: 4px;
+	border-right: 4px;
+        border-style: solid;
+        border-color: #f93;
+}
+
+#foot .label,#foot .valore,#foot .vuoto{
+        text-align: right;
+        float:left;
+}
+
+#foot .label{
+	width: 95px;
+        text-align: right;
+}
+
+#foot .valore{
+	width: 140px;
+        text-align: right;
+}
+
+#foot .vuoto{
+	width: 50px;
 }

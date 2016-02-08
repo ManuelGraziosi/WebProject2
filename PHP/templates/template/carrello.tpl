@@ -30,7 +30,7 @@
             <p>{$prodotti[i].nome_prodotto}</p>
         </span>
         <span class="quantita">
-            <input class="n_quantita" type="text" value="{$prodotti[i].quantita}"/>N.
+            <p><input class="n_quantita" type="text" value="{$prodotti[i].quantita}"/>N.</p>
         </span>
         <span class="prezzo">
             <p>{$prodotti[i].prezzo}€</p>
@@ -47,10 +47,14 @@
         <b> Nessun prodotto nel carrello </b>
     </div>
     {/section}
-    <div class="elemento">
-        <b> TOTALE: {$totale}</b>
-    </div>
-    <div class="">
-        <button id="aggiorna">aggiorna carrello</button>
+    <div id="foot">
+        <span class="label">
+            <b> TOTALE:</b>
+        </span>
+        <span class="valore">
+            <b>{$totale}</b>
+        </span>
+        <span class="vuoto">
+        </span>
     </div>
 </div>
