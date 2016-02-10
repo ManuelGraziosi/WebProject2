@@ -3,12 +3,18 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Creato il: Ago 09, 2015 alle 20:09
+-- Creato il: Feb 10, 2016 alle 18:34
 -- Versione del server: 5.6.24
 -- Versione PHP: 5.6.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
 
 --
 -- Database: `sammartino`
@@ -23,17 +29,26 @@ USE `sammartino`;
 --
 
 DROP TABLE IF EXISTS `cliente`;
-CREATE TABLE IF NOT EXISTS `cliente` (
+CREATE TABLE `cliente` (
   `EMAIL` varchar(80) NOT NULL,
   `nome` varchar(40) DEFAULT NULL,
   `cognome` varchar(40) DEFAULT NULL,
   `password` varchar(30) DEFAULT NULL,
-  `codice_attivazione` varchar(20) DEFAULT NULL,
-  `attivazione` enum('non_attivo','attivo') DEFAULT NULL,
+  `attivazione` enum('non_attivo','attivo') DEFAULT 'attivo',
   `citta` varchar(20) DEFAULT NULL,
   `via` varchar(100) DEFAULT NULL,
   `CAP` varchar(5) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dump dei dati per la tabella `cliente`
+--
+
+INSERT INTO `cliente` (`EMAIL`, `nome`, `cognome`, `password`, `attivazione`, `citta`, `via`, `CAP`) VALUES
+('alessioscarpone@gmail.com', 'Alessio', 'Scarpone', 'matinf', 'attivo', 'Teramo', 'salita san martino', '64100'),
+('corradoscarpone@gmail.com', 'corrado', 'scarpone', 'matinf', 'attivo', 'teramo', 'scapriano alto', '64100'),
+('danielescarpone@gmail.com', 'Daniele', 'Scarpone', 'matinf', 'attivo', 'Teramo', 'salita san Martino', '64100'),
+('pippobaudo@gmail.com', 'pippo', 'baudo', 'matinf', 'attivo', 'teramo', 'scapriano alto', '64100');
 
 -- --------------------------------------------------------
 
@@ -42,14 +57,26 @@ CREATE TABLE IF NOT EXISTS `cliente` (
 --
 
 DROP TABLE IF EXISTS `commento`;
-CREATE TABLE IF NOT EXISTS `commento` (
+CREATE TABLE `commento` (
   `ID_COMMENTO` int(11) NOT NULL,
   `nome_prod_com` varchar(30) DEFAULT NULL,
   `data_commento` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '''9999-12-31 23:59:59',
   `user_commento` varchar(80) NOT NULL,
-  `testo` varchar(1024) DEFAULT NULL,
+  `testo` varchar(256) DEFAULT NULL,
   `voto` float NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+
+--
+-- Dump dei dati per la tabella `commento`
+--
+
+INSERT INTO `commento` (`ID_COMMENTO`, `nome_prod_com`, `data_commento`, `user_commento`, `testo`, `voto`) VALUES
+(4, 'Caciotta', '2016-02-05 14:04:42', 'danielescarpone@gmail.com', 'pippo daniele scarpone', 0),
+(5, 'Caciotta', '2016-02-05 14:05:10', 'danielescarpone@gmail.com', 'daniele', 0),
+(6, 'Caciotta', '2016-02-05 14:05:59', 'danielescarpone@gmail.com', 'scarpone', 0),
+(7, 'Caciotta', '2016-02-05 14:16:33', 'danielescarpone@gmail.com', '123456789', 0),
+(8, 'Yogurt limone', '2016-02-05 18:03:47', 'danielescarpone@gmail.com', 'commento per lo yogurt al limone', 0),
+(9, 'Caciotta al peperoncino', '2016-02-00 16:44:14', 'danielescarpone@gmail.com', 'ciao io funziono', 0);
 
 -- --------------------------------------------------------
 
@@ -58,9 +85,16 @@ CREATE TABLE IF NOT EXISTS `commento` (
 --
 
 DROP TABLE IF EXISTS `newsletter`;
-CREATE TABLE IF NOT EXISTS `newsletter` (
+CREATE TABLE `newsletter` (
   `email` varchar(80) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dump dei dati per la tabella `newsletter`
+--
+
+INSERT INTO `newsletter` (`email`) VALUES
+('danielescarponegmail.com');
 
 -- --------------------------------------------------------
 
@@ -69,7 +103,7 @@ CREATE TABLE IF NOT EXISTS `newsletter` (
 --
 
 DROP TABLE IF EXISTS `ordine`;
-CREATE TABLE IF NOT EXISTS `ordine` (
+CREATE TABLE `ordine` (
   `ID_ORDINE` int(11) NOT NULL,
   `id_metodo_pagamento` int(11) DEFAULT NULL,
   `email_cliente` varchar(80) DEFAULT NULL,
@@ -86,7 +120,7 @@ CREATE TABLE IF NOT EXISTS `ordine` (
 --
 
 DROP TABLE IF EXISTS `pagamento`;
-CREATE TABLE IF NOT EXISTS `pagamento` (
+CREATE TABLE `pagamento` (
   `ID_PAGAMENTO` int(11) NOT NULL,
   `nome_titolare` varchar(40) DEFAULT NULL,
   `cognome_titolare` varchar(40) DEFAULT NULL,
@@ -101,14 +135,49 @@ CREATE TABLE IF NOT EXISTS `pagamento` (
 --
 
 DROP TABLE IF EXISTS `prodotto`;
-CREATE TABLE IF NOT EXISTS `prodotto` (
+CREATE TABLE `prodotto` (
   `NOME_PRODOTTO` varchar(30) NOT NULL,
-  `foto` blob NOT NULL,
+  `foto` char(100) NOT NULL,
   `descrizione` varchar(1024) NOT NULL,
   `categoria` varchar(30) NOT NULL,
   `prezzo_kg` float NOT NULL,
   `disponibilita` int(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dump dei dati per la tabella `prodotto`
+--
+
+INSERT INTO `prodotto` (`NOME_PRODOTTO`, `foto`, `descrizione`, `categoria`, `prezzo_kg`, `disponibilita`) VALUES
+('Caciotta', 'Caciotta grande', 'fatto con latte dell azienda sammartino fatto con latte dell azienda sammartino fatto con latte dell azienda sammartino fatto con latte dell azienda sammartino fatto con latte dell azienda sammartino fatto con latte dell azienda sammartino fatto con latte dell azienda sammartino fatto con latte dell azienda sammartino fatto con latte dell azienda sammartino fatto con latte dell azienda sammartino fatto con latte dell azienda sammartino ', 'Caciotta', 7.2, 45),
+('Caciotta al peperoncino', 'peperoncino', 'fatto con latte dell azienda sammartino fatto con latte dell azienda sammartino fatto con latte dell azienda sammartino fatto con latte dell azienda sammartino fatto con latte dell azienda sammartino fatto con latte dell azienda sammartino fatto con latte dell azienda sammartino fatto con latte dell azienda sammartino fatto con latte dell azienda sammartino fatto con latte dell azienda sammartino fatto con latte dell azienda sammartino fatto con latte dell azienda sammartino fatto con latte dell azienda sammartino ', 'caciotta', 9, 10),
+('Caciotta al tartufo', 'tartufo', 'fatto con latte dell azienda sammartino', 'caciotta', 15, 10),
+('Caciotta alle noci', 'noci', 'fatto con latte dell azienda sammartino', 'caciotta', 8, 10),
+('Filone', 'filone', 'fatto con latte dell azienda sammartino', 'pasta filata', 7.9, 10),
+('Mozzarella 100g', 'mozzarella_100g', 'fatto con latte dell azienda sammartino', 'pasta filata', 7.9, 10),
+('Mozzarella 1kg', 'mozzarella_1kg', 'fatto con latte dell azienda sammartino', 'pasta filata', 7.9, 10),
+('Mozzarella 240g', 'mozzarella_240g', 'fatto con latte dell azienda sammartino', 'pasta filata', 7.9, 10),
+('Mozzarella 500g', 'mozzarella_500g', 'fatto con latte dell azienda sammartino', 'pasta filata', 7.9, 10),
+('Praline normali', 'p_normali', 'fatto con latte dell azienda sammartino', 'caciotta', 5, 15),
+('Praline peperoncino', 'p_peperoncino', 'fatto con latte dell azienda sammartino fatto con latte dell azienda sammartino fatto con latte dell azienda sammartino fatto con latte dell azienda sammartino fatto con latte dell azienda sammartino fatto con latte dell azienda sammartino fatto con latte dell azienda sammartino fatto con latte dell azienda sammartino fatto con latte dell azienda sammartino fatto con latte dell azienda sammartino fatto con latte dell azienda sammartino fatto con latte dell azienda sammartino fatto con latte dell azienda sammartino fatto con latte dell azienda sammartino fatto con latte dell azienda sammartino fatto con latte dell azienda sammartino fatto con latte dell azienda sammartino fatto con latte dell azienda sammartino fatto con latte dell azienda sammartino fatto con latte dell azienda sammartino fatto con latte dell azienda sammartino fatto con latte dell azienda sammartino fatto con latte dell azienda sammartino fatto con latte dell azienda sammartino fatto con latte dell azienda sammartino fatto con latte dell azi', 'caciotta', 7, 15),
+('Praline tartufo', 'p_tartufo', 'fatto con latte dell azienda sammartino', 'caciotta', 8, 15),
+('Ricotta da 2kg', 'ricotta_2kg', 'fatto con latte dell azienda sammartino', 'fresco', 3, 10),
+('Ricotta da 350g', 'ricotta_350g', 'fatto con latte dell azienda sammartino', 'fresco', 3, 10),
+('Ricotta da 500g', 'ricotta_500g', 'fatto con latte dell azienda sammartino', 'fresco', 3, 10),
+('Semistagionato da 15kg', 'semistagionato_15kg', 'fatto con latte dell azienda sammartino', 'stagionato', 13, 45),
+('Semistagionato da 2kg', 'semistagionato_2kg', 'fatto con latte dell azienda sammartino', 'stagionato', 13, 45),
+('Semistagionato da 8kg', 'semistagionato_8kg', 'fatto con latte dell azienda sammartino', 'stagionato', 13, 45),
+('Stagionato da 15kg', 'stagionato_15kg', 'fatto con latte dell azienda sammartino', 'stagionato', 13, 45),
+('Stagionato da 2kg', 'stagionato_2kg', 'fatto con latte dell azienda sammartino', 'stagionato', 13, 45),
+('Stagionato da 8kg', 'stagionato_8kg', 'fatto con latte dell azienda sammartino', 'stagionato', 13, 45),
+('Troncetto morbido', 'morbido', 'fatto con latte dell azienda sammartino', 'fresco', 8, 10),
+('Troncetto primo sale', 'primo_sale', 'fatto con latte dell azienda sammartino', 'fresco', 8, 10),
+('Yogurt banana', 'yogurt_banana', 'fatto con latte dell azienda sammartino', 'fresco', 2, 14),
+('Yogurt caffe', 'yogurt_caffe', 'fatto con latte dell azienda sammartino', 'fresco', 2, 14),
+('Yogurt fragola', 'yogurt_fragola', 'fatto con latte dell azienda sammartino', 'fresco', 2, 14),
+('Yogurt frutti di bosco', 'yogurt_frutti di bosco', 'fatto con latte dell azienda sammartino', 'fresco', 2, 14),
+('Yogurt limone', 'yogurt_limone', 'fatto con latte dell azienda sammartino', 'fresco', 2, 14),
+('Yogurt naturale', 'yogurt_naturale', 'fatto con latte dell azienda sammartino', 'fresco', 2, 14);
 
 -- --------------------------------------------------------
 
@@ -117,7 +186,7 @@ CREATE TABLE IF NOT EXISTS `prodotto` (
 --
 
 DROP TABLE IF EXISTS `prod_ordinato`;
-CREATE TABLE IF NOT EXISTS `prod_ordinato` (
+CREATE TABLE `prod_ordinato` (
   `ID_PROD_ORDINATO` int(11) NOT NULL,
   `nome_prodotto` varchar(30) DEFAULT NULL,
   `id_ordine` int(11) NOT NULL,
@@ -181,6 +250,11 @@ ALTER TABLE `prod_ordinato`
 --
 
 --
+-- AUTO_INCREMENT per la tabella `commento`
+--
+ALTER TABLE `commento`
+  MODIFY `ID_COMMENTO` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+--
 -- AUTO_INCREMENT per la tabella `ordine`
 --
 ALTER TABLE `ordine`
@@ -219,3 +293,7 @@ ALTER TABLE `ordine`
 ALTER TABLE `prod_ordinato`
   ADD CONSTRAINT `prod_ordinato_ibfk_1` FOREIGN KEY (`nome_prodotto`) REFERENCES `prodotto` (`NOME_PRODOTTO`) ON DELETE NO ACTION ON UPDATE CASCADE,
   ADD CONSTRAINT `prod_ordinato_ibfk_2` FOREIGN KEY (`id_ordine`) REFERENCES `ordine` (`ID_ORDINE`) ON DELETE NO ACTION ON UPDATE CASCADE;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
