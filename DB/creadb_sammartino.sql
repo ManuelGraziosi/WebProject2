@@ -277,8 +277,8 @@ ALTER TABLE `prod_ordinato`
 -- Limiti per la tabella `commento`
 --
 ALTER TABLE `commento`
-  ADD CONSTRAINT `commento_ibfk_1` FOREIGN KEY (`nome_prod_com`) REFERENCES `prodotto` (`NOME_PRODOTTO`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `commento_ibfk_2` FOREIGN KEY (`user_commento`) REFERENCES `cliente` (`EMAIL`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `commento_ibfk_1` FOREIGN KEY (`nome_prod_com`) REFERENCES `prodotto` (`NOME_PRODOTTO`),
+  ADD CONSTRAINT `commento_ibfk_2` FOREIGN KEY (`user_commento`) REFERENCES `cliente` (`EMAIL`);
 
 --
 -- Limiti per la tabella `ordine`
