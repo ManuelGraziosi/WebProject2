@@ -75,18 +75,18 @@ class C_registrazione {
         $view=new V_registrazione();
         $db=new F_database();
         $cliente=new E_cliente();
-        $email=$view->getEmail();
-        $password=$view->getPassword();
-        $clientedati=$db->caricaRiga("cliente", $email);
+        $this->_email=$view->getEmail();
+        $this->_password=$view->getPassword();
+        $clientedati=$db->caricaRiga("cliente", $this->_email);
         if(count($clientedati)==1){
             U_operazioni::inserisciDati($cliente, $clientedati);
         }
         if ($cliente!=false) {
             if ($cliente->getAccountAttivo()) {
                 //account attivo
-                if ($email == $cliente->getEmail() && $password == $cliente->getPassword()) {
+                if ($this->_email == $cliente->getEmail() && $this->_password == $cliente->getPassword()) {
                     $sessione=U_singolaistanza::getIstanza('U_sessione');
-                    $sessione->imposta_valore('email',$email);
+                    $sessione->imposta_valore('email',$this->_email);
                     $sessione->imposta_valore('nome_cognome',$cliente->getNome().' '.$cliente->getCognome());
                     $this->_messaggio['cliente']=$cliente->getNome().' '.$cliente->getCognome();
                     //$sessione->leggi_valore('nome_cognome');
@@ -111,8 +111,14 @@ class C_registrazione {
      */
     public function logout() {
         $sessione=  U_singolaistanza::getIstanza('U_sessione');
-        $sessione->cancella_valore('email');
-        $sessione->cancella_valore('nome_cognome');
+        try {
+            $sessione->chiudi_sessione();
+            header('Location: index.php');
+            exit;
+        } catch (Exception $e) {
+        	//$View->invia(array("success" => FALSE));
+        }
+        exit;
     }
 }
 ?>

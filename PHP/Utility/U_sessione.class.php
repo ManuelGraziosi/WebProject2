@@ -8,17 +8,21 @@ class U_sessione {
     public function __construct() {
         session_start();
     }
-    function imposta_valore($chiave,$valore) {
+    public function imposta_valore($chiave,$valore) {
         $_SESSION[$chiave]=$valore;
     }
-    function cancella_valore($chiave) {
+    public function cancella_valore($chiave) {
         unset($_SESSION[$chiave]);
     }
-    function leggi_valore($chiave) {
+    public function leggi_valore($chiave) {
         if (isset($_SESSION[$chiave]))
             return $_SESSION[$chiave];
         else
             return false;
+    }
+    public function chiudi_sessione() {
+        session_unset();
+        session_destroy();
     }
 }
 ?>
