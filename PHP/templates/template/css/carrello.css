@@ -95,7 +95,7 @@ div#carrello{
 .elemento .quantita{
 	width: 175px;
         text-align: right;
-	//background: pink;
+	
 }
 
 .elemento .quantita .n_quantita{
