@@ -16,7 +16,7 @@ var E_home = function(){
     /**/$('#newsletter').click(home.newsletter);
     $('#submit_newsletter').unbind().click(home.submit_newsletter);
     $('#registrazione').click(home.registrazione);
-    $('#login').unbind().click(home.login);
+    $('#invialogin'/**login/**/).unbind().click(home.login);
     $('#logout').unbind().click(home.logout);
     $('#searchimg').unbind().click(home.ricerca);
     $('#barracerca').unbind().keyup(home.ricerca);

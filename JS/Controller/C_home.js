@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-var C,V;
 var U = new U_operazioni();
 
 var C_home = function(){
@@ -18,24 +17,25 @@ C_home.prototype={
         $('title').html('Sammartino | '+nomePagina);
         $('.menu').removeClass('active');
         $(this).addClass('active');
+        $(document).scrollTop(0);
         U.richiestaHtmlServer('C_visualizzazione',nomePagina,'#mainright');
     },
     
     amministratore : function(){
-        C = new C_amministrazione();
+        var C =  new C_amministrazione();
         
     },
     
     newsletter : function(){
-        C=new C_newsletter();
-        V=new V_newsletter();
+        var C = new C_newsletter();
+        var V = new V_newsletter();
         C.controllaEmailNewsletter();
         //$('#submit_newsletter').button();
     },
     
     submit_newsletter : function(){
-        C=new C_newsletter();
-        V=new V_newsletter();
+        var C = new C_newsletter();
+        var V = new V_newsletter();
         var email = V.recuperaEmailNewsletter();
         /*il ! e da cancellare*/
         if(C.controllaEmailNewsletter()){
@@ -53,8 +53,8 @@ C_home.prototype={
     },
     
     registrazione : function(){
-        C = new C_registrazione();
-        V = new V_registrazione();
+        var C =  new C_registrazione();
+         V =  new V_registrazione();
         $.ajax({
             url:"index.php?controllore=C_visualizzazione&metodo=registrazione",
             success:function(html){
@@ -73,25 +73,21 @@ C_home.prototype={
     },
     
     login : function(){
-        $('#invialogin').unbind().click(function(){
-            C = new C_registrazione();
-            V = new V_registrazione();
-            var dati= V.recuperaDatiLogin();
-            C.inviaDatiLogin(dati);
-        });
+        var C =  new C_registrazione();
+        var V =  new V_registrazione();
+        var dati= V.recuperaDatiLogin();
+        C.inviaDatiLogin(dati);
     },
     
     logout : function(){
-        //$('#invialogout').unbind().click(function(){
-            C = new C_registrazione();
-            C.richiestaLogout();
-        //});
+        var C =  new C_registrazione();
+        C.richiestaLogout();
     },
     
     ricerca : function(){
-        C = new C_registrazione();
-        V = new V_registrazione();
-        var stringa = V.recuperaDatiricerca();
+        var C =  new C_vetrina();
+        var V =  new V_vetrina();
+        var stringa = V.recuperaDatiRicerca();
         C.ricerca(stringa);
     },
     

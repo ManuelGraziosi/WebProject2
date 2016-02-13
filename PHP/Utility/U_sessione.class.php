@@ -6,6 +6,7 @@
  */
 class U_sessione {
     public function __construct() {
+        session_name("az.Sammartino");
         session_start();
     }
     public function imposta_valore($chiave,$valore) {
@@ -23,6 +24,10 @@ class U_sessione {
     public function chiudi_sessione() {
         session_unset();
         session_destroy();
+    }
+    
+    public function esiste_valore( $name ){
+        return isset($_SESSION[$name]);
     }
 }
 ?>

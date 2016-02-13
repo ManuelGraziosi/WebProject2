@@ -27,7 +27,7 @@
 .foto-space
 {
     width: 250px;
-    height: 250px;
+    height: 187.5px;
     background-color: red;
 }
 
@@ -52,7 +52,7 @@
 #foto
 {   
     width: 250px;
-    max-height: 250px;
+    max-height: 187.5px;
     vertical-align: middle;
 }
 

@@ -2,7 +2,7 @@ var C,V;
 var U = new U_operazioni();
 
 var C_vetrina=function(){
-    U.aggiorna_grafica();
+    
 };
 
 C_vetrina.prototype={
@@ -15,7 +15,7 @@ C_vetrina.prototype={
             data:{NOME_PRODOTTO:nome},
             success:function(carrello) {
             V=new V_dettagli_prodotto();
-            $('#nascosto').html(carrello);
+            $('#notifica').html(carrello);
             V.dialogomanuel();
             $('#accordion').accordion();
             }
@@ -41,6 +41,20 @@ C_vetrina.prototype={
         V = new V_fareOrdine();/**/
         var nome = $(this).attr("title");
         C.rimuoviProdottoOrdinato(nome);
-        $(this).parent().parent().remove();
+        $(this).parent().parent().fadeOut({duration:1500,animated:'slow'});
+        
+    },
+    
+    ricerca : function(stringa){
+        $.ajax({
+            url:"index.php?controllore=C_visualizzazione&metodo=ricerca",
+            type:'GET',
+            data:stringa,
+            dataType:"html",
+            success:function(lista) {
+                var V = new V_vetrina();
+                V.mostraRisultatiRicerca(lista);
+            }
+        });
     }
 };

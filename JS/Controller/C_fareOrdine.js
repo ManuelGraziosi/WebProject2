@@ -17,8 +17,7 @@ C_fareOrdine.prototype={
             data:/**/dati/**{"NOME_PRODOTTO":"Caciotta","quantita":"100"}/**/,
             dataType:"JSON",
             success:function(dati){
-                //$('#nascosto').html(dati._prodotto.NOME_PRODOTTO+" "+dati._prodotto.categoria+" "+dati._prodotto.descrizione);
-                //c = new C_fareOrdine();
+                $('#notifica').dialog().html(dati.NOME_PRODOTTO+" è stato inserito nel carrello con successo!!</br>quantità: "+dati.quantita+"</br>prezzo: "+dati.prezzo_kg);
                 
             }
         });

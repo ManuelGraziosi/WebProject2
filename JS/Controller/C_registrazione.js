@@ -74,48 +74,46 @@ C_registrazione.prototype={
         $('#via_registrazione').blur(function () {
             if (!$(this).val().match(/^[a-zA-Z' ]{2,100}$/)) {
                 $(this).css("border", "3px solid red");
-                errori[1]=true;
+                errori[6]=true;
             }
             else{
                 $(this).css("border", "2px solid green");
-                errori[1]=false;
+                errori[6]=false;
             }
         });
 
         $('#citta_registrazione').blur(function () {
             if (!$(this).val().match(/^[a-zA-Z' ]{1,20}$/)) {
                 $(this).css("border", "3px solid red");
-                errori[1]=true;
+                errori[7]=true;
             }
             else{
                 $(this).css("border", "2px solid green");
-                errori[1]=false;
+                errori[7]=false;
             }
         });
         
         $('#CAP_registrazione').blur(function () {
             if (!$(this).val().match(/^[0-9]{5}$/)) {
                 $(this).css("border", "3px solid red");
-                errori[1]=true;
+                errori[8]=true;
             }
             else{
                 $(this).css("border", "2px solid green");
-                errori[1]=false;
+                errori[8]=false;
             }
         });
     },
 
     inviaDatiRegistrazione:function(dati){
-        /**$('body').append(" invia dati");/**/
-        var view = new V_registrazione();
-        var dati = view.recuperaDatiRegistrazione();
+        //var view = new V_registrazione();
+        var dati = V.recuperaDatiRegistrazione();
         $.ajax({
             url:"index.php?controllore=C_registrazione&metodo=creaCliente",
             data:dati,
             datatype:"json",
-            success:function(){
-                var view= new V_registrazione();
-                view.notifica();
+            success:function(info){
+                V.notificaRegistrazione(info);
             }
         });
     },
@@ -124,15 +122,13 @@ C_registrazione.prototype={
         /**$('body').append(" invia dati");/**/
         var view = new V_registrazione();
         var dati = view.recuperaDatiLogin();
+        $('#notifica').append(dati);
         $.ajax({
             url:"index.php?controllore=C_registrazione&metodo=autentica",
             data:dati,
             datatype:"json",
-            success:function(login){
-                $('#utente').html('<p>'+login['cliente']+'</p>');
-                if(login['errore']!=false){
-                    alert(login['errore']);
-                }
+            success:function(info){
+                view.notificaLogin(info);
             }
         });
     },
@@ -142,23 +138,8 @@ C_registrazione.prototype={
             url:"index.php?controllore=C_registrazione&metodo=logout",
             /**data:dati,/**
             datatype:"json",/**/
-            success:function(login){
-                $('#utente').html('<p>Ospite</p>');
-                if(login['errore']==""){
-                    alert(login['errore']);
-                }
-            }
-        });
-    },
-    
-    ricerca : function(stringa){
-        $.ajax({
-            url:"index.php?controllore=C_visualizzazione&metodo=ricerca",
-            type:'GET',
-            data:stringa,
-            dataType:"html",
-            success:function(prod) {
-                $('#mainright').html(prod);
+            success:function(){
+                window.location.reload();
             }
         });
     },
@@ -193,7 +174,7 @@ C_registrazione.prototype={
             datatype:"json",
             success:function(successo){
                 if(successo){
-                    var view= new V_newsletter();
+                    var view = new V_newsletter();
                     view.notifica(true);
                 }
                 else{

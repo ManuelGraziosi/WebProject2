@@ -40,8 +40,9 @@ class C_fareOrdine {
             }
             $this->_carrello->inserisciProdotto($ordineprodotto,$quantita);
             $sessione=  U_singolaistanza::getIstanza('U_sessione');
+            //print_r($ordineprodotto);
             $sessione->imposta_valore('carrello',serialize($this->_carrello));
-            $view->mostraNotifica('aggiungi',$ordineprodotto);
+            $view->mostraNotifica('aggiungi',$prodotto);
             //$view->mostraNotifica('aggiungi',$this->_carrello);
         }
         else{
@@ -55,7 +56,7 @@ class C_fareOrdine {
         $this->_carrello->rimuoviProdotto($nomeprodotto);
         $sessione=  U_singolaistanza::getIstanza('U_sessione');
         $sessione->imposta_valore('carrello',serialize($this->_carrello));
-        $view->mostraNotifica('rimuovi',false);
+        $view->mostraNotifica('rimuovi',$nomeprodotto);
     }
     
     public function aggiornaProdottoOrdinato(){
@@ -65,7 +66,7 @@ class C_fareOrdine {
         $this->_carrello->aggiornaProdotto($nomeprodotto,$quantita);
         $sessione=  U_singolaistanza::getIstanza('U_sessione');
         $sessione->imposta_valore('carrello',serialize($this->_carrello));
-        $view->mostraNotifica('rimuovi',false);
+        $view->mostraNotifica('aggiorna',false);
     }
     
     public function mostraCarrello(){
@@ -87,7 +88,7 @@ class C_fareOrdine {
                 );
                 /**/
             }
-            return $daticarrello;
+            return $daticarrello;//qui si deve richiamare un metodo da inserire della V_fareOrdine
         }
         else{
             return false;

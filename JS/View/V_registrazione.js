@@ -2,7 +2,7 @@ var V_registrazione= function(){
     //this.dialogo();
 };
 
-V_registrazione.prototype.dialogo= function(){
+V_registrazione.prototype.dialogo = function(){
     $('#formRegistrazione').dialog({
         draggable:false,
         modal:true,
@@ -15,7 +15,7 @@ V_registrazione.prototype.dialogo= function(){
 };
 
 /**/
-V_registrazione.prototype.recuperaDatiRegistrazione=function(){
+V_registrazione.prototype.recuperaDatiRegistrazione = function(){
     //this.dati = new Array();
     var dati = new Object();
     dati={
@@ -31,7 +31,7 @@ V_registrazione.prototype.recuperaDatiRegistrazione=function(){
     return dati;
 };
 
-V_registrazione.prototype.recuperaDatiLogin=function(){
+V_registrazione.prototype.recuperaDatiLogin = function(){
     //this.dati = new Array();
     var dati = new Object();
     dati={
@@ -42,16 +42,20 @@ V_registrazione.prototype.recuperaDatiLogin=function(){
 };
 /**/
 
-V_registrazione.prototype.notifica=function(){
-    $('#formRegistrazione').html("registrazione avvenuta con successo");
+V_registrazione.prototype.notificaLogin = function(info){
+    if(info['errore'] == false){
+        $('#utente').html('<p>'+info['cliente']+'</p>');
+        $('#login').fadeOut(/**/{animated:'slow',duration:2000}/**/);
+    } else {
+        alert(info['errore']);
+    }
 };
 
-V_registrazione.prototype.recuperaDatiricerca=function(){
-    $('body').append("recuperati dati dal text di ricerca </br>");
-    //this.dati = new Array();
-    var dati = new Object();
-    dati = {
-        "ricerca" : $('#barracerca').val()
-    };
-    return dati;
+V_registrazione.prototype.notificaRegistrazione = function(info){
+    if(info.errore == ""){
+        //$('#utente').html('<p>'+info['cliente']+'</p>');
+        $('#formRegistrazione').html("<div id='successo'><p>registrazione avvenuta con successo</p></div>");
+    } else {
+        $('#formRegistrazione').html("<div id='errore'><p>"+info['errore']+"</p></div>");
+    }
 };

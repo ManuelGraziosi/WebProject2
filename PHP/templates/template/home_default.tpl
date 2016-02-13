@@ -21,7 +21,6 @@
     <script type="text/javascript" src="JS/Controller/C_registrazione.js"></script>
     <script type="text/javascript" src="JS/Controller/C_amministrazione.js"></script>
     <script type="text/javascript" src="JS/Controller/C_newsletter.js"></script>
-    <script type="text/javascript" src="JS/Controller/C_dettagli_prodotto.js"></script>
     <script type="text/javascript" src="JS/Controller/C_vetrina.js"></script>
     <script type="text/javascript" src="JS/Controller/C_fareOrdine.js"></script>
     
@@ -145,7 +144,7 @@
          - © Copyright 2015
       </p>
     </div>
-    <div id="nascosto" class="prova"></div>
+    <div id="notifica" class="prova"></div>
     
 </body>
 </html>

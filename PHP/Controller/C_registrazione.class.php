@@ -25,6 +25,7 @@ class C_registrazione {
      * @return mixed
      */
     public function creaCliente() {
+        header('Content-Type: application/json');
         $sessione= U_singolaistanza::getIstanza('U_sessione');
         $view = U_singolaistanza::getIstanza('V_registrazione');
         $datiCliente=$view->getDatiRegistrazione();
@@ -47,17 +48,13 @@ class C_registrazione {
                 //$this->emailAttivazione($cliente);
                 $registrato=true;
             } else {
-                $this->_messaggio='Le password immesse non coincidono';
+                $this->_messaggio['errore']='Le password immesse non coincidono';
             }
         } else {
             //cliente esistente
-            $this->_messaggio='Email gi&agrave; utilizzato';
+            $this->_messaggio['errore']='Email gi&agrave; utilizzato';
         }
-        if (!$registrato) {
-            print $this->_messaggio;
-        } else {
-            print 'tutto apposto';
-        }
+        print json_encode($this->_messaggio);
     }
     
     
@@ -81,26 +78,33 @@ class C_registrazione {
         if(count($clientedati)==1){
             U_operazioni::inserisciDati($cliente, $clientedati);
         }
-        if ($cliente!=false) {
-            if ($cliente->getAccountAttivo()) {
-                //account attivo
-                if ($this->_email == $cliente->getEmail() && $this->_password == $cliente->getPassword()) {
-                    $sessione=U_singolaistanza::getIstanza('U_sessione');
-                    $sessione->imposta_valore('email',$this->_email);
-                    $sessione->imposta_valore('nome_cognome',$cliente->getNome().' '.$cliente->getCognome());
-                    $this->_messaggio['cliente']=$cliente->getNome().' '.$cliente->getCognome();
-                    //$sessione->leggi_valore('nome_cognome');
+        $sessione=U_singolaistanza::getIstanza('U_sessione');
+        if($sessione->leggi_valore('email')==false){
+        
+            if ($cliente!=false) {
+                if ($cliente->getAccountAttivo()) {
+                    //account attivo
+                    if ($this->_email == $cliente->getEmail() && $this->_password == $cliente->getPassword()) {
+                        $sessione=U_singolaistanza::getIstanza('U_sessione');
+                        $sessione->imposta_valore('email',$this->_email);
+                        $sessione->imposta_valore('nome_cognome',$cliente->getNome().' '.$cliente->getCognome());
+                        $this->_messaggio['cliente']=$cliente->getNome().' '.$cliente->getCognome();
+                        //$sessione->leggi_valore('nome_cognome');
+                    } else {
+                        $this->_messaggio['errore']='Email o password errati';
+                        //EMAIL password errati
+                    }
                 } else {
-                    $this->_messaggio['errore']='Email o password errati';
-                    //EMAIL password errati
+                    $this->_messaggio['errore']='L\'account non è attivo';
+                    //account non attivo
                 }
             } else {
-                $this->_messaggio['errore']='L\'account non è attivo';
-                //account non attivo
+                $this->_messaggio['errore']='L\'account non esiste';
+                //account non esiste
             }
         } else {
-            $this->_messaggio['errore']='L\'account non esiste';
-            //account non esiste
+            $this->_messaggio['cliente']=$sessione->leggi_valore('nome_cognome');
+            $this->_messaggio['errore']='Si deve effetuare il logout del cliente attuale';
         }
         //print_r($this->_messaggio);
         echo json_encode($this->_messaggio);
@@ -111,14 +115,16 @@ class C_registrazione {
      */
     public function logout() {
         $sessione=  U_singolaistanza::getIstanza('U_sessione');
-        try {
+        //try {
             $sessione->chiudi_sessione();
+            /**
             header('Location: index.php');
             exit;
         } catch (Exception $e) {
-        	//$View->invia(array("success" => FALSE));
+            
         }
         exit;
+        /**/
     }
 }
 ?>
