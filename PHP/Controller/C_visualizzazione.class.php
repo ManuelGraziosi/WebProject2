@@ -115,7 +115,7 @@ class C_visualizzazione{
         $view->inserisciDatiTemplate('prodotto', $datiprod[0]);
         //$view->impostaTemplate('dettagli_prodotto.tpl');
         $view->inserisciDatiTemplate('commenti', $datiCommenti);
-        $view->impostaTemplate('dettagli_prodotto.tpl');
+        $view->impostaTemplate('commento.tpl');
         //print_r($datiCommenti);
         
     }
