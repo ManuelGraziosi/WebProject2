@@ -6,7 +6,7 @@
  */
 class U_sessione {
     public function __construct() {
-        session_name("az.Sammartino");
+        //session_name("az.Sammartino");
         session_start();
     }
     public function imposta_valore($chiave,$valore) {
