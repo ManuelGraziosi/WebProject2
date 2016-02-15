@@ -8,6 +8,6 @@ $(document).ready(function(){
                 $('div').append(php);
                 $.getScript("jquery1.js");
             }
-        })
-    })
+        });
+    });
 });
