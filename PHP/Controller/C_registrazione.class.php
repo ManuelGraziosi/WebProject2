@@ -25,7 +25,6 @@ class C_registrazione {
      * @return mixed
      */
     public function creaCliente() {
-        header('Content-Type: application/json');
         $sessione= U_singolaistanza::getIstanza('U_sessione');
         $view = U_singolaistanza::getIstanza('V_registrazione');
         $datiCliente=$view->getDatiRegistrazione();
@@ -43,7 +42,7 @@ class C_registrazione {
                     $cliente->$keys[$i]=$dato;
                     $i++;
                 }
-                $cliente->generaCodiceAttivazione();
+                //$cliente->generaCodiceAttivazione();
                 $db->depositaRiga("cliente", $cliente);
                 //$this->emailAttivazione($cliente);
                 $registrato=true;
@@ -52,9 +51,9 @@ class C_registrazione {
             }
         } else {
             //cliente esistente
-            $this->_messaggio['errore']='Email gi&agrave; utilizzato';
+            $this->_messaggio['errore']='Email gi&agrave; utilizzata';
         }
-        print json_encode($this->_messaggio);
+        $view->mostraNotifica($this->_messaggio);
     }
     
     

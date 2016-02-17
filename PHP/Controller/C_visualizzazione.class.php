@@ -15,7 +15,17 @@ class C_visualizzazione{
     
     public function paginaIniziale() {
         $view=new V_view();
-        //$view->inserisciDatiTemplate('titolo', 'home');
+        
+        //questo si deve risolvere e forse i cookie sono la soluzione
+        $sessione=  U_singolaistanza::getIstanza("U_sessione");
+        $nome_cognome=$sessione->leggi_valore('nome_cognome');
+        if($nome_cognome!=false){
+            $view->inserisciDatiTemplate('utente', $nome_cognome);
+        }else{
+            $view->inserisciDatiTemplate('utente', 'Ospite');
+        }
+        
+        
         $view->impostaTemplate('home_default.tpl');
     }
     

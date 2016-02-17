@@ -1,16 +1,16 @@
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 var U = new U_operazioni();
 
 var C_amministrazione = function(){
-    /**/$('title').html('Sammartino | Amministrazione');
-    $('.menu').removeClass('active');
-    $('#amministrazione').addClass('active');/**/
-    U.richiestaHtmlServer('C_visualizzazione','amministrazione','body');
+    
 };
 
 C_amministrazione.prototype = {
-    inviaProdotto : function(){
-        V = new V_amministrazione();
-        var datiProdotto = V.recuperaDatiProdotto();
+    inserisciProdotto : function(datiProdotto){
         $.ajax({
             url:"index.php?controllore=C_amministratore&metodo=inserisciProdotto",
             type:'GET',

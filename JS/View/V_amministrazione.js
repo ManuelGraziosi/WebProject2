@@ -19,12 +19,12 @@ V_amministrazione.prototype.recuperaDatiProdotto=function(){
     $('body').append(nome);
     var dati = new Object();
     dati = {
-        "NOME_PRODOTTO": $('#'+nome+'_nome').val(),
-        "foto"         : $('#'+nome+'_foto').val(),
-        "descrizione"  : $('#'+nome+'_descrizione').val(),
-        "categoria"    : $('#'+nome+'_categoria').val(),
-        "prezzo_kg"    : $('#'+nome+'_prezzo').val(),
-        "disponibilita": $('#'+nome+'_disponibilita').val()
+        "NOME_PRODOTTO": $('#tabellaForm #nome').val(),
+        "foto"         : $('#tabellaForm #foto').val(),
+        "descrizione"  : $('#tabellaForm #descrizione').val(),
+        "categoria"    : $('#tabellaForm #categoria').val(),
+        "prezzo_kg"    : $('#tabellaForm #prezzo').val(),
+        "disponibilita": $('#tabellaForm #disponibilita').val()
     };
     return dati;
 }

@@ -25,29 +25,6 @@ C_vetrina.prototype={
         });
     },
     
-    
-    ordinareprodotto : function(){
-        /**/
-        U = new U_operazioni();
-        C = new C_fareOrdine();
-        V = new V_fareOrdine();/**/
-        var nome = $(this).attr("title");
-        //$("body").html(nome);
-        /**/
-        var dati = V.datiProdottoOrdinato(/**/nome/**/);
-        C.inserisciProdottoOrdinato(dati);
-        /**/
-    },
-    
-    eliminareprodotto : function(){
-        C = new C_fareOrdine();
-        V = new V_fareOrdine();/**/
-        var nome = $(this).attr("title");
-        C.rimuoviProdottoOrdinato(nome);
-        $(this).parent().parent().fadeOut({duration:1500,animated:'slow'});
-        
-    },
-    
     ricerca : function(stringa){
         $.ajax({
             url:"index.php?controllore=C_visualizzazione&metodo=ricerca",
@@ -57,6 +34,11 @@ C_vetrina.prototype={
             success:function(lista) {
                 var V = new V_vetrina();
                 V.mostraRisultatiRicerca(lista);
+                $.ajax({
+                        url:"JS/Event/E_Vetrina.js",
+                        dataType:'script',
+                        async:false
+                    });
             }
         });
     }

@@ -29,17 +29,8 @@ class V_fareOrdine extends V_view{
         }
     }
     
-    public function mostraNotifica($tiponotivica, $item){
+    public function mostraNotifica($item){
         header("Content-type: application/json");
-        switch ($tiponotivica) {
-            case 'aggiungi':
-                print json_encode($item);
-                break;
-            case 'rimuovi':
-                print json_encode($item);
-                break;
-            default:
-                break;
-        }
+        print json_encode($item);
     }
 }

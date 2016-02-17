@@ -32,5 +32,35 @@ U_operazioni.prototype = {
         var nospace = stringa.replace(/ /g, ' .'); 
         
         return nospace;
+    },
+    
+    dialogoModale:function(selettore){
+        $(selettore).dialog({
+            draggable:false,
+            modal:true,
+            resizable:false,
+            title:"Notifica",
+            close: $(selettore).remove()
+        });
+    },
+    
+    dialogoModaleConferma:function(selettore,conferma){
+        $(selettore).dialog({
+            draggable:false,
+            modal:true,
+            resizable:false,
+            title:"Notifica",
+            buttons:[{
+                    text:"conferma",
+                    click:conferma
+                },
+                {
+                    text:"annulla",
+                    click:function(){
+                        $(this).dialog("close");
+                    }
+                }],
+            close: $(selettore).remove()
+        });
     }
 };

@@ -29,13 +29,9 @@ class E_cliente {
     */
     public $password;
     /**
-    * @AttributeType string
-    */
-    public $codice_attivazione;
-    /**
     * @AttributeType enum
     */
-    public $attivazione;
+    public $attivazione="attivo";
     /**
     * @AttributeType string
     */
@@ -53,13 +49,6 @@ class E_cliente {
     
     public function spesaStoricaTotale() {
         // Not yet implemented
-    }
-
-    /**
-     * @access public
-     */
-    public function generaCodiceAttivazione() {
-        $this->codice_attivazione=mt_rand();
     }
 
     /**

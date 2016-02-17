@@ -5,19 +5,24 @@ var E_amministrazione = function(){
 
 E_amministrazione.prototype = {
     inserisciEventi: function(){
+        var V =new V_amministrazione();
+        var C = new C_amministrazione();
+        var U = new U_operazioni();
         $('#InserisciProdotto').click(function(){
             $('#tabellaForm').fadeIn();
-            var V =new V_amministrazione();
-            V.dialogo();
+            U.dialogoModaleConferma('#tabellaForm',function(){
+                var datiProdotto = V.recuperaDatiProdotto();
+                C.inserisciProdotto(datiProdotto);
+            });
+            //V.dialogo();
         });
         $('.AggiornaProdotto').click(function(event,ui){
             $('#tabellaForm').fadeIn();
-            var V =new V_amministrazione();
-            V.dialogo();
-            var dati = V.recuperaDatiProdotto(ui);
-            V.visualizzaDatiProdotto(dati);
+            U.dialogoModale('#tabellaForm');
         });
-        $('#EliminaProdotto').click();
-        $('#AggiornaProdottoSelezionato').click();
+        $('.EliminaProdotto').click(function(event,ui){
+            $('#tabellaForm').fadeIn();
+            U.dialogoModale('#tabellaForm');
+        });
     }
 };

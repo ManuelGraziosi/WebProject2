@@ -5,27 +5,25 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="icon" href="PHP/templates/template/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" type="text/css" media="screen" href="PHP/templates/template/css/index.css" />
-    <!-- <script type="text/javascript" src="JS/Utility/Jquery/jquery-1.11.3.min.js"></script> -->
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <!--<script type="text/javascript" src="JS/Utility/Jquery/jquery-1.11.3.min.js"></script>-->
+    <script type="text/javascript" src="JS/Utility/Jquery/jquery-1.12.0.min.js"></script>
     <!----><!---->
     <script type="text/javascript" src="JS/Utility/U_operazioni.js"></script>
     <script type="text/javascript" src="JS/Utility/Jquery/scripts.js"></script>
     
-    
+    <!--
     <script type="text/javascript" src="JS/Event/E_amministrazione.js"></script>
     <script type="text/javascript" src="JS/Event/E_home.js"></script>
     <script type="text/javascript" src="JS/Event/E_vetrina.js"></script>
-    
+    -->
     
     <script type="text/javascript" src="JS/Controller/C_home.js"></script>
     <script type="text/javascript" src="JS/Controller/C_registrazione.js"></script>
-    <script type="text/javascript" src="JS/Controller/C_amministrazione.js"></script>
     <script type="text/javascript" src="JS/Controller/C_newsletter.js"></script>
     <script type="text/javascript" src="JS/Controller/C_vetrina.js"></script>
     <script type="text/javascript" src="JS/Controller/C_fareOrdine.js"></script>
     
     <script type="text/javascript" src="JS/View/V_registrazione.js"></script>
-    <script type="text/javascript" src="JS/View/V_amministrazione.js"></script>
     <script type="text/javascript" src="JS/View/V_newsletter.js"></script>
     <script type="text/javascript" src="JS/View/V_vetrina.js"></script>
     <script type="text/javascript" src="JS/View/V_commento.js"></script>
@@ -37,7 +35,6 @@
     <link rel="stylesheet" type="text/css" media="screen" href="JS/Utility/Jquery/jquery-ui-1.11.4.custom/jquery-ui.min.css" /> 
     <script type="text/javascript" src="JS/Utility/Jquery/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
 </head>
-
 <body>
     <div id="container" class="clearfix">
 
@@ -58,7 +55,7 @@
         <div id="top-bar">
 
             <span id="user-space">
-                <span><img id="user_pic" src="PHP/templates/template/images/user.png" /><p id="utente">Ospite</p></span>
+                <span><img id="user_pic" src="PHP/templates/template/images/user.png" /><p id="utente">{$utente}</p></span>
                 
 <!----<div id="logout" class="ui-state-default ui-corner-all" title=".ui-icon-close">Logout<span class="ui-icon ui-icon-close"></span></div>
                 <!------>
@@ -68,7 +65,7 @@
 
             <div id="menucont">
                 <ul>
-                    <li><a id="home" title="Home" class="menu">Home</a></li>
+                    <li><a id="home" title="Home" class="menu active">Home</a></li>
                     <li><a id="chisiamo" title="ChiSiamo" class="menu">Chi Siamo</a></li>
                     <li><a id="dovesiamo" title="DoveSiamo" class="menu">Dove Siamo</a></li>
                     <li><a id="galleria" title="Galleria" class="menu">Galleria</a></li>

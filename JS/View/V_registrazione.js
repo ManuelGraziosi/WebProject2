@@ -1,9 +1,14 @@
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 var V_registrazione= function(){
     //this.dialogo();
 };
 
-V_registrazione.prototype.dialogo = function(){
-    $('#formRegistrazione').dialog({
+V_registrazione.prototype.dialogo = function(/**html/**/){
+    $(/**/'#formRegistrazione'/**/)/**.html(html)/**/.dialog({
         draggable:false,
         modal:true,
         resizable:false,
@@ -19,14 +24,14 @@ V_registrazione.prototype.recuperaDatiRegistrazione = function(){
     //this.dati = new Array();
     var dati = new Object();
     dati={
-        "nome"       : $('#nome_registrazione').val(),
-        "cognome"    : $('#cognome_registrazione').val(),
-        "EMAIL"      : $('#EMAIL_registrazione').val(),
-        "password"   : $('#password_registrazione').val(),
-        "password_1" : $('#password_1_registrazione').val(),
-        "via"        : $('#via_registrazione').val(),
-        "citta"      : $('#citta_registrazione').val(),
-        "CAP"        : $('#CAP_registrazione').val()
+        "nome"       : $('input#nome_registrazione').val(),
+        "cognome"    : $('input#cognome_registrazione').val(),
+        "EMAIL"      : $('input#EMAIL_registrazione').val(),
+        "password"   : $('input#password_registrazione').val(),
+        "password_1" : $('input#password_1_registrazione').val(),
+        "via"        : $('input#via_registrazione').val(),
+        "citta"      : $('input#citta_registrazione').val(),
+        "CAP"        : $('input#CAP_registrazione').val()
     };
     return dati;
 };

@@ -42,11 +42,11 @@ class C_fareOrdine {
             $sessione=  U_singolaistanza::getIstanza('U_sessione');
             //print_r($ordineprodotto);
             $sessione->imposta_valore('carrello',serialize($this->_carrello));
-            $view->mostraNotifica('aggiungi',$prodotto);
+            $view->mostraNotifica(array("errore"=>"","dati"=>$prodotto));
             //$view->mostraNotifica('aggiungi',$this->_carrello);
         }
         else{
-            print "ti devi loggare";
+            $view->mostraNotifica(array("errore"=>"fare Login"));;
         }
     }
     
@@ -56,17 +56,17 @@ class C_fareOrdine {
         $this->_carrello->rimuoviProdotto($nomeprodotto);
         $sessione=  U_singolaistanza::getIstanza('U_sessione');
         $sessione->imposta_valore('carrello',serialize($this->_carrello));
-        $view->mostraNotifica('rimuovi',$nomeprodotto);
+        $view->mostraNotifica(array("errore"=>"","dati"=>$nomeprodotto));
     }
     
     public function aggiornaProdottoOrdinato(){
         $view=  U_singolaistanza::getIstanza('V_fareOrdine');
         $nomeprodotto=$view->getNomeProdotto();
-        $quantita=$view->getQuantita();
+        $quantita=/**/$view->getQuantita()/**1/**/;
         $this->_carrello->aggiornaProdotto($nomeprodotto,$quantita);
         $sessione=  U_singolaistanza::getIstanza('U_sessione');
         $sessione->imposta_valore('carrello',serialize($this->_carrello));
-        $view->mostraNotifica('aggiorna',false);
+        $view->mostraNotifica(array("errore"=>"","dati"=>false));
     }
     
     public function mostraCarrello(){
@@ -81,10 +81,10 @@ class C_fareOrdine {
                 $i++;
                 $daticarrello[$i]=array(
                     "nome_prodotto"=>$ordine1[$key]->_prodotto->getNOME_PRODOTTO(),
-                    "quantita"=>2,/**$ordine1[$key]->getQuantita(),/**/ 
+                    "quantita"=>/**/$ordine1[$key]->getQuantita(),/**/ 
                     "foto"=>$ordine1[$key]/**/->_prodotto/**/->getFoto(),
                     "prezzo"=>$ordine1[$key]/**/->_prodotto/**/->getPrezzo_kg(),
-                    "subtotale"=>$ordine1[$key]/**/->_prodotto/**/->getPrezzo_kg()*2
+                    "subtotale"=>$ordine1[$key]/**/->_prodotto/**/->getPrezzo_kg()*$ordine1[$key]->getQuantita()
                 );
                 /**/
             }

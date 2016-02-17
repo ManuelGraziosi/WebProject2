@@ -10,10 +10,10 @@
             <p>Quantita</p>
         </span>
         <span class="prezzo">
-            <p>Prezzo</p>
+            <p>Prezzo(€)</p>
         </span>
         <span class="subtotale">
-            <p>Subtotale</p>
+            <p>Subtotale(€)</p>
         </span>
         <span class="cancella">
             <p></p>
@@ -30,13 +30,13 @@
             <p>{$prodotti[i].nome_prodotto}</p>
         </span>
         <span class="quantita">
-            <p><input class="n_quantita" type="text" value="{$prodotti[i].quantita}"/>N.</p>
+            <p><input class="n_quantita" title="{$prodotti[i].nome_prodotto}" type="text" value="{$prodotti[i].quantita}"/>N.</p>
         </span>
         <span class="prezzo">
-            <p>{$prodotti[i].prezzo}€</p>
+            <p>{$prodotti[i].prezzo}</p>
         </span>
         <span class="subtotale">
-            <p>{$prodotti[i].subtotale}€</p>{assign var="totale" value=$prodotti[i].subtotale+$totale}
+            <p>{$prodotti[i].subtotale}</p>{assign var="totale" value=$prodotti[i].subtotale+$totale}
         </span>
         <span class="cancella">
             <button class="cancella_prodotto" title="{$prodotti[i].nome_prodotto}">X</button>
@@ -51,7 +51,7 @@
         <span class="label">
             <b> TOTALE:</b>
         </span>
-        <span class="valore">
+        <span class="totale">
             <b>{$totale}</b>
         </span>
         <span class="vuoto">

@@ -40,4 +40,9 @@ class V_registrazione {
             return $_REQUEST['password'];
         }
     }
+    
+    public function mostraNotifica($item){
+        header("Content-type: application/json");
+        print json_encode($item);
+    }
 }
