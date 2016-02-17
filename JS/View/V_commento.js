@@ -4,11 +4,11 @@
  * and open the template in the editor.
  */
 
-var V_dettagli_prodotto= function(){
+var V_commento=function(){
     //this.dialogo();
 };
 
-V_dettagli_prodotto.prototype={
+V_commento.prototype={
     dialogomanuel: function(){
         $('.dettagli_prodotto').dialog({
             draggable:false,
@@ -17,6 +17,11 @@ V_dettagli_prodotto.prototype={
             width: "50%",
             minWidth:500,
             title:"Dettagli Prodotto",
+/**            open: function(){
+                $(document).ready(function(){
+                    $.getScript("JS/Controller/C_commento.js");
+                });
+            },/**/
             close: function(){
                 $('.dettagli_prodotto').remove();
             }

@@ -13,12 +13,15 @@ C_vetrina.prototype={
             type:'GET',
             dataType:"html",
             data:{NOME_PRODOTTO:nome},
-            success:function(carrello) {
-            V=new V_dettagli_prodotto();
+            success:function(carrello){
+            V = new V_commento();
             $('#notifica').html(carrello);
             V.dialogomanuel();
+            
             $('#accordion').accordion();
             }
+        }).done(function() {
+            $.getScript("JS/Prova.js");
         });
     },
     
