@@ -1,5 +1,6 @@
-var control;
+
 //$.getScript("JS/Utility/autoload.js");
 $(document).ready(function(){
-	control = new E_home();
+	var control = new C_home();
+        control.Eventi();
 });

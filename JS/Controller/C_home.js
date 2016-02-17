@@ -12,6 +12,26 @@ var C_home = function(){
 };
 
 C_home.prototype={
+    Eventi:function(){
+        $('.menu').click(this.caricaPaginaHtml);//richiede tutte le pagine del menu
+    
+    
+        $('#carrello').click(this.mostraCarrello);
+        $('#amministrazione').click(this.amministratore);
+        /**/$('#newsletter').click(this.newsletter);
+        $('#submit_newsletter').click(this.submit_newsletter);
+        $('#registrazione').click(this.registrazione);
+        $('#invialogin'/**login/**/).click(this.login);
+        $('#logout').click(this.logout);
+        $('#searchimg').click(this.ricerca);
+        $('#barracerca').keyup(this.ricerca);
+        /**$('#barracerca').keypress(function(evento){
+            if(evento.which == 13){//13 corrisponde al tasto invio
+                home.ricerca();
+            }
+        });/**/
+    },
+    
     caricaPaginaHtml : function(){
         var nomePagina = $(this).attr('title');
         $('title').html('Sammartino | '+nomePagina);
@@ -68,8 +88,6 @@ C_home.prototype={
                 });
             }
         });
-        
-        
     },
     
     login : function(){
