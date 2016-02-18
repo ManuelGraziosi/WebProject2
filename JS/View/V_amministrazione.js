@@ -2,17 +2,68 @@ var V_amministrazione= function(){
     //this.dialogo();
 };
 
-V_amministrazione.prototype.mostraForm= function(invia){
-    var U = new U_operazioni();
-    $('#tabellaForm').fadeIn({animated:'slow',duration:1000});
-    U.dialogoModaleConferma('#tabellaForm',invia);
+V_amministrazione.prototype.mostraFormInserimento= function(invia){
+    $('#tabellaForm').dialog({
+        draggable:true,
+        modal:true,
+        resizable:false,
+        title:"Inserimento nuovo prodotto",
+        buttons:[{
+                text:"conferma",
+                click:function(){invia();$(this).dialog("close");}
+            },
+            {
+                text:"annulla",
+                click:function(){
+                    $(this).dialog("close");
+                }
+            }],
+        close: $('#tabellaForm').remove()
+    });
+};
+/**/
+V_amministrazione.prototype.notificaCancellazione= function(){
+    $('#tabellaForm').dialog({
+        draggable:true,
+        modal:true,
+        resizable:false,
+        title:"Notifica",
+        buttons:[{
+                text:"conferma",
+                click:function(){invia();$(this).dialog("close");}
+            },
+            {
+                text:"annulla",
+                click:function(){
+                    $(this).dialog("close");
+                }
+            }],
+        close: $('#tabellaForm').remove()
+    });
+};
+/**/
+V_amministrazione.prototype.mostraFormModifica= function(invia){
+    $('#tabellaForm').dialog({
+        draggable:true,
+        modal:true,
+        resizable:false,
+        title:"Modifica Prodotto",
+        buttons:[{
+                text:"conferma",
+                click:function(){invia();$(this).dialog("close");}
+            },
+            {
+                text:"annulla",
+                click:function(){
+                    $(this).dialog("close");
+                }
+            }],
+        close: $('#tabellaForm').remove()
+    });
 };
 
 /**/
 V_amministrazione.prototype.recuperaDatiProdotto=function(){
-    //this.dati = new Array();
-    var nome = $(this).attr('title');
-    $('body').append(nome);
     var dati = new Object();
     dati = {
         "NOME_PRODOTTO": $('#tabellaForm #nome').val(),
@@ -30,8 +81,7 @@ V_amministrazione.prototype.recuperaDatiProdotto=function(){
 }
 
 V_amministrazione.prototype.visualizzaDatiProdotto=function(dati){
-    //this.dati = new Array();
-    $('#tabellaForm #nome').val(dati['NOME_PRODOTTO']);
+    $('#tabellaForm #nome').val(dati['NOME_PRODOTTO']).attr('readonly','readonly');
     $('#tabellaForm #foto').val(dati['foto']);
     $('#tabellaForm #descrizione').val(dati['descrizione']);
     $('#tabellaForm #categoria').val(dati['categoria']);

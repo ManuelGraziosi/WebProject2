@@ -7,15 +7,19 @@ E_amministrazione.prototype = {
     inserisciEventi: function(){
         var V =new V_amministrazione();
         var C = new C_amministrazione();
-        $('#InserisciProdotto').click(function(){
+        
+        $('#InserisciProdotto').click(function(event){
+            event.stopPropagation();
             var invia=function(){
                 var datiProdotto = V.recuperaDatiProdotto();
                 C.inserisciProdotto(datiProdotto);
             };
-            V.mostraForm(invia);
+            V.mostraFormInserimento(invia);
             //V.dialogo();
         });
-        $('.AggiornaProdotto').click(function(event,ui){
+        
+        $('.AggiornaProdotto').click(function(event){
+            event.stopPropagation();
             var nome = $(this).attr('title');
             var datiProdotto = C.recuperaProdotto(nome);
                 $('body').append(datiProdotto.NOME_PRODOTTO);
@@ -24,11 +28,21 @@ E_amministrazione.prototype = {
                 var datiProdotto = V.recuperaDatiProdotto();
                 C.aggiornaProdotto(datiProdotto);
             };
-            V.mostraForm(invia);
+            V.mostraFormModifica(invia);
         });
-        $('.EliminaProdotto').click(function(event,ui){
+        
+        $('.EliminaProdotto').click(function(event){
+            event.stopPropagation();
             var nome=$(this).attr('title');
             C.eliminaProdotto(nome);
+            V.notificaCancellazione();
+        });
+        
+        $('.banda').click(function(event){
+            event.stopPropagation();
+            var email=$(this).attr('title');
+            C.bandaCliente({"EMAIL":email});
+            //window.location.reload();
         });
     }
 };

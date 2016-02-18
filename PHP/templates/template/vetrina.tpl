@@ -27,15 +27,18 @@
                 </div>
                 <div class="info">
                     <div class="dettaglio">
-                        <div class="nome {$prodotti[i].NOME_PRODOTTO}">
+                        <div class="nome">
                             {$prodotti[i].NOME_PRODOTTO}
                         </div>
                         <div class="prezzo">
-                            {$prodotti[i].prezzo_kg}
+                            Prezzo:{$prodotti[i].prezzo_kg}
                         </div>
                         <div class="categoria">
-                            {$prodotti[i].categoria}
+                            Categoria:{$prodotti[i].categoria}
                         </div>
+                        <!--<button class="foto" title="{$prodotti[i].NOME_PRODOTTO}">
+                            <span class="ui-icon ui-icon-info"></span>
+                        </button>-->
                         <button title="{$prodotti[i].NOME_PRODOTTO}" class="aggiungi">
                             <img src="PHP/templates/template/images/cart/addCart.png" width="45" height="45"/>
                         </button>
@@ -43,6 +46,6 @@
                 </div>
             </div>
         {sectionelse} 
-            <b> Nessun prodotto disponibile in vetrina </b>
+            <b> Nessun prodotto corrisponde hai criteri di ricerca </b>
         {/section}
         </div>

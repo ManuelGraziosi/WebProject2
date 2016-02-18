@@ -82,10 +82,6 @@ class E_cliente {
         }
     }
 
-    public function getCodiceAttivazione() {
-        return $this->codice_attivazione;
-    }
-    
     public function getNome() {
         return $this->nome;
     }

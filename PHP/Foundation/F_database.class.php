@@ -19,18 +19,6 @@ class F_database {
      * @var $_query Variabile contenente il risultato dell'ultima query
      */
     private $_query;
-    /**
-     * @var $_table Variabile contenente il nome della tabella
-     */
-    protected $_table;
-    /**
-     * @var $_key Variabile contenente la chiave della tabella
-     */
-    protected $_key;
-    /**
-     * @var $_auto_increment Variabile booleana tabella con chiave automatica o no
-     */
-    protected $_auto_increment=false;
         
     function __construct() {
         global $config;

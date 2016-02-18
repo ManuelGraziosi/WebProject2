@@ -78,6 +78,17 @@ C_amministrazione.prototype = {
                 window.location.reload();
             }
         });
-    }
+    },
     /**/
+    bandaCliente : function(dato){
+        $.ajax({
+            url:"index.php?controllore=C_amministratore&metodo=bandaCliente",
+            type:'GET',
+            dataType:"html",
+            data:dato,
+            success:function() {
+                
+            }
+        });
+    }
 }

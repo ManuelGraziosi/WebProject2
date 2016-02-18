@@ -14,6 +14,7 @@ C_home.prototype={
         var C = new C_registrazione();
         var V = new V_registrazione();
         $('.menu').click(function(event){
+            event.stopPropagation();
             $(document).scrollTop(0);
             var nomePagina = $(event.target).attr('title');
             $('title').html('Sammartino | '+nomePagina);
@@ -35,6 +36,7 @@ C_home.prototype={
             });
         });
         $('#registrazione').click(function(event){
+            event.stopPropagation();
             var nomePagina = $(event.target).attr('id');
             $.ajax({
                 url:'index.php?controllore=C_visualizzazione&metodo='+nomePagina,
@@ -52,21 +54,25 @@ C_home.prototype={
             });
         });
         
-        $('#invialogin').click(function(){
+        $('#invialogin').click(function(event){
+            event.stopPropagation();
             var dati = V.recuperaDatiLogin();
             C.inviaDatiLogin(dati);
         });
         
-        $('#logout').click(function(){
+        $('#logout').click(function(event){
+            event.stopPropagation();
             C.richiestaLogout();
         });
         
-        $('#EMAIL_newsletter').change(function(){
+        $('#EMAIL_newsletter').change(function(event){
+            event.stopPropagation();
             C.controllaEmailNewsletter();
             //$('#submit_newsletter').button();
         });
         
-        $('#submit_newsletter').click(function(){
+        $('#submit_newsletter').click(function(event){
+            event.stopPropagation();
             var email = V.recuperaEmailNewsletter();
             /*il ! e da cancellare*/
             if(C.controllaEmailNewsletter()){
@@ -83,14 +89,16 @@ C_home.prototype={
             }
         });
         
-        $('#searchimg').click(function(){
+        $('#searchimg').click(function(event){
+            event.stopPropagation();
             var C =  new C_vetrina();
             var V =  new V_vetrina();
             var stringa = V.recuperaDatiRicerca();
             C.ricerca(stringa);
         });
         
-        $('#barracerca').keyup(function(){
+        $('#barracerca').keyup(function(event){
+            event.stopPropagation();
             var C =  new C_vetrina();
             var V =  new V_vetrina();
             var stringa = V.recuperaDatiRicerca();

@@ -31,21 +31,9 @@
     background-color: red;
 }
 
-.nome
+.nome, .prezzo, .categoria
 {
-    width:200px;
-    float:left;
-}
-
-.prezzo
-{
-    width:200px;
-    float:left;
-}
-
-.categoria
-{
-    width:200px;
+    width:180px;
     float:left;
 }
 
