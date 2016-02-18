@@ -26,7 +26,7 @@
                     <label>Nome:</label>
                 </span>
                 <span class="colonnaTabellaText">
-                    <input id="nome" type="text"/>
+                    <input id="nome" class="dati" type="text"/>
                 </span>
             </div>
             <div class="rigaTabella">
@@ -34,7 +34,7 @@
                     <label>Nome foto:</label>
                 </span>
                 <span class="colonnaTabellaText">
-                    <input id="foto" type="text"/>
+                    <input id="foto" class="dati" type="text"/>
                 </span>
             </div>
             <div class="rigaTabella">
@@ -42,7 +42,7 @@
                     <label>Descrizione:</label>
                 </span>
                 <span class="colonnaTabellaText">
-                    <textarea id="descrizione" name="descrizione"></textarea>
+                    <textarea id="descrizione" class="dati" name="descrizione"></textarea>
                 </span>
             </div>
             <div class="rigaTabella">
@@ -50,7 +50,7 @@
                     <label>Categoria:</label>
                 </span>
                 <span class="colonnaTabellaText">
-                    <input id="categoria" type="text"/>
+                    <input id="categoria" class="dati" type="text"/>
                 </span>
             </div>
             <div class="rigaTabella">
@@ -58,7 +58,7 @@
                     <label>Prezzo:</label>
                 </span>
                 <span class="colonnaTabellaText">
-                    <input id="prezzo_kg" type="text"/>
+                    <input id="prezzo" class="dati" type="text"/>
                 </span>
             </div>
             <div class="rigaTabella">
@@ -66,7 +66,7 @@
                     <label>Disponibilità:</label>
                 </span>
                 <span class="colonnaTabellaText">
-                    <input id="disponibilita" type="text"/>
+                    <input id="disponibilita" class="dati" type="text"/>
                 </span>
             </div>
         </div>

@@ -17,29 +17,67 @@ C_amministrazione.prototype = {
             dataType:"json",
             data:datiProdotto,
             success:function(successo) {
+                /**
                 if(!successo){
                     alert("prodotto inserito con successo");
                 }
                 else{
                     alert("errore di inserimento");
                 }
+                /**/
+                window.location.reload();
             }
         });
     },
     
-    eliminaProdotto : function(){
+    recuperaProdotto : function(nome){
         var dati = new Object();
         dati = {
-            "NOME_PRODOTTO": $('#nome').val()
+            "NOME_PRODOTTO": nome
+        };
+        var comodo;
+        $.ajax({
+            url:"index.php?controllore=C_amministratore&metodo=recuperaProdotto",
+            type:'GET',
+            dataType:"json",
+            data:dati,
+            async:false,
+            success:function(datiprodotto) {
+                comodo=datiprodotto;
+                //var V = new V_amministrazione();
+            }
+        });
+        return comodo;
+    },
+    
+    aggiornaProdotto : function(dati){
+        
+        $.ajax({
+            url:"index.php?controllore=C_amministratore&metodo=aggiornaProdotto",
+            type:'GET',
+            dataType:"json",
+            data:dati,
+            success:function() {
+                window.location.reload();
+            }
+        });
+    },
+    
+    /**/
+    eliminaProdotto : function(nome){
+        var dati = new Object();
+        dati = {
+            "NOME_PRODOTTO": nome
         };
         $.ajax({
             url:"index.php?controllore=C_amministratore&metodo=eliminaProdotto",
             type:'GET',
             dataType:"html",
             data:dati,
-            success:function(carrello) {
-                $('#mainright').html(carrello);
+            success:function() {
+                window.location.reload();
             }
         });
     }
+    /**/
 }

@@ -50,7 +50,7 @@ V_registrazione.prototype.recuperaDatiLogin = function(){
 V_registrazione.prototype.notificaLogin = function(info){
     if(info['errore'] == false){
         $('#utente').html('<p>'+info['cliente']+'</p>');
-        $('#login').fadeOut(/**/{animated:'slow',duration:2000}/**/);
+        $('.login').fadeOut(/**/{animated:'slow',duration:2000}/**/);
     } else {
         alert(info['errore']);
     }

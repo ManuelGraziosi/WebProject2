@@ -2,14 +2,10 @@ var V_amministrazione= function(){
     //this.dialogo();
 };
 
-V_amministrazione.prototype.dialogo= function(){
-    $('#tabellaForm').dialog({
-        draggable:false,
-        modal:true,
-        resizable:false,
-        minWidth:400,
-        title:"Aggiorna Prodotto"
-    });
+V_amministrazione.prototype.mostraForm= function(invia){
+    var U = new U_operazioni();
+    $('#tabellaForm').fadeIn({animated:'slow',duration:1000});
+    U.dialogoModaleConferma('#tabellaForm',invia);
 };
 
 /**/
@@ -26,15 +22,19 @@ V_amministrazione.prototype.recuperaDatiProdotto=function(){
         "prezzo_kg"    : $('#tabellaForm #prezzo').val(),
         "disponibilita": $('#tabellaForm #disponibilita').val()
     };
+    $('#tabellaForm .dati').each(function(){
+        $(this).val("");
+    });
+    $('#tabellaForm').fadeOut({animated:'slow',duration:1000});
     return dati;
 }
 
 V_amministrazione.prototype.visualizzaDatiProdotto=function(dati){
     //this.dati = new Array();
-    $('#nome').val(dati['NOME_PRODOTTO']);
-    $('#foto').val(dati['foto']);
-    $('#descrizione').val(dati['descrizione']);
-    $('#categoria').val(dati['categoria']);
-    $('#prezzo_kg').val(dati['prezzo_kg']);
-    $('#disponibilita').val(dati['disponibilita']);
+    $('#tabellaForm #nome').val(dati['NOME_PRODOTTO']);
+    $('#tabellaForm #foto').val(dati['foto']);
+    $('#tabellaForm #descrizione').val(dati['descrizione']);
+    $('#tabellaForm #categoria').val(dati['categoria']);
+    $('#tabellaForm #prezzo').val(dati['prezzo_kg']);
+    $('#tabellaForm #disponibilita').val(dati['disponibilita']);
 }

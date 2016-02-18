@@ -52,4 +52,9 @@ class V_amministratore {
         echo $dati;
     }
     
+    public function inviaDatiProdotto($datiProdotto){
+        header("Content-Type: application/json");
+        print json_encode($datiProdotto);
+    }
+    
 }

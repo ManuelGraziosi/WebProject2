@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title></title>
+    <title>Sammartino | Home</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="icon" href="PHP/templates/template/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" type="text/css" media="screen" href="PHP/templates/template/css/index.css" />
@@ -95,14 +95,16 @@
             <p>"AD OGNI PASTO PUOI PRENDERTI CURA DI TE PORTANDO A TAVOLA GLI OTTIMI E GENUINI PRODOTTI DEL CASEIFICIO SAMMARTINO"</p>
             
             <div id="menufisarmonica">
-                <h7>LOGIN / REGISTRAZIONE</h7>
-                    <div id="login">
+                {if $utente == "Ospite"}
+                <h7 class="login">LOGIN / REGISTRAZIONE</h7>
+                    <div id="login" class="login">
                         <p align="center">ACCEDI</p>
                         Email: <br> <input type="email" id="EMAIL"/>
                         Password:<input type="password" id="password"/>
                         <button id="invialogin">Login</button> <br><br>
                         Non sei iscritto? <a id="registrazione" title="Registrati">REGISTRATI</a>
                     </div>
+                {/if}
                 <h7>CONTATTACI</h7>
                     <div id="contattaci">
                         <b>Az. Agricola SAMMARTINO</b><br><br>

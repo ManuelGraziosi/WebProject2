@@ -56,6 +56,18 @@ class C_amministratore {
         
     }
     
+    public function recuperaProdotto() {
+        $view = new V_amministratore();
+        $db = new F_database();
+        $prodotto = new E_prodotto();
+        $nomeProdotto=$view->getNomeProdotto();
+        $datiProdotto=$db->caricaRiga('prodotto', $nomeProdotto);
+        $view->inviaDatiProdotto($datiProdotto[0]);
+        //$prodotto = $db->caricaTabella('prodotto');
+        //print_r($prodotto);
+        
+    }
+    
     public function getOrdiniConfermati() {
         //$view = new V_amministratore();
         $db = new F_database();
