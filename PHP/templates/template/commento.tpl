@@ -53,7 +53,7 @@
                         </div>
 
         {sectionelse} 
-            <b> Nessun prodotto disponibile in vetrina </b>
+            <b> Nessun commento disponibile </b>
         {/section}
  
                         <div class="d_mostra_tutti">VISUALIZZA ALTRI COMMENTI</div>
