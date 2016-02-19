@@ -17,7 +17,7 @@ U_operazioni.prototype = {
         };
         $.ajax({
             url:"index.php",
-            type:'GET',
+            type:'POST',
             data:azioneRichiesta,
             dataType:"html",
             success:function(html) {

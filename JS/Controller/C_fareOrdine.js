@@ -15,7 +15,7 @@ C_fareOrdine.prototype={
         var invia=function(){
             $.ajax({
                 url:"index.php?controllore=C_fareOrdine&metodo=inserisciProdottoOrdinato",
-                metod:"GET",
+                type:'POST',
                 data:/**dati/**/{"NOME_PRODOTTO":nome,"quantita":1}/**/,
                 dataType:"JSON",
                 success:function(risposta){
@@ -38,7 +38,7 @@ C_fareOrdine.prototype={
         var nome = $(this).attr('title');
         $.ajax({
             url:"index.php?controllore=C_fareOrdine&metodo=rimuoviProdottoOrdinato",
-            metod:"GET",
+            type:'POST',
             data:{"NOME_PRODOTTO":nome},
             dataType:"JSON",
             success:function(){
@@ -64,7 +64,7 @@ C_fareOrdine.prototype={
         var nome = $(this).attr('title');
         $.ajax({
             url:"index.php?controllore=C_fareOrdine&metodo=aggiornaProdottoOrdinato",
-            metod:"GET",
+            type:'POST',
             data:{"NOME_PRODOTTO":nome,"quantita":$(this).val()},
             dataType:"JSON",
             success:function(){
@@ -76,7 +76,7 @@ C_fareOrdine.prototype={
     effettuaOrdine: function(){
         $.ajax({
             url:"index.php?controllore=C_fareOrdine&metodo=effettuaOrdine",
-            metod:"GET",
+            type:'POST',
             data:dati,
             dataType:"JSON",
             success:function(){
@@ -87,7 +87,7 @@ C_fareOrdine.prototype={
     confermaOrdine: function(){
         $.ajax({
             url:"index.php?controllore=C_fareOrdine&metodo=confermaOrdine",
-            metod:"GET",
+            type:'POST',
             data:dati,
             dataType:"JSON",
             success:function(){

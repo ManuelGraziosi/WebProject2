@@ -44,7 +44,7 @@
 
                          <h3>
                             DATA: {$commenti[i].data_commento}
-                            UTENTE: {$commenti[i].user_commento}
+                            UTENTE: {$commenti[i].nome}
                             VOTO: {$commenti[i].voto}
                             
                         </h3>

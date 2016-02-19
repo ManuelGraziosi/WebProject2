@@ -11,7 +11,7 @@ C_vetrina.prototype={
         var nome=$(this).attr('title');
         $.ajax({
             url:"index.php?controllore=C_visualizzazione&metodo=dettagliprodotto",
-            type:'GET',
+            type:'POST',
             dataType:"html",
             data:{NOME_PRODOTTO:nome},
             success:function(carrello){
@@ -31,7 +31,7 @@ C_vetrina.prototype={
     ricerca : function(stringa){
         $.ajax({
             url:"index.php?controllore=C_visualizzazione&metodo=ricerca",
-            type:'GET',
+            type:'POST',
             data:stringa,
             dataType:"html",
             success:function(lista) {

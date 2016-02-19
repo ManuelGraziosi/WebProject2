@@ -13,7 +13,7 @@ C_amministrazione.prototype = {
     inserisciProdotto : function(datiProdotto){
         $.ajax({
             url:"index.php?controllore=C_amministratore&metodo=inserisciProdotto",
-            type:'GET',
+            type:'POST',
             dataType:"json",
             data:datiProdotto,
             success:function(successo) {
@@ -38,7 +38,7 @@ C_amministrazione.prototype = {
         var comodo;
         $.ajax({
             url:"index.php?controllore=C_amministratore&metodo=recuperaProdotto",
-            type:'GET',
+            type:'POST',
             dataType:"json",
             data:dati,
             async:false,
@@ -54,7 +54,7 @@ C_amministrazione.prototype = {
         
         $.ajax({
             url:"index.php?controllore=C_amministratore&metodo=aggiornaProdotto",
-            type:'GET',
+            type:'POST',
             dataType:"json",
             data:dati,
             success:function() {
@@ -71,7 +71,7 @@ C_amministrazione.prototype = {
         };
         $.ajax({
             url:"index.php?controllore=C_amministratore&metodo=eliminaProdotto",
-            type:'GET',
+            type:'POST',
             dataType:"html",
             data:dati,
             success:function() {
@@ -83,7 +83,7 @@ C_amministrazione.prototype = {
     bandaCliente : function(dato){
         $.ajax({
             url:"index.php?controllore=C_amministratore&metodo=bandaCliente",
-            type:'GET',
+            type:'POST',
             dataType:"html",
             data:dato,
             success:function() {

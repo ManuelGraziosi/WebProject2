@@ -23,6 +23,7 @@ C_home.prototype={
             $.ajax({
                 url:'index.php?controllore=C_visualizzazione&metodo='+nomePagina,
                 datatype:"html",
+                type:'POST',
                 ifModified:true,
                 async:false,
                 success:function(html){
@@ -30,6 +31,7 @@ C_home.prototype={
                     $.ajax({
                         url:"JS/Event/E_"+nomePagina+".js",
                         dataType:'script',
+                        type:'POST',
                         async:false
                     });
                 }
@@ -41,6 +43,7 @@ C_home.prototype={
             $.ajax({
                 url:'index.php?controllore=C_visualizzazione&metodo='+nomePagina,
                 datatype:"html",
+                type:'POST',
                 ifModified:true,
                 success:function(html){
                     $('#notifica').html(html);

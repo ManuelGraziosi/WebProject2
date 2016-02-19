@@ -109,6 +109,7 @@ C_registrazione.prototype={
         $.ajax({
             url:"index.php?controllore=C_registrazione&metodo=creaCliente",
             data:dati,
+            type:'POST',
             datatype:"json",
             success:function(info){
                 V.notificaRegistrazione(info);
@@ -124,6 +125,7 @@ C_registrazione.prototype={
         $.ajax({
             url:"index.php?controllore=C_registrazione&metodo=autentica",
             data:dati,
+            type:'POST',
             datatype:"json",
             success:function(info){
                 view.notificaLogin(info);
@@ -134,6 +136,7 @@ C_registrazione.prototype={
     richiestaLogout: function(){
         $.ajax({
             url:"index.php?controllore=C_registrazione&metodo=logout",
+            type:'POST',
             /**data:dati,/**
             datatype:"json",/**/
             success:function(){
@@ -164,6 +167,7 @@ C_registrazione.prototype={
         $.ajax({
             url:"index.php",
             data:dati,
+            type:'POST',
             datatype:"json",
             success:function(successo){
                 if(successo){
