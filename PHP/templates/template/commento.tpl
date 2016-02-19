@@ -33,10 +33,10 @@
                 <div class="d_comment_area">
                     <p id="utente">Ospite</p>
                         <form id="Form_commento" method="post">
-                            <textarea id="text_commento" name="commento" onKeyUp="V.characterLeft();" onKeyDown="V.characterLeft();" placeholder="Inserisci il tuo commento..." maxlength="255"></textarea>
+                            <textarea id="text_commento" name="commento" placeholder="Inserisci il tuo commento..." maxlength="255"></textarea>
                             <br>
                             <p id="charsLeft">Rimanenti: 255 di 255</p>
-                            <input type="button" onClick="V.invioCommento()" id="commenta" name="submit" value="Invia">
+                            <input type="button" id="commenta" name="submit" value="Invia">
                         </form>
                 </div>
                 <div id="accordion">
