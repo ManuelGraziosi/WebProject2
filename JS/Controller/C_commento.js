@@ -6,5 +6,5 @@
 
 
 var C_commento= function(){
-    $('#text_commento').text("MA CHE CAZZOOOOO");
+    
 };
