@@ -7,6 +7,7 @@ var C_vetrina=function(){
 
 C_vetrina.prototype={
     dettaglio : function(){
+        var V = new V_commento();
         var nome=$(this).attr('title');
         $.ajax({
             url:"index.php?controllore=C_visualizzazione&metodo=dettagliprodotto",
@@ -14,14 +15,16 @@ C_vetrina.prototype={
             dataType:"html",
             data:{NOME_PRODOTTO:nome},
             success:function(carrello){
-            V = new V_commento();
+//            V = new V_commento();
             $('#notifica').html(carrello);
-            V.dialogomanuel();
+            //$.getScript("JS/Prova.js");
             
-            $('#accordion').accordion();
+            //V.dialogomanuel();
+//            $('#accordion').accordion();
             }
         }).done(function() {
-            $.getScript("JS/Prova.js");
+            //$.getScript("JS/Prova.js");
+            V.dialogomanuel();
         });
     },
     

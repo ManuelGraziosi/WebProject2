@@ -26,7 +26,10 @@ V_commento.prototype={
                 $('.dettagli_prodotto').remove();
             }
         });
+        $('#accordion').accordion();
         $('#invia').button();
+        $('#text_commento').on("change keypress paste", this.characterLeft);
+        $('#commenta').on("click", this.invioCommento);
     },
     
     //funzione per il conteggio dei caratteri nell'area commento
@@ -74,6 +77,7 @@ V_commento.prototype={
             datatype:"html",//cosi definisco il tipo di dato che ricevo dopo l'invio, che sra un popup con scritto successo quindi html
             success:function(risposta){
                 alert(risposta);
+                $('.dettagli_prodotto').remove();
             }
         });
     }

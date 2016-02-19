@@ -19,6 +19,7 @@ class C_commento {
         //$sessione=new U_sessione();
         $EmailCom=$sessione->leggi_valore("email");
         
+        if($EmailCom){
         //qui creo 
         $view=U_singolaistanza::getIstanza('V_commento');
         //$view=new V_commento();//serve solo per richiamare velocemente i metodi
@@ -42,8 +43,11 @@ class C_commento {
          
          header("Content-type: application/html");
          
-         echo "SUCCESSO!!!";
-         
+         echo "Commento inserito con SUCCESSO!!!";
+        }
+        else{
+            echo "Te DEVI da LOGGA'!!!";
+        }
          /**
          $db=new F_newsletter();
          $db->addEmail($email->getEMAIL());
