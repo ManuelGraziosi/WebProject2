@@ -19,7 +19,7 @@ C_commento.prototype={
                 data:dati,
                 datatype:"html",//cosi definisco il tipo di dato che ricevo dopo l'invio, che sra un popup con scritto successo quindi html
                 success:function(risposta){
-                    alert(risposta);
+                    V.notificaAllert(risposta);
                     $('.dettagli_prodotto').remove();
                 }
             });
