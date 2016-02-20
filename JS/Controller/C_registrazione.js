@@ -36,8 +36,8 @@ C_registrazione.prototype={
 
         $('input#EMAIL_registrazione').blur(function (event) {
             //if (!$(this).val().match(/^[a-zA-z' .]{2,30}@[a-zA-Z]{2,10}.[a-z]{2,3}$/)) {
-            if (!$(this).val().match(/^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/)) {
-                $(this).css("border","3px solid red");
+            if (!$(this).val().match(/^([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-])+.)+([a-zA-Z0-9]{2,4})+$/)) {
+        	$(this).css("border","3px solid red");
                 errori[2]=true;
                 //}
             }
