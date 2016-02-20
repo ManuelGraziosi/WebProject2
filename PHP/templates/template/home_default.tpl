@@ -22,6 +22,7 @@
     <script type="text/javascript" src="JS/Controller/C_newsletter.js"></script>
     <script type="text/javascript" src="JS/Controller/C_vetrina.js"></script>
     <script type="text/javascript" src="JS/Controller/C_fareOrdine.js"></script>
+    <script type="text/javascript" src="JS/Controller/C_commento.js"></script>
     
     <script type="text/javascript" src="JS/View/V_registrazione.js"></script>
     <script type="text/javascript" src="JS/View/V_newsletter.js"></script>

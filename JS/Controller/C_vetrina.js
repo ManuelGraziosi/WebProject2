@@ -7,7 +7,7 @@ var C_vetrina=function(){
 
 C_vetrina.prototype={
     dettaglio : function(){
-        var V = new V_commento();
+        //var V = new V_commento();
         var nome=$(this).attr('title');
         $.ajax({
             url:"index.php?controllore=C_visualizzazione&metodo=dettagliprodotto",
@@ -24,6 +24,7 @@ C_vetrina.prototype={
             }
         }).done(function() {
             //$.getScript("JS/Prova.js");
+            var V = new V_commento();
             V.dialogomanuel();
         });
     },

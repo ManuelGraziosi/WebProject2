@@ -176,6 +176,32 @@ class F_database {
             $query.='LIMIT '.$limit.' ';
         $this->query($query);
         
+        print_r($query);
+        
+        return $this->getRisultati();
+    }
+    
+    function joinReserch($tabella,$parametri = array(), $ordinamento = '', $limit = '') {
+        $filtro='';
+        for ($i=0; $i<count($parametri)-1; $i++) {
+            /*if ($i>0) $filtro .= ' OR';/**/
+            $filtro .= ' `'.$parametri[$i][0].'` '.$parametri[$i][1].' \''.$parametri[$i][2].'\' '.$parametri[$i][3];
+            print_r($filtro);
+        }
+        $filtro .= ' `'.$parametri[count($parametri)-1][0].'` '.$parametri[count($parametri)-1][1].' '.$parametri[count($parametri)-1][2].' '.$parametri[count($parametri)-1][3];
+        //print_r($filtro);
+        $query='SELECT * ' .
+                'FROM '.$tabella.' ';
+        if ($filtro != '')
+            $query.='WHERE '.$filtro.' ';
+        if ($ordinamento!='')
+            $query.='ORDER BY '.$ordinamento.' ';
+        if ($limit != '')
+            $query.='LIMIT '.$limit.' ';
+        $this->query($query);
+        
+        print_r($query);
+        
         return $this->getRisultati();
     }
     

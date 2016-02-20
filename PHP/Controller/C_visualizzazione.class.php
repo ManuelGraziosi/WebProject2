@@ -121,7 +121,8 @@ class C_visualizzazione{
         $nome=$view->getNomeProdotto();
         print $nome;//test di verifica selezione prodotto
         $datiprod=$db->caricaRiga('prodotto',$nome);
-        $datiCommenti=$db->ricerca('commento',array(array("nome_prod_com","=",$nome,"")),"data_commento","5");
+        $datiCommenti=$db->joinReserch('commento,cliente',array(array("nome_prod_com","=",$nome,"AND"),array("EMAIL","=","user_commento","")),"data_commento DESC","5");
+        //print_r($datiCommenti);
         $view->inserisciDatiTemplate('prodotto', $datiprod[0]);
         //$view->impostaTemplate('dettagli_prodotto.tpl');
         $view->inserisciDatiTemplate('commenti', $datiCommenti);

@@ -8,9 +8,11 @@
                     <div class="d_voto">
                         <p>VOTO</p>
                     </div>
-                    <div title="{$prodotto.NOME_PRODOTTO}" class="d_aggiungi">
-                        <img src="PHP/templates/template/images/cart/addCart.png" width="45" height="45"/>
-                    </div>
+                    <span title="{$prodotto.NOME_PRODOTTO}" id="d_aggiungi">
+                        <button>
+                            <img src="PHP/templates/template/images/cart/addCart.png" width="45" height="45"/>
+                        </button>
+                    </span>
                 </div>
                 <!-- SEZIONE DESCRIZIONE -->
                 <div class="d_dettaglio">
