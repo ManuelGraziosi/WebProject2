@@ -7,6 +7,28 @@
  */
 class C_amministratore {
     
+    public function esegui() {
+        $view=new V_view();
+        //questo si deve risolvere e forse i cookie sono la soluzione
+        /**
+        $sessione=  U_singolaistanza::getIstanza("U_sessione");
+        $nome_cognome=$sessione->leggi_valore('nome_cognome');
+        if($nome_cognome!=false){
+            $view->inserisciDatiTemplate('utente', $nome_cognome);
+        }else{
+            $view->inserisciDatiTemplate('utente', 'Ospite');
+        }
+        /**/
+        $db= new F_database();
+        $datiprod=$db->caricaTabella('prodotto');
+        $daticlie=$db->caricaTabella('cliente');
+        $datiprodotto=$db->caricaRiga("prodotto", "Caciotta");
+        $view->inserisciDatiTemplate('prodotto', $datiprodotto);
+        $view->inserisciDatiTemplate('prodotti', $datiprod);
+        $view->inserisciDatiTemplate('clienti', $daticlie);
+        $view->impostaTemplate('amministrazione.tpl');
+    }
+    
     public function eliminaProdotto() {
         $view = new V_amministratore();
         $db = new F_database();

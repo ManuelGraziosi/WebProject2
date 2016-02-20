@@ -5,7 +5,7 @@
  *
  * @author daniele
  */
-class V_amministratore {
+class V_amministratore extends V_view{
     
     public function getNomeProdotto() {
         if(isset($_REQUEST['NOME_PRODOTTO'])){
