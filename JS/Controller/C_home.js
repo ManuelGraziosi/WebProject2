@@ -60,7 +60,7 @@ C_home.prototype={
         $('#invialogin').click(function(event){
             event.stopPropagation();
             var dati = V.recuperaDatiLogin();
-            if(dati){
+            if(dati.EMAIL || dati.password){
             C.inviaDatiLogin(dati);
             }
             else{
