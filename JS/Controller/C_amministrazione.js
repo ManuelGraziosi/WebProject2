@@ -10,21 +10,50 @@ var C_amministrazione = function(){
 };
 
 C_amministrazione.prototype = {
+    
+    LoginAdmin:function(){
+        //var V = new V_registrazione();
+        //var dati = V.recuperaDatiRegistrazione();
+        $.ajax({
+            url:"admin.php?controllore=C_amministratore&metodo=autenticaAdmin",
+            data:{"username":$('#username').val(),"password":$('#password').val()},
+            type:'POST',
+            datatype:"json",
+            success:function(info){
+                if(info.mess){
+                    $.ajax({
+                        url:"admin.php?controllore=C_amministratore&metodo=esegui",
+                        type:"post"
+                    }).done(function(html){
+                        $('body').html(html);
+                    });
+                }else{
+                    $("body").append(info.mess);
+                }
+            }
+        });
+    },
+    
+    LogoutAdmin:function(dati){
+        //var V = new V_registrazione();
+        //var dati = V.recuperaDatiRegistrazione();
+        $.ajax({
+            url:"admin.php?controllore=C_amministratore&metodo=logoutAdmin",
+            type:'POST',
+            datatype:"json",
+            success:function(info){
+                window.location.reload();
+            }
+        });
+    },
+    
     inserisciProdotto : function(datiProdotto){
         $.ajax({
-            url:"index.php?controllore=C_amministratore&metodo=inserisciProdotto",
+            url:"admin.php?controllore=C_amministratore&metodo=inserisciProdotto",
             type:'POST',
-            dataType:"json",
+            //dataType:"json",
             data:datiProdotto,
             success:function(successo) {
-                /**
-                if(!successo){
-                    alert("prodotto inserito con successo");
-                }
-                else{
-                    alert("errore di inserimento");
-                }
-                /**/
                 window.location.reload();
             }
         });
@@ -37,7 +66,7 @@ C_amministrazione.prototype = {
         };
         var comodo;
         $.ajax({
-            url:"index.php?controllore=C_amministratore&metodo=recuperaProdotto",
+            url:"admin.php?controllore=C_amministratore&metodo=recuperaProdotto",
             type:'POST',
             dataType:"json",
             data:dati,
@@ -53,7 +82,7 @@ C_amministrazione.prototype = {
     aggiornaProdotto : function(dati){
         
         $.ajax({
-            url:"index.php?controllore=C_amministratore&metodo=aggiornaProdotto",
+            url:"admin.php?controllore=C_amministratore&metodo=aggiornaProdotto",
             type:'POST',
             dataType:"json",
             data:dati,
@@ -70,19 +99,18 @@ C_amministrazione.prototype = {
             "NOME_PRODOTTO": nome
         };
         $.ajax({
-            url:"index.php?controllore=C_amministratore&metodo=eliminaProdotto",
+            url:"admin.php?controllore=C_amministratore&metodo=eliminaProdotto",
             type:'POST',
             dataType:"html",
             data:dati,
             success:function() {
-                window.location.reload();
             }
         });
     },
     /**/
     bandaCliente : function(dato){
         $.ajax({
-            url:"index.php?controllore=C_amministratore&metodo=bandaCliente",
+            url:"admin.php?controllore=C_amministratore&metodo=bandaCliente",
             type:'POST',
             dataType:"html",
             data:dato,

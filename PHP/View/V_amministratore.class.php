@@ -16,9 +16,27 @@ class V_amministratore extends V_view{
         }
     }
     
+    public function getPassword() {
+        if(isset($_REQUEST['password'])){
+            return $_REQUEST['password'];
+        }
+        else{
+            return false;
+        }
+    }
+    
     public function getEMAILCliente() {
         if(isset($_REQUEST['EMAIL'])){
             return $_REQUEST['EMAIL'];
+        }
+        else{
+            return false;
+        }
+    }
+    
+    public function getUsername() {
+        if(isset($_REQUEST['username'])){
+            return $_REQUEST['username'];
         }
         else{
             return false;

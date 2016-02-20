@@ -5,6 +5,7 @@ $config['DBMS']['username']="root";
 $config['DBMS']['passwd']="";
 
 $config['cliente']='EMAIL';
+$config['admin']='nome';
 $config['pagamento']='ID_PAGAMENTO';
 $config['commento']='ID_COMMENTO';
 $config['newsletter']='email';

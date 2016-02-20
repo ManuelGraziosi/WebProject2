@@ -9,12 +9,12 @@
 
         <script type="text/javascript" src="JS/Utility/U_operazioni.js"></script>
 
-        <script type="text/javascript" src="JS/index_admin.js"></script>
         <script type="text/javascript" src="JS/View/V_amministrazione.js"></script>
         <script type="text/javascript" src="JS/Controller/C_amministrazione.js"></script>
         <script type="text/javascript" src="JS/Event/E_amministrazione.js"></script>
 
 
+        <script type="text/javascript" src="JS/index_admin.js"></script>
 
         <link rel="stylesheet" type="text/css" media="screen" href="JS/Utility/Jquery/jquery-ui-1.11.4.custom/jquery-ui.min.css" /> 
         <script type="text/javascript" src="JS/Utility/Jquery/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
@@ -75,6 +75,7 @@
                 <li><a href="#Prodotto">Prodotto</a></li>
                 <li><a href="#Cliente">Cliente</a></li>
                 <li><a href="#OrdiniConfermati">Ordini Confermati</a></li>
+                <li id="logout">logout</li>
               </ul>
             <div id="Prodotto" class="contenutoAmministrazione">
                 <table class="admin">

@@ -43,9 +43,6 @@ class C_registrazione {
      
      
     public function creaCliente() {
-        //if(!isset($_COOKIE["Sammartino"])){
-            
-        //$sessione= U_singolaistanza::getIstanza('U_sessione');
         $view = U_singolaistanza::getIstanza('V_registrazione');
         $datiCliente=$view->getDatiRegistrazione();
         $cliente=new E_cliente();
@@ -84,10 +81,6 @@ class C_registrazione {
             $this->_messaggio['messaggio']='Email gi&agrave; utilizzata';
         }
         $view->mostraNotifica($this->_messaggio);
-//    }else
-//    {
-//        
-//    }
 }
     
     
@@ -147,17 +140,10 @@ class C_registrazione {
      * Effettua il logout
      */
     public function logout() {
-        $sessione=  U_singolaistanza::getIstanza('U_sessione');
-        //try {
+        if(isset($_COOKIE["Sammartino"])){
+            $sessione= U_singolaistanza::getIstanza("U_sessione");
             $sessione->chiudi_sessione();
-            /**
-            header('Location: index.php');
-            exit;
-        } catch (Exception $e) {
-            
         }
-        exit;
-        /**/
     }
 }
 ?>
