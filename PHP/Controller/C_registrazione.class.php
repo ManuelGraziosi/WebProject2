@@ -30,9 +30,8 @@ class C_registrazione {
     			if(
     		       ereg("^[a-zA-Z' ]{2,30}$",$dati['nome']) &&
     		       ereg("^[a-zA-Z' ]{2,30}$",$dati['cognome']) &&
-    		       ereg("^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*\$",$dati['EMAIL']) &&
+    		       eregi("^[a-z0-9][_.a-z0-9-]+@([a-z0-9][0-9a-z-]+.)+([a-z]{2,4})",$dati['EMAIL']) &&
     		       ereg("^[[a-zA-Z0-9#!%\^&;\*\$:\{\}=\-_`~\(\)]{6,30}$",$dati['password']) &&
-    		      ($dati['password']==$dati['password_1']) &&
     		       ereg("^[a-zA-Z' ]{1,20}$",$dati['citta']) &&
     		       ereg("^[0-9a-zA-Z' ]{2,100}$",$dati['via']) &&
     		       ereg("^[0-9]{5}$",$dati['CAP'])
@@ -68,18 +67,19 @@ class C_registrazione {
 	                //$this->emailAttivazione($cliente);
 	                $registrato=true;
 	                $this->_messaggio['corretto']='registrate';
+	                $this->_messaggio['messaggio']='registrate';
 	            }
 	            else {
-	            	$this->_messaggio['errore']='ERRORE';
+	            	$this->_messaggio['messaggio']='ERRORE';
 	                 }   
                } 
 
             else {
-                $this->_messaggio['errore']='Le password immesse non coincidono';
+                $this->_messaggio['messaggio']='Le password immesse non coincidono';
             }
         } else {
             //cliente esistente
-            $this->_messaggio['errore']='Email gi&agrave; utilizzata';
+            $this->_messaggio['messaggio']='Email gi&agrave; utilizzata';
         }
         $view->mostraNotifica($this->_messaggio);
     }
