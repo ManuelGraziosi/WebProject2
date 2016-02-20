@@ -46,7 +46,7 @@ class C_commento {
          echo "Commento inserito con SUCCESSO!!!";
         }
         else{
-            echo "Te DEVI da LOGGA'!!!";
+            echo "Eseguire prima il Login!";
         }
          /**
          $db=new F_newsletter();
