@@ -50,6 +50,14 @@ class C_visualizzazione{
         $view->impostaTemplate('carrello.tpl');
     }
     
+     public function effettuaOrdine() {
+        $view=new V_view();
+        //$C_ordine= new C_fareOrdine();
+        //$ordine = $C_ordine->mostraCarrello();
+        //$view->inserisciDatiTemplate('prodotti',$ordine);
+        $view->impostaTemplate('pagamento.tpl');
+    }
+    
     public function registrazione() {
         
         $view=new V_view();

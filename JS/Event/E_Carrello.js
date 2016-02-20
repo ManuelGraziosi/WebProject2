@@ -20,5 +20,6 @@ $.ajax({
         $('.cancella_prodotto').click(fareOrdine.rimuoviProdottoOrdinato);
 //        $('.n_quantita').on("blur change",fareOrdine.aggiornaProdottoOrdinato);
         $('.n_quantita').on("keyup",fareOrdine.aggiornaProdottoOrdinato);
+        $('#pagamento').click(fareOrdine.effettuaOrdine);
     //}
 //});
