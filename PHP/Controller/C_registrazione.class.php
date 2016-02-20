@@ -43,7 +43,9 @@ class C_registrazione {
      
      
     public function creaCliente() {
-        $sessione= U_singolaistanza::getIstanza('U_sessione');
+        //if(!isset($_COOKIE["Sammartino"])){
+            
+        //$sessione= U_singolaistanza::getIstanza('U_sessione');
         $view = U_singolaistanza::getIstanza('V_registrazione');
         $datiCliente=$view->getDatiRegistrazione();
         $cliente=new E_cliente();
@@ -82,7 +84,11 @@ class C_registrazione {
             $this->_messaggio['messaggio']='Email gi&agrave; utilizzata';
         }
         $view->mostraNotifica($this->_messaggio);
-    }
+//    }else
+//    {
+//        
+//    }
+}
     
     
     
