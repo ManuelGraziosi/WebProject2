@@ -24,6 +24,25 @@ class C_registrazione {
      *
      * @return mixed
      */
+     
+    private function controlloDati($dati)
+    		{
+    			if(
+    		       ereg("^[a-zA-Z' ]{2,30}$",$dati['nome']) &&
+    		       ereg("^[a-zA-Z' ]{2,30}$",$dati['cognome']) &&
+    		       ereg("^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*\$",$dati['EMAIL']) &&
+    		       ereg("^[[a-zA-Z0-9#!%\^&;\*\$:\{\}=\-_`~\(\)]{6,30}$",$dati['password']) &&
+    		      ($dati['password']==$dati['password_1']) &&
+    		       ereg("^[a-zA-Z' ]{1,20}$",$dati['citta']) &&
+    		       ereg("^[0-9a-zA-Z' ]{2,100}$",$dati['via']) &&
+    		       ereg("^[0-9]{5}$",$dati['CAP'])
+    		       )
+    		       	return true; 
+    			else 
+    		     	return false;  
+    		}
+     
+     
     public function creaCliente() {
         $sessione= U_singolaistanza::getIstanza('U_sessione');
         $view = U_singolaistanza::getIstanza('V_registrazione');
@@ -37,16 +56,25 @@ class C_registrazione {
             if($datiCliente['password_1']==$datiCliente['password']) {
                 unset($datiCliente['password_1']);
                 $keys=array_keys($datiCliente);
-                $i=0;
-                foreach($datiCliente as $dato){
-                    $cliente->$keys[$i]=$dato;
-                    $i++;
-                }
-                //$cliente->generaCodiceAttivazione();
-                $db->depositaRiga("cliente", $cliente);
-                //$this->emailAttivazione($cliente);
-                $registrato=true;
-            } else {
+	             if($this->controlloDati($datiCliente))
+	               {
+	                $i=0;
+	                foreach($datiCliente as $dato){
+	                    $cliente->$keys[$i]=$dato;
+	                    $i++;
+	                }
+	                //$cliente->generaCodiceAttivazione();
+	                $db->depositaRiga("cliente", $cliente);
+	                //$this->emailAttivazione($cliente);
+	                $registrato=true;
+	                $this->_messaggio['corretto']='registrate';
+	            }
+	            else {
+	            	$this->_messaggio['errore']='ERRORE';
+	                 }   
+               } 
+
+            else {
                 $this->_messaggio['errore']='Le password immesse non coincidono';
             }
         } else {

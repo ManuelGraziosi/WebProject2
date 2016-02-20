@@ -57,10 +57,10 @@ V_registrazione.prototype.notificaLogin = function(info){
 };
 
 V_registrazione.prototype.notificaRegistrazione = function(info){
-    if(info.errore == ""){
+    if(info.coretto != ""){
         //$('#utente').html('<p>'+info['cliente']+'</p>');
         $('#formRegistrazione').html("<div id='successo'><p>registrazione avvenuta con successo</p></div>");
-    } else {
+    } else if(info.errore != ""){
         $('#formRegistrazione').html("<div id='errore'><p>"+info['errore']+"</p></div>");
     }
 };
