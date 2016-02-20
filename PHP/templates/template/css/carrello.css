@@ -1,12 +1,4 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 1-set-2015, 0.01.59
-    Author     : daniele
-*/
+
 
 div#carrello{
 	width:100%;
@@ -44,11 +36,12 @@ div#carrello{
 
 
 #intestazione .foto{
-	width:75px;
+    padding-left: 10px;
+	width:5px;
 }
 
 #intestazione .nome{
-	width: 392px;
+	width: 302px;
 }
 
 #intestazione .quantita{
@@ -56,11 +49,11 @@ div#carrello{
 }
 
 #intestazione .prezzo{
-	width: 95px;
+	width: 125px;
 }
 
 #intestazione .subtotale{
-	width: 140px;
+	width: 150px;
 }
 /**/
 
@@ -89,7 +82,7 @@ div#carrello{
 }
 
 .elemento .nome{
-	width: 392px;
+	width: 220px;
 }
 
 .elemento .quantita{
@@ -104,18 +97,19 @@ div#carrello{
 }
 
 .elemento .prezzo{
-	width: 95px;
+	width: 125px;
         text-align: right;
 }
 
 .elemento .subtotale{
-	width: 140px;
+	width: 150px;
         text-align: right;
 }
 
 .elemento .cancella{
 	width: 50px;
-        font-size: 15px;
+    font-size: 15px;
+    padding-left: 130px;
 }
 
 .elemento .cancella_prodotto{

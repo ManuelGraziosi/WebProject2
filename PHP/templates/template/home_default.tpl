@@ -22,6 +22,7 @@
     <script type="text/javascript" src="JS/Controller/C_newsletter.js"></script>
     <script type="text/javascript" src="JS/Controller/C_vetrina.js"></script>
     <script type="text/javascript" src="JS/Controller/C_fareOrdine.js"></script>
+    <script type="text/javascript" src="JS/Controller/C_commento.js"></script>
     
     <script type="text/javascript" src="JS/View/V_registrazione.js"></script>
     <script type="text/javascript" src="JS/View/V_newsletter.js"></script>
@@ -138,8 +139,8 @@
     </div>
     <div id="footercont">
       <p>
-        Template by <a title="download website templates" href="http://www.downloadwebsitetemplates.co.uk" rel="external">Download Website Templates</a> - Designed by <a title="Mario Valdeburgo Git Hub" href="https://github.com/MarioValdeburgo" rel="external">Mario Valdeburgo</a>
-         - © Copyright 2015
+        Template by <a title="download website templates" href="http://www.downloadwebsitetemplates.co.uk" rel="external">Download Website Templates</a> - Developed by <a title="Mario Valdeburgo - Git Hub" href="https://github.com/MarioValdeburgo" rel="external">Mario Valdeburgo</a> - <a title="Daniele Scarpone - Git Hub" href="https://github.com/daniscar" rel="external">Daniele Scarpone</a> - <a title="Manuel Graziosi - Git Hub" href="https://github.com/ManuelGraziosi" rel="external">Manuel Graziosi</a>
+         - © Copyright 2016
       </p>
     </div>
     <div id="notifica" class="prova"></div>

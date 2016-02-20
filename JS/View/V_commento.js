@@ -8,8 +8,13 @@ var V_commento=function(){
     //this.dialogo();
 };
 
+//var C_ord = new C_fareOrdine();
+//var C_com = new C_commento();
+
 V_commento.prototype={
     dialogomanuel: function(){
+        var C_ord = new C_fareOrdine();
+        var C_com = new C_commento();
         $('.dettagli_prodotto').dialog({
             draggable:false,
             modal:true,
@@ -29,9 +34,15 @@ V_commento.prototype={
         $('#accordion').accordion();
         $('#invia').button();
         $('#text_commento').on("change keypress paste", this.characterLeft);
-        $('#commenta').on("click", this.invioCommento);
+        $('#commenta').on("click", C_com.invioCommento);
+        $('#d_aggiungi').on("click", C_ord.inserisciProdottoOrdinato);
     },
     
+    notificaAllert: function(dato_alert){
+        
+        alert(dato_alert);
+        
+    },
     //funzione per il conteggio dei caratteri nell'area commento
     characterLeft: function(){
             var maxLen = 255;
@@ -42,44 +53,28 @@ V_commento.prototype={
             $('#charsLeft').text(str);
         },
     //funzione per l'organizzazione dei dati da inviare al db tramite la View php
-    invioCommento: function(){
+    preparaCommento: function(){
         //il 15 compensa lo scritto di troppo che non serve
         var lengthNameProdCom = $(".d_nome").text().length - 15; 
         //a causa della formattazione minchiona sono costretto a prendere parte del testo    
         var productCom = $("#nome_prod").text().trim().substr(15,lengthNameProdCom);
         var dateTemp = new Date();
-        var dayCom = dateTemp.getDay();
+        var dayCom = dateTemp.getDate();
         var monthCom = dateTemp.getMonth()+1;
         var yearCom = dateTemp.getFullYear();
         var hourCom = dateTemp.getHours();
         var minuteCom = dateTemp.getMinutes();
         var secondCom = dateTemp.getSeconds();
         var dateCom = yearCom + "-" + monthCom + "-" + dayCom + " " + hourCom + ":" + minuteCom + ":" + secondCom;
-
-        //var userCom = $('#utente').text();
-        
-
         var textCom = $("#text_commento").val();
-
-        //var msg = "Il prodotto è: " + productCom + 
-        //          "\n\r la Data è: " + dateCom + 
-        //          "\n\r il testo inserito è: " + textCom;
-        //alert(msg);
-        
+  
         var dati = {
             "ProductCOM"    : productCom,
             "DateCOM"       : dateCom,
             "TextCOM"       : textCom 
         };
-        $.ajax({
-            url:"index.php?controllore=C_commento&metodo=inserisci_commento",
-            data:dati,
-            datatype:"html",//cosi definisco il tipo di dato che ricevo dopo l'invio, che sra un popup con scritto successo quindi html
-            success:function(risposta){
-                alert(risposta);
-                $('.dettagli_prodotto').remove();
-            }
-        });
+        
+        return dati;
     }
 };
 
