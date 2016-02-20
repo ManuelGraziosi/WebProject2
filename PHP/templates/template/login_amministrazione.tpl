@@ -23,7 +23,7 @@
     <body>
         <div id="login" class="login">
             <p align="center">ACCEDI</p>
-            username: <br> <input type="text" id="username"/>
+            username:<input type="text" id="username"/></br>
             Password:<input type="password" id="password"/>
             <button id="invialoginadmin">Login</button>
         </div>

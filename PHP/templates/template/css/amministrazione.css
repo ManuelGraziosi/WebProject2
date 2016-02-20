@@ -147,7 +147,15 @@ button{
 #logout{
     float:right;
 }
-
-/**/
-
-/**/
+#login{
+    width: 200px;
+    height: 150px;
+    float: left;
+    background-color: #DDDDDD;
+    padding: 10px 10px 10px 10px;
+    border:#FFCC99 solid 5px;
+    -moz-box-align: center;
+}
+body{
+    background-color: grey;
+}
