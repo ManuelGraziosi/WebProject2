@@ -1,13 +1,13 @@
 <div id="carrello">
     <div id="intestazione">
         <span class="foto">
-            <p>foto</p>
+            <p>Foto</p>
         </span>
         <span class="nome">
             <p>Nome prodotto</p>
         </span>
         <span class="quantita">
-            <p>Quantita</p>
+            <p>Quantità</p>
         </span>
         <span class="prezzo">
             <p>Prezzo(€)</p>
@@ -20,7 +20,7 @@
         </span>
     </div>
     <!--va iterato-->
-    {assign var="totale" value=0}
+  {assign var="totale" value=0}
     {section name=i loop=$prodotti}
     <div class="elemento">
         <span class="foto">
