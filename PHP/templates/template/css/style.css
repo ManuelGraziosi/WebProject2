@@ -407,11 +407,11 @@ float: left;
 #logout
 {
 color: black;
-padding-left: 2px;
 text-decoration: underline;
 float: right;
-width: 60px;
-height: 50px;
+width: 65px;
+height: 35px;
+margin-top: 9px;
 }
 
 #top-bar{
