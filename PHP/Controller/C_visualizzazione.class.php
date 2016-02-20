@@ -98,23 +98,7 @@ class C_visualizzazione{
         $smarty->inserisciDatiTemplate('prodotti', $prodotti);
         $smarty->impostaTemplate('vetrina.tpl');
     }
-    /**
-    public function amministrazione() {
-        /**
-        $view=new V_view();
-        $db= new F_database();
-        $datiprod=$db->caricaTabella('prodotto');
-        $daticlie=$db->caricaTabella('cliente');
-        $datiprodotto=$db->caricaRiga("prodotto", "Caciotta");
-        $view->inserisciDatiTemplate('prodotto', $datiprodotto);
-        $view->inserisciDatiTemplate('prodotti', $datiprod);
-        $view->inserisciDatiTemplate('clienti', $daticlie);
-        $view->impostaTemplate('amministrazione.tpl');
-        /**
-     header("location: /amministrazione.html");
-     /**
-    }
-    /**/
+    
     public function dettagliprodotto(){
         $view=new V_fareOrdine();
         $db= new F_database();
