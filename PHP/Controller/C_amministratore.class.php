@@ -27,7 +27,6 @@ class C_amministratore {
         $view->inserisciDatiTemplate('prodotti', $datiprod);
         $view->inserisciDatiTemplate('clienti', $daticlie);
         $view->impostaTemplate('amministrazione.tpl');
-        $view->impostaTemplate('amministrazione.tpl');
     }
     
     public function eliminaProdotto() {
