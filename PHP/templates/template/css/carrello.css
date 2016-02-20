@@ -124,7 +124,7 @@ div#carrello{
 	border-bottom: 4px;
 	border-right: 4px;
         border-style: solid;
-        border-color: #f93;
+        border-color: #fd7;
 }
 
 #foot .label,#foot .totale,#foot .vuoto{
@@ -145,4 +145,8 @@ div#carrello{
 
 #foot .vuoto{
 	width: 50px;
+        padding-left: 130px;
+}
+#pagamento{
+	float: right;
 }

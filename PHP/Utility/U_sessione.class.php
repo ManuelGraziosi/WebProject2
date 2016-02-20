@@ -4,11 +4,18 @@
  * @author Daniele Scarpone
  * @package System
  */
-        session_name("Sammartino");
+
+
+
 class U_sessione {
     public function __construct() {
+        session_name("Sammartino");
     	session_start(/**array(['cookie_lifetime' => 60*60*24*365])/**/);
-        session_set_cookie_params(60*60*24*365);
+            $parametri=  session_get_cookie_params();
+            setcookie(session_name(), session_id(),time()+(60*60*24*365),
+            $parametri['path'],$parametri['domain'],
+            $parametri['secure'],$parametri['httponly']);
+        //session_set_cookie_params(60*60*24*365);
     }
     public function imposta_valore($chiave,$valore) {
         $_SESSION[$chiave]=$valore;

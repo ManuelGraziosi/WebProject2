@@ -56,5 +56,10 @@
         </span>
         <span class="vuoto">
         </span>
+        
     </div>
+        
 </div>
+<button id="pagamento">
+    <img src="PHP/templates/template/images/paga.jpg" width="80" height="80"/>
+</button>

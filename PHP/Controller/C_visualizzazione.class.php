@@ -17,14 +17,19 @@ class C_visualizzazione{
         $view=new V_view();
         
         //questo si deve risolvere e forse i cookie sono la soluzione
-        $sessione=  U_singolaistanza::getIstanza("U_sessione");
+        /**$sessione=  U_singolaistanza::getIstanza("U_sessione");
         $nome_cognome=$sessione->leggi_valore('nome_cognome');
-        if($nome_cognome!=false){
+         *
+         */
+        if(isset($_COOKIE["Sammartino"])){
+            
+            $sessione=  U_singolaistanza::getIstanza("U_sessione");
+            $nome_cognome=$sessione->leggi_valore('nome_cognome');
             $view->inserisciDatiTemplate('utente', $nome_cognome);
         }else{
             $view->inserisciDatiTemplate('utente', 'Ospite');
         }
-        
+        /**/
         
         $view->impostaTemplate('home_default.tpl');
     }
