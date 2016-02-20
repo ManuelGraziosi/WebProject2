@@ -72,7 +72,6 @@
                     <li><a id="galleria" title="Galleria" class="menu">Galleria</a></li>
                     <li><a id="vetrina" title="Vetrina" class="menu">Vetrina</a></li>
                 </ul>
-
                 <span id="menuright">
                     <div id="formsearch">
                                 <!--<form method="get" action="">-->
