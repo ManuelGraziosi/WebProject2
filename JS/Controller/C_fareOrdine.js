@@ -70,6 +70,30 @@ C_fareOrdine.prototype={
             success:function(){
                 
             }
+        }).done(function(){
+            $.ajax({
+                url:'index.php?controllore=C_visualizzazione&metodo=carrello',
+                datatype:"html",
+                type:'POST',
+                ifModified:true,
+                async:false,
+                success:function(html){
+                    $('#mainright').html(html);
+//                    $.ajax({
+//                        url:"JS/Event/E_Carrello.js",
+//                        dataType:'script',
+//                        type:'POST',
+//                        async:false
+//                    });
+                }
+            }).done(function(){
+                    $.ajax({
+                        url:"JS/Event/E_Carrello.js",
+                        dataType:'script',
+                        type:'POST',
+                        async:false
+                    });
+            });
         });
     },
     
