@@ -16,13 +16,7 @@ class C_visualizzazione{
     public function paginaIniziale() {
         $view=new V_view();
         
-        //questo si deve risolvere e forse i cookie sono la soluzione
-        /**$sessione=  U_singolaistanza::getIstanza("U_sessione");
-        $nome_cognome=$sessione->leggi_valore('nome_cognome');
-         *
-         */
         if(isset($_COOKIE["Sammartino"])){
-            
             $sessione=  U_singolaistanza::getIstanza("U_sessione");
             $nome_cognome=$sessione->leggi_valore('nome_cognome');
             $view->inserisciDatiTemplate('utente', $nome_cognome);
