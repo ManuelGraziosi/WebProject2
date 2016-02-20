@@ -17,7 +17,7 @@ class C_amministratore {
             if($sessione->leggi_valore('admin')!=false){
                 $db= new F_database();
                 $datiprod=$db->caricaTabella('prodotto');
-                $daticlie=$db->caricaTabella('username');
+                $daticlie=$db->caricaTabella('cliente');
                 $view->inserisciDatiTemplate('prodotti', $datiprod);
                 $view->inserisciDatiTemplate('clienti', $daticlie);
                 $view->impostaTemplate('amministrazione.tpl');
@@ -30,25 +30,31 @@ class C_amministratore {
     }
     
     public function autenticaAdmin() {
-        header('Content-Type: application/html');
+        header('Content-Type: application/json');
         $view=new V_amministratore();
         $db=new F_database();
         $username=$view->getUsername();
         $password=$view->getPassword();
         $datiadmin=$db->caricaRiga("admin", $username);
         $sessione=U_singolaistanza::getIstanza('U_sessione');
-        //if($sessione->leggi_valore('admin')==false){
-        
-            if ($username!=false) {
-                    //account attivo
-                if ($username == $datiadmin['nome'] && $password == $datiadmin['password']) {
-                    $sessione=U_singolaistanza::getIstanza('U_sessione');
-                    $sessione->imposta_valore('admin',$datiadmin['nome']);
-                    $sessione->imposta_valore('password',$datiadmin['password']);
-                }
+        if ($username!=false) {
+            if ($username == $datiadmin[0]['nome'] && $password == $datiadmin[0]['password']) {
+                $sessione=U_singolaistanza::getIstanza('U_sessione');
+                $sessione->imposta_valore('admin',$datiadmin[0]['nome']);
+                $sessione->imposta_valore('password',$datiadmin[0]['password']);
+                echo json_encode(array("mess"=>true));
             }
-        //}
-        $this->esegui();
+            else{
+                echo json_encode(array("mess"=>"username e password sono errati"));
+            }
+        }
+    }
+    
+    public function logoutAdmin(){
+        if(isset($_COOKIE["Sammartino"])){
+            $sessione= U_singolaistanza::getIstanza("U_sessione");
+            $sessione->chiudi_sessione();
+        }
     }
     
     public function eliminaProdotto() {

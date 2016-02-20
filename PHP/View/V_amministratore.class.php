@@ -35,8 +35,8 @@ class V_amministratore extends V_view{
     }
     
     public function getUsername() {
-        if(isset($_REQUEST['Username'])){
-            return $_REQUEST['Username'];
+        if(isset($_REQUEST['username'])){
+            return $_REQUEST['username'];
         }
         else{
             return false;

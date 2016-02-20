@@ -144,6 +144,9 @@ button{
     color: #fff !important;
 }
 
+#logout{
+    float:right;
+}
 
 /**/
 

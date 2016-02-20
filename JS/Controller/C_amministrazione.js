@@ -11,7 +11,7 @@ var C_amministrazione = function(){
 
 C_amministrazione.prototype = {
     
-    inviaDatiLogin:function(dati){
+    LoginAdmin:function(){
         //var V = new V_registrazione();
         //var dati = V.recuperaDatiRegistrazione();
         $.ajax({
@@ -20,7 +20,29 @@ C_amministrazione.prototype = {
             type:'POST',
             datatype:"json",
             success:function(info){
-                $("body").html(info);
+                if(info.mess){
+                    $.ajax({
+                        url:"admin.php?controllore=C_amministratore&metodo=esegui",
+                        type:"post"
+                    }).done(function(html){
+                        $('body').html(html);
+                    });
+                }else{
+                    $("body").append(info.mess);
+                }
+            }
+        });
+    },
+    
+    LogoutAdmin:function(dati){
+        //var V = new V_registrazione();
+        //var dati = V.recuperaDatiRegistrazione();
+        $.ajax({
+            url:"admin.php?controllore=C_amministratore&metodo=logoutAdmin",
+            type:'POST',
+            datatype:"json",
+            success:function(info){
+                window.location.reload();
             }
         });
     },
@@ -29,17 +51,9 @@ C_amministrazione.prototype = {
         $.ajax({
             url:"admin.php?controllore=C_amministratore&metodo=inserisciProdotto",
             type:'POST',
-            dataType:"json",
+            //dataType:"json",
             data:datiProdotto,
             success:function(successo) {
-                /**
-                if(!successo){
-                    alert("prodotto inserito con successo");
-                }
-                else{
-                    alert("errore di inserimento");
-                }
-                /**/
                 window.location.reload();
             }
         });
@@ -90,7 +104,6 @@ C_amministrazione.prototype = {
             dataType:"html",
             data:dati,
             success:function() {
-                window.location.reload();
             }
         });
     },

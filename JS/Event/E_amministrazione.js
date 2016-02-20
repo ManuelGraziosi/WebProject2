@@ -10,6 +10,7 @@ E_amministrazione.prototype = {
         
         $('#InserisciProdotto').click(function(event){
             event.stopPropagation();
+            V.inizializzaForm();
             var invia=function(){
                 var datiProdotto = V.recuperaDatiProdotto();
                 C.inserisciProdotto(datiProdotto);
@@ -45,6 +46,8 @@ E_amministrazione.prototype = {
             //window.location.reload();
         });
         
-        $('#invialogin').click(C.inviaDatiLogin);
+        $('#invialogin').click(C.LoginAdmin);
+        
+        $('#logout').click(C.LogoutAdmin);
     }
 };
