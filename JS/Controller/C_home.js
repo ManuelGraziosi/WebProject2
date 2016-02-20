@@ -60,7 +60,12 @@ C_home.prototype={
         $('#invialogin').click(function(event){
             event.stopPropagation();
             var dati = V.recuperaDatiLogin();
+            if(dati){
             C.inviaDatiLogin(dati);
+            }
+            else{
+                alert("Inserire Username e Password");
+            }
         });
         
         $('#logout').click(function(event){

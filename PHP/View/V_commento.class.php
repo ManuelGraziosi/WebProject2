@@ -13,6 +13,10 @@
  */
 class V_commento {
     //put your code here
+    public function notificaDaCommento($notifica){
+        header("Content-type: application/html");
+        echo $notifica;
+    }
 
     public function getProductCom(){
         if(isset($_REQUEST['ProductCOM'])){

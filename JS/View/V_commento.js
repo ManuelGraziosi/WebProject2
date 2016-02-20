@@ -40,7 +40,21 @@ V_commento.prototype={
     
     notificaAllert: function(dato_alert){
         
-        alert(dato_alert);
+        //alert(dato_alert);
+        $("#notifica").html(dato_alert).dialog({
+            draggable:false,
+            modal:true,
+            resizable:false,
+            title:"Errore",
+            buttons:[
+                {
+                    text:"OK",
+                    click:function(){
+                        $(this).dialog("close");
+                    }
+                }],
+            close: $("#notifica").remove()
+        });
         
     },
     //funzione per il conteggio dei caratteri nell'area commento
