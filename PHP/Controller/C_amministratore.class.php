@@ -10,23 +10,23 @@ class C_amministratore {
     public function esegui() {
         $view=new V_view();
         //questo si deve risolvere e forse i cookie sono la soluzione
-        /**
-        $sessione=  U_singolaistanza::getIstanza("U_sessione");
-        $nome_cognome=$sessione->leggi_valore('nome_cognome');
-        if($nome_cognome!=false){
-            $view->inserisciDatiTemplate('utente', $nome_cognome);
+        
+        if(isset($_COOKIE["Sammartino"])){
+            $sessione= U_singolaistanza::getIstanza("U_sessione");
+            //$sessione= new U_sessione();
+            if($sessione->leggi_valore('admin')!=false){
+                $db= new F_database();
+                $datiprod=$db->caricaTabella('prodotto');
+                $daticlie=$db->caricaTabella('cliente');
+                $view->inserisciDatiTemplate('prodotti', $datiprod);
+                $view->inserisciDatiTemplate('clienti', $daticlie);
+                $view->impostaTemplate('amministrazione.tpl');
+            }else{
+                $view->impostaTemplate('login_amministrazione.tpl');
+            }
         }else{
-            $view->inserisciDatiTemplate('utente', 'Ospite');
+            $view->impostaTemplate('login_amministrazione.tpl');
         }
-        /**/
-        $db= new F_database();
-        $datiprod=$db->caricaTabella('prodotto');
-        $daticlie=$db->caricaTabella('cliente');
-        $datiprodotto=$db->caricaRiga("prodotto", "Caciotta");
-        $view->inserisciDatiTemplate('prodotto', $datiprodotto);
-        $view->inserisciDatiTemplate('prodotti', $datiprod);
-        $view->inserisciDatiTemplate('clienti', $daticlie);
-        $view->impostaTemplate('amministrazione.tpl');
     }
     
     public function eliminaProdotto() {
