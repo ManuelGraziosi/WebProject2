@@ -17,7 +17,7 @@ class C_amministratore {
             if($sessione->leggi_valore('admin')!=false){
                 $db= new F_database();
                 $datiprod=$db->caricaTabella('prodotto');
-                $daticlie=$db->caricaTabella('cliente');
+                $daticlie=$db->caricaTabella('username');
                 $view->inserisciDatiTemplate('prodotti', $datiprod);
                 $view->inserisciDatiTemplate('clienti', $daticlie);
                 $view->impostaTemplate('amministrazione.tpl');
@@ -27,6 +27,28 @@ class C_amministratore {
         }else{
             $view->impostaTemplate('login_amministrazione.tpl');
         }
+    }
+    
+    public function autenticaAdmin() {
+        header('Content-Type: application/html');
+        $view=new V_amministratore();
+        $db=new F_database();
+        $username=$view->getUsername();
+        $password=$view->getPassword();
+        $datiadmin=$db->caricaRiga("admin", $username);
+        $sessione=U_singolaistanza::getIstanza('U_sessione');
+        //if($sessione->leggi_valore('admin')==false){
+        
+            if ($username!=false) {
+                    //account attivo
+                if ($username == $datiadmin['nome'] && $password == $datiadmin['password']) {
+                    $sessione=U_singolaistanza::getIstanza('U_sessione');
+                    $sessione->imposta_valore('admin',$datiadmin['nome']);
+                    $sessione->imposta_valore('password',$datiadmin['password']);
+                }
+            }
+        //}
+        $this->esegui();
     }
     
     public function eliminaProdotto() {
@@ -79,14 +101,14 @@ class C_amministratore {
     public function eliminaCliente() {
         $view = new V_amministratore();
         $db = new F_database();
-        $cliente = new E_cliente();
+        $username = new E_username();
         $emailCliente = $view->getEMAILCliente();
-        $datiCliente = $db->caricaRiga('cliente', $emailCliente);
+        $datiCliente = $db->caricaRiga('username', $emailCliente);
         
-        U_operazioni::inserisciDati($cliente, $datiCliente);
-        $db->cancellaRiga('cliente', $cliente);
+        U_operazioni::inserisciDati($username, $datiCliente);
+        $db->cancellaRiga('username', $username);
         
-        $clienti=$db->caricaTabella('cliente');
+        $clienti=$db->caricaTabella('username');
         print_r($clienti);
         
     }
@@ -94,12 +116,12 @@ class C_amministratore {
     public function bandaCliente(){
         $view = new V_amministratore();
         $db = new F_database();
-        $cliente = new E_cliente();
+        $username = new E_username();
         $emailCliente = $view->getEMAILCliente();
-        $datiCliente = $db->caricaRiga('cliente', $emailCliente);
-        U_operazioni::inserisciDati($cliente, $datiCliente);
-        $cliente->setAttivazione('non_attivo');
-        $db->aggiornaRiga('cliente', $cliente);
+        $datiCliente = $db->caricaRiga('username', $emailCliente);
+        U_operazioni::inserisciDati($username, $datiCliente);
+        $username->setAttivazione('non_attivo');
+        $db->aggiornaRiga('username', $username);
         
     }
     

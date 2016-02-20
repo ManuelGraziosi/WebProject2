@@ -15,6 +15,7 @@
         <script type="text/javascript" src="JS/Event/E_amministrazione.js"></script>
 
 
+        <script type="text/javascript" src="JS/index_admin.js"></script>
 
         <link rel="stylesheet" type="text/css" media="screen" href="JS/Utility/Jquery/jquery-ui-1.11.4.custom/jquery-ui.min.css" /> 
         <script type="text/javascript" src="JS/Utility/Jquery/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>

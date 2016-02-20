@@ -10,9 +10,24 @@ var C_amministrazione = function(){
 };
 
 C_amministrazione.prototype = {
+    
+    inviaDatiLogin:function(dati){
+        //var V = new V_registrazione();
+        //var dati = V.recuperaDatiRegistrazione();
+        $.ajax({
+            url:"admin.php?controllore=C_amministratore&metodo=autenticaAdmin",
+            data:{"username":$('#username').val(),"password":$('#password').val()},
+            type:'POST',
+            datatype:"json",
+            success:function(info){
+                $("body").html(info);
+            }
+        });
+    },
+    
     inserisciProdotto : function(datiProdotto){
         $.ajax({
-            url:"index.php?controllore=C_amministratore&metodo=inserisciProdotto",
+            url:"admin.php?controllore=C_amministratore&metodo=inserisciProdotto",
             type:'POST',
             dataType:"json",
             data:datiProdotto,
@@ -37,7 +52,7 @@ C_amministrazione.prototype = {
         };
         var comodo;
         $.ajax({
-            url:"index.php?controllore=C_amministratore&metodo=recuperaProdotto",
+            url:"admin.php?controllore=C_amministratore&metodo=recuperaProdotto",
             type:'POST',
             dataType:"json",
             data:dati,
@@ -53,7 +68,7 @@ C_amministrazione.prototype = {
     aggiornaProdotto : function(dati){
         
         $.ajax({
-            url:"index.php?controllore=C_amministratore&metodo=aggiornaProdotto",
+            url:"admin.php?controllore=C_amministratore&metodo=aggiornaProdotto",
             type:'POST',
             dataType:"json",
             data:dati,
@@ -70,7 +85,7 @@ C_amministrazione.prototype = {
             "NOME_PRODOTTO": nome
         };
         $.ajax({
-            url:"index.php?controllore=C_amministratore&metodo=eliminaProdotto",
+            url:"admin.php?controllore=C_amministratore&metodo=eliminaProdotto",
             type:'POST',
             dataType:"html",
             data:dati,
@@ -82,7 +97,7 @@ C_amministrazione.prototype = {
     /**/
     bandaCliente : function(dato){
         $.ajax({
-            url:"index.php?controllore=C_amministratore&metodo=bandaCliente",
+            url:"admin.php?controllore=C_amministratore&metodo=bandaCliente",
             type:'POST',
             dataType:"html",
             data:dato,

@@ -44,5 +44,7 @@ E_amministrazione.prototype = {
             C.bandaCliente({"EMAIL":email});
             //window.location.reload();
         });
+        
+        $('#invialogin').click(C.inviaDatiLogin);
     }
 };
