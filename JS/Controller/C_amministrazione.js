@@ -25,7 +25,7 @@ C_amministrazione.prototype = {
                         url:"admin.php?controllore=C_amministratore&metodo=esegui",
                         type:"post"
                     }).done(function(html){
-                        $('body').html(html);
+                        $('html').html(html);
                     });
                 }else{
                     $("body").append(info.mess);

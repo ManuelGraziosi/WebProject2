@@ -46,7 +46,7 @@ E_amministrazione.prototype = {
             //window.location.reload();
         });
         
-        $('#invialogin').click(C.LoginAdmin);
+        $('#invialoginadmin').click(C.LoginAdmin);
         
         $('#logout').click(C.LogoutAdmin);
     }

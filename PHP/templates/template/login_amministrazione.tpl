@@ -25,7 +25,7 @@
             <p align="center">ACCEDI</p>
             username: <br> <input type="text" id="username"/>
             Password:<input type="password" id="password"/>
-            <button id="invialogin">Login</button>
+            <button id="invialoginadmin">Login</button>
         </div>
     </body>
 </html>
