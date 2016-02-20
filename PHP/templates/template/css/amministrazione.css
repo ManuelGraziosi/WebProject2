@@ -144,9 +144,10 @@ button{
     color: #fff !important;
 }
 
-#logout{
+#logoutli{
     float:right;
 }
+
 #login{
     width: 200px;
     height: 150px;

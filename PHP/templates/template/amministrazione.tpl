@@ -75,7 +75,7 @@
                 <li><a href="#Prodotto">Prodotto</a></li>
                 <li><a href="#Cliente">Cliente</a></li>
                 <li><a href="#OrdiniConfermati">Ordini Confermati</a></li>
-                <li id="logout">logout</li>
+                <li id="logoutli"><button id="logout">logout</button></li>
               </ul>
             <div id="Prodotto" class="contenutoAmministrazione">
                 <table class="admin">
