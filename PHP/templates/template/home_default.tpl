@@ -71,7 +71,6 @@
                     <li><a id="dovesiamo" title="DoveSiamo" class="menu">Dove Siamo</a></li>
                     <li><a id="galleria" title="Galleria" class="menu">Galleria</a></li>
                     <li><a id="vetrina" title="Vetrina" class="menu">Vetrina</a></li>
-                    <li><a id="amministrazione" title="amministrazione" class="menu">Amministrazione</a></li>
                 </ul>
 
                 <span id="menuright">
