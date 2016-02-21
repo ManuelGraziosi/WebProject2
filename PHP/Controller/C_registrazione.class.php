@@ -65,8 +65,8 @@ class C_registrazione {
 	                $db->depositaRiga("cliente", $cliente);
 	                //$this->emailAttivazione($cliente);
 	                $registrato=true;
-	                $this->_messaggio['corretto']='registrate';
-	                $this->_messaggio['messaggio']='registrate';
+	                $this->_messaggio['corretto']='Registrato!';
+	                $this->_messaggio['messaggio']='Registrato!';
 	            }
 	            else {
 	            	$this->_messaggio['messaggio']='ERRORE';
@@ -78,7 +78,7 @@ class C_registrazione {
             }
         } else {
             //cliente esistente
-            $this->_messaggio['messaggio']='Email gi&agrave; utilizzata';
+            $this->_messaggio['messaggio']='Email già utilizzata!';
         }
         $view->mostraNotifica($this->_messaggio);
 }
@@ -121,7 +121,7 @@ class C_registrazione {
                         //EMAIL password errati
                     }
                 } else {
-                    $this->_messaggio['errore']='L\'account non Ã¨ attivo';
+                    $this->_messaggio['errore']='L\'account non è attivo';
                     //account non attivo
                 }
             } else {
