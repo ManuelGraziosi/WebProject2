@@ -30,7 +30,7 @@ class C_registrazione {
     			if(
     		       ereg("^[a-zA-Z' ]{2,30}$",$dati['nome']) &&
     		       ereg("^[a-zA-Z' ]{2,30}$",$dati['cognome']) &&
-    		       eregi("^[a-z0-9][_.a-z0-9-]+@([a-z0-9][0-9a-z-]+.)+([a-z]{2,4})",$dati['EMAIL']) &&
+    		       eregi("^[a-z0-9][_.a-z0-9-]+@([a-z0-9][0-9a-z-]+.)+([a-z]{2,4})$",$dati['EMAIL']) &&
     		       ereg("^[[a-zA-Z0-9#!%\^&;\*\$:\{\}=\-_`~\(\)]{6,30}$",$dati['password']) &&
     		       ereg("^[a-zA-Z' ]{1,20}$",$dati['citta']) &&
     		       ereg("^[0-9a-zA-Z' ]{2,100}$",$dati['via']) &&
@@ -78,7 +78,7 @@ class C_registrazione {
             }
         } else {
             //cliente esistente
-            $this->_messaggio['messaggio']='Email già utilizzata!';
+            $this->_messaggio['messaggio']='Email gi&agrave; utilizzata';
         }
         $view->mostraNotifica($this->_messaggio);
 }
@@ -121,7 +121,7 @@ class C_registrazione {
                         //EMAIL password errati
                     }
                 } else {
-                    $this->_messaggio['errore']='L\'account non è attivo';
+                    $this->_messaggio['errore']='L\'account non &egrave; attivo';
                     //account non attivo
                 }
             } else {
