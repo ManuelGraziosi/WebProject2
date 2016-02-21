@@ -1,0 +1,98 @@
+<?php /* Smarty version 2.6.26, created on 2016-02-21 00:16:09
+         compiled from carrello.tpl */ ?>
+<div id="carrello">
+    <div id="intestazione">
+        <span class="foto">
+            <p>Foto</p>
+        </span>
+        <span class="nome">
+            <p>Nome prodotto</p>
+        </span>
+        <span class="quantita">
+            <p>Quantità</p>
+        </span>
+        <span class="prezzo">
+            <p>Prezzo(€)</p>
+        </span>
+        <span class="subtotale">
+            <p>Subtotale(€)</p>
+        </span>
+        <span class="cancella">
+            <p></p>
+        </span>
+    </div>
+    <!--va iterato-->
+  <?php $this->assign('totale', 0); ?>
+    <?php unset($this->_sections['i']);
+$this->_sections['i']['name'] = 'i';
+$this->_sections['i']['loop'] = is_array($_loop=$this->_tpl_vars['prodotti']) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
+$this->_sections['i']['show'] = true;
+$this->_sections['i']['max'] = $this->_sections['i']['loop'];
+$this->_sections['i']['step'] = 1;
+$this->_sections['i']['start'] = $this->_sections['i']['step'] > 0 ? 0 : $this->_sections['i']['loop']-1;
+if ($this->_sections['i']['show']) {
+    $this->_sections['i']['total'] = $this->_sections['i']['loop'];
+    if ($this->_sections['i']['total'] == 0)
+        $this->_sections['i']['show'] = false;
+} else
+    $this->_sections['i']['total'] = 0;
+if ($this->_sections['i']['show']):
+
+            for ($this->_sections['i']['index'] = $this->_sections['i']['start'], $this->_sections['i']['iteration'] = 1;
+                 $this->_sections['i']['iteration'] <= $this->_sections['i']['total'];
+                 $this->_sections['i']['index'] += $this->_sections['i']['step'], $this->_sections['i']['iteration']++):
+$this->_sections['i']['rownum'] = $this->_sections['i']['iteration'];
+$this->_sections['i']['index_prev'] = $this->_sections['i']['index'] - $this->_sections['i']['step'];
+$this->_sections['i']['index_next'] = $this->_sections['i']['index'] + $this->_sections['i']['step'];
+$this->_sections['i']['first']      = ($this->_sections['i']['iteration'] == 1);
+$this->_sections['i']['last']       = ($this->_sections['i']['iteration'] == $this->_sections['i']['total']);
+?>
+    <div class="elemento">
+        <span class="foto">
+            <img id="d_foto" src="PHP/templates/template/images/prodotti/<?php echo $this->_tpl_vars['prodotti'][$this->_sections['i']['index']]['foto']; ?>
+.jpg" width="50px" height="50px"/>
+        </span>
+        <span class="nome">
+            <p><?php echo $this->_tpl_vars['prodotti'][$this->_sections['i']['index']]['nome_prodotto']; ?>
+</p>
+        </span>
+        <span class="quantita">
+            <p><input class="n_quantita" title="<?php echo $this->_tpl_vars['prodotti'][$this->_sections['i']['index']]['nome_prodotto']; ?>
+" type="text" value="<?php echo $this->_tpl_vars['prodotti'][$this->_sections['i']['index']]['quantita']; ?>
+"/>N.</p>
+        </span>
+        <span class="prezzo">
+            <p><?php echo $this->_tpl_vars['prodotti'][$this->_sections['i']['index']]['prezzo']; ?>
+</p>
+        </span>
+        <span class="subtotale">
+            <p><?php echo $this->_tpl_vars['prodotti'][$this->_sections['i']['index']]['subtotale']; ?>
+</p><?php $this->assign('totale', $this->_tpl_vars['prodotti'][$this->_sections['i']['index']]['subtotale']+$this->_tpl_vars['totale']); ?>
+        </span>
+        <span class="cancella">
+            <button class="cancella_prodotto" title="<?php echo $this->_tpl_vars['prodotti'][$this->_sections['i']['index']]['nome_prodotto']; ?>
+">X</button>
+        </span>
+    </div>
+    <?php endfor; else: ?>
+    <div class="elemento">
+        <b> Nessun prodotto nel carrello </b>
+    </div>
+    <?php endif; ?>
+    <div id="foot">
+        <span class="label">
+            <b> TOTALE:</b>
+        </span>
+        <span class="totale">
+            <b><?php echo $this->_tpl_vars['totale']; ?>
+</b>
+        </span>
+        <span class="vuoto">
+        </span>
+        
+    </div>
+        
+</div>
+<button id="pagamento">
+    <img src="PHP/templates/template/images/paga.jpg" width="80" height="80"/>
+</button>

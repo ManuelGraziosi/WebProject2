@@ -1,0 +1,18 @@
+<?php
+/**
+ * Description of U_operazioni
+ *
+ * @author daniele
+ */
+class U_operazioni {
+    
+    public static function inserisciDati(&$oggetto, $dati){
+        if(array_key_exists('0', $dati)){
+            $dati=$dati[0];
+        }
+        foreach ($dati as $key => $value) {
+            $oggetto->$key=$value;
+        }
+    }
+}
+
