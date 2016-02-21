@@ -16,7 +16,7 @@ C_amministrazione.prototype = {
         var dati = V.recuperaDatiLogin();
         $.ajax({
             url:"admin.php?controllore=C_amministratore&metodo=autenticaAdmin",
-            data:{"username":$('#username').val(),"password":$('#password').val()},
+            data:dati,
             type:'POST',
             datatype:"json",
             success:function(info){
