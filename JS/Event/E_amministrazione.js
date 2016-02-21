@@ -46,12 +46,12 @@ E_amministrazione.prototype = {
             //window.location.reload();
         });
         
-        $('#invialoginadmin').click(function(event){
+        $('#invialoginadmin').unbind().click(function(event){
             event.stopPropagation();
             C.LoginAdmin();
         });
         
-        $('#logout').click(function(event){
+        $('#logout').unbind().click(function(event){
             event.stopPropagation();
             C.LogoutAdmin();
         });
