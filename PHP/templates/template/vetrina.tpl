@@ -23,7 +23,7 @@
 
             <div class="prodotto" id="{$smarty.section.i.iteration}">
                 <div class="foto-space" title="{$prodotti[i].NOME_PRODOTTO}">
-                    <img id="foto" src="PHP/templates/template/images/prodotti/{$prodotti[i].foto}.jpg" />
+                    <img id="foto" src="PHP/templates/template/images/prodotti/{$prodotti[i].foto}_small.jpg" />
                 </div>
                 <div class="info">
                     <div class="dettaglio">
