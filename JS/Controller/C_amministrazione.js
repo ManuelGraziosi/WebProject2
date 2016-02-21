@@ -12,8 +12,8 @@ var C_amministrazione = function(){
 C_amministrazione.prototype = {
     
     LoginAdmin:function(){
-        //var V = new V_registrazione();
-        //var dati = V.recuperaDatiRegistrazione();
+        var V = new V_amministrazione();
+        var dati = V.recuperaDatiLogin();
         $.ajax({
             url:"admin.php?controllore=C_amministratore&metodo=autenticaAdmin",
             data:{"username":$('#username').val(),"password":$('#password').val()},
@@ -29,13 +29,13 @@ C_amministrazione.prototype = {
                         }
                     })
                 }else{
-                    $('#login').append("email e/o password sono errati");
+                    V.notificaErroreLoginAdmin();
                 }
             }
         });
     },
     
-    LogoutAdmin:function(dati){
+    LogoutAdmin:function(){
         //var V = new V_registrazione();
         //var dati = V.recuperaDatiRegistrazione();
         $.ajax({

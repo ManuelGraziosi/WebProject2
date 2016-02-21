@@ -82,3 +82,11 @@ V_amministrazione.prototype.inizializzaForm=function(){
         $(this).val("");
     });
 }
+
+V_amministrazione.prototype.notificaErroreLoginAdmin= function(){
+    alert('email e/o password sono errati');
+};
+
+V_amministrazione.prototype.recuperaDatiLogin= function(){
+    return {username:$('#username').val(),password:$('#password').val()};
+};

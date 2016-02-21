@@ -46,8 +46,14 @@ E_amministrazione.prototype = {
             //window.location.reload();
         });
         
-        $('#invialoginadmin').click(C.LoginAdmin);
+        $('#invialoginadmin').click(function(event){
+            event.stopPropagation();
+            C.LoginAdmin();
+        });
         
-        $('#logout').click(C.LogoutAdmin);
+        $('#logout').click(function(event){
+            event.stopPropagation();
+            C.LogoutAdmin();
+        });
     }
 };
