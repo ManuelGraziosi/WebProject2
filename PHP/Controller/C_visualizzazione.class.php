@@ -18,12 +18,11 @@ class C_visualizzazione{
         
         if(isset($_COOKIE["Sammartino"])){
             $sessione=  U_singolaistanza::getIstanza("U_sessione");
-            if($sessione->leggi_valore('nome_cognome')){
-                $nome_cognome=$sessione->leggi_valore('nome_cognome');
-                $view->inserisciDatiTemplate('utente', $nome_cognome);
-            }else{
-                $view->inserisciDatiTemplate('utente', 'Ospite');
-            }
+            $nome_cognome=$sessione->leggi_valore('nome_cognome');
+            $view->inserisciDatiTemplate('utente', $nome_cognome);
+            $view->inserisciDatiTemplate('utente', 'Ospite');
+        }else{
+            $view->inserisciDatiTemplate('utente', 'Ospite');
         }
         /**/
         

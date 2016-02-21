@@ -14,7 +14,7 @@ class C_amministratore {
         if(isset($_COOKIE["Sammartino"])){
             $sessione= U_singolaistanza::getIstanza("U_sessione");
             //$sessione= new U_sessione();
-            if(!$sessione->leggi_valore('nome_cognome')){
+            if($sessione->leggi_valore('admin')!=false){
                 $db= new F_database();
                 $datiprod=$db->caricaTabella('prodotto');
                 $daticlie=$db->caricaTabella('cliente');
