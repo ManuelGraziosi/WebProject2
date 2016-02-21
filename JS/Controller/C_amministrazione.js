@@ -20,15 +20,16 @@ C_amministrazione.prototype = {
             type:'POST',
             datatype:"json",
             success:function(info){
-                if(info.mess){
+                if(info){
                     $.ajax({
                         url:"admin.php?controllore=C_amministratore&metodo=esegui",
-                        type:"post"
-                    }).done(function(html){
-                        $('html').html(html);
-                    });
+                        type:'POST',
+                        success:function(html){
+                            $('body').html(html);
+                        }
+                    })
                 }else{
-                    $("body").append(info.mess);
+                    $('#login').append("email e/o password sono errati");
                 }
             }
         });

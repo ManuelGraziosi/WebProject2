@@ -30,22 +30,22 @@ class C_amministratore {
     }
     
     public function autenticaAdmin() {
-        header('Content-Type: application/json');
         $view=new V_amministratore();
         $db=new F_database();
         $username=$view->getUsername();
         $password=$view->getPassword();
         $datiadmin=$db->caricaRiga("admin", $username);
         $sessione=U_singolaistanza::getIstanza('U_sessione');
-        if ($username!=false) {
-            if ($username == $datiadmin[0]['nome'] && $password == $datiadmin[0]['password']) {
+        if ($datiadmin!=false) {
+            if ($username == $datiadmin[0]['nome'] && $password == $datiadmin[0]['password'] && $username && $password) {
                 $sessione=U_singolaistanza::getIstanza('U_sessione');
                 $sessione->imposta_valore('admin',$datiadmin[0]['nome']);
                 $sessione->imposta_valore('password',$datiadmin[0]['password']);
-                echo json_encode(array("mess"=>true));
+                //$this->esegui();
+                echo true;
             }
             else{
-                echo json_encode(array("mess"=>"username e password sono errati"));
+                echo false;
             }
         }
     }
