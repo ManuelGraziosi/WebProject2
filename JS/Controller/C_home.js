@@ -25,17 +25,24 @@ C_home.prototype={
                 datatype:"html",
                 type:'POST',
                 ifModified:true,
-                async:false,
+//                async:false,
                 success:function(html){
                     $('#mainright').html(html);
-                    $.ajax({
-                        url:"JS/Event/E_"+nomePagina+".js",
-                        dataType:'script',
-                        type:'POST',
-                        async:false
-                    });
+//                    $.ajax({
+//                        url:"JS/Event/E_"+nomePagina+".js",
+//                        dataType:'script',
+//                        type:'POST',
+//                        async:false
+//                    });
                 }
-            });
+            }).done(
+                $.ajax({
+                    url:"JS/Event/E_"+nomePagina+".js",
+                    dataType:'script',
+                    type:'POST',
+//                    async:false
+                })
+            );
         });
         $('#registrazione').click(function(event){
             event.stopPropagation();

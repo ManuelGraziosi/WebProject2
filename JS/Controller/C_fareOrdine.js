@@ -102,21 +102,34 @@ C_fareOrdine.prototype={
             url:'index.php?controllore=C_visualizzazione&metodo=effettuaOrdine',
             datatype:"html",
             type:'POST',
-            ifModified:true,
-            success:function(html){
+//            success:function(html){
+//                $('#notifica').html(html).dialog({
+//                    draggable:false,
+//                    modal:true,
+//                    resizable:false,
+//                    width: "50%",
+//                    minWidth:500,
+//                    title:"Form Completamento Ordine",
+//                    close: function(){
+//                        $('#notifica').remove();
+//                    }
+//                });
+//            }
+        }).done(
+            function(html){
                 $('#notifica').html(html).dialog({
-                draggable:false,
-                modal:true,
-                resizable:false,
-                width: "50%",
-                minWidth:500,
-                title:"Form Completamento Ordine",
-                close: function(){
-                    $('#notifica').remove();
-                }
-            });
-            }
-        });
+                    draggable:false,
+                    modal:true,
+                    resizable:false,
+                    width: "50%",
+                    minWidth:500,
+                    title:"Form Completamento Ordine",
+                    close: function(){
+                        $('#notifica').remove();
+                    }
+                });
+            }   
+        );
     },
     confermaOrdine: function(){}
 };
