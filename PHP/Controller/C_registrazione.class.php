@@ -25,21 +25,23 @@ class C_registrazione {
      * @return mixed
      */
      
-    private function controlloDati($dati)
-    		{
-    			if(
-    		       ereg("^[a-zA-Z' ]{2,30}$",$dati['nome']) &&
-    		       ereg("^[a-zA-Z' ]{2,30}$",$dati['cognome']) &&
-    		       eregi("^[a-z0-9][_.a-z0-9-]+@([a-z0-9][0-9a-z-]+.)+([a-z]{2,4})$",$dati['EMAIL']) &&
-    		       ereg("^[[a-zA-Z0-9#!%\^&;\*\$:\{\}=\-_`~\(\)]{6,30}$",$dati['password']) &&
-    		       ereg("^[a-zA-Z' ]{1,20}$",$dati['citta']) &&
-    		       ereg("^[0-9a-zA-Z' ]{2,100}$",$dati['via']) &&
-    		       ereg("^[0-9]{5}$",$dati['CAP'])
-    		       )
-    		       	return true; 
-    			else 
-    		     	return false;  
-    		}
+    private function controlloDati($dati){
+        
+    	if(
+            ereg("^[a-zA-Z' ]{2,30}$",$dati['nome']) &&
+            ereg("^[a-zA-Z' ]{2,30}$",$dati['cognome']) &&
+            eregi("^[a-z0-9][_.a-z0-9-]+@([a-z0-9][0-9a-z-]+.)+([a-z]{2,4})$",$dati['EMAIL']) &&
+            ereg("^[[a-zA-Z0-9#!%\^&;\*\$:\{\}=\-_`~\(\)]{6,30}$",$dati['password']) &&
+            ereg("^[a-zA-Z' ]{1,20}$",$dati['citta']) &&
+            ereg("^[0-9a-zA-Z' ]{2,100}$",$dati['via']) &&
+            ereg("^[0-9]{5}$",$dati['CAP'])
+            ){
+                return true; 
+            }
+            else{ 
+                return false;  
+            }
+    }
      
      
     public function creaCliente() {
