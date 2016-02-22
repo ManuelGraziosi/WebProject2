@@ -28,21 +28,14 @@ C_home.prototype={
 //                async:false,
                 success:function(html){
                     $('#mainright').html(html);
-//                    $.ajax({
-//                        url:"JS/Event/E_"+nomePagina+".js",
-//                        dataType:'script',
-//                        type:'POST',
-//                        async:false
-//                    });
+                    $.ajax({
+                        url:"JS/Event/E_"+nomePagina+".js",
+                        dataType:'script',
+                        type:'POST',
+                        async:false
+                    });
                 }
-            }).done(
-                $.ajax({
-                    url:"JS/Event/E_"+nomePagina+".js",
-                    dataType:'script',
-                    type:'POST',
-//                    async:false
-                })
-            );
+            })
         });
         $('#registrazione').click(function(event){
             event.stopPropagation();
